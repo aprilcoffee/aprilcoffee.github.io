@@ -20,7 +20,7 @@ function setup() {
   //sun = loadImage("sun.png");
   	//video = createVideo("data/transit.mov");
   	//video.loop();
-  	for (var s = 0; s < 1000; s++) {
+  	for (var s = 0; s < 10000; s++) {
     	SB.push(new sunBall(90, random(360), random(360), width / 2, height / 2));
   	}
   	//video.hide();
