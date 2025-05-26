@@ -16,7 +16,10 @@
             <h1>The purple coincidence</h1>
         </header>
         <div class="content-wrapper">
-            <article>
+            <article><div class="section-navigation">
+                <a href="what-you-see.html" class="prev-section">← Previous: What you see is not inside the machine</a>
+                <a href="eliza-effect.html" class="next-section">Next: Eliza Effect →</a>
+            </div>
                 <p>At the end of 2023, at the 37th Chaos Communication Congress (CCC), I shared our project<sup><a href="#fn1" id="fnref1">1</a></sup> with Leon-Etienne Kühr. The process of 37C3 is actually a collation of the ideas we have been working on for the past few years. Much of the ideas have evolved since the presentation, I would rather talk about the cause and effect here, to reiterate some context and touch a brush with my sense of presence.</p>
 
                 <p>The whole project began with a paranoid night; like all media artists seeking to exploit technology, we first began with the classical approach: a simple feedback loop. In 1969, American sound artist Alvin Lucier composed the piece <em>I am Sitting in a Room</em>. In the piece, Lucier records himself reading a short text and then playing the tape recording to the room while re-recording it. The new recording was then played back into the room, and so on. The resonance of the room becomes a noise source, akin to what Claude Shannon described in his model of communication, gradually erasing the intelligibility of the speech.</p>
@@ -26,15 +29,17 @@ while True:
     image = m.run(img=image)</code></pre>
                 <p>In order to see the nature of unguided image, we were not using text prompts as input, but working purely with the image variation model. After a few iterations, the images slowly transformed into a purple, noisy texture. The paranoia began, and no matter how we changed the initial image, the purple always returned. This discovery prompted us to start disassembling the Stable Diffusion model we used, trying to find the source behind this persistent visual shift. We turned to the Hugging Face documentation and began experimenting with feedback loops across various components of the generative pipeline. It quickly became clear that AI image generation is not a single black box but a system of interconnected pipelines. Although these experiments were far from fully unraveling the image generation process, they cracked open a small chasm in the black box.</p>
                 <p>Our encounters with modern technology often feel seamless and straightforward, a effortless interactions with designed interfaces. Push, Tap, Slide, etc. Whether driving a car, shopping online, or booking hotels and trains, we experienced a polished front end that conceals the intricate infrastructures operating beneath the surface.</p>
+                <div class="section-navigation">
+                    <a href="what-you-see.html" class="prev-section">← Previous: What you see is not inside the machine</a>
+                    <a href="eliza-effect.html" class="next-section">Next: Eliza Effect →</a>
+                </div>
             </article>
-            <div class="section-navigation">
-                <a href="what-you-see.html" class="prev-section">← Previous: What you see is not inside the machine</a>
-                <a href="eliza-effect.html" class="next-section">Next: Eliza Effect →</a>
-            </div>
+            
             <aside class="footnotes">
                 <h3>Footnotes</h3>
                 <ol>
-                    <li id="fn1">The presentation at 37C3 can be found at <a href="https://media.ccc.de/v/37c3-12166-the_purple_coincidence">media.ccc.de</a> <a href="#fnref1" class="footnote-backref">↩</a></li>
+                    <li id="fn1">The presentation at 37C3 can be found at <a href="https://www.youtube.com/watch?v=B0ZJxOIinr4">YouTube</a> <a href="#fnref1" class="footnote-backref">↩</a></li>
+                </ol>
                 </ol>
             </aside>
         </div>
