@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Noise Maker - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>Optimized Noise Maker</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>Having set the stage with the broader concept of AI, I want to turn to the specific class of generative models that akin to my practice: diffusion models. These models are at the core of Stable Diffusion, and understanding how they work not only illuminates why we got that purple image in the feedback experiment but also provides insight into the framework of generative AI's approach creating images.</p>
+
+                <p>Stable Diffusion's model is an implementation of Latent Diffusion<sup><a href="#fn1" id="fnref1">1</a></sup> which improved efficiency by doing the diffusion in a compressed latent space (with the U-Net which we will later discuss) rather than pixel space. This process is guided by two things: the learned model (how to denoise in general) and the conditioning (the text prompt) which guides the model towards a particular kind of image. A given text prompt "sunset over ocean" will subtly nudge each denoising step to favor features associated with sunsets and oceans. Technically, this is done by cross-attention layers that incorporate textual embeddings with the image generation process, effectively allowing the words to influence the image features at every step. In this section, a step-by-step explanation of how diffusion models work will be provided, which is crucial for understanding the hidden aesthetic qualities in generative models.</p>
+
+                <h2>Sections</h2>
+                <ul>
+                    <li><a href="measuring-coffee.html">Measuring Coffee</a> - Understanding algorithms through daily routines</li>
+                    <li><a href="computer-vision.html">When Computer Squeeze its eyes</a> - The mechanics of image processing</li>
+                    <li><a href="self-critic.html">Self-critic machine</a> - The evolution of GANs</li>
+                    <li><a href="biochemical.html">A biochemical problem</a> - Medical applications and ethical considerations</li>
+                    <li><a href="attention.html">Attending to Attention</a> - Understanding attention mechanisms</li>
+                    <li><a href="denoising.html">Denosing the noise</a> - The technical narrative of diffusion models</li>
+                </ul>
+            </article>
+            <div class="section-navigation">
+                <a href="../loss-function/statistical-index.html" class="prev-section">← Previous: Statistical Index and Embeddings</a>
+                <a href="measuring-coffee.html" class="next-section">Next: Measuring Coffee →</a>
+            </div>
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">Robin Rombach et al., "High-Resolution Image Synthesis with Latent Diffusion Models." <a href="#fnref1" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html>

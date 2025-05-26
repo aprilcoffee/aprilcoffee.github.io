@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denoising - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>Denosing the noise</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>All of the research finally converges at this point, the technical narrative of the <em>diffusion model</em> itself. A common misconception is that images in AI were generated out of thin air, but this is far from the truth. Much like sculpting from a raw stone, diffusion begins with random noise, pure entropy, and iteratively reduces the noise into a coherent visual representation, or as a form of human understanding: an image. This transformation of noise is guided by statistical patterns learned through <em>convolution</em> and <em>cross-attention mechanisms</em>, and orchestrated by architectures like <em>U-Net</em> and steered by models like <em>CLIP</em>, which align visual outputs with textual prompts.</p>
+
+                <p>The basic principle of diffusion models was formalized as <em>Denoising Diffusion Probabilistic Models (DDPM)</em><sup><a href="#fn1" id="fnref1">1</a></sup>, which introduced two processes: the training phase and the generation phase. <em>Forward diffusion</em> (used in training) gradually adds Gaussian noise to an image over a series of steps until it becomes indistinguishable from random noise. Rather than directly learning to reverse this process, the model learns to predict the noise added at each step, which correlates to the image and caption input.</p>
+
+                <p>Once the models is trained, it performs a <em>reverse diffusion</em> to generate a new image. Starting from pure noise, it iteratively removes noise at each steps. In a normal text-to-image models, this denoising process is guided by text encoding with models such as CLIP, and integrated with cross-attention. This allows the system to guide the generation process toward a semantically meaningful output that correlates to the text prompt.</p> 
+
+                <p>Typically, the architecture of the model is a U-Net, which allows the model to maintain spatial details while learning semantic features. However, performing diffusion in full pixel space is computationally demanding. This challenge is addressed by <em>High-Resolution Image Synthesis with Latent Diffusion Models</em><sup><a href="#fn2" id="fnref2">2</a></sup> by Rombach et al., which introduced <em>Latent Diffusion Models (LDMs)</em>. Instead of working with full-resolution images, LDMs operate in a compressed latent space, significantly improving efficiency without sacrificing image quality. The diffusion process happens in this latent representation, which is later decoded into a final image with <em>Variational Autoencoder (VAE)</em><sup><a href="#fn3" id="fnref3">3</a></sup>. Notably, the authors of LDMs paper played an initial role in the development of <em>Stable Diffusion</em>, the text-to-image model that I heavily rely on.</p>
+
+                <p>The diffusion process has both interesting and depressing implications. First, it relies on the notion of what counts as noise versus signal in an image. If certain visual features were rare or considered noise in the training set, the model might literally treat them as noise to be removed. For example, if very few training images showed nonbinary gender presentations, the model might "wash out" ambiguous gender attributes as it denoises, since there is a stronger probability for binary gender appearance<sup><a href="#fn4" id="fnref4">4</a></sup>. In this way, the diffusion model is tinted by the statistical frequency of things in its training data. What it doesn't often see, it may not generate clearly.</p>
+
+                <p>Secondly, diffusion confers a homogenizing effect. Each denoising step averages out possibilities based on learned probabilities. Unless prompted with a very specific style, most AI images can feel aesthetically similar, reflecting popular internet imagery. The process could homogenize creative output<sup><a href="#fn5" id="fnref5">5</a></sup>, leading to the loss of individuality and recreating biases and stereotypes. Technically, this happens because the model tends toward high-probability states during generation, and yet again, truly low-probability features get "noised out."</p>
+
+                <p></p>In conclusion, diffusion models is now part in our cultural landscape. By looking into the technical aspects, it becomes clearer what actually resulted in the problems that are often criticized. Diffusion models, like any other medium, reflects the values of their users. After all, every new tools: the camera, the computer, and now the algorithm, ultimately reshapes how we see the world and understand ourselves. This journey of making sense of how it works made me realize its limitations and potential.</p>
+
+                <p>And yet, the patterns a diffusion model amplifies are not just shaped by training data, they are conditioned by the infrastructures and industries that make computation possible in the first place. <em>The decisions embedded in model architecture are intertwined with the physical limitations</em>. And every aesthetic tendency is made possible by vast calculation on electronics. This is also where the materiality of artificial intelligence must be confronted. In the end, diffusion is not just a statistical process, it is a material one.</p>
+            </article>
+                <div class="section-navigation">
+                    <a href="attention.html" class="prev-section">← Previous: Attending to Attention</a>
+                    <a href="../materiality.html" class="next-section">Next Chapter: Materiality of Artificial Intelligence →</a>
+                </div>
+            
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">Ho, J., Jain, A., & Abbeel, P. "Denoising Diffusion Probabilistic Models." Advances in Neural Information Processing Systems. 2020. <a href="https://arxiv.org/abs/2006.11239">Paper</a> <a href="#fnref1" class="footnote-backref">↩</a></li>
+                    <li id="fn2">Rombach et al. "High-Resolution Image Synthesis with Latent Diffusion Models." CVPR 2022. <a href="https://arxiv.org/abs/2112.10752">Paper</a> <a href="#fnref2" class="footnote-backref">↩</a></li>
+                    <li id="fn3">Kingma, D. P., & Welling, M. "Auto-Encoding Variational Bayes." ICLR 2014. <a href="https://arxiv.org/abs/1312.6114">Paper</a> <a href="#fnref3" class="footnote-backref">↩</a></li>
+                    <li id="fn4">Sourojit Ghosh, ""Person" == Light-skinned, Western Man, and Sexualization of Women of Color: Stereotypes in Stable Diffusion." <a href="https://arxiv.org/abs/2211.03759">Paper</a> <a href="#fnref4" class="footnote-backref">↩</a></li>
+                    <li id="fn5">AI Art Magazine, "The Artistic Dilemma: Navigating the Challenges of AI in Creative Expression." <a href="https://aiartmagazine.org/the-artistic-dilemma-navigating-the-challenges-of-ai-in-creative-expression/">Article</a> <a href="#fnref5" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The purple coincidence - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>The purple coincidence</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>At the end of 2023, at the 37th Chaos Communication Congress (CCC), I shared our project<sup><a href="#fn1" id="fnref1">1</a></sup> with Leon-Etienne Kühr. The process of 37C3 is actually a collation of the ideas we have been working on for the past few years. Much of the ideas have evolved since the presentation, I would rather talk about the cause and effect here, to reiterate some context and touch a brush with my sense of presence.</p>
+
+                <p>The whole project began with a paranoid night; like all media artists seeking to exploit technology, we first began with the classical approach: a simple feedback loop. In 1969, American sound artist Alvin Lucier composed the piece <em>I am Sitting in a Room</em>. In the piece, Lucier records himself reading a short text and then playing the tape recording to the room while re-recording it. The new recording was then played back into the room, and so on. The resonance of the room becomes a noise source, akin to what Claude Shannon described in his model of communication, gradually erasing the intelligibility of the speech.</p>
+                <p>Due to the limitations of technology at the time, one factor was not fully accounted for in Lucier's original concept: the recording quality of the tape machine. Technology leaves its mark on everything that passes through it. In this case, the subtle noise introduces us to the texture the tape recorder creates and the aesthetic quality embedded in the machine itself. In our experimentation with feedback in AI-generated images, the intention was to measure the mathematical space. Could this process shed light on the inherent qualities of generative AI?</p>
+                <pre><code>m = AI('img2img_stability')
+while True:
+    image = m.run(img=image)</code></pre>
+                <p>In order to see the nature of unguided image, we were not using text prompts as input, but working purely with the image variation model. After a few iterations, the images slowly transformed into a purple, noisy texture. The paranoia began, and no matter how we changed the initial image, the purple always returned. This discovery prompted us to start disassembling the Stable Diffusion model we used, trying to find the source behind this persistent visual shift. We turned to the Hugging Face documentation and began experimenting with feedback loops across various components of the generative pipeline. It quickly became clear that AI image generation is not a single black box but a system of interconnected pipelines. Although these experiments were far from fully unraveling the image generation process, they cracked open a small chasm in the black box.</p>
+                <p>Our encounters with modern technology often feel seamless and straightforward, a effortless interactions with designed interfaces. Push, Tap, Slide, etc. Whether driving a car, shopping online, or booking hotels and trains, we experienced a polished front end that conceals the intricate infrastructures operating beneath the surface.</p>
+            </article>
+            <div class="section-navigation">
+                <a href="what-you-see.html" class="prev-section">← Previous: What you see is not inside the machine</a>
+                <a href="eliza-effect.html" class="next-section">Next: Eliza Effect →</a>
+            </div>
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">The presentation at 37C3 can be found at <a href="https://media.ccc.de/v/37c3-12166-the_purple_coincidence">media.ccc.de</a> <a href="#fnref1" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

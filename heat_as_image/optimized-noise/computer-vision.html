@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>When Computer Squeeze its eyes</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>In contrast to processing textual data via neural networks, image processing is never optimal for working in such an amount. Processing a 128x128 greyscale coffee pot image requires a computer to handle around 16000 pixels. As image size increases, the computational complexity grows exponentially, especially when factoring in color channels. To manage this problem, machine learning models process images through convolutions, like squinting your eye; it perceives the <em>contours</em> of an image rather than finding details. The algorithmic principle of convolutions is the repeated application of filters, also known as <em>kernels</em>, averaging pixel relationships. The convolutional processes highlight specific features such as textures, edges, and patterns and detect shapes and objects more effectively (though deductive) in order to have a meaningful understanding of the overall structure rather than its individual pixel values. Furthermore, <em>Pooling layers</em>, such as <em>max pooling</em>, condense image data by selecting the most prominent features, ensuring robustness against minor variations like shifts or distortions. This enables <em>convolutional neural networks (CNNs)</em>, a class of AI algorithms inspired by the human visual cortex, to generalize well across different images of the same object.</p>
+
+                <p>In the case of multilayer neural networks, a convolution layer acts as a set of texture/shape detectors that scan across an image. The first layers of a CNN might detect edges or blobs of color, while deeper layers detect more complex forms (eyes, wheels, etc. depending on what it's trained on). This hierarchical feature detection is why CNNs automatically learn the right <em>visual vocabulary</em> necessary for the task at hand.</p>
+
+                <p>Photography has been questioning the aura that erodes, captures, and digitalizes, as in how the transition from lived experience to digital still image reduced reality into a finite and compressed state. Yet even this reduced reality holds aesthetic value, perceptible by the human eyes, which humans can process. However, once it passes through convolutions, even the human eye struggles to recognize the mechanism in question. The image becomes a language of features and abstractions, no longer a surface to be seen but a structure to be interpreted.</p>
+            </article>
+                <div class="section-navigation">
+                    <a href="measuring-coffee.html" class="prev-section">← Previous: Measuring Coffee</a>
+                    <a href="self-critic.html" class="next-section">Next: Self-critic machine →</a>
+                </div>
+           
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

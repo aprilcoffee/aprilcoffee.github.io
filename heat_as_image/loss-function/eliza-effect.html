@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliza Effect - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>Eliza Effect</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>The Turing Test (also known as the Imitation Game) is a foundational concept in artificial intelligence that assesses whether a machine can convincingly mimic human-like responses, making it difficult to distinguish from human. For over 70 years, academic discussions and media coverage have solidified this test as a standard for evaluating the intelligence of artificial intelligence. When a new AI model emerges, it's often accompanied by claims about its ability to pass the Turing Test.</p>
+                <p>However, many people overlook the fact that Turing originally proposed the concept as a experiment on gender recognition. In his paper<sup><a href="#fn1" id="fnref1">1</a></sup> written in 1950, Turing designed an experiment framework: two participants (A and B), one male and one female, and an interrogator who could only communicate through text without relying on visual or auditory cues. For example, the interrogator might ask A to describe their hair length, with A responding as a man would ("My hair is short, about 9 inches long"). B can try to help the interrogator figure out the identity by claiming, "I'm a woman," but A can also play along in a similar way. Turing proposed the hypothesis that if A's role was taken over by a machine, could the interrogator still determined incorrectly?</p>
+                <p>This line of thinking led to a fundamental question: what is the nature of human thought? Compared to evaluating intelligence, the human-computer relationship from a philosophical perspective. He became a critic of the large-scale application of computers in society and the ethical issues that came with it. In his book <em>Computer Power and Human Reason</em><sup><a href="#fn2" id="fnref2">2</a></sup>, Weizenbaum presented a classic Eliza dialogue:</p>
+                <pre><code>Men are all alike
+IN WHAT WAY
+they're always bugging us about something or other
+CAN YOU THINK OF A SPECIFIC EXAMPLE
+well, my boyfriend made me come here
+YOUR BOYFRIEND MADE YOU COME HERE
+He noticed that I'm depressed much of the time
+I AM SORRY TO HEAR YOU ARE DEPRESSED</code></pre>
+                <p>He pointed out that although people knew Eliza was simply following a pre-programmed script, they still formed emotional attachments to the machine. He once described an event where his secretary, who is fully familiar with how Eliza worked, still wanted him not to be present during their conversation. This dialogue became an example to show that even simple instructions could evoke strong human emotional responses.</p>
+                <p>Over time, researchers and commentators often conflate the woman in the dialogue with Weizenbaum's secretary, though there's no direct evidence linking the two. The fact that those historical record were long thought lost further complicating the situation. Recently, a professor of Digital Humanities David M. Berry, artist Sarah Ciston, and their team<sup><a href="#fn3" id="fnref3">3</a></sup> revisited Eliza's history by recovering log entries and archived materials. In their investigation into the identity of the secretary, they discovered that responses varied across different versions of the dialogue in Weizenbaum's notes. Weizenbaum used different terms such as "young woman," "distraught young lady," and "user," which blurred the identity of the interlocutor and raised questions about possible narrative intentions or unconscious bias.</p>
+                <pre><code>Doctor, I am terribly depressed
+IS IT BECAUSE YOU ARE TERRIBLY DEPRESSED THAT YOU CAME TO ME
+Actually, my wife suggested I come to you here
+TELL ME MORE ABOUT YOUR FAMILY
+I have no children
+YOU SAY YOU HAVE NO CHILDREN</code></pre>
+                <p>This dialogue in Weizenbaum's book was significantly different from this version, where the speaker became a man whose wife suggested he come for an evaluation. This modified conversation sparked new questions and speculations: Did Weizenbaum deliberately deceive the reader into reinforcing his critique, or did the system inevitably invite projection and imagination? After all, a rule-based program like Eliza never truly understands. It echos, rephrases and mirrors a carefully patterned response that reflects our language and ideology back to us.</p>
+                <p>ELIZA did not reveal how machines think. It showed how easily we assign meaning and how language alone can be enough to convince. In that sense, what is more enduring than the illusion of machine intelligence is that it exposes our own human loss function, the invisible criteria by which we seek reason, recognition, and intention in patterns.</p>
+                <p>At this moment, I realized that even though we were fully aware that the purple texture was never a technical failure but rather an algorithmic bias created by a certain floating-point error in color encoding, we were still trying to interpret it as an aesthetic meaning, projecting narrative onto code. In other words, it is yet another isolated output upon which we based our assumptions.</p>
+                <p>What is AI if not a system that creates space for meaning, even when there is none? A structure that we interact with, which reflects how it was trained on and how it was built. In other words, it is a medium, not only because of what it contains but also how it conditions the way to respond to it.</p>
+            </article>
+            <div class="section-navigation">
+                <a href="purple-coincidence.html" class="prev-section">← Previous: The purple coincidence</a>
+                <a href="specificity.html" class="next-section">Next: Specificity in Imaging →</a>
+            </div>
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">A. M. Turing, "Computing Machinery and Intelligence." <a href="#fnref1" class="footnote-backref">↩</a></li>
+                    <li id="fn2">Joseph Weizenbaum, <em>Computer Power and Human Reason</em>. <a href="#fnref2" class="footnote-backref">↩</a></li>
+                    <li id="fn3">David M. Berry and Sarah Ciston, "Weizenbaum's Secretary." <a href="#fnref3" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

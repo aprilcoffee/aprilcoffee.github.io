@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Loss Function in Our Practices - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>The Loss Function in Our Practices</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p></p>This writing primarily concerns Artificial Intelligence (AI) in a broad sense, specifically machine learning, a branch of AI that relies on neural networks. These networks are structured to mimic the way the human brain processes information. In such a system, artificial neurons are represented in numerical values. Each neuron is interdependent; each holds a value and a set of weights that determine the strength of its connections to the neighbors. Together, they form a layered architecture that enables the system to remember patterns from data, adjust internal parameters, and make predictions or decisions based on new input. In this part, I want to discuss the loss and gain of such a system and how numerical structure could create so much loss in translation yet bring new discourse and inspiration in art practice.</p>
+
+                <p>Generative Artificial Intelligence, developed within the domain of deep learning, is capable of producing new information such as text, images, or audio. The center of modern artificial intelligence is an optimized prediction, an idea that any provided task, from recognizing a face to composing a poet, can be framed as an optimization problem. In practical terms, this means training a model to minimize a <em>loss function</em> (or maximizing rewards). A loss function mathematically represents the gap between the network's output and the desired outcome.</p>
+
+                <p>During the training process, an algorithm known as the <em>backpropagation algorithm</em> computes how wrong the model's output is and how much to adjust it. The network then works backward from the output, calculating the contribution of each parameter to the error and then applying it to individual neurons to optimize how wrong it is. An <em>optimizer</em> like <em>gradient descent</em> uses the information of the loss function to nudge all the weights slightly in the direction that most reduce the loss. By iteratively applying these adjustments across many training examples, the network learns patterns, improving its accuracy by minimizing the loss over time. These three components: the loss function, the backpropagation of error, and the rule to update weights (gradient descent) form a self-correcting feedback loop that is cybernetic in principle: the system continuously measures its performance and adjusts itself in response, steering closer to a goal.</p>
+
+                <p></p>Given image recognition as a practical example, a loss function measures the difference between the generated image and the desired criteria, guiding the model to improve its quality of processing a certain image that aligns with the expected results. I was pondered by the process of learning. Could an algorithm function as a <em>critique</em>? A mathematical sense of judgment of “this is not what I want.” Imagine the myriad of criteria humans use to evaluate a piece of art (its composition, texture, originality, and cultural relevance) being compressed into a computable set of metrics. An AI that optimizes loss function may converge towards solutions that satisfy the numeric criteria yet surprise us in form. However, much is lost in translation when human aesthetic experience is reduced to numbers. As an artistic production never falls into a single quantifiable set of goals, it is often about exploration, context, and even deliberate ambiguity and provocations. Can such qualities also be captured by a loss function? Beatrice Fazi argues that not everything meaningful in art or experience can be predetermined or discretely measured. It reminds me that human intention and algorithmic interpretations are never fully closed; a loss function, therefore, is not a fixed target but a moving interplay between our guidance and the machine's iterative trial-and-error.</p>
+            
+                <h2>Sections</h2>
+                <ul>
+                    <li><a href="what-you-see.html">What you see is not inside the machine</a> - The illusion of AI-generated content</li>
+                    <li><a href="purple-coincidence.html">The purple coincidence</a> - Investigating unexpected outcomes in AI feedback loops</li>
+                    <li><a href="eliza-effect.html">Eliza Effect</a> - Understanding human emotional responses to AI</li>
+                    <li><a href="specificity.html">Specificity in Imaging</a> - Tracing the lineage of image-making techniques</li>
+                    <li><a href="statistical-index.html">Statistical Index and Embeddings</a> - Examining the role of statistical measures in AI</li>
+                </ul>
+            </article>
+            <div class="section-navigation">
+                <a href="../introduction/future-self.html" class="prev-section">← Previous: Note for the future self</a>
+                <a href="what-you-see.html" class="next-section">Next: What you see is not inside the machine →</a>
+            </div>
+            </div>
+            
+            
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html>

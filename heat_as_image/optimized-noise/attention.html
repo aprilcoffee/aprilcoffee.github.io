@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attending to Attention - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>Attending to Attention</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>Introduced in the transformer architecture by researchers in Google, in their paper, Attention is all you need<sup><a href="#fn1" id="fnref1">1</a></sup>, attention represents a major shift from traditional convolutional methods. Attention allows the model to dynamically focus on the most relevant parts of the input, whether a specific pixel in an image or a word in a sentence. In essence, attention enables a model to consider the entirety of data simultaneously, magically allowing model to read context, weighing the relevance of different input data. Technically, attention operates by transforming each input element into three vectors: queries, keys, and values. The model computes attention scores by taking the dot product of queries and keys, normalizes these scores using the a softmax<sup><a href="#fn2" id="fnref2">2</a></sup> function, and then uses them to weigh the values.</p> 
+
+                <p>In image models, attention does more than just understand details; it makes the image coherent. It compares and relates features and segmentations across the whole image, ensuring that visual patterns are not just present but purposeful. When combined with text, through what's known as cross-attention, the model begins to interpret language as a visual possibility. A tokenized sentence becomes a sequence of seeds (which does not hold a linear order), and the model attends to each token as it sketches, imagines, and reads an image pixel by pixel.</p>
+
+                <p>Even though I can not fully grasp the complexity of such models, it seems to me that attention mechanisms bring a degree of intention in machine behavior. Attention echos how our perception works by selection and contextualization in an often recursive manner. Instead of passively processing data to conventional conditions, the model begins to attend, to perceive relationships, to prioritize, and to interpret. With attention, the machine sees not just structure as data points but a degree of meaning that is represented in a form that we may never fully comprehend. Some argue that attention could be accounted as a primitive form of cognition. Yet our cognition is embedded in lived experience, shaped by embodiment, emotion, memory, and the usage of language. While attention in machines may resemble a cognitive gesture, it remains fundamentally different from how we know and understand the world.</p> 
+            </article>
+                <div class="section-navigation">
+                    <a href="biochemical.html" class="prev-section">← Previous: A biochemical problem</a>
+                    <a href="denoising.html" class="next-section">Next: Denosing the noise →</a>
+                </div>
+            
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">Vaswani, A., et al. "Attention Is All You Need." In Advances in Neural Information Processing Systems 30, 5998-6008. 2017. <a href="#fnref1" class="footnote-backref">↩</a></li>
+                    <li id="fn2">The softmax function is a mathematical operation that converts a vector of values into a probability distribution, where each output value lies between 0 and 1 and the total sums to 1. <a href="#fnref2" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

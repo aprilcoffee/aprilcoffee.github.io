@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A biochemical problem - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>A biochemical problem</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+
+                <p>Biomedical image recognition has always faced the challenge of accuracy. Medical imaging technologies such as MRI, CT scans, and ultrasound produce vast amounts of visual data yet require detailed annotation by trained professionals. Manual segmentations of cells, organs, or pathological regions are time-consuming and subjective. Olaf Ronneberger, Philipp Fischer, and Thomas Brox proposed U-Net<sup><a href="#fn1" id="fnref1">1</a></sup></p> in 2015, introducing a design that could operate effectively on small datasets to perform reliable segmentations. In the same year of the ISBI cell tracking challenge, a grand challenge for dental X-ray image segmentation, U-Net demolished all other competitors by a large margin. The success in the medical contexts paved the way for its adoption across various domains, and it remains the largest cited paper in disciplines such as AI image generation.</p>
+
+                <p>A typical U-Net operates in two main phases: the <em>contraction path</em> (encoder) and the <em>expansion path</em> (decoder). It encodes an image into lower resolution and then projects it back again; this distinction U-shape structure was hence given the name. The contraction path systematically distills the images down to basic features, such as edges, textures, and abstract patterns, by performing convolutional operations in each layer followed by pooling. It's worth noting that a 572x572 pixels image will be compressed into a 32x32 image at its lowest resolution, making it almost illegible for human eyes. Conversely, the expansion path reconstructs the image back to its original resolution through transforming convolutions and feature connections, effectively reassembling images from their abstracted states back into a nuanced representation. Crucially, U-Net copies the feature maps throughout the operations, connecting the encoding layer to its respective decoding layers, hence preserving details that would normally lost in compression. However, this design reaches its limits when it comes to generative tasks, where not just recognition but a degree of imagination is required.</p>
+
+            </article>
+            <div class="section-navigation">
+                <a href="self-critic.html" class="prev-section">← Previous: Self-critic machine</a>
+                <a href="attention.html" class="next-section">Next: Attending to Attention →</a>
+            </div>
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">Ronneberger, O., Fischer, P., & Brox, T. "U-Net: Convolutional Networks for Biomedical Image Segmentation." Medical Image Computing and Computer-Assisted Intervention (MICCAI), Springer, LNCS, Vol. 9351: 234–241, 2015. DOI: 10.1007/978-3-319-24574-4_28. <a href="https://arxiv.org/abs/1505.04597">Paper</a> <a href="#fnref1" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

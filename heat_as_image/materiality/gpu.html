@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Processing Units - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>Graphics Processing Units</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <pre><code>device = torch.device("cuda" if torch.cuda.is_available() else "cpu")</code></pre>
+
+                <p>Whether Midjourney, DALL·E, Stable Diffusion, or even ChatGPT, all these early-stage generative models were trained on NVIDIA's data center graphic cards, most notably the NVIDIA A100. Introduced in May 2020, the A100 was fabricated by TSMC (Taiwan Semiconductor Manufacturing Company) using their 7nm process. It packs 54.2 billion transistors and was designed specifically for large-scale AI workloads. ChatGPT alone is estimated to have required 20,000 to 30,000 A100s just to train. The consumer counterpart at the time was the NVIDIA RTX 3090, also built on TSMC's 7nm process, while not capable for large-scale AI training, it is still powerful for gaming and modest generative task.</p>
+
+                <p>As of the time of writing, NVIDIA's latest consumer graphic card is the RTX 4090, built on TSMC's advanced 4nm process, and packing as much as 76.3 billion transistors. Its data center counterpart, the NVIDIA H100, is widely used across industry and research for the development and deployment of AI models. While NVIDIA's H100 enterprise graphic card and the consumer version RTX 4090 inhabit different worlds, one is a cutting-edge accelerator for AI research and data centers, the other plays the role of consumer products. Yet fundamentally, these chips are made from the same material origins and global production pipeline. Both are designed by NVIDIA (based on the Hopper architecture) and fabricated by TSMC using a 4nm process.</p>
+
+                <p>A typical graphic card consists of the following units: GPU, which stands for Graphics Processing Unit, the centerpiece of hardware in the system to process multiple data at the same time. Memory, which is also referred to as VRAM, is how a graphic card temporarily holds data to process. In terms of AI, this is the component that stores the mass amount of neurons to be calculated. Regarding image generation, stable diffusion 1.5 requires 10GB of VRAM to allocate its mass amount of data as neurons. The interface is the component enabling graphic cards to communicate with other computer components via PCI Express. Heat Sink is designed to accumulate heat during use; every GPU consists of a heat sink and fans. Power connectors connect to the motherboard via 6- or 8-pin power connectors, and the default power consumption of RTX 4090 is around 450 watts, which is equivalent to a professional-grade espresso machine during brewing. Last is an output to output video data through HDMI, DisplayPort, or DVI.</p>
+
+                <p>Founded in the mid-1990s, NVIDIA was once a company focusing on producing hardware specifically for gaming. 3D gaming requires two major demands: high refresh rate and visual realism. Simple 3D graphics in computers are calculated as polygons; the more detailed the graphic should look like, the more polygons it has to calculate simultaneously. In 1999, NVIDIA presented the GeForce 256, which claimed to be the world's first GPU, a device that operates independently from central processing units (CPUs). Consisting of thousands of computational cores, its primary role was to handle simple yet repetitive mathematical problems like rendering positions and lighting in virtual environments. Currently, gaming is still a vital part of a graphic card's identity. Through technologies like ray tracing, for example, GPUs have to simulate how light behaves and bounces in the real world.</p>
+
+                <p>Those thousands of tiny cores, originally designed for rendering graphics, turned out to be perfectly suited for training neural networks. Their ability to compute massive volumes of simple, repetitive mathematical operations mirrored the patterns in deep learning. Instead of rendering dragons or teapots in video games, GPUs could now be used to process layers of data in neural networks. This turning point came in 2012, when Alex Krizhevsky, along with Ilya Sutskever and Geoffrey Hinton from the University of Toronto, developed AlexNet<sup><a href="#fn1">1</a></sup>, a deep convolutional neural network leveraging the GPUs' parallel processing capabilities. AlexNet outperformed all other approaches for image classification, and soon, utilizing graphic cards for neural networks became an industry standard in the field of deep learning. Krizhevsky was then employed by NVIDIA, where he contributed to the development of the infamous proprietary framework for parallel computing, now known as <em>CUDA (Compute Unified Device Architecture)</em>.</p>
+
+                <pre><code>RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location='cpu' to map your storages to the CPU.</code></pre>
+
+                <p>The error message with CUDA is a cruel reminder for anyone programming with AI. It does not just signal a bug but exposes a deeper dependency. Most AI models available online are built and optimized within certain frameworks; more often than not, they expect a CUDA-enabled environment. But CUDA was designed only to work with NVIDIA GPUs, which means that whether amateurs are having fun, commercial developers are deploying services, or even researchers are running experiments, all are effectively SURRENDERED to acquire this piece of hardware. This is one of the reasons why, amid the AI bloom, NVIDIA's market cap surpassed 3 trillion dollars in June 2024, becoming the world's most valuable company at the time. Competitors like AMD have developed their own AI computing frameworks, but none have achieved NVIDIA's scale or software ecosystem dominance. Purchasing NVIDIA graphic cards is thus, not just a technical choice, but a gatekeeping mechanism.</p>
+
+                <p>These notes mark the beginning of my research into how an NVIDIA graphic card, a vital tool in artistic practices regarding AI, comes to be. The assembly of modern graphics processors is the result of an intricate, global supply chain. From mining raw minerals to the final assembly, companies across different continents handle each step. Advanced processors, or semiconductors, seem to be nearly everywhere in modern society; there are yet various bottlenecks that are capable of such productions. The following is a step-by-step tour of this production pipeline, demonstrating tight international coordination.</p>
+            </article>
+            <div class="section-navigation">
+                <a href="commodity.html" class="prev-section">← Previous: Art as commodity and commodity as art</a>
+                <a href="sand.html" class="next-section">Next: Sand, Quartz and Silicon →</a>
+            </div>
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">Krizhevsky, Alex, Ilya Sutskever, and Geoffrey Hinton. "ImageNet Classification with Deep Convolutional Neural Networks." Advances in Neural Information Processing Systems 25, 2012, pp. 1097-1105. <a href="#fnref1" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

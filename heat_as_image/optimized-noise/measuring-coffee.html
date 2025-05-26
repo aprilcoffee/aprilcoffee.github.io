@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measuring Coffee - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+    <main>
+        <header>
+            <h1>Measuring Coffee</h1>
+        </header>
+        <div class="content-wrapper">
+            <article>
+                <p>Before diving into how AI generates an image, I want to start with an everyday algorithm: my morning coffee routine. The first thing I do after waking up is to make a pot of coffee; the algorithm is as follows:</p>
+             
+                <ol>
+                    <li>Fill fresh water in the Brita water filter.</li>
+                    <li>While waiting for the water to filter, grind approximately 8 spoons of coffee bean.</li>
+                    <li>Pour all coffee to the coffee machine filter, and if there is residual coffee on the grinder, use the wooden brush to brush them off.</li>
+                    <li>Pour all the filter water in the machine, but since the water filter could only process 6 cups of water, filter another pot of water.</li>
+                    <li>Pour again all filtered water until it reaches 8 cups on the scale.</li>
+                    <li>Press the start button and wait for approximately 10 minutes.</li>
+                    <li>Pour some coffee from the pot to a cup.</li>
+                    <li>Drink coffee.</li>
+                    <li>Repeat the next day.</li>
+                </ol>
+            </br>
+                <p>
+                The whole process takes around 15 minutes until the first sip, and throughout the day, this pot will be reheated again until it is empty. This repetitive process happens every single day, and sometimes, there are slight modifications based on the remaining water in the filter. The schedule is tailored by the design of the machine; if any parameters are in different sizes, the whole procedure might change. Sometimes, in the middle of the day, I would crave another cup of coffee, but seeing an empty pot, I might not brew it, thinking the caffeine consumption is too much today. In reality, I would rather sit in front of my computer doing nothing than wait for another 10 minutes. The coffee routine algorithm is like computation, by which it must follow steps exactly, but it also hints at flexibility when conditions change (e.g., if the water filter is slow, I adjust timing). It is then natural to think about how computers follow instructions and how those instructions can be simple (making coffee) or complicated (making an image). Yet fundamentally, it's all step-by-step computations, whether they manipulate water or pixel values.</p>
+
+               <p>The shared coffee experience also occurs in others, such as the frustration of craving another coffee but seeing an empty pot. In 1991, a group of researchers in the computer laboratory at Cambridge University shared the same issue with finding empty pots of coffee. The solution was fairly simple: they set up a 128x128 pixels camera in greyscale that records the coffee pot in the breaking room, links it to a computer, and shares the image feed via an internal network. Thus, the computer installed with their software Coffee can check whether the coffee pot is empty or not.<sup><a href="#fn1" id="fnref1">1</a></sup></p> In this particular encounter, the computer has been mediating a visual concept: the amount of leftover coffee in a pot. A low-resolution image allows humans to read the surface level, thus making judgments based on images projected on the screen instead of reality. If we elaborate more on the decision-making process, could a computer also process this single line in order to determine whether there is coffee or not?</p>
+
+               <p>Computation processes have simplified the means of determining problems; the problem revolving around how machines see falls into the field of <em>computer vision</em>. Visions in computers function differently than how we as humans see; in the case of the coffee pot, an edge detection algorithm could determine the surface area of the coffee; the edge detection algorithm is basically linear regressions in the image and determines where the line is. A problem about how we understand vision became a mathematical problem instead. Computer vision has been the foundation of multiple scientific domains, from biomedical imaging and autonomous robotics to environmental monitoring and augmented reality. As neural networks evolved to detect and interpret subtle patterns in visual data, the field not only transformed our technological capabilities but also redefined our very understanding of perception and cognition.</p>
+
+            </article>
+                <div class="section-navigation">
+                    <a href="index.html" class="prev-section">← Back to Chapter Overview</a>
+                    <a href="computer-vision.html" class="next-section">Next: When Computer Squeeze its eyes →</a>
+                </div>
+            
+            <aside class="footnotes">
+                <h3>Footnotes</h3>
+                <ol>
+                    <li id="fn1">Masinter, Larry, et al. "Hyper Text Coffee Pot Control Protocol (HTCPCP/1.0)." IETF RFC 2324, April 1, 1998. <a href="https://datatracker.ietf.org/doc/html/rfc2324">https://datatracker.ietf.org/doc/html/rfc2324</a>. <a href="#fnref1" class="footnote-backref">↩</a></li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html> 

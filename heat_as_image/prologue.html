@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prologue - Heat as (Generative) Image Making</title>
+    <link rel="stylesheet" href="/heat_as_image/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="table-of-contents">
+        <!-- Navigation will be loaded by JavaScript -->
+    </nav>
+
+    <main>
+        <header>
+            <h1>Prologue</h1>
+        </header>
+
+        <div class="content-wrapper">
+            <article>
+                <pre><code>from diffusers import DiffusionPipeline
+import torch
+
+model = "stable-diffusion-v1-5/stable-diffusion-v1-5"
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+pipeline = DiffusionPipeline.from_pretrained(model, torch_dtype=torch.float16).to(device)
+pipeline("a photorealistic image of a functioning NVIDIA graphic card").images[0]</code></pre>
+
+                <p>The provided example code, written in Python, demonstrates how to generate an image based on a textual description using a pre-trained diffusion model or, in a more popular saying, create an image with artificial intelligence (AI). The model implemented is stable-diffusion-v1-5. Due to its nature as an open-source model, the model allows multiple variations to sprout, permitting machines equipped with modest hardware to run them locally. Hence, it has become one of the most popular options (at least in the English-speaking communities) for various image-related tasks.</p>
+
+                <p>To break down the code line by line, we first import two libraries: diffusers, a library provided by Hugging Face, the most widely used platform offers provides easy access to state-of-the-art generative AI models, applications, and data sets. The code shown above is also an example from the Hugging Face documents, followed by torch, the deep learning framework for Python that facilitates the handling of tensors and enables acceleration through specific hardware. Then, we load the model, stable-diffusion-v1-5, a latent text-to-image diffusion model. Instead of operating directly with image space or pixels, it first compresses the images into the latent space. Then, it decompresses them to the visible image via a Variational autoencoder (VAE).</p>
+
+                <p>Subsequently, we dynamically select the computation device for the library torch to utilize. CUDA (Compute Unified Device Architecture) is a parallel computing framework developed by NVIDIA that enables developers to harness the computational power of Graphics Processing units (GPUs) for general-purpose computing tasks. If an NVIDIA graphics processor unit is available, it is utilized for enhanced computational performance. Otherwise, the CPU is used by default. A GPU significantly improves the model's performance, especially for computationally intensive tasks such as diffusion processes. While there are alternatives like ROCm (developed by AMD), MPS (Apple Silicon), and OpenCL, most online tutorials and resources are designed and developed with NVIDIA CUDA, making it necessary to purchase solely NVIDIA graphic cards for machine learning tasks.</p>
+
+                <p>Last but not least, we access the diffusion pipeline class, which abstracts away many of the complexities of working with diffusion models. We load the above pre-trained models and use the appropriate device to perform computations based on a given text input.</p>
+
+                <p>These seven lines of code have been integral to my practices, with minor alterations such as using different models or generation methods. Nonetheless, this code has consistently been the foundation for my artistic work, enabling the practical use of state-of-the-art image generation methods. Images seem to magically appear through it, with complex processes greatly simplified for direct usage.</p>
+
+                <p>Despite the reduction of complexity, code remains essential to artistic practices in AI, becoming abstract lines of text that can be copied, pasted, and executed across various machines to perform multiple tasks.</p>
+
+                <p>Just last week, I was struggling to connect my computer to a wireless printer. How did this phenomenon of generating an image come to be?</p>
+            </article>
+            <div class="section-navigation">
+                <a href="/heat_as_image/index.html" class="prev-section">← Back to Home</a>
+                <a href="/heat_as_image/introduction/index.html" class="next-section">Next: Introduction →</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/heat_as_image/js/navigation.js"></script>
+    <script src="/heat_as_image/js/main.js"></script>
+</body>
+</html>
