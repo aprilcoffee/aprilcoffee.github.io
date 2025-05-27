@@ -322,9 +322,9 @@ blockquote p {
 
 /* Article Headings */
 article h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
-    margin: 2.5rem 0 1.5rem;
+    margin: 2rem 0 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--border-color);
 }
@@ -333,6 +333,58 @@ article h3 {
     font-size: 1.4rem;
     color: var(--secondary-color);
     margin: 2rem 0 1rem;
+}
+
+/* Section Links in Index Pages */
+article h2 + ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+article h2 + ul li {
+    margin-bottom: 0.4rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.2s ease;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+article h2 + ul li:hover {
+    border-color: var(--accent-color);
+}
+
+article h2 + ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline;
+    transition: color 0.2s ease;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+article h2 + ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    article h2 {
+        font-size: 1.3rem;
+        margin: 1.5rem 0 0.8rem;
+    }
+
+    article h2 + ul li {
+        margin-bottom: 0.3rem;
+        padding: 0.2rem 0;
+        font-size: 0.9rem;
+    }
+
+    article h2 + ul li a {
+        font-size: 1rem;
+    }
 }
 
 /* Responsive Design */
