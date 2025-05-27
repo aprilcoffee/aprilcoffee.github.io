@@ -262,6 +262,21 @@ p code, li code {
 .footnotes li {
     margin-bottom: 1rem;
     padding-left: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.footnotes a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footnotes a:hover {
+    text-decoration: underline;
 }
 
 /* Footnote link numbers in main text */
@@ -475,9 +490,7 @@ article h3 {
         padding-left: 0.3rem;
     }
 
-    .footnote-ref,
-    sup > a,
-    .footnote-backref {
+    .footnotes a {
         font-size: 0.8rem;
     }
 
@@ -705,6 +718,80 @@ em {
 @media (max-width: 768px) {
     .cover-image {
         margin: 1rem auto;
+        max-width: 100%;
+    }
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
+.cover-image {
+    max-width: 70%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+}
+
+.content-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Figure Styles */
+.content-figure {
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.content-figure figcaption {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Social Media Image */
+.social-image {
+    max-width: 1024px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1024/630;
+    object-fit: cover;
+}
+
+/* Responsive Image Adjustments */
+@media (max-width: 768px) {
+    .cover-image {
+        max-width: 100%;
+    }
+    
+    .content-image {
+        max-width: 100%;
+    }
+    
+    .content-figure {
+        max-width: 100%;
+        margin: 1.5rem auto;
+    }
+    
+    .content-figure figcaption {
+        font-size: 0.85rem;
+        margin-top: 0.3rem;
+    }
+    
+    .social-image {
         max-width: 100%;
     }
 } 
