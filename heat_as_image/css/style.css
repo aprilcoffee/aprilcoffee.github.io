@@ -566,6 +566,11 @@ article h3 {
         margin-bottom: 0.5rem;
         padding-bottom: 0.3rem;
     }
+
+    .cover-image {
+        margin: 1rem auto;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -683,5 +688,23 @@ em {
     .table-of-contents > ul > li.active > .submenu,
     .table-of-contents > ul > li:has(.active) {
         display: block;
+    }
+}
+
+/* Cover Image */
+.cover-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .cover-image {
+        margin: 1rem auto;
+        max-width: 100%;
     }
 } 
