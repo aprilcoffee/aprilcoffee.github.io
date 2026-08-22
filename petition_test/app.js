@@ -72,6 +72,30 @@ function toSignatories(rows) {
   return out;
 }
 
+
+/* ---------- B: split-flap counter ---------- */
+
+function setFlap(n) {
+  var box = document.getElementById("flap");
+  if (!box) return;
+  var digits = String(n).padStart(2, "0").split("");
+
+  while (box.children.length > digits.length) box.removeChild(box.lastChild);
+  while (box.children.length < digits.length) {
+    var d = document.createElement("span");
+    d.className = "digit";
+    box.appendChild(d);
+  }
+  digits.forEach(function (ch, i) {
+    var el = box.children[i];
+    if (el.textContent === ch) return;
+    el.textContent = ch;
+    el.classList.remove("flip");
+    void el.offsetWidth;          // restart the animation
+    el.classList.add("flip");
+  });
+}
+
 /* ---------- render ---------- */
 
 function render(people) {
@@ -104,6 +128,7 @@ function render(people) {
   });
 
   document.getElementById("count").textContent = " (" + people.length + ")";
+  setFlap(people.length);
 }
 
 function setStatus(en, zh, ko) {
@@ -118,6 +143,7 @@ function setStatus(en, zh, ko) {
 }
 
 function load() {
+  setFlap(0);
   if (CSV_URL.indexOf("http") !== 0) {
     setStatus("The list is not connected yet.", "名單尚未連結。", "명단이 아직 연결되지 않았습니다.");
     return;

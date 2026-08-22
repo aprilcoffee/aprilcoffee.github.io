@@ -1,0 +1,9 @@
+# working material, not part of the site
+information/
+_to_delete/
+
+# macOS
+.DS_Store
+
+# local tooling
+.claude/
