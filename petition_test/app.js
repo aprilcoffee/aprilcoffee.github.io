@@ -75,10 +75,12 @@ function toSignatories(rows) {
 
 /* ---------- B: split-flap counter ---------- */
 
+var FLAP_DIGITS = 4;      // pads to 4; grows on its own past 9999
+
 function setFlap(n) {
   var box = document.getElementById("flap");
   if (!box) return;
-  var digits = String(n).padStart(2, "0").split("");
+  var digits = String(n).padStart(FLAP_DIGITS, "0").split("");
 
   while (box.children.length > digits.length) box.removeChild(box.lastChild);
   while (box.children.length < digits.length) {
@@ -148,7 +150,7 @@ function load() {
     setStatus("The list is not connected yet.", "名單尚未連結。", "명단이 아직 연결되지 않았습니다.");
     return;
   }
-  setStatus("Loading…", "載入中…", "불러오는 중…");
+  if (!document.getElementById("list").children.length) setStatus("Loading…", "載入中…", "불러오는 중…");
 
   fetch(CSV_URL + (CSV_URL.indexOf("?") === -1 ? "?" : "&") + "cb=" + Date.now(),
         { cache: "no-store", referrerPolicy: "no-referrer" })
@@ -166,5 +168,11 @@ function load() {
 
 /* ---------- init ---------- */
 
+var POLL_MS = 30000;      // re-read the sheet every 30s while the tab is visible
+
 initLang();
-if (document.getElementById("list")) load();
+if (document.getElementById("list")) {
+  load();
+  setInterval(function () { if (!document.hidden) load(); }, POLL_MS);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) load(); });
+}
