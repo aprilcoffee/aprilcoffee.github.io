@@ -13,17 +13,17 @@
 <meta property="og:title" content="Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料 — Ting-Chun Liu">
 <meta property="og:description" content="在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。">
 <meta property="og:url" content="https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/">
-<meta property="og:image" content="https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png">
+<meta property="og:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料 — Ting-Chun Liu">
 <meta name="twitter:description" content="在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。">
-<meta name="twitter:image" content="https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png">
+<meta name="twitter:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
 <script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
 <link rel="stylesheet" href="/liutingchun/assets/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "datePublished": "2019-09-02", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/", "image": "https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png", "description": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "datePublished": "2019-09-02", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/", "image": "https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp", "description": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/"}</script>
 </head>
 <body>
 <aside class="side" id="side">
@@ -50,7 +50,7 @@
 <p>OSC Arguments ： 是為實際傳輸的資料內容，可以是零個也可以是多個字串或數字。</p>
 <p>一個基本的OSC訊號傳輸時，可以只傳送兩個部分，Address Pattern還有Arguments</p>
 <p>假定我們在Max/Msp時用一個message框起來 就會長這樣</p>
-<figure><img src="https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png')this.src='https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png'"></figure>
+<figure><img src="/liutingchun/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/liutingchun/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp')this.src='/liutingchun/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp'"></figure>
 <p>這裡是指Address Pattern為/msg 而 Arguments 也就是資料為 0 和 1 兩個</p>
 <p>題外話一下，Max/Msp的 udpSend , udpReceive都不是真的udp，而是指osc。</p>
 <p>在使用 OSC 時分為Client和Server兩端。我自己習慣上 Server 通常作為接收端，而Client通常作為發送端 (Boardcast時另當別論)。需要注意的是通常需要在Server端軟體開啟的情況下，Client再開啟會比較安全唷～～</p>

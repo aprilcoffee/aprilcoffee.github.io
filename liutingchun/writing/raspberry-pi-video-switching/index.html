@@ -13,17 +13,17 @@
 <meta property="og:title" content="Raspberry Pi 互動影片切換與播放 — Ting-Chun Liu">
 <meta property="og:description" content="以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。">
 <meta property="og:url" content="https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-video-switching/">
-<meta property="og:image" content="https://static.wixstatic.com/media/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.png">
+<meta property="og:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Raspberry Pi 互動影片切換與播放 — Ting-Chun Liu">
 <meta name="twitter:description" content="以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。">
-<meta name="twitter:image" content="https://static.wixstatic.com/media/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.png">
+<meta name="twitter:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.webp">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
 <script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
 <link rel="stylesheet" href="/liutingchun/assets/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 互動影片切換與播放", "datePublished": "2019-01-23", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-video-switching/", "image": "https://static.wixstatic.com/media/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.png", "description": "以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-video-switching/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 互動影片切換與播放", "datePublished": "2019-01-23", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-video-switching/", "image": "https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.webp", "description": "以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-video-switching/"}</script>
 </head>
 <body>
 <aside class="side" id="side">
@@ -43,7 +43,7 @@
 <main class="main" id="main">
 <article class="post"><aside class="post-info"><h1>Raspberry Pi 互動影片切換與播放</h1><dl class="meta"><dt>Date</dt><dd>2019-01-23</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/liutingchun/writing/">← Writing</a></aside><div class="prose post-body"><p>這篇來談談近期如何使用 Raspberry Pi 進行互動的影片切換播放。一些用詞上如果有錯誤還請閱讀的大大見諒，並留言幫助我提出修正以分享正確資訊給更多朋友。另外附上上次忘記提及的小小功能，Raspberry Pi最討人厭的小閃電符號移除。</p>
 <p>這篇文主要談談如何使用 Raspberry Pi 透過 python 來進行電子控制，以及影片播放，關於馬達運作以及GPIO輸出的部分會先跳過，主要講input，開發環境在Python 2.7 上，都是內建在RPi裏頭，我習慣的撰寫方式是使用vim，然後利用python的GPIO library進行互動的部分。透過subprocess的方式，開啟omxplayer來播放全螢幕影片。最初建立這樣的架構時是使用在<a href="https://gunter292.wixsite.com/gunter/copy-of-moonlight-segment" target="_blank" rel="noopener">林瑜亮的作品</a>上，為了方便展出不使用電腦，便利用Raspberry Pi 同時當播放器與互動的控制。作品運作技術大致上來說，便是有兩段不同的跑步小人動畫，以投影機放在線性馬達的方式隨著投影機移動，每當線性馬達抵達其中一端(以微動開關觸發)便會觸發馬達往另一個方向移動，並且切換影片，千言萬語無法形容作品，瑜亮下個月會在台北數位藝術中心展出，可以直接去看作品 &lt;3</p>
-<figure><img src="https://static.wixstatic.com/media/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.jpg/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.jpg" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.jpg')this.src='https://static.wixstatic.com/media/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.jpg'"></figure>
+<figure><img src="/liutingchun/images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/liutingchun/images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp')this.src='/liutingchun/images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp'"></figure>
 <p>一般會談到為什麼不使用Processing或Arduino來進行簡單的互動prototype，主要的原因在於Processing在Raspberry Pi上必須使用「GL Video」這套Library來跑影片，然而執行效率實在堪憂，為了給自己一點挑戰，便嘗試把互動的部分組合影像。並使用omxplayer來代理processing播放影片的角色。</p>
 <p>看過前篇的朋友應該已經做完了setup但是這邊再重複一次。在Raspberry Pi的terminal上，記得要先安裝以下套件來播放影音檔</p>
 <pre><code>sudo apt-get install omxplayer
@@ -52,7 +52,7 @@
 <p><a href="https://github.com/aprilcoffee/autoVideoplayOnRaspberryPi" target="_blank" rel="noopener">https://github.com/aprilcoffee/autoVideoplayOnRaspberryPi</a></p>
 <p>這邊就來稍微談一下如合撰寫簡單的GPIO程式，基本上會稍作與Arduino在撰寫習慣上的不同。使用的範例是之前瑜亮的作品的部分，<strong>控制馬達移動的同時，在觸碰到兩個不同的微動開關會進行影片切換。</strong></p>
 <p>在Arduino上，基本必須在 setup() 做初始化 (initialize) 後，在 loop()中撰寫執行內容。一般來說，製作互動影片不管觸發的感測器是什麼，通常是loop()中讀取感測器之後，以Serialport的方式送至processing去切換影片。本篇文主要有兩段撰寫需要做說明，一段為如何使用python的GPIO library進行電子控制，和如何以python播放影片。</p>
-<figure><img src="https://static.wixstatic.com/media/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.png/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.png" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.png')this.src='https://static.wixstatic.com/media/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.png'"></figure>
+<figure><img src="/liutingchun/images/wix/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/liutingchun/images/wix/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.webp')this.src='/liutingchun/images/wix/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.webp'"></figure>
 <p>在了解Processing與Arduino播放方式之後，我們進入基礎的GPIO撰寫。</p>
 <p>首先必須透過terminal在執行檔案的資料夾去新增一個python檔案。</p>
 <pre><code>vim videoplayer.py
@@ -71,7 +71,7 @@ import multiprocessing
 GPIO.setmode(GPIO.BCM)
 </code></pre>
 <p>這兩種不同模式的差異在，BOARD是以排插對應的編號，而BCM是系統排的GPIO編號，我習慣使用BCM原因在於我不會誤用到5V GND等等錯誤的位置。在此附上編號的排序圖(Raspberry Pi 3適用)。中間的那排數字代表使用BOARD模式時對應的號碼。</p>
-<figure><img src="https://static.wixstatic.com/media/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.png/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.png" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.png')this.src='https://static.wixstatic.com/media/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.png'"></figure>
+<figure><img src="/liutingchun/images/wix/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/liutingchun/images/wix/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.webp')this.src='/liutingchun/images/wix/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.webp'"></figure>
 <p>接著便是宣告按鈕變數(或感測器位置)，以及宣告幾個數字用來存取感測器讀取到的值，這幾行的用意與Arduino中使用以下用法相同。</p>
 <pre><code>int l_btn = 0;
 int r_btn = 0;
@@ -147,7 +147,7 @@ proc1.kill()
 <p>當我在python中建立proc1這個subprocess時，系統會給予它一個pid，類似於電腦給予這個thread的編號，我只要直接呼叫電腦強制關閉這個thread影片便可以關閉，然後保持隨手好習慣，將這個變數在python中也刪除掉。</p>
 <p>如此便是大致上的影片切換與播放了，在不同時候呼叫不同的subprocess開啟影片，並在需要切換時關閉它，另外附帶一提，有空也可以嘗試同時開啟兩部影片，會有意想不到很酷的視覺效果.........</p>
 <p>在此附上完整程式，有問題也歡迎回應。</p>
-<figure><img src="https://static.wixstatic.com/media/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.png/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.png" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.png')this.src='https://static.wixstatic.com/media/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.png'"></figure>
+<figure><img src="/liutingchun/images/wix/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/liutingchun/images/wix/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.webp')this.src='/liutingchun/images/wix/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.webp'"></figure>
 <p>P.S：使用Raspberry Pi 播放影像最討厭人的部分便是用電警示的小小閃電符號，會在螢幕最上方很討厭的一直出現解決方法其實很簡單。回到terminal中到達/boot/config.txt。</p>
 <pre><code>vim /boot/config.txt
 </code></pre>
