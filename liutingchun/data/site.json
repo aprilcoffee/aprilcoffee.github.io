@@ -424,8 +424,9 @@
       "type": "Internet Art (p5.js website)",
       "materials": "",
       "collaborators": "",
-      "cover": "images/wix/4eb1dd_efe92a2d2f2e403e8833d6964a9f910c~mv2.webp",
+      "cover": "images/sun.webp",
       "images": [
+        "images/sun.webp",
         "images/wix/4eb1dd_efe92a2d2f2e403e8833d6964a9f910c~mv2.webp"
       ],
       "video": "",
@@ -585,14 +586,11 @@
       "type": "Light Installation",
       "materials": "7 segment light, light stand, angle steel, self-designed PCB board — 175 × 35 × 30 cm",
       "collaborators": "LLL (林瑜亮 Lin Yu-Liang, 李翎暄 Li Ling-Syuan)",
-      "cover": "",
+      "cover": "images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp",
       "images": [
-        "images/wix/4eb1dd_388b5846bd884162a4dc9d6ffab4c8b7~mv2_d_2048_1358_s_2.webp",
-        "images/wix/4eb1dd_0dcc243328b14cb295f4cdbbbdd5021a~mv2_d_2048_1358_s_2.webp",
-        "images/wix/4eb1dd_ce7b25fe4ab2468286b4ea54fc8fae9e~mv2_d_4096_2730_s_4_2.webp",
         "images/wix/4eb1dd_01369d2faa0d40cc9e46b5df1f44ea97~mv2_d_3888_2592_s_4_2.webp",
-        "images/wix/4eb1dd_f1130697ecd34c33818746a97ff182a0~mv2_d_3888_2592_s_4_2.webp",
         "images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp",
+        "images/wix/4eb1dd_f1130697ecd34c33818746a97ff182a0~mv2_d_3888_2592_s_4_2.webp",
         "images/wix/4eb1dd_1f0d10db976a436fa3ca92a17c173531~mv2_d_3888_2592_s_4_2.webp"
       ],
       "video": "",
@@ -619,7 +617,11 @@
       "materials": "",
       "collaborators": "Yu-Wei He",
       "cover": "images/wix/4eb1dd_386d6402aaea408c906d840b30315dd0~mv2_d_3360_2100_s_2.webp",
-      "images": [],
+      "images": [
+        "images/wix/4eb1dd_386d6402aaea408c906d840b30315dd0~mv2_d_3360_2100_s_2.webp",
+        "images/wix/4eb1dd_388b5846bd884162a4dc9d6ffab4c8b7~mv2_d_2048_1358_s_2.webp",
+        "images/wix/4eb1dd_0dcc243328b14cb295f4cdbbbdd5021a~mv2_d_2048_1358_s_2.webp"
+      ],
       "video": "https://vimeo.com/246924651",
       "links": [],
       "credits": "Performer: Ting-Chun Liu, Yu-Wei He",
