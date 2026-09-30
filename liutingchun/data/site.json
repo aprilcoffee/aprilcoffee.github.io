@@ -98,7 +98,30 @@
     "statement_de": "Ting-Chun Liu ist Künstler an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis — er seziert technologische Systeme durch feedbackbasierte Interventionen.",
     "statement_zh": "劉庭均是一位藝術家，創作橫跨批判性人工智慧、影音媒體與網路實踐——以回饋驅動的介入手法，拆解科技系統。",
     "job_title_de": "Künstler",
-    "job_title_zh": "藝術家"
+    "job_title_zh": "藝術家",
+    "hidden_words": [
+      "critical AI",
+      "feedback",
+      "latent space",
+      "heat as image",
+      "recursion",
+      "jailbreak",
+      "self-cannibalizing AI",
+      "audio-visual",
+      "network art",
+      "noise",
+      "Taipei",
+      "Köln",
+      "Weimar",
+      "劉庭均",
+      "p5.js",
+      "Processing",
+      "Raspberry Pi",
+      "artistic research"
+    ],
+    "video_thumbs": {
+      "324791977": "https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280"
+    }
   },
   "works": [
     {
@@ -344,7 +367,8 @@
       "text_zh": "自啟蒙運動以來，海灘一直是觀光勝地。隨著大眾旅遊與社群媒體興起，理想化的海灘圖像與現實交織在一起，導致世界各地的海岸線遭受大規模的人為介入與改造。本計畫以這種對海灘之美的想像為出發點，探討社群媒體旅遊圖像所呈現的片面現實，並透過 AI 揭示當代圖像生成模型的技術與美學特質。\n\n# 一片從未抵達的想像風景\n\n本計畫探討社群媒體上旅遊圖像的片面現實，並透過 AI 與機器學習揭示當代圖像生成模型的技術與美學面向。藉由以數位方式拼湊幻想與想像，計畫創造出一個始終無法抵達的「理想彼方」。最終得出的模型代表一種由 AI 形塑的集體無意識；它所生成的圖像終究無法企及，就像社群媒體上那些如畫的景點一樣。透過多種形式，計畫邀請觀者質疑這些圖像的真實性，以及它們所體現的集體意識。\n\n# 海灘圖像作為想像風景的歷史脈絡\n\n西方文學中的海洋描繪，長久以來強調未知的危險與災難。法國歷史學家 Alain Corbin 在著作《The Lure of the Sea》（1994）中爬梳西方世界對海洋理解的轉變。中世紀之前，海洋常與洪水、風暴、怪物與各種災厄等未知相連；隨著啟蒙時代科學的進展，這種未知的想像在十七世紀逐漸被驅散。當科學開始解開海洋的謎團，海灘有了與現代性與觀光連結的新象徵，貴族與市民開始建立海水浴場，海灘終於成為現代旅遊的鮮明象徵。\n\n# 社群媒體造成的人工智慧演算法偏見\n\n人類生產的文字與圖像，在當代最大的受眾已從人類轉為機器。電腦利用人類的知識體系來生成文字與圖像，但這個學習過程並非沒有偏見。來自社群媒體或線上圖庫的訓練資料，大多呈現潔淨、明亮、白色的海灘；這樣的表徵偏差，讓電腦把海灘圖像視為人造景觀。而當機器處理這些圖像並生成新圖時，判斷結果是否符合「海灘」概念的評估偏差也隨之出現。多重偏見疊加，使 Transformer 模型往往產生平庸俗套的海灘圖像。",
       "text_de": "Seit der Aufklärung ist der Strand ein touristischer Sehnsuchtsort. Mit dem Aufkommen von Massentourismus und sozialen Medien haben sich idealisierte Strandbilder mit der Wirklichkeit verflochten – mit der Folge massiver Eingriffe und Umgestaltungen an Küsten weltweit. Ausgehend von dieser Vorstellung vom schönen Strand untersucht das Projekt die einseitigen Wirklichkeiten, die Reisebilder in sozialen Medien zeigen, und legt mithilfe von KI die technischen und ästhetischen Eigenschaften aktueller Bildgenerierungsmodelle offen.\n\n# Die imaginäre Landschaft, die nie erreicht wurde\n\nDas Projekt untersucht einseitige Wirklichkeiten in Reisebildern aus sozialen Medien und zeigt technische wie ästhetische Aspekte aktueller Bildgenerierungsmodelle. Indem es Fantasien und Vorstellungen digital zusammensetzt, erschafft es ein „ideales Anderswo“, das unerreichbar bleibt. Das entstandene Modell verkörpert ein von KI geformtes kollektives Unbewusstes; die Bilder, die es hervorbringt, sind letztlich ebenso unerreichbar wie die malerischen Orte in sozialen Medien. In verschiedenen Formaten fordert das Projekt dazu auf, die Authentizität dieser Bilder und das kollektive Bewusstsein, das sie verkörpern, zu hinterfragen.\n\n# Historischer Kontext: das Strandbild als imaginäre Landschaft\n\nDie Darstellung des Meeres in der westlichen Literatur betonte lange unbekannte Gefahren und Katastrophen. Der französische Historiker Alain Corbin untersucht in „Meereslust. Das Abendland und die Entdeckung der Küste“ (engl. „The Lure of the Sea“, 1994), wie sich die westliche Wahrnehmung des Meeres veränderte. Vor dem Mittelalter wurde das Meer häufig mit dem Unbekannten verbunden – mit Fluten, Stürmen, Ungeheuern und Unheil. Mit dem wissenschaftlichen Fortschritt der Aufklärung verlor das Unbekannte im 17. Jahrhundert allmählich an Schrecken. Als die Wissenschaft die Rätsel des Meeres zu entschlüsseln begann, wurde der Strand zum Symbol von Moderne und Tourismus; Adel und Bürgertum gründeten Seebäder, und der Strand wurde zum Sinnbild des modernen Tourismus.\n\n# KI-Verzerrungen durch soziale Medien\n\nDas wichtigste Publikum menschlich erzeugter Texte und Bilder sind heute nicht mehr Menschen, sondern Maschinen. Computer nutzen menschliche Wissenssysteme, um Texte und Bilder zu erzeugen – doch dieses Lernen ist nicht frei von Verzerrungen. Trainingsbilder aus sozialen Medien oder Online-Bibliotheken zeigen meist makellose, helle, weiße Strände. Diese Repräsentationsverzerrung lässt den Computer Strandbilder als künstliche Kulisse begreifen. Wenn die Maschine diese Bilder verarbeitet und neue erzeugt, kommt bei der Frage, ob ein Ergebnis dem Begriff „Strand“ entspricht, zusätzlich eine Bewertungsverzerrung hinzu. Diese mehrfachen Verzerrungen führen dazu, dass Transformer-Modelle oft banale Strandbilder erzeugen.",
       "type_de": "Laufendes Projekt, audiovisuelle Performance",
-      "type_zh": "進行中計畫、影音表演"
+      "type_zh": "進行中計畫、影音表演",
+      "video_thumb": "https://i.vimeocdn.com/video/1864253378-e0839fb7317ce1555fd28dfe1739bfe567a2d7acab8f49f657e7753953b6e804-d_1280"
     },
     {
       "slug": "beneath",
@@ -423,7 +447,8 @@
         "/bring-us-somewhere"
       ],
       "type_de": "Video",
-      "type_zh": "錄像"
+      "type_zh": "錄像",
+      "video_thumb": "https://i.vimeocdn.com/video/1078886525-48553bc367e77e3847476847086c2e0eac911025db0629d419fccd2e97dce895-d_1280"
     },
     {
       "slug": "faces",
@@ -446,7 +471,8 @@
       "text_zh": "我討厭直視別人眼睛",
       "text_de": "Ich schaue Menschen nicht gern in die Augen.",
       "type_de": "Video",
-      "type_zh": "錄像"
+      "type_zh": "錄像",
+      "video_thumb": "https://i.vimeocdn.com/video/1078885125-317194ad371bb909a8bc2efeccc8e4c13d08d2146b3abbb37e170ead86c91cd9-d_1280"
     },
     {
       "slug": "segmentary-moonlight",
@@ -530,7 +556,8 @@
       "text_zh": "出國交換的期間，對於國外的文化與語言都極不熟悉，在適應的過程中重新檢視自我，才發現僅存的只剩自己單薄的身體。因此也開始在國外的行為藝術創作，然而在過程中時常發現自己對於身體的狀態是不熟悉的，且意識操作身體的過程也容易失準，這時才理解到對於自我的身體，我是如此的不了解。\n\n作品是極為簡單的動作不斷重複，試圖達成相同的結果，以及產生一個聲音，在重複的過程中記憶著相同的運動狀態，盡力著讓其達到預設的結果。並將他們重疊壓縮成為單一的動作。\n\n延續先前作品，透過重複單一動作的壓縮影像討論影像的真實性，和現實時間與影像時間的關係，並納入現場聲音，將空間的音場也進行壓縮。這次我拍攝了數個單一的手勢(Gesture)數百次，並將每個動作取下固定幾個影格與聲音片段，再將其堆疊並壓縮成單一的動作影像。企圖建立單一動作的秩序，於此同時身體所特有的失準也將顯現，而現場的聲音與身體的動作所觸發的聲音，也是與自己身體的對話。",
       "text_de": "Während meines Austauschs in Prag waren mir Sprache und Kultur fremd. Ohne die Bindung an die Heimat blieben nur Fleisch und Körper – der Anfang meiner Arbeit mit Aktionen. Im Prozess wurde mir bewusst, wie wenig ich über meinen Körper wusste und wie ungenau ich ihn steuere.\n\nDas Video zeigt eine einfache, wiederholte Geste, die immer dasselbe Ziel erreichen und einen Klang erzeugen will: Ich merke mir den Zustand des Körpers und versuche, das erwartete Ergebnis zu erfüllen. Die Wiederholungen werden dann zu einer einzigen Bewegung verdichtet.\n\nDurch das Wiederholen einer einzelnen Geste in einem verdichteten Bild frage ich nach der Authentizität des bewegten Bildes. Einzelbilder verbinden Bild und Ton; mit dem Klang der Umgebung und des Raumes werden alle Frames der Geste zusammengepresst. Ich habe eine einzelne Bewegung mehr als hundertmal aufgenommen, aus jeder Aufnahme einige Frames ausgewählt und zu einer Bewegung zusammengefügt – der Versuch, eine Ordnung der Geste herzustellen. Zugleich wird die Ungenauigkeit des Körpers sichtbar.",
       "type_de": "Videoinstallation",
-      "type_zh": "錄像裝置"
+      "type_zh": "錄像裝置",
+      "video_thumb": "https://i.vimeocdn.com/video/762455522-ab7252269ea7906c7e2ddf8e1a5ee56a93a082da629d2deaadce5c93cf73e8fc-d_1280"
     },
     {
       "slug": "light-segment",
@@ -578,7 +605,8 @@
       "text_zh": "我們無法控制所有將至的目的，數位下關係的產生必伴隨一套規則。是否完整遵守或服從即是個人意志的展現；脆弱妥協或強硬碰撞，遊戲中產生了另一層對應關係，有機的身體動態與無機的聲響指令，成為彼此競爭的工具和唯一的溝通管道。當下的抉擇皆影響了未來。交錯中我們終究無法突破規則，但規則下，身體作為意志的表述仍能有著無限的可能。歷久而生的疼痛，或精神上的耗弱都是為抵達無可避免之終點必負的代價。\n\n# 內容敘述\n\n一個現場有著兩場競爭同時進行。電腦間棋局的競爭，與兩副意志與肉體的競爭。\n\n指令：第一幕——聆聽並服從規則。聽從一盤由現場兩位電腦棋局的對奕指令，以膠帶標記其移動過程。\n\n兩人遵守規則各執一方的對弈，但旗子的控制權交由電腦。一場棋局的輸贏不在兩人掌握中，但雙方在黏貼膠帶的過程中，定會因為彼此吃子的關係有所衝突與碰撞。在遵守規則的同時，以身體生產撕扯膠帶的聲響，以及彼此身體間的對應關係與碰撞，兩人身體的有機動態即時反饋模糊死板的電腦聲音；來得及或錯過，失準或順利黏貼，都是兩人與棋局間不同層次的競爭關係。\n\n指令：第二幕——觀察並遵循規則。觀察地上已建立的棋局紀錄，遍歷其中留下的痕跡，排除路上阻礙。\n\n兩人身體反饋著彼此，遵循著規則照著上一場遊戲中的路徑行走，此時電腦不在限制兩人，人有了自我的意志做出行走方向的選擇，但卻必須遵守自己當初所建立的道路。以身體的不同模式去探索道路，透過身體與路徑對話，也透過身體與對手產生關係。即便發生衝突與碰撞，彼此的競爭也必須遵照最初建立的路徑規則。",
       "text_de": "Wir können nicht jedes nahende Ziel kontrollieren. Beziehungen im Digitalen folgen stets Regeln; ob man sie befolgt oder nicht, drückt den eigenen Willen aus. Sich dem Spiel zu ergeben oder sich ihm zu stellen, formt eine weitere Ebene der Entsprechung. Die organische Bewegung des Körpers und die künstlichen Sprachanweisungen werden zu Mitteln der Kommunikation und des Wettstreits.\n\nJede augenblickliche Entscheidung prägt die Zukunft. Am Kreuzungspunkt können wir die Regeln nie brechen. Doch innerhalb der Regeln bleiben unendliche Möglichkeiten, solange der Körper den eigenen Willen ausdrückt. Schmerz hält lange an, der Geist mag ermüden – all das ist der Preis dafür, das unausweichliche Ziel zu erreichen.\n\nIm Raum finden zwei Wettkämpfe gleichzeitig statt: eine Schachpartie zwischen zwei Computern und ein Wettstreit zweier Willen und Körper. Erster Akt – zuhören und den Regeln gehorchen: Die Performer folgen den Zugansagen der Computer und markieren jeden Zug mit Klebeband auf dem Boden. Zweiter Akt – beobachten und den Regeln folgen: Ohne Computer gehen beide die zuvor markierten Wege ab; sie entscheiden frei über die Richtung, müssen aber auf den selbst gelegten Pfaden bleiben.",
       "type_de": "Performance-Dokumentation",
-      "type_zh": "表演紀錄"
+      "type_zh": "表演紀錄",
+      "video_thumb": "https://i.vimeocdn.com/video/672050321-1925ba001eca50dc7386f4fd5e368ad068a1b35e4a77998f1493037350b35b8b-d_1280"
     },
     {
       "slug": "take-off-the-clothes",
@@ -601,7 +629,8 @@
       "text_zh": "指示：脫衣服，探索衣服的聲音。\n\n這件表演是我在布拉格美術學院（AVU）交換期間完成的。交換期間，周遭的一切——文化、語言，甚至身體——對我都很陌生，我也因此開始做行為。那時才驚覺，自己對身體的感受竟如此不了解。\n\n歐洲的天氣很冷，我穿得比在台灣時多很多，這成了這件表演的起點：我嘗試在公共場合脫衣服，探尋過去的我、現在的我，與現場觀眾之間的差異。\n\n回到台灣之後，我在不同的脈絡下再次進行了同樣的表演。",
       "text_de": "Anweisung: Zieh die Kleidung aus, suche nach dem inneren Klang.\n\nDie Performance entstand während meines Austauschs an der AVU in Prag. Alles um mich herum war mir fremd – Kulturen, Sprachen, sogar Körper. Damals begann ich, mit Aktionen zu arbeiten, und war erschrocken, wie wenig ich über das Empfinden meines eigenen Körpers wusste.\n\nIn Europa war es kalt, ich trug viel mehr Kleidung als sonst in Taiwan. Daraus entstand die Idee: mich in der Öffentlichkeit auszuziehen und dem Unterschied nachzuspüren zwischen dem, der ich war, dem, der ich bin, und dem Publikum vor Ort.\n\nZurück in Taiwan habe ich die Performance noch einmal aufgeführt, um sie in einem anderen Kontext zu verstehen.",
       "type_de": "Performance-Dokumentation",
-      "type_zh": "表演紀錄"
+      "type_zh": "表演紀錄",
+      "video_thumb": "https://i.vimeocdn.com/video/672038145-afd80a83cc575a74fcb90db967fcc76c211cbe5cb16a9df1a60929c6ddce40d1-d_1280"
     },
     {
       "slug": "hyper-link-into-image",
@@ -786,20 +815,30 @@
         "title_zh": "學歷"
       },
       {
-        "title": "Award",
+        "title": "Awards & Fellowships",
         "items": [
+          {
+            "year": "2026",
+            "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
+            "url": ""
+          },
           {
             "year": "2025",
             "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
             "url": ""
           }
         ],
-        "title_de": "Auszeichnungen",
-        "title_zh": "獎項"
+        "title_de": "Auszeichnungen & Fellowships",
+        "title_zh": "獎項與獎助"
       },
       {
         "title": "Lectures, Talks & Workshops",
         "items": [
+          {
+            "year": "2026",
+            "text": "Workshop within the DFG network “Das Wissen der digitalen Literatur”, 12 June 2026",
+            "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur"
+          },
           {
             "year": "2026",
             "text": "Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr",

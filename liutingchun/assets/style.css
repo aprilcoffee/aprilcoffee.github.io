@@ -13,8 +13,8 @@
   --side-w: 280px;
   --pad: 56px;
   --gap: 14px;          /* gutter between plates */
-  --col: 440px;         /* information column (work text, CV headings) */
-  --plates-max: 940px;  /* image field on work pages */
+  --col: 540px;         /* information column (work text) */
+  --plates-max: 820px;  /* image field on work pages */
   --label: 340px;       /* heading column on list pages */
 
   --sans: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
@@ -135,9 +135,9 @@ a.card:hover .cap .t { text-decoration: underline; text-underline-offset: 4px; t
 .meta dt { font-family: var(--mono); font-size: 13px; color: var(--mut); padding-top: 2px; }
 .meta dd { margin: 0; }
 
-.work-info .prose { margin-top: 32px; font-size: 17.5px; line-height: 1.7; }
+.work-info .prose { margin-top: 32px; font-size: 18px; line-height: 1.75; }
 .work-info .prose p + p { margin-top: .9em; }
-.work-info .prose h3 { font-size: 17.5px; margin: 1.6em 0 .5em; }
+.work-info .prose h3 { font-size: 18px; margin: 1.6em 0 .5em; }
 .credits { margin-top: 24px; font-family: var(--mono); font-size: 13px; line-height: 1.7; color: var(--mut); white-space: pre-line; }
 
 .plates { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
@@ -195,7 +195,7 @@ button.embed.lite:hover img { opacity: 1; }
 .year-group .cat { grid-row: 1; grid-column: 2; color: var(--mut); }
 .year-group a:hover .t { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 
-.post { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 780px); gap: 48px; align-items: start; }
+.post { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 860px); gap: 48px; align-items: start; }
 .post-info { position: sticky; top: 44px; }
 .post-info h1 { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.25; }
 .post-info .meta { margin-top: 22px; }
@@ -235,7 +235,7 @@ button.embed.lite:hover img { opacity: 1; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1280px) {
-  :root { --col: 360px; --label: 280px; --pad: 40px; --plates-max: 760px; }
+  :root { --col: 440px; --label: 280px; --pad: 40px; --plates-max: 640px; }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .grid.friends { grid-template-columns: repeat(4, 1fr); }
 }
