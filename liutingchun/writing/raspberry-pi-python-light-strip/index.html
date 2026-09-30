@@ -8,6 +8,7 @@
 <meta name="author" content="Ting-Chun Liu">
 <link rel="canonical" href="https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-python-light-strip/">
 <meta property="og:site_name" content="Ting-Chun Liu">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raspberry Pi Python 燈條控制 (ws281x 系列) — Ting-Chun Liu">
 <meta property="og:description" content="如何使用 Python 操作彩色 LED 燈條，安裝相關套件與使用規格。">
@@ -17,10 +18,10 @@
 <meta name="twitter:title" content="Raspberry Pi Python 燈條控制 (ws281x 系列) — Ting-Chun Liu">
 <meta name="twitter:description" content="如何使用 Python 操作彩色 LED 燈條，安裝相關套件與使用規格。">
 <meta name="twitter:image" content="https://static.wixstatic.com/media/4eb1dd_2c024145eb3340659134cb0f6d09dbda~mv2.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
 <link rel="stylesheet" href="/liutingchun/assets/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi Python 燈條控制 (ws281x 系列)", "datePublished": "2021-03-12", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-python-light-strip/", "image": "https://static.wixstatic.com/media/4eb1dd_2c024145eb3340659134cb0f6d09dbda~mv2.jpg", "description": "如何使用 Python 操作彩色 LED 燈條，安裝相關套件與使用規格。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-python-light-strip/"}</script>
 </head>
@@ -30,15 +31,17 @@
     <a class="brand" href="/liutingchun/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav"><a href="/liutingchun/works/">Works</a><a href="/liutingchun/performance/">Performance</a><a href="/liutingchun/about/">About</a><a href="/liutingchun/writing/" class="on" aria-current="page">Writing</a><a href="/liutingchun/friends/">Friends</a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/liutingchun/works/"><span class="idx">(1)</span><span>Works</span></a><a href="/liutingchun/performance/"><span class="idx">(2)</span><span>Performance</span></a><a href="/liutingchun/about/"><span class="idx">(3)</span><span>About</span></a><a href="/liutingchun/writing/" class="on" aria-current="page"><span class="idx">(4)</span><span>Writing</span></a><a href="/liutingchun/friends/"><span class="idx">(5)</span><span>Friends</span></a></nav>
   <div class="side-foot">
+    <div class="signal" data-effect="signal" aria-hidden="true"></div>
     <div><a href="mailto:april85227@gmail.com">april85227@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
+    <div class="legal"><a href="/liutingchun/impressum/">Impressum</a><a href="/liutingchun/datenschutz/">Datenschutz</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><header class="work-head"><h1>Raspberry Pi Python 燈條控制 (ws281x 系列)</h1><p class="mono">2021-03-12 · technique</p></header><div class="prose post-body"><p>這篇貼文想簡單分享一些如何使用python操作彩色LED燈條，如何安裝相關套件跟一些使用規格。原理其實跟使用Arduino搭配NeoPixel或FastLED這兩款套件相同，只是在這邊語法上會使用Raspberry Pi的GPIO與Python。如果對寫程式比較棘手，也推薦直接購買LED燈條控制器 (如 T500K) 搭配適當的軟體 (LEDEdit)，就可以直接將影片map成燈光。因為發現自己始終沒有整理好的檔案，所以決定順手寫一下部落格來做個資料的整理。</p>
+<article class="post"><aside class="post-info"><h1>Raspberry Pi Python 燈條控制 (ws281x 系列)</h1><dl class="meta"><dt>Date</dt><dd>2021-03-12</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/liutingchun/writing/">← Writing</a></aside><div class="prose post-body"><p>這篇貼文想簡單分享一些如何使用python操作彩色LED燈條，如何安裝相關套件跟一些使用規格。原理其實跟使用Arduino搭配NeoPixel或FastLED這兩款套件相同，只是在這邊語法上會使用Raspberry Pi的GPIO與Python。如果對寫程式比較棘手，也推薦直接購買LED燈條控制器 (如 T500K) 搭配適當的軟體 (LEDEdit)，就可以直接將影片map成燈光。因為發現自己始終沒有整理好的檔案，所以決定順手寫一下部落格來做個資料的整理。</p>
 <p>使用python的好處是，當進行與其他軟體的互動或通訊時，相容性會高很多。遠端操作上也可以直接使用<a href="/liutingchun/writing/raspberrypi-python-osc/">OSC進行通訊</a>，或是Websocket等等各種協定。對於只會撰寫python的朋友也會容易許多。</p>
 <p>市面上大部分的單顆可控制燈條，主要的型號分為SK系列與WS281x系列。值得注意的是WS系列雖然並不是指燈本身，而且其控制晶片的名稱。LED燈泡本身還是使用5050規格。購買LED時也可以注意購買燈泡的密度，大致上分為幾種規格，<strong>每一公尺內含30, 60, 144顆燈泡</strong>，也有的燈條控制單元是以<strong>三顆燈泡為一個單位控制</strong>，並不是每顆燈泡都可以獨立操作。</p>
 <p>這邊也稍微整理一下幾種常見型號，給大家看看各個型號的差異，在需要購買時以供參考。</p>
@@ -128,8 +131,8 @@ while True:
 <p>我們在這邊把 i的範圍，拓展成0~255，符合RGB的設定</p>
 <p>另外最後的 <strong>time.sleep(0.005)</strong> 則是設定每次while重複的頻率。</p>
 <p>當我們可以操作單顆燈時，變化便可以自己設定。</p>
-<p>祝大家玩得愉快</p></div><nav class="pager"><a href="/liutingchun/writing/xanadu-travel-agency/">← 海灘作為想像的彼方—仙納度旅行社計畫</a><a href="/liutingchun/writing/raspberry-pi3-b-plus-video-sync/">Raspberry Pi3 B+ 同步播放器 →</a></nav></article>
+<p>祝大家玩得愉快</p></div><nav class="pager" aria-label="Posts"><a href="/liutingchun/writing/xanadu-travel-agency/"><span class="mono">← (2)</span><span class="t">海灘作為想像的彼方—仙納度旅行社計畫</span></a><a href="/liutingchun/writing/raspberry-pi3-b-plus-video-sync/"><span class="mono">(4) →</span><span class="t">Raspberry Pi3 B+ 同步播放器</span></a></nav></article>
 </main>
-<script src="/liutingchun/assets/site.js"></script>
+<script src="/liutingchun/assets/site.js" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="/liutingchun/assets/effects.js" defer></script>
 </body>
 </html>

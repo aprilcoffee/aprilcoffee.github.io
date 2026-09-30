@@ -49,7 +49,46 @@
       "https://aprilcoffee.github.io/heat_as_image/optimized-noise/self-critic.html",
       "https://aprilcoffee.github.io/heat_as_image/outlook.html",
       "https://aprilcoffee.github.io/heat_as_image/prologue.html"
-    ]
+    ],
+    "ga_id": "G-JX0CS0510W",
+    "statement": "Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media and network practice — dissecting technological systems through feedback-driven interventions.",
+    "address": [],
+    "job_title": "Artist",
+    "occupations": [
+      "Artist",
+      "Artistic researcher",
+      "Lecturer"
+    ],
+    "knows_about": [
+      "Critical artificial intelligence",
+      "Generative AI",
+      "Artistic research on AI",
+      "Media art",
+      "Audio-visual performance",
+      "Network and internet art",
+      "Feedback systems"
+    ],
+    "person_extra": {
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Academy of Media Arts Cologne (KHM)"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Taipei National University of the Arts"
+        }
+      ],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Bauhaus-Universität Weimar"
+      },
+      "award": "Weizenbaum-Studienpreis 2025 (FIfF e.V.)",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Taipei, Taiwan"
+      }
+    }
   },
   "works": [
     {

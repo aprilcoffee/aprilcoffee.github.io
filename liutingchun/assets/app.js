@@ -127,19 +127,21 @@
       var prev = i > 0 ? list[i - 1] : null;
       var next = i >= 0 && i < list.length - 1 ? list[i + 1] : null;
 
-      return '<article>' +
-        '<header class="work-head"><h1>' + esc(w.title) + '</h1>' +
-        (w.title_zh ? '<div class="zh">' + esc(w.title_zh) + '</div>' : '') +
+      return '<article class="work"><aside class="work-info"><span class="idx">(' + (i + 1) + ')</span>' +
+        '<h1>' + esc(w.title) + '</h1>' +
+        (w.title_zh ? '<p class="zh">' + esc(w.title_zh) + '</p>' : '') +
         '<dl class="meta">' + rows.filter(function (r) { return r[1]; }).map(function (r) {
           return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>';
-        }).join('') + '</dl></header>' +
-        '<div class="prose">' + prose(w.text) +
-        (w.credits ? '<div class="credits">' + esc(w.credits) + '</div>' : '') + '</div>' +
-        '<div class="media">' + embed(w.video) +
-        (w.images || []).map(function (u) { return img(u, 2000, w.title); }).join('') + '</div>' +
+        }).join('') + '</dl>' +
+        '<div class="prose">' + prose(w.text) + '</div>' +
+        (w.credits ? '<p class="credits">' + esc(w.credits) + '</p>' : '') + '</aside>' +
+        '<div class="plates">' + embed(w.video) +
+        (w.images || []).map(function (u, k) {
+          return '<figure' + (k === 0 && !w.video ? ' class="hero"' : '') + '>' + img(u, 2000, w.title) + '</figure>';
+        }).join('') + '</div>' +
         '<nav class="pager">' +
-        (prev ? '<a href="#/works/' + esc(prev.slug) + '">← ' + esc(prev.title) + '</a>' : '<span></span>') +
-        (next ? '<a href="#/works/' + esc(next.slug) + '">' + esc(next.title) + ' →</a>' : '<span></span>') +
+        (prev ? '<a href="#/works/' + esc(prev.slug) + '"><span class="mono">←</span><span class="t">' + esc(prev.title) + '</span></a>' : '<span></span>') +
+        (next ? '<a href="#/works/' + esc(next.slug) + '"><span class="mono">→</span><span class="t">' + esc(next.title) + '</span></a>' : '<span></span>') +
         '</nav></article>';
     },
 
@@ -181,8 +183,9 @@
       var p = (DATA.writing || []).filter(function (x) { return x.slug === slug; })[0];
       if (!p) return views.notfound();
       setMeta(p.title, p.excerpt);
-      var box = '<article class="post"><header class="work-head"><h1>' + esc(p.title) + '</h1><p class="mono">' +
-        esc(p.date) + ' · ' + esc(p.category) + '</p></header><div class="prose post-body" id="postBody">Loading…</div></article>';
+      var box = '<article class="post"><aside class="post-info"><h1>' + esc(p.title) + '</h1><dl class="meta"><dt>Date</dt><dd>' +
+        esc(p.date) + '</dd><dt>Category</dt><dd>' + esc(p.category) + '</dd></dl></aside>' +
+        '<div class="prose post-body" id="postBody">Loading…</div></article>';
       var local = null;
       try { local = localStorage.getItem('ltc-post-' + slug); } catch (e) {}
       (local != null ? Promise.resolve(local) : fetch('posts/' + encodeURIComponent(slug) + '.md', { cache: 'no-cache' }).then(function (r) { return r.text(); }))

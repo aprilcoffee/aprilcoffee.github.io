@@ -317,6 +317,15 @@
       field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
       field('Email', s, 'email'),
       field('首頁圖片', s, 'home_image'),
+      field('首頁大字介紹 Statement', s, 'statement', { area: true }),
+      (function () {
+        var ta = h('textarea', { value: (s.address || []).join('\n'), placeholder: 'Musterstraße 1\n12345 Berlin\nDeutschland' });
+        ta.addEventListener('input', function () {
+          s.address = ta.value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean); save();
+        });
+        return h('label', {}, ['Impressum 地址（德國法規要求，每行一段）', ta]);
+      })(),
+      field('Google Analytics ID（G-…）', s, 'ga_id'),
       field('網站網址（搜尋引擎、分享連結用；換網域時改這裡）', s, 'base_url'),
       field('預設分享縮圖', s, 'og_image'),
       lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url'])

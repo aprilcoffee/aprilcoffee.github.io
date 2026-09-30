@@ -226,14 +226,24 @@ def summary(text, n=160):
 
 
 # ---------- layout ----------
+NAV_LABELS = {"works": "Works", "performance": "Performance", "about": "About", "writing": "Writing", "friends": "Friends"}
+
+
+def idx(n):
+    return '<span class="idx">(%d)</span>' % n
+
+
 def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld=None, full=False, section=""):
     page_title = "%s — %s" % (title, S["name"]) if title else "%s %s" % (S["name"], S.get("name_zh", ""))
     canonical = abs_url(path)
     image = asset_abs(image or S.get("og_image") or "")
-    nav = "".join('<a href="%s"%s>%s</a>' % (url(s + "/"), ' class="on" aria-current="page"' if s == section else "",
-                                              s.capitalize()) for s in SECTIONS)
+    nav = "".join('<a href="%s"%s>%s<span>%s</span></a>' % (
+        url(s + "/"), ' class="on" aria-current="page"' if s == section else "", idx(i + 1), NAV_LABELS[s])
+        for i, s in enumerate(SECTIONS))
     links = "".join(a(l["url"], esc(l["label"])) for l in S.get("links", []))
     ld_tag = ('<script type="application/ld+json">%s</script>' % json.dumps(ld, ensure_ascii=False)) if ld else ""
+    ga = ('<script async src="%s" data-ga="%s" data-banner></script>' % (url("assets/analytics.js"), esc(S["ga_id"]))
+          if S.get("ga_id") else "")
     return """<!doctype html>
 <html lang="{lang}">
 <head>
@@ -244,6 +254,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <meta name="author" content="{name}">
 <link rel="canonical" href="{c}">
 <meta property="og:site_name" content="{name}">
+<meta property="og:locale" content="{locale}">
 <meta property="og:type" content="{ogt}">
 <meta property="og:title" content="{t}">
 <meta property="og:description" content="{d}">
@@ -253,10 +264,10 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <meta name="twitter:title" content="{t}">
 <meta name="twitter:description" content="{d}">
 <meta name="twitter:image" content="{img}">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="{icon}" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="{name} — Writing" href="{feed}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+{ga}
 <link rel="stylesheet" href="{css}">
 {ld}
 </head>
@@ -266,79 +277,109 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     <a class="brand" href="{home}"><span class="brand-en">{name}</span><span class="brand-zh">{zh}</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav">{nav}</nav>
+  <nav class="nav" id="nav" aria-label="Main">{nav}</nav>
   <div class="side-foot">
+    <div class="signal" data-effect="signal" aria-hidden="true"></div>
     <div><a href="mailto:{email}">{email}</a></div>
     <div class="links">{links}</div>
     <div>© {year} {name}</div>
+    <div class="legal"><a href="{imp}">Impressum</a><a href="{dsg}">Datenschutz</a></div>
   </div>
 </aside>
 <main class="main{full}" id="main">
 {body}
 </main>
-<script src="{js}"></script>
+<script src="{js}" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="{fx}" defer></script>
 </body>
 </html>
-""".format(lang=lang, t=esc(page_title), d=esc(desc or S.get("description")), name=esc(S["name"]),
-           zh=esc(S.get("name_zh", "")), c=esc(canonical), ogt=og_type, img=esc(image), css=url("assets/style.css"),
-           js=url("assets/site.js"), feed=url("writing/feed.xml"), ld=ld_tag, home=url(), nav=nav,
-           email=esc(S["email"]), links=links, year=datetime.date.today().year, full=" full" if full else "", body=body)
+""".format(lang=lang, locale="zh_TW" if lang.startswith("zh") else "en_US", t=esc(page_title),
+           d=esc(desc or S.get("description")), name=esc(S["name"]), zh=esc(S.get("name_zh", "")), c=esc(canonical),
+           ogt=og_type, img=esc(image), icon=url("assets/favicon.svg"), css=url("assets/style.css"),
+           js=url("assets/site.js"), fx=url("assets/effects.js"), feed=url("writing/feed.xml"), ga=ga, ld=ld_tag,
+           home=url(), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, email=esc(S["email"]), links=links, year=datetime.date.today().year,
+           full=" full" if full else "", body=body)
 
 
 PERSON = {"@context": "https://schema.org", "@type": "Person", "name": S["name"],
-          "alternateName": S.get("name_zh", ""), "url": abs_url(), "email": "mailto:" + S["email"],
-          "jobTitle": "Artist", "description": S.get("description", ""),
+          "alternateName": [S.get("name_zh", ""), "Liu Ting-Chun", "劉庭均"], "url": abs_url(), "email": "mailto:" + S["email"],
+          "jobTitle": S.get("job_title", "Artist"), "description": S.get("statement") or S.get("description", ""),
+          "knowsAbout": S.get("knows_about", []),
+          "hasOccupation": [{"@type": "Occupation", "name": o} for o in S.get("occupations", [])],
           "sameAs": [l["url"] for l in S.get("links", [])]}
+PERSON.update(S.get("person_extra", {}))
 
 
-def pager(items, i, base, label):
+def pager(items, i, base, label, noun):
     prev = items[i - 1] if i > 0 else None
     nxt = items[i + 1] if i < len(items) - 1 else None
-    return '<nav class="pager">%s%s</nav>' % (
-        '<a href="%s">← %s</a>' % (url(base % prev["slug"]), esc(prev[label])) if prev else "<span></span>",
-        '<a href="%s">%s →</a>' % (url(base % nxt["slug"]), esc(nxt[label])) if nxt else "<span></span>")
+    one = lambda it, n, arrow: ('<a href="%s"><span class="mono">%s</span><span class="t">%s</span></a>' % (
+        url(base % it["slug"]), arrow % n, esc(it[label])))
+    return '<nav class="pager" aria-label="%s">%s%s</nav>' % (
+        noun, one(prev, i, "← (%d)") if prev else "<span></span>", one(nxt, i + 2, "(%d) →") if nxt else "<span></span>")
+
+
+def page_head(title, lead=""):
+    return '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
+        esc(title), '<p class="lead">%s</p>' % esc(lead) if lead else "")
+
+
+def work_card(n, w):
+    c = cover_of(w)
+    return ('<a class="card" href="%s"><div class="thumb">%s</div><div class="cap">%s<span class="t">%s%s</span>'
+            '<span class="mono">%s</span></div></a>') % (
+        url("works/%s/" % w["slug"]), img(c, 900, w["title"]) if c else '<span class="ph">%s</span>' % esc(w["title"]),
+        idx(n), esc(w["title"]), '<span class="zh">%s</span>' % esc(w["title_zh"]) if w.get("title_zh") else "",
+        esc(w.get("year")))
+
+
+def meta(rows):
+    return '<dl class="meta">%s</dl>' % "".join("<dt>%s</dt><dd>%s</dd>" % r for r in rows if r[1])
 
 
 # ---------- pages ----------
 pages = {}  # path -> html
 TITLES.update({url("works/%s/" % w["slug"]): w["title"] for w in works})
 TITLES.update({url("writing/%s/" % p["slug"]): p["title"] for p in posts})
-TITLES.update({url(s + "/"): s.capitalize() for s in SECTIONS})
+TITLES.update({url(s + "/"): NAV_LABELS[s] for s in SECTIONS})
 
 
 def page(path, *args, **kw):
     pages[path] = layout(path, *args, **kw)
 
 
+# home: generative field + statement, then a few recent works
 page("", "", S.get("description"),
-     '<h1 class="sr-only">%s %s</h1><section class="home">%s</section>' % (
-         esc(S["name"]), esc(S.get("name_zh", "")), img(S.get("home_image", ""), 2400, S["name"], lazy=False) if S.get("home_image") else ""),
+     '<section class="home-hero"><div class="field" data-effect="field" aria-hidden="true"></div>'
+     '<h1 class="sr-only">%s %s</h1><p class="home-statement"><span>%s</span></p></section>'
+     '<section class="home-selected" aria-label="Selected works"><div class="grid">%s</div>'
+     '<a class="more" href="%s">All works (%d) →</a></section>' % (
+         esc(S["name"]), esc(S.get("name_zh", "")), esc(S.get("statement") or S.get("description")),
+         "".join(work_card(i + 1, w) for i, w in enumerate(works[:3])), url("works/"), len(works)),
      ld=PERSON, full=True)
 
-cards = []
-for w in works:
-    c = cover_of(w)
-    cards.append('<a class="card" href="%s"><div class="thumb">%s</div><div class="cap"><span>%s%s</span>'
-                 '<span class="mono">%s</span></div></a>' % (
-                     url("works/%s/" % w["slug"]), img(c, 900, w["title"]) if c else '<span class="ph">%s</span>' % esc(w["title"]),
-                     esc(w["title"]), ' <span class="zh">%s</span>' % esc(w["title_zh"]) if w.get("title_zh") else "",
-                     esc(w.get("year"))))
 years = sorted(w["year"][:4] for w in works if w.get("year"))
 page("works/", "Works", "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI." % (
          S["name"], years[0] if years else "", years[-1] if years else ""),
-     '<h1 class="page-title">Works</h1><div class="grid">%s</div>' % "".join(cards), section="works")
+     page_head("Works", "Installations, performances, internet art and artistic research, %s–%s." % (
+         years[0] if years else "", years[-1] if years else "")) +
+     '<div class="grid">%s</div>' % "".join(work_card(i + 1, w) for i, w in enumerate(works)), section="works")
 
 for i, w in enumerate(works):
     rows = [("Year", esc(w.get("year"))), ("Type", esc(w.get("type"))), ("Materials", esc(w.get("materials"))),
             ("With", esc(w.get("collaborators")))]
     rows += [("Link", a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
-    body = ('<article><header class="work-head"><h1>%s</h1>%s<dl class="meta">%s</dl></header>'
-            '<div class="prose">%s%s</div><div class="media">%s%s</div>%s</article>') % (
-        esc(w["title"]), '<p class="zh">%s</p>' % esc(w["title_zh"]) if w.get("title_zh") else "",
-        "".join("<dt>%s</dt><dd>%s</dd>" % r for r in rows if r[1]),
-        prose(w.get("text")), '<p class="credits">%s</p>' % esc(w["credits"]) if w.get("credits") else "",
-        embed(w.get("video"), title=w["title"]), "".join(img(u, 2000, w["title"]) for u in w.get("images", [])),
-        pager(works, i, "works/%s/", "title"))
+    ims = w.get("images", [])
+    plates = embed(w.get("video"), title=w["title"])
+    plates += "".join(('<figure class="hero">%s</figure>' if k == 0 and not w.get("video") else "<figure>%s</figure>") %
+                      img(u, 2000 if k == 0 else 1400, "%s — %d" % (w["title"], k + 1)) for k, u in enumerate(ims))
+    rest = len(ims) - (0 if w.get("video") else 1)  # images in the two-column part of the grid
+    if rest > 0 and rest % 2:
+        plates = plates.replace("<figure>", '<figure class="wide">', 1)  # never leave an empty cell
+    body = ('<article class="work"><aside class="work-info">%s<h1>%s</h1>%s%s<div class="prose">%s</div>%s</aside>'
+            '<div class="plates">%s</div>%s</article>') % (
+        idx(i + 1), esc(w["title"]), '<p class="zh">%s</p>' % esc(w["title_zh"]) if w.get("title_zh") else "",
+        meta(rows), prose(w.get("text")), '<p class="credits">%s</p>' % esc(w["credits"]) if w.get("credits") else "",
+        plates, pager(works, i, "works/%s/", "title", "Works"))
     desc = summary(w.get("text")) or "%s (%s), %s by %s." % (w["title"], w.get("year"), w.get("type") or "work", S["name"])
     ld = {"@context": "https://schema.org", "@type": "CreativeWork", "name": w["title"],
           "alternateName": w.get("title_zh") or None, "dateCreated": w.get("year", "")[:4],
@@ -348,35 +389,46 @@ for i, w in enumerate(works):
     page("works/%s/" % w["slug"], w["title"] + (" " + w["title_zh"] if w.get("title_zh") else ""), desc, body,
          image=cover_of(w), og_type="article", ld={k: v for k, v in ld.items() if v}, section="works")
 
-perf = "".join('<div>%s<h2>%s</h2><p>%s</p></div>' % (embed(p["video"], p.get("thumb", ""), p["title"]), esc(p["title"]), esc(p.get("note")))
-               for p in D.get("performances", []))
+perf = "".join('<div>%s<div class="cap">%s<h2>%s</h2><p>%s</p></div></div>' % (
+    embed(p["video"], p.get("thumb", ""), p["title"]), idx(n + 1), esc(p["title"]), esc(p.get("note")))
+    for n, p in enumerate(D.get("performances", [])))
 page("performance/", "Audio-Visual Performance", "Audio-visual performance records of %s." % S["name"],
-     '<h1 class="page-title">Audio-Visual Performance</h1><div class="perf">%s</div>' % perf,
+     page_head("Audio-Visual Performance", "Live audio-visual sets and performance records, 2016–2024.") +
+     '<div class="perf">%s</div>' % perf,
      image=(D.get("performances") or [{}])[0].get("thumb"), section="performance")
 
 cv = ""
-for sec in D["about"]["sections"]:
+for n, sec in enumerate(D["about"]["sections"]):
     rows = "".join('<div class="cv-row"><span class="mono">%s</span><span>%s</span></div>' % (
         esc(it.get("year")), a(it["url"], esc(it["text"])) if it.get("url") else esc(it["text"])) for it in sec["items"])
-    cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(sec["title"]), rows)
+    cv += '<section class="cv-sec"><h2>%s%s</h2><div>%s</div></section>' % (idx(n + 1), esc(sec["title"]), rows)
 page("about/", "About", D["about"]["bio"],
-     '<h1 class="page-title">About</h1><p class="bio">%s</p>%s<p class="contact">Contact: <a href="mailto:%s">%s</a></p>' % (
-         esc(D["about"]["bio"]), cv, esc(S["email"]), esc(S["email"])),
+     '<div class="about-top"><h1 class="page-title">About</h1><div><p class="bio">%s</p>'
+     '<p class="contact"><a href="mailto:%s">%s</a></p></div></div>%s' % (
+         esc(D["about"]["bio"]), esc(S["email"]), esc(S["email"]), cv),
      ld=dict(PERSON, description=D["about"]["bio"]), og_type="profile", section="about")
 
-items = "".join('<li><a href="%s"><span class="mono">%s</span><span class="wt">%s<small>%s</small></span>'
-                '<span class="mono">%s</span></a></li>' % (
-                    url("writing/%s/" % p["slug"]), esc(p["date"]), esc(p["title"]), esc(p.get("excerpt")), esc(p.get("category")))
-                for p in posts)
+groups, order = {}, []
+for p in posts:
+    y = p["date"][:4]
+    if y not in groups:
+        groups[y] = []
+        order.append(y)
+    groups[y].append('<li><a href="%s"><span class="t">%s</span><span class="cat mono">%s</span>'
+                     '<span class="ex">%s</span></a></li>' % (
+                         url("writing/%s/" % p["slug"]), esc(p["title"]), esc(p.get("category")), esc(p.get("excerpt"))))
 page("writing/", "Writing", "Writing and technical notes by %s: artworks, Raspberry Pi, Processing and Python." % S["name"],
-     '<h1 class="page-title">Writing</h1><ul class="list writing">%s</ul>' % items, section="writing")
+     page_head("Writing", "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python (in Mandarin).") +
+     "".join('<section class="year-group"><span class="mono">%s</span><ul>%s</ul></section>' % (y, "".join(groups[y])) for y in order),
+     section="writing")
 
 for i, p in enumerate(posts):
     src = read_post(p["slug"])
     desc = p.get("excerpt") or summary(src)
-    body = ('<article class="post"><header class="work-head"><h1>%s</h1><p class="mono">%s · %s</p></header>'
+    body = ('<article class="post"><aside class="post-info"><h1>%s</h1>%s<a class="back" href="%s">← Writing</a></aside>'
             '<div class="prose post-body">%s</div>%s</article>') % (
-        esc(p["title"]), esc(p["date"]), esc(p.get("category")), post_html(src), pager(posts, i, "writing/%s/", "title"))
+        esc(p["title"]), meta([("Date", esc(p["date"])), ("Category", esc(p.get("category")))]), url("writing/"),
+        post_html(src), pager(posts, i, "writing/%s/", "title", "Posts"))
     ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"], "datePublished": p["date"],
           "inLanguage": p.get("lang", "zh-Hant"), "url": abs_url("writing/%s/" % p["slug"]),
           "image": asset_abs(p.get("cover") or S.get("og_image")), "description": desc,
@@ -385,17 +437,61 @@ for i, p in enumerate(posts):
     page("writing/%s/" % p["slug"], p["title"], desc, body, image=p.get("cover"), og_type="article",
          lang=p.get("lang", "zh-Hant"), ld=ld, section="writing")
 
+
 def friend(f):
     thumb = img(f["image"], 600, f["name"]) if f.get("image") else '<span class="ph">%s</span>' % esc(f["name"])
     if not f.get("url"):  # site no longer online: keep the name, drop the link
-        return '<div class="card"><div class="thumb">%s</div><div class="cap"><span>%s</span></div></div>' % (thumb, esc(f["name"]))
+        return '<div class="card"><div class="thumb">%s</div><div class="cap"><span class="t">%s</span></div></div>' % (
+            thumb, esc(f["name"]))
     return ('<a class="card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s</div>'
-            '<div class="cap"><span>%s</span><span class="mono">↗</span></div></a>') % (esc(f["url"]), thumb, esc(f["name"]))
+            '<div class="cap"><span class="t">%s</span><span class="mono">↗</span></div></a>') % (
+        esc(f["url"]), thumb, esc(f["name"]))
 
 
-fr = "".join(friend(f) for f in D.get("friends", []))
 page("friends/", "Friends", "Friends and fellow artists of %s." % S["name"],
-     '<h1 class="page-title">Friends</h1><div class="grid friends">%s</div>' % fr, section="friends")
+     page_head("Friends", "Artists and collaborators.") +
+     '<div class="grid friends">%s</div>' % "".join(friend(f) for f in D.get("friends", [])), section="friends")
+
+
+addr = S.get("address") or []
+addr_html = "<br>".join(esc(x) for x in addr) if addr else \
+    '<span class="todo">[Postanschrift fehlt — in site.json → site.address eintragen]</span>'
+page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], """
+<div class="legal-page">
+<h1 class="page-title">Impressum</h1>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>{name}<br>{addr}</p>
+<h2>Kontakt</h2>
+<p>E-Mail: <a href="mailto:{email}">{email}</a></p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<p>{name}<br>{addr}</p>
+<h2>Haftung für Links</h2>
+<p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden derartige Links umgehend entfernt.</p>
+<h2>Urheberrecht</h2>
+<p>Texte, Bilder und Videos auf dieser Website unterliegen dem Urheberrecht von {name} bzw. der genannten Fotograf*innen und Kooperationspartner*innen. Eine Verwendung ist nur nach vorheriger Zustimmung erlaubt.</p>
+<p class="en">Legal notice for this personal artist website. Contact: {email}.</p>
+</div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
+
+page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], """
+<div class="legal-page">
+<h1 class="page-title">Datenschutz&shy;erklärung</h1>
+<h2>1. Verantwortlicher</h2>
+<p>{name}<br>{addr}<br>E-Mail: <a href="mailto:{email}">{email}</a></p>
+<h2>2. Hosting</h2>
+<p>Diese Website wird bei GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie IP-Adresse, Zeitpunkt und aufgerufene Seite in Server-Logfiles, um die Website auszuliefern und abzusichern. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework.</p>
+<h2>3. Google Analytics</h2>
+<p>Nur wenn Sie im Hinweis auf „OK“ klicken, wird Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) geladen. Google Analytics setzt dann Cookies und erfasst pseudonymisierte Nutzungsdaten (z.&nbsp;B. aufgerufene Seiten, Verweildauer, ungefährer Standort, Gerät), um die Nutzung dieser Website statistisch auszuwerten. IP-Adressen werden von Google Analytics 4 nicht gespeichert. Werbefunktionen sind deaktiviert. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Ohne Einwilligung wird Google Analytics nicht geladen. Eine Übermittlung in die USA ist möglich; Google ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
+<p>Sie können Ihre Einwilligung jederzeit widerrufen: <button type="button" data-consent-reset>Einstellung zurücksetzen / Reset choice</button></p>
+<h2>4. Eingebettete Videos (Vimeo, YouTube)</h2>
+<p>Videos werden erst geladen, wenn Sie auf das Vorschaubild klicken. Erst dann werden Daten (u.&nbsp;a. IP-Adresse) an Vimeo (Vimeo.com Inc., New York, USA) bzw. YouTube (Google Ireland Limited) übertragen; YouTube wird im erweiterten Datenschutzmodus (youtube-nocookie.com) eingebunden. Vorschaubilder einiger Vimeo-Videos werden über vumbnail.com geladen.</p>
+<h2>5. Externe Bilder</h2>
+<p>Einzelne ältere Bilder werden noch vom Server der früheren Website (static.wixstatic.com, Wix.com Ltd.) geladen. Dabei wird Ihre IP-Adresse an Wix übertragen. Diese Bilder werden nach und nach auf diese Website verlagert.</p>
+<h2>6. Schriften und Skripte</h2>
+<p>Es werden keine Google Fonts von Google-Servern geladen. Die Bibliothek p5.js für die grafischen Animationen wird von cdnjs (Cloudflare, Inc.) geladen; dabei wird Ihre IP-Adresse an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<h2>7. Ihre Rechte</h2>
+<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie auf Widerruf erteilter Einwilligungen. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
+<p class="en">In short: analytics only runs after you click OK; videos only load when you press play; nothing else tracks you.</p>
+</div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
 
 
 # ---------- write ----------
@@ -405,7 +501,7 @@ def write(rel, text):
     open(p, "w", encoding="utf-8").write(text)
 
 
-for s in SECTIONS:  # start clean so removed works/posts disappear
+for s in SECTIONS + ["impressum", "datenschutz"]:  # start clean so removed works/posts disappear
     shutil.rmtree(os.path.join(ROOT, s), ignore_errors=True)
 for path, text in pages.items():
     write(path + "index.html", text)
@@ -419,6 +515,22 @@ feed_items = "".join(
 write("writing/feed.xml", '<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>%s — Writing</title>'
       "<link>%s</link><description>%s</description>%s</channel></rss>\n" % (esc(S["name"]), abs_url("writing/"), esc(S.get("description")), feed_items))
 
+# llms.txt: a plain-language summary for AI assistants (llmstxt.org), linked from robots.txt
+llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
+        "> " + (S.get("statement") or S.get("description", "")), "",
+        "Areas: " + ", ".join(S.get("knows_about", [])), "",
+        "## Main pages", "",
+        "- [Works](%s): installations, performances, internet art and artistic research" % abs_url("works/"),
+        "- [About / CV](%s): biography, teaching, exhibitions, talks, publications" % abs_url("about/"),
+        "- [Writing](%s): texts and technical notes" % abs_url("writing/"),
+        "- [Audio-Visual Performance](%s)" % abs_url("performance/"), "",
+        "## Works", ""]
+llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))
+         for w in works]
+llms += ["", "## Contact", "", "- Email: " + S["email"]] + ["- %s: %s" % (l["label"], l["url"]) for l in S.get("links", [])]
+llms_txt = "\n".join(llms) + "\n"
+write("llms.txt", llms_txt)
+
 # sitemap.xml and robots.txt only count at the domain root, so when the site lives
 # in a subfolder they go to the repo root; the sitemap then also lists the other
 # project sites on the domain (site.sitemap_extra).
@@ -429,8 +541,10 @@ top = REPO if PREFIX != "/" else ROOT
 origin = "{0.scheme}://{0.netloc}/".format(urlparse(BASE))
 open(os.path.join(top, "sitemap.xml"), "w", encoding="utf-8").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % "".join(locs))
+open(os.path.join(top, "llms.txt"), "w", encoding="utf-8").write(llms_txt)
 open(os.path.join(top, "robots.txt"), "w").write(
-    "User-agent: *\nAllow: /\nDisallow: %sadmin/\nDisallow: %spreview.html\n\nSitemap: %ssitemap.xml\n" % (PREFIX, PREFIX, origin))
+    "User-agent: *\nAllow: /\nDisallow: %sadmin/\nDisallow: %spreview.html\n\nSitemap: %ssitemap.xml\n"
+    "# Summary for AI assistants: %sllms.txt\n" % (PREFIX, PREFIX, origin, origin))
 
 # When the site lives at the domain root, keep old Wix URLs working.
 if PREFIX == "/":

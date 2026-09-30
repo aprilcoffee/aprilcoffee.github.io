@@ -8,6 +8,7 @@
 <meta name="author" content="Ting-Chun Liu">
 <link rel="canonical" href="https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/">
 <meta property="og:site_name" content="Ting-Chun Liu">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料 — Ting-Chun Liu">
 <meta property="og:description" content="在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。">
@@ -17,10 +18,10 @@
 <meta name="twitter:title" content="Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料 — Ting-Chun Liu">
 <meta name="twitter:description" content="在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。">
 <meta name="twitter:image" content="https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
 <link rel="stylesheet" href="/liutingchun/assets/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "datePublished": "2019-09-02", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/", "image": "https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png", "description": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberrypi-python-osc/"}</script>
 </head>
@@ -30,15 +31,17 @@
     <a class="brand" href="/liutingchun/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav"><a href="/liutingchun/works/">Works</a><a href="/liutingchun/performance/">Performance</a><a href="/liutingchun/about/">About</a><a href="/liutingchun/writing/" class="on" aria-current="page">Writing</a><a href="/liutingchun/friends/">Friends</a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/liutingchun/works/"><span class="idx">(1)</span><span>Works</span></a><a href="/liutingchun/performance/"><span class="idx">(2)</span><span>Performance</span></a><a href="/liutingchun/about/"><span class="idx">(3)</span><span>About</span></a><a href="/liutingchun/writing/" class="on" aria-current="page"><span class="idx">(4)</span><span>Writing</span></a><a href="/liutingchun/friends/"><span class="idx">(5)</span><span>Friends</span></a></nav>
   <div class="side-foot">
+    <div class="signal" data-effect="signal" aria-hidden="true"></div>
     <div><a href="mailto:april85227@gmail.com">april85227@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
+    <div class="legal"><a href="/liutingchun/impressum/">Impressum</a><a href="/liutingchun/datenschutz/">Datenschutz</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><header class="work-head"><h1>Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料</h1><p class="mono">2019-09-02 · technique</p></header><div class="prose post-body"><p>這篇來寫寫如何在Python當中使用OSC通訊協定傳輸基本的數字，稍微解釋一下何為OSC還有其應用範圍，然後做一個簡單的Server/Client端的使用說明，比較複雜的用途(Broadcast、Bundle、或是如何做複雜Parsing)就先跳過, 簡單易懂為主。</p>
+<article class="post"><aside class="post-info"><h1>Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料</h1><dl class="meta"><dt>Date</dt><dd>2019-09-02</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/liutingchun/writing/">← Writing</a></aside><div class="prose post-body"><p>這篇來寫寫如何在Python當中使用OSC通訊協定傳輸基本的數字，稍微解釋一下何為OSC還有其應用範圍，然後做一個簡單的Server/Client端的使用說明，比較複雜的用途(Broadcast、Bundle、或是如何做複雜Parsing)就先跳過, 簡單易懂為主。</p>
 <p>這篇使用的語言主要以 Python 為主，TouchDesigner, Processing, Unity 或是 MaxMsp 的 OSC 網路教學資源很多很多就自己查吧。看完這篇再搭配之前的 python GPIO 撰寫，就可以利用自己的 Raspberry Pi 和 PureData 製作自製電子樂器了～～</p>
 <p>OSC全名為 Open Sound Control，是個基於 UDP 的通訊協定(也可以用 TCP 不過就不贅述)，被大量應用於聲音相關軟體，可以做區域網路內簡單資料的傳輸。不管是跨機器、或是跨軟體，都是傳輸資料簡單好用的工具。舉例來說，當我要將 Ableton Live 中某一軌聲音的音量視覺化，便可以傳送一個 OSC 封包給 Processing 或是TouchDesigner，得到這個參數之後，便可以做調整。或是在基於 Raspberry Pi 中以 Python 撰寫的 GPIO 收到感測器訊號時，也可以將參數傳送到 PureData 來生成聲音。一個OSC的封包主要分為兩種OSC Message或是OSC Bundle，這邊以比較簡單常用的Message為主解釋。</p>
 <p>一個 OSC 的 Message 基本上分為三個部分</p>
@@ -132,8 +135,8 @@ oscmsg.append(number)
 client.send(oscmsg)
 </code></pre>
 <p>這樣便可以將接收到的數字傳送出去～</p>
-<p>基本的python中使用OSC大概就是這樣，祝大家玩得愉快。</p></div><nav class="pager"><a href="/liutingchun/writing/processing-text-animation/">← Processing 蒙地卡羅演算法做文字動畫</a><a href="/liutingchun/writing/lift-off/">Audio-Visual 作品 Lift-Off →</a></nav></article>
+<p>基本的python中使用OSC大概就是這樣，祝大家玩得愉快。</p></div><nav class="pager" aria-label="Posts"><a href="/liutingchun/writing/processing-text-animation/"><span class="mono">← (5)</span><span class="t">Processing 蒙地卡羅演算法做文字動畫</span></a><a href="/liutingchun/writing/lift-off/"><span class="mono">(7) →</span><span class="t">Audio-Visual 作品 Lift-Off</span></a></nav></article>
 </main>
-<script src="/liutingchun/assets/site.js"></script>
+<script src="/liutingchun/assets/site.js" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="/liutingchun/assets/effects.js" defer></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
 <meta name="author" content="Ting-Chun Liu">
 <link rel="canonical" href="https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi3-b-plus-video-sync/">
 <meta property="og:site_name" content="Ting-Chun Liu">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raspberry Pi3 B+ 同步播放器 — Ting-Chun Liu">
 <meta property="og:description" content="以 omxplayer-sync 在多台 Raspberry Pi 3 B+ 上製作同步影片播放器的完整步驟。">
@@ -17,10 +18,10 @@
 <meta name="twitter:title" content="Raspberry Pi3 B+ 同步播放器 — Ting-Chun Liu">
 <meta name="twitter:description" content="以 omxplayer-sync 在多台 Raspberry Pi 3 B+ 上製作同步影片播放器的完整步驟。">
 <meta name="twitter:image" content="https://static.wixstatic.com/media/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
 <link rel="stylesheet" href="/liutingchun/assets/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi3 B+ 同步播放器", "datePublished": "2020-02-01", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi3-b-plus-video-sync/", "image": "https://static.wixstatic.com/media/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.jpg", "description": "以 omxplayer-sync 在多台 Raspberry Pi 3 B+ 上製作同步影片播放器的完整步驟。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi3-b-plus-video-sync/"}</script>
 </head>
@@ -30,15 +31,17 @@
     <a class="brand" href="/liutingchun/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav"><a href="/liutingchun/works/">Works</a><a href="/liutingchun/performance/">Performance</a><a href="/liutingchun/about/">About</a><a href="/liutingchun/writing/" class="on" aria-current="page">Writing</a><a href="/liutingchun/friends/">Friends</a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/liutingchun/works/"><span class="idx">(1)</span><span>Works</span></a><a href="/liutingchun/performance/"><span class="idx">(2)</span><span>Performance</span></a><a href="/liutingchun/about/"><span class="idx">(3)</span><span>About</span></a><a href="/liutingchun/writing/" class="on" aria-current="page"><span class="idx">(4)</span><span>Writing</span></a><a href="/liutingchun/friends/"><span class="idx">(5)</span><span>Friends</span></a></nav>
   <div class="side-foot">
+    <div class="signal" data-effect="signal" aria-hidden="true"></div>
     <div><a href="mailto:april85227@gmail.com">april85227@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
+    <div class="legal"><a href="/liutingchun/impressum/">Impressum</a><a href="/liutingchun/datenschutz/">Datenschutz</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><header class="work-head"><h1>Raspberry Pi3 B+ 同步播放器</h1><p class="mono">2020-02-01 · technique</p></header><div class="prose post-body"><p>積欠已久，接了小工作決定邊弄邊把步驟寫出來。</p>
+<article class="post"><aside class="post-info"><h1>Raspberry Pi3 B+ 同步播放器</h1><dl class="meta"><dt>Date</dt><dd>2020-02-01</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/liutingchun/writing/">← Writing</a></aside><div class="prose post-body"><p>積欠已久，接了小工作決定邊弄邊把步驟寫出來。</p>
 <p>同步播放器的工作方式，需要至少兩台電腦(在這邊使用Pi)在同個網域下運作。第一台作為Master，其他作為Slave。當Master在播放影片時，會在一定時間間隔不斷傳送目前播放的時間點給所有Slaves。但大家也知道，這樣的傳輸方法，會因為不同網路環境存在一定的延遲。因此，在Slaves收到訊息時，會自動Seek到對應的時間點，在把目前自己播放的時間點傳送回去給Master。</p>
 <p>大致上來說，如同大家在國高中作過的「蝙蝠回聲距離問題」，當Master收到Slave回傳的訊號時，便會確認自己目前的時間點，再和自己當初傳送出訊號的時間點相減除以二。一來一往之間，Master變可以得知連結關係中的網路延遲時差，進而把目前播放時間再加上預期傳輸時間差送給所有Slaves，達成同步。</p>
 <figure><img src="https://static.wixstatic.com/media/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.jpg/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.jpg" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.jpg')this.src='https://static.wixstatic.com/media/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.jpg'"></figure>
@@ -158,8 +161,8 @@ cd /home/pi/Desktop/autoplay
 <li><strong>請使用h264檔案，並且影片長於60秒</strong></li>
 </ul>
 <p>最後附張之前在府中和阿芝芳境王量弄展覽同步播放的工作圖</p>
-<figure><img src="https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg')this.src='https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg'"></figure></div><nav class="pager"><a href="/liutingchun/writing/raspberry-pi-python-light-strip/">← Raspberry Pi Python 燈條控制 (ws281x 系列)</a><a href="/liutingchun/writing/processing-text-animation/">Processing 蒙地卡羅演算法做文字動畫 →</a></nav></article>
+<figure><img src="https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg/v1/fit/w_1600,h_1600,q_85,enc_auto/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg')this.src='https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg'"></figure></div><nav class="pager" aria-label="Posts"><a href="/liutingchun/writing/raspberry-pi-python-light-strip/"><span class="mono">← (3)</span><span class="t">Raspberry Pi Python 燈條控制 (ws281x 系列)</span></a><a href="/liutingchun/writing/processing-text-animation/"><span class="mono">(5) →</span><span class="t">Processing 蒙地卡羅演算法做文字動畫</span></a></nav></article>
 </main>
-<script src="/liutingchun/assets/site.js"></script>
+<script src="/liutingchun/assets/site.js" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="/liutingchun/assets/effects.js" defer></script>
 </body>
 </html>

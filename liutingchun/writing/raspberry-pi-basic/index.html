@@ -8,6 +8,7 @@
 <meta name="author" content="Ting-Chun Liu">
 <link rel="canonical" href="https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-basic/">
 <meta property="og:site_name" content="Ting-Chun Liu">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raspberry Pi 基本使用 — Ting-Chun Liu">
 <meta property="og:description" content="遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。">
@@ -17,10 +18,10 @@
 <meta name="twitter:title" content="Raspberry Pi 基本使用 — Ting-Chun Liu">
 <meta name="twitter:description" content="遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。">
 <meta name="twitter:image" content="https://static.wixstatic.com/media/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
 <link rel="stylesheet" href="/liutingchun/assets/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 基本使用", "datePublished": "2019-01-17", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-basic/", "image": "https://static.wixstatic.com/media/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.jpg", "description": "遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/writing/raspberry-pi-basic/"}</script>
 </head>
@@ -30,15 +31,17 @@
     <a class="brand" href="/liutingchun/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav"><a href="/liutingchun/works/">Works</a><a href="/liutingchun/performance/">Performance</a><a href="/liutingchun/about/">About</a><a href="/liutingchun/writing/" class="on" aria-current="page">Writing</a><a href="/liutingchun/friends/">Friends</a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/liutingchun/works/"><span class="idx">(1)</span><span>Works</span></a><a href="/liutingchun/performance/"><span class="idx">(2)</span><span>Performance</span></a><a href="/liutingchun/about/"><span class="idx">(3)</span><span>About</span></a><a href="/liutingchun/writing/" class="on" aria-current="page"><span class="idx">(4)</span><span>Writing</span></a><a href="/liutingchun/friends/"><span class="idx">(5)</span><span>Friends</span></a></nav>
   <div class="side-foot">
+    <div class="signal" data-effect="signal" aria-hidden="true"></div>
     <div><a href="mailto:april85227@gmail.com">april85227@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
+    <div class="legal"><a href="/liutingchun/impressum/">Impressum</a><a href="/liutingchun/datenschutz/">Datenschutz</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><header class="work-head"><h1>Raspberry Pi 基本使用</h1><p class="mono">2019-01-17 · technique</p></header><div class="prose post-body"><p>因為近期接案使用頻繁(或是幫新銳動畫裝置藝術家<a href="https://gunter292.wixsite.com/gunter" target="_blank" rel="noopener">林瑜亮</a>於香港布展)，遂做個簡單的資料整理；包含遠端操控、開機自動執行、影片播放、3.5音源輸出消除雜音等等，做個常見的 Raspberry Pi 使用經驗分享。盼能拋磚引玉，得到更多分享與回饋。</p>
+<article class="post"><aside class="post-info"><h1>Raspberry Pi 基本使用</h1><dl class="meta"><dt>Date</dt><dd>2019-01-17</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/liutingchun/writing/">← Writing</a></aside><div class="prose post-body"><p>因為近期接案使用頻繁(或是幫新銳動畫裝置藝術家<a href="https://gunter292.wixsite.com/gunter" target="_blank" rel="noopener">林瑜亮</a>於香港布展)，遂做個簡單的資料整理；包含遠端操控、開機自動執行、影片播放、3.5音源輸出消除雜音等等，做個常見的 Raspberry Pi 使用經驗分享。盼能拋磚引玉，得到更多分享與回饋。</p>
 <p>隨著 Raspberry Pi 的價格逐漸親民，運算量也遠大於一代二代，第三代又內附 wifi 晶片，以Raspberry Pi 作為互動裝置的主機板門檻逐漸降低。想說整理一下最近對 Rapsberry Pi 的使用方法，以及一些十分重要的基礎。</p>
 <p>本篇文的撰寫有些操作的門檻，基本上不在 command line 的部分多做介紹。使用的皆為 Raspberry Pi 3 以上之型號，包含 Raspberry Pi 3 Model B, Raspberry Pi Model B+。</p>
 <hr />
@@ -108,8 +111,8 @@ sudo crontab -e
 sudo pkill omxplayer
 </code></pre>
 <p>以下大概是Raspberry Pi基本的一些功能。</p>
-<p>之後有空再來撰寫 python 控制GPIO的部分，以及如何使用subprocess切換omxplayer來開啟影片。還有如何使用Raspberry Pi架設簡單的無線基地台。</p></div><nav class="pager"><a href="/liutingchun/writing/raspberry-pi-video-switching/">← Raspberry Pi 互動影片切換與播放</a><a href="/liutingchun/writing/body-as-the-reflection-on-site/">身體作為現場的折射（一） →</a></nav></article>
+<p>之後有空再來撰寫 python 控制GPIO的部分，以及如何使用subprocess切換omxplayer來開啟影片。還有如何使用Raspberry Pi架設簡單的無線基地台。</p></div><nav class="pager" aria-label="Posts"><a href="/liutingchun/writing/raspberry-pi-video-switching/"><span class="mono">← (9)</span><span class="t">Raspberry Pi 互動影片切換與播放</span></a><a href="/liutingchun/writing/body-as-the-reflection-on-site/"><span class="mono">(11) →</span><span class="t">身體作為現場的折射（一）</span></a></nav></article>
 </main>
-<script src="/liutingchun/assets/site.js"></script>
+<script src="/liutingchun/assets/site.js" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="/liutingchun/assets/effects.js" defer></script>
 </body>
 </html>

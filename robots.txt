@@ -4,3 +4,4 @@ Disallow: /liutingchun/admin/
 Disallow: /liutingchun/preview.html
 
 Sitemap: https://aprilcoffee.github.io/sitemap.xml
+# Summary for AI assistants: https://aprilcoffee.github.io/llms.txt

@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  var me = document.currentScript;
+
   // Links from the first version of the site used #/works/slug style URLs.
   var m = location.hash.match(/^#\/(.*)$/);
   if (m) {
@@ -24,9 +26,29 @@
     f.src = el.getAttribute('data-src');
     f.allow = 'autoplay; fullscreen; picture-in-picture';
     f.allowFullscreen = true;
+    f.title = el.getAttribute('aria-label') || 'Video';
     var wrap = document.createElement('div');
     wrap.className = 'embed';
     wrap.appendChild(f);
     el.replaceWith(wrap);
   });
+
+  // p5.js effects: loaded only when a page has one, after everything else is done,
+  // so they never compete with the content for bandwidth.
+  if (!me || !document.querySelector('[data-effect]')) return;
+  function load(src, cb) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onload = cb;
+    document.body.appendChild(s);
+  }
+  function start() {
+    var idle = window.requestIdleCallback || function (f) { setTimeout(f, 200); };
+    idle(function () {
+      load(me.getAttribute('data-p5'), function () { load(me.getAttribute('data-effects')); });
+    });
+  }
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start);
 })();
