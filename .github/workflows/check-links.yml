@@ -35,3 +35,5 @@ jobs:
           jobSummary: true
       - name: Print report
         run: cat lychee-report.md
+      - name: Check videos (Vimeo / YouTube oEmbed)
+        run: python3 liutingchun/scripts/check-videos.py | tee -a "$GITHUB_STEP_SUMMARY"
