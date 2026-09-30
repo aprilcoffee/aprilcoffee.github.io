@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=praCnmqs5QA
 
 Christina 的創作比較多著重在觀念的作品聲音創作，在指導時也比較像朋友，給予的建議多是怎麼想像自己的身體狀態。初到工作室時，教授與助教把工作室中間用紙膠帶圍出一個方塊，並出了第一個課題，贈與工作室中公共空間一個行為 (Gesture)，作為自己使用私人空間的交換。說實話剛開始實也沒什麼想法，手邊也沒有習慣的創作資源 (祥昌興城街什麼的)，看到地上被圍成一圈的紙膠帶，就想起 Bruce Nauman 的作品「[Walking in an Exaggerated Manner](https://www.moma.org/learn/moma_learning/bruce-nauman-walking-in-an-exaggerated-manner-around-the-perimeter-of-a-square-1967-68)」隨手就在往工作室的路上撿起一塊石頭，沿著地上的膠帶線敲打，這大概是在布拉格創作的第一個實驗。
 
-https://www.youtube.com/watch?v=x7DWz_jMtR4
+（影片已從 YouTube 下架）
 
 原本的設計只是沿著路線走完，但慢慢敲打的過程中，會發現自己的節奏以及動作，會與膠帶的紋理交互影響，遂把膠帶當作譜面，刮痕、斷面、磨損、去閱讀膠帶來完成行為，在途中被同學擋道時，想起了自己在先前表演時缺乏與現場的互動，便把石頭丟給同學讓他敲過他的身體範圍。當每個同學都給予空間自己的創作之後，我們被引導的討論環繞在彼此之間的關係，誰的聲音與誰的行為有了交錯，而教授與助教也親自創作，給予自己對於這個空間的想像，這也引導到了我們之後的延伸。
 

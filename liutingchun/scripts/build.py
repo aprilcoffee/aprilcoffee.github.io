@@ -385,10 +385,15 @@ for i, p in enumerate(posts):
     page("writing/%s/" % p["slug"], p["title"], desc, body, image=p.get("cover"), og_type="article",
          lang=p.get("lang", "zh-Hant"), ld=ld, section="writing")
 
-fr = "".join('<a class="card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s</div>'
-             '<div class="cap"><span>%s</span><span class="mono">↗</span></div></a>' % (
-                 esc(f["url"]), img(f["image"], 600, f["name"]) if f.get("image") else '<span class="ph">%s</span>' % esc(f["name"]),
-                 esc(f["name"])) for f in D.get("friends", []))
+def friend(f):
+    thumb = img(f["image"], 600, f["name"]) if f.get("image") else '<span class="ph">%s</span>' % esc(f["name"])
+    if not f.get("url"):  # site no longer online: keep the name, drop the link
+        return '<div class="card"><div class="thumb">%s</div><div class="cap"><span>%s</span></div></div>' % (thumb, esc(f["name"]))
+    return ('<a class="card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s</div>'
+            '<div class="cap"><span>%s</span><span class="mono">↗</span></div></a>') % (esc(f["url"]), thumb, esc(f["name"]))
+
+
+fr = "".join(friend(f) for f in D.get("friends", []))
 page("friends/", "Friends", "Friends and fellow artists of %s." % S["name"],
      '<h1 class="page-title">Friends</h1><div class="grid friends">%s</div>' % fr, section="friends")
 

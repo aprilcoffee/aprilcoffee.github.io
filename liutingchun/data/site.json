@@ -30,7 +30,7 @@
       "https://aprilcoffee.github.io/heat_as_image/loss-function/",
       "https://aprilcoffee.github.io/heat_as_image/loss-function/purple-coincidence.html",
       "https://aprilcoffee.github.io/heat_as_image/loss-function/specificity.html",
-      "https://aprilcoffee.github.io/heat_as_image/loss-function/statistical-",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/statistical-index.html",
       "https://aprilcoffee.github.io/heat_as_image/loss-function/what-you-see.html",
       "https://aprilcoffee.github.io/heat_as_image/materiality/cleanrooms.html",
       "https://aprilcoffee.github.io/heat_as_image/materiality/commodity.html",
@@ -530,14 +530,15 @@
       "images": [
         "images/wix/4eb1dd_ae4670631da5484d93dbe3425d900db5~mv2.webp"
       ],
-      "video": "https://youtu.be/d4LyVxF7bjE",
+      "video": "",
       "links": [],
       "credits": "",
       "text": "A drone that relies on power supplied by wires.\n\nRelaxing, storing energy, pulling, and crashing. Relaxing, storing energy, pulling, and crashing.\n\nIn the oscillation of self-pulling, the aircraft possesses its own dynamic and three-dimensional perspective, but at the same time tries to break free from the flat foundation it relies on.\n\nThe work also reflects my thoughts and concerns as a student of New Media Arts. Based on the speed and movement of time, which are essential conditions for the establishment of media art, and the maintenance of electricity, which also plays an important role in technological art, if the electricity supply is disrupted by the work itself, ending all movement, would the work still be valid in an exhibition like New Media Arts?\n\n一台依靠電線供電的飛行器。\n\n鬆弛、蓄能、拉扯、撞擊，鬆弛、蓄能、拉扯、撞擊。\n\n飛行器在自我拉扯的擺盪之間，自擁著動態與立體的視角，卻又極欲掙脫自己依賴的平面根基。\n\n作品亦為我作為新媒體藝術學系學生的想法與煩惱，基於時間的速度與動態作為媒體藝術成立的充要條件，而電力的維持也在科技藝術中佔有極大的地位，倘若今日供電被作品本身所扯斷，終結一切動態，作品在新媒體藝術展覽這樣的場域是否依舊成立？",
       "hidden": true,
       "aliases": [
         "/let-the-drone-fly"
-      ]
+      ],
+      "old_video": "https://youtu.be/d4LyVxF7bjE"
     }
   ],
   "performances": [
@@ -1033,8 +1034,9 @@
     },
     {
       "name": "Cels Ho",
-      "url": "http://celscelscels.wixsite.com/celsho",
-      "image": "https://static.wixstatic.com/media/4eb1dd_6afac9def6af49ed96ee5d2864a1aa9c~mv2.png"
+      "url": "",
+      "image": "https://static.wixstatic.com/media/4eb1dd_6afac9def6af49ed96ee5d2864a1aa9c~mv2.png",
+      "old_url": "http://celscelscels.wixsite.com/celsho"
     },
     {
       "name": "Gunter",
@@ -1053,8 +1055,9 @@
     },
     {
       "name": "林哲志 Lin zhe zhi",
-      "url": "https://zhe-zhi-lin.weebly.com",
-      "image": "https://static.wixstatic.com/media/4eb1dd_0697ae245e7444b6802b93b7d45c613d~mv2_d_3995_2250_s_2.jpg"
+      "url": "",
+      "image": "https://static.wixstatic.com/media/4eb1dd_0697ae245e7444b6802b93b7d45c613d~mv2_d_3995_2250_s_2.jpg",
+      "old_url": "https://zhe-zhi-lin.weebly.com"
     },
     {
       "name": "JackLiu",
@@ -1083,8 +1086,9 @@
     },
     {
       "name": "Wenny Lan",
-      "url": "https://seenlan.wordpress.com/",
-      "image": "https://static.wixstatic.com/media/4eb1dd_0975d9a9e4be481fbea0008ec68e58b4~mv2.png"
+      "url": "",
+      "image": "https://static.wixstatic.com/media/4eb1dd_0975d9a9e4be481fbea0008ec68e58b4~mv2.png",
+      "old_url": "https://seenlan.wordpress.com/"
     }
   ],
   "writing": [
