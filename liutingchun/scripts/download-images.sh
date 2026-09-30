@@ -20,7 +20,11 @@ for url in $urls; do
     continue
   fi
   echo "[$n/$total] $url"
-  curl -fsSL --retry 3 -o "$file" "$url" || { echo "  failed"; rm -f "$file"; }
+  curl -fsSL --retry 3 -o "$file" "$url" || { echo "  failed"; rm -f "$file"; continue; }
+  # Convert to webp like the rest of images/wix/ (skip gifs to keep animation).
+  if command -v cwebp >/dev/null && [[ "$file" != *.gif ]]; then
+    cwebp -quiet -q 82 "$file" -o "${file%.*}.webp" && rm -f "$file"
+  fi
 done
 
 # Rewrite only the URLs whose file actually downloaded.
@@ -29,14 +33,15 @@ import json, os, re
 p = "data/site.json"
 s = open(p, encoding="utf-8").read()
 def sub(m):
-    f = "images/wix/" + m.group(1)
-    ok = os.path.exists(f) and os.path.getsize(f) > 0
-    return f if ok else m.group(0)
+    name = m.group(1)
+    for f in ("images/wix/" + os.path.splitext(name)[0] + ".webp", "images/wix/" + name):
+        if os.path.exists(f) and os.path.getsize(f) > 0:
+            return f
+    return m.group(0)
 s = re.sub(r'https://static\.wixstatic\.com/media/([^"/]+)', sub, s)
 json.loads(s)  # sanity check
 open(p, "w", encoding="utf-8").write(s)
 print("site.json updated")
 EOF
 
-echo "Done. Optional: shrink big files before committing, e.g."
-echo "  mogrify -resize '2000x2000>' -quality 85 images/wix/*.jpg"
+echo "Done. Commit images/wix/ and data/site.json."
