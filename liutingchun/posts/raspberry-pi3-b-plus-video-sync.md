@@ -4,7 +4,7 @@
 
 大致上來說，如同大家在國高中作過的「蝙蝠回聲距離問題」，當Master收到Slave回傳的訊號時，便會確認自己目前的時間點，再和自己當初傳送出訊號的時間點相減除以二。一來一往之間，Master變可以得知連結關係中的網路延遲時差，進而把目前播放時間再加上預期傳輸時間差送給所有Slaves，達成同步。
 
-![](https://static.wixstatic.com/media/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.jpg)
+![](images/wix/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.webp)
 
 本篇將解釋如何目前最流通的Raspberry Pi3 Model B+ 製作同步播放器。主要使用的軟體是這份：[https://github.com/turingmachine/omxplayer-sync](https://github.com/turingmachine/omxplayer-sync)
 
@@ -24,9 +24,9 @@
 
 進行完成之後就可以重新開機等待完成
 
-![](https://static.wixstatic.com/media/4eb1dd_930e7beee924484487baa59fb33e55ff~mv2.png)
+![](images/wix/4eb1dd_930e7beee924484487baa59fb33e55ff~mv2.webp)
 
-![](https://static.wixstatic.com/media/4eb1dd_f98ab4ce781a4129931a06bb2017fb9d~mv2.png)
+![](images/wix/4eb1dd_f98ab4ce781a4129931a06bb2017fb9d~mv2.webp)
 
 ### 安裝軟體
 
@@ -60,7 +60,7 @@ avoid_warnings=1
 
 之後鍵盤按下 **esc** 離開編輯模式 再輸入 **:wq** 變可以存檔跳出。
 
-![](https://static.wixstatic.com/media/4eb1dd_f887142c7e9b49c89fac52f51b7315d0~mv2.png)
+![](images/wix/4eb1dd_f887142c7e9b49c89fac52f51b7315d0~mv2.webp)
 
 這時我們便可以開始安裝omxplayer-sync。
 
@@ -142,7 +142,7 @@ cd /home/pi/Desktop/autoplay
 wget https://github.com/turingmachine/omxplayer-sync/raw/master/synctest.mp4
 ```
 
-![](https://static.wixstatic.com/media/4eb1dd_259a63d93f4e4a8d90cd64db3a46f227~mv2.png)
+![](images/wix/4eb1dd_259a63d93f4e4a8d90cd64db3a46f227~mv2.webp)
 
 接著我們打上
 
@@ -152,7 +152,7 @@ omxplayer-sync -muv synctest.mp4
 
 變可以測試影片是否正常播放，請記得如果是在VNC模式下，是不會有畫面的。如果需要退出，按下Ctrl-C即可。
 
-![](https://static.wixstatic.com/media/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.jpg)
+![](images/wix/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.webp)
 
 ### 實際使用
 
@@ -202,4 +202,4 @@ omxplayer-sync -lu -a fill [檔案名稱]
 
 最後附張之前在府中和阿芝芳境王量弄展覽同步播放的工作圖
 
-![](https://static.wixstatic.com/media/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.jpg)
+![](images/wix/4eb1dd_80c7db8b444b4d0e8ed9807f3ea952a4~mv2.webp)

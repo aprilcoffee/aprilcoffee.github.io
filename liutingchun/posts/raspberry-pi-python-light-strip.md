@@ -8,7 +8,7 @@
 
 細節的規格上還是有很多差異，如果有需求也可以直接去查規格書
 
-![](https://static.wixstatic.com/media/4eb1dd_ed5d093e03034228a59a3677701cc3a9~mv2.png)
+![](images/wix/4eb1dd_ed5d093e03034228a59a3677701cc3a9~mv2.webp)
 
 大致的規格解說完，我們就可以開工寫python了。
 
@@ -37,7 +37,7 @@ python3 -m pip install --force-reinstall adafruit-blinka
 
 作為訊號的pin腳，只能使用D10, D12, D18, D21
 
-![](https://static.wixstatic.com/media/4eb1dd_cd37178f863947ae97f99b116415029c~mv2.jpg)
+![](images/wix/4eb1dd_cd37178f863947ae97f99b116415029c~mv2.webp)
 
 而有個**繞過這項規則的方法**，就是直接使用SPI pin腳
 

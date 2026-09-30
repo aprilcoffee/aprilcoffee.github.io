@@ -16,7 +16,7 @@ OSC Arguments ： 是為實際傳輸的資料內容，可以是零個也可以�
 
 假定我們在Max/Msp時用一個message框起來 就會長這樣
 
-![](https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png)
+![](images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp)
 
 這裡是指Address Pattern為/msg 而 Arguments 也就是資料為 0 和 1 兩個
 

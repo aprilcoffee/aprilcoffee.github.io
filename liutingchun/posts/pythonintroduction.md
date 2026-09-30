@@ -1,4 +1,4 @@
-![](https://static.wixstatic.com/media/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.jpeg)
+![](images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp)
 
 這學期算是比較正式接了助教，想説寫給自己整理也分享這學期的課程大綱，還有一些自己的雜談與碎念。
 

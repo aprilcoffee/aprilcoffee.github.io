@@ -2,7 +2,7 @@
 
 這篇文主要談談如何使用 Raspberry Pi 透過 python 來進行電子控制，以及影片播放，關於馬達運作以及GPIO輸出的部分會先跳過，主要講input，開發環境在Python 2.7 上，都是內建在RPi裏頭，我習慣的撰寫方式是使用vim，然後利用python的GPIO library進行互動的部分。透過subprocess的方式，開啟omxplayer來播放全螢幕影片。最初建立這樣的架構時是使用在[林瑜亮的作品](https://gunter292.wixsite.com/gunter/copy-of-moonlight-segment)上，為了方便展出不使用電腦，便利用Raspberry Pi 同時當播放器與互動的控制。作品運作技術大致上來說，便是有兩段不同的跑步小人動畫，以投影機放在線性馬達的方式隨著投影機移動，每當線性馬達抵達其中一端(以微動開關觸發)便會觸發馬達往另一個方向移動，並且切換影片，千言萬語無法形容作品，瑜亮下個月會在台北數位藝術中心展出，可以直接去看作品 <3
 
-![](https://static.wixstatic.com/media/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.jpg)
+![](images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp)
 
 一般會談到為什麼不使用Processing或Arduino來進行簡單的互動prototype，主要的原因在於Processing在Raspberry Pi上必須使用「GL Video」這套Library來跑影片，然而執行效率實在堪憂，為了給自己一點挑戰，便嘗試把互動的部分組合影像。並使用omxplayer來代理processing播放影片的角色。
 
@@ -20,7 +20,7 @@ https://github.com/aprilcoffee/autoVideoplayOnRaspberryPi
 
 在Arduino上，基本必須在 setup() 做初始化 (initialize) 後，在 loop()中撰寫執行內容。一般來說，製作互動影片不管觸發的感測器是什麼，通常是loop()中讀取感測器之後，以Serialport的方式送至processing去切換影片。本篇文主要有兩段撰寫需要做說明，一段為如何使用python的GPIO library進行電子控制，和如何以python播放影片。
 
-![](https://static.wixstatic.com/media/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.png)
+![](images/wix/4eb1dd_08964e75f0bf41eab840a367f9ab39e3~mv2.webp)
 
 在了解Processing與Arduino播放方式之後，我們進入基礎的GPIO撰寫。
 
@@ -54,7 +54,7 @@ GPIO.setmode(GPIO.BCM)
 
 這兩種不同模式的差異在，BOARD是以排插對應的編號，而BCM是系統排的GPIO編號，我習慣使用BCM原因在於我不會誤用到5V GND等等錯誤的位置。在此附上編號的排序圖(Raspberry Pi 3適用)。中間的那排數字代表使用BOARD模式時對應的號碼。
 
-![](https://static.wixstatic.com/media/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.png)
+![](images/wix/4eb1dd_ed6893fb609f4325841d16a9047edaae~mv2.webp)
 
 接著便是宣告按鈕變數(或感測器位置)，以及宣告幾個數字用來存取感測器讀取到的值，這幾行的用意與Arduino中使用以下用法相同。
 
@@ -176,7 +176,7 @@ proc1.kill()
 
 在此附上完整程式，有問題也歡迎回應。
 
-![](https://static.wixstatic.com/media/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.png)
+![](images/wix/4eb1dd_5186c79ebb484bbca79c6dea24d6bf16~mv2_d_1383_1732_s_2.webp)
 
 P.S：使用Raspberry Pi 播放影像最討厭人的部分便是用電警示的小小閃電符號，會在螢幕最上方很討厭的一直出現解決方法其實很簡單。回到terminal中到達/boot/config.txt。
 

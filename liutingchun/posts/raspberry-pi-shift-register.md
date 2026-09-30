@@ -6,7 +6,7 @@
 
 [https://www.liutingchun.com/segmentary-moonlight](https://www.liutingchun.com/segmentary-moonlight)
 
-![](https://static.wixstatic.com/media/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.jpg)
+![](images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp)
 
 直接控制移位暫存器的好處，是如果沒有適當library(如Arduino的FastLED或Adafruit_NeoPixel)才需要使用。另外如果使用arduino firmata的話也可以用這種方式控制。就可以直接在processing呼叫arduino使用ws2812做mapping唷～～
 
@@ -14,7 +14,7 @@ TPIC6C594非常類似74HC595，只是當需要驅動LED的電壓高於5V，就�
 
 ### Pin腳們的說明
 
-![](https://static.wixstatic.com/media/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.png)
+![](images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp)
 
 74HC595基本上上頭有16個腳位，分別是DS、SH_CP、ST_CP、Q0-Q7、Q7' ，還有 VCC、GND、OE跟MR。
 
@@ -52,7 +52,7 @@ segmentData = 25
 
 將所有想要輸出的數字做編號以及建成變數，基本上七段顯示器每顆燈的編號如下。
 
-![](https://static.wixstatic.com/media/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.png)
+![](images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp)
 
 我們可以看到對應的英文，便可以由此建立變數。為了方便我們使用移位暫存器時同時將一卡車位元(一顆七段顯示)送進去，我們要將這些英文對應成正確的位元組。
 
@@ -109,7 +109,7 @@ else:
 
 且的運算組，可以將兩個位元作且運算，下面附圖表ＸＤＤＤ
 
-![](https://static.wixstatic.com/media/4eb1dd_673f21f2538a4640991d535f8ae83696~mv2.gif)
+![](images/wix/4eb1dd_673f21f2538a4640991d535f8ae83696~mv2.gif)
 
 舉例來說：
 
@@ -162,7 +162,7 @@ segments & 1 << (7-n)這個運算式，便是一次一次把下一個數字送�
 
 這邊有個且運作子(&)，便是做且運算，我們一樣附圖耶～
 
-![](https://static.wixstatic.com/media/4eb1dd_51a5ae2a3d8e4172a5d05e3959d04ec8~mv2.gif)
+![](images/wix/4eb1dd_51a5ae2a3d8e4172a5d05e3959d04ec8~mv2.gif)
 
 剛開始 segments 為 01100001
 
@@ -217,6 +217,6 @@ https://vimeo.com/324791977
 
 (紅色小光段版本是用Arduino Mega硬幹的，因為很酷所以想放一下，但是code完全不一樣)
 
-![](https://static.wixstatic.com/media/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.jpg)
+![](images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp)
 
-![](https://static.wixstatic.com/media/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.jpg)
+![](images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp)

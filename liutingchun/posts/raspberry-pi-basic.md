@@ -42,7 +42,7 @@ ssh pi@xxx.xxx.xxx.xxx
 
 開機後基本設定，在RPi的terminal中打上 sudo raspi-config 開始做初始化設定，在advance的部分開啟 scp, gpio, ssh, vnc, i2c。將時區設定好，並且將無線網路連線至手機熱點一次之後便會記憶。
 
-![](https://static.wixstatic.com/media/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.jpg)
+![](images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp)
 
 開啟VNC之後，便可以在自己電腦使用軟體 VNC Viewer 連線ip直接操作RPi的桌面。
 

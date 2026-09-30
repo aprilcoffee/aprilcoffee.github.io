@@ -1,6 +1,6 @@
 標題很聳動，但其實也就是用了蒙地卡羅方法來計算文字在空間中的佔比。寫一點技術文章，這篇要先感謝家豪冠廷家陞可以一起快樂寫程式，還有淳俐剛好在柏林表演找我湊一腳很隨便的live-coding視覺，才有辦法把這東西弄完。這份Code有點類似高中在玩BBS的時候有些windows的軟體可以做Ascii art，把圖片或影片轉換成文字效果，一直在想有什麼演算法可以去實踐它……，後來用蒙地卡羅演算法(Monte Carlo algorithm)硬幹出來惹。恥恥的，其實到現在還沒辦法真的理解使用上，蒙地卡羅演算法跟蒙地卡羅方法的差別，跪求解釋。這篇會分兩段去寫分別會是如何使文字流動起來，和如果轉換圖像文字。
 
-![首圖先自肥](https://static.wixstatic.com/media/4eb1dd_21d53832d0a9486288a5352b0453b894~mv2.jpg)
+![首圖先自肥](images/wix/4eb1dd_21d53832d0a9486288a5352b0453b894~mv2.webp)
 
 更新一下近況，好不容易在杜塞道夫註冊完居住地，終於算是半個杜賽人了。有時間其實寫一些畢業之後小心得寫了一半，但有點太恥不敢發，再修一下過幾天再說。
 
@@ -30,13 +30,13 @@ for (int x=0; x<=width; x+=10) {
 }
 ```
 
-![](https://static.wixstatic.com/media/4eb1dd_91f6b3481a5841f89077ac55e762fa94~mv2_d_2303_1632_s_2.png)
+![](images/wix/4eb1dd_91f6b3481a5841f89077ac55e762fa94~mv2_d_2303_1632_s_2.webp)
 
 稍稍解釋下 Ascii 碼，附上一張精美的Ascii Table。我們可以看到小寫 a 的編號是97，之後的連續25個字母都是英文小寫，因此我們要亂數產生英文小寫的話，只需要先整數運算出 ‘a’ + random(26) 之後去強轉成整數，小撇步是加成乘除運算，系統會自己默認為數字運算。之後只要強轉回char()就得到字母了。
 
 最後就形成這張圖～～
 
-![](https://static.wixstatic.com/media/4eb1dd_d6e99e5207a44a1c8cb424b8e3b2d7a9~mv2.jpg)
+![](images/wix/4eb1dd_d6e99e5207a44a1c8cb424b8e3b2d7a9~mv2.webp)
 
 下一步想要做出類似駭客任務的流動效果，只要在最上面那排不斷的隨機生成文字。然後再隨機的條件下，會讓下面的陣列位置繼承上面的文字，就會有這種效果，而調整Random的參數，也可以影響線條的長短流速等等。
 
@@ -59,11 +59,11 @@ for (int y=height; y>=10; y-=10)
 for (int y=10; y<height; y+=10)
 ```
 
-![](https://static.wixstatic.com/media/4eb1dd_343742a8ae624b6a843f5724d8585a65~mv2.jpg)
+![](images/wix/4eb1dd_343742a8ae624b6a843f5724d8585a65~mv2.webp)
 
 重複製作由左至右的流動之後，就會有這樣大小色塊的狀態出現。
 
-https://video.wixstatic.com/video/4eb1dd_2f01b930b0724a738bc039138a696753/480p/mp4/file.mp4
+images/wix/4eb1dd_2f01b930b0724a738bc039138a696753.mp4
 
 也因此會發現，**一些文字例如 i, o, c 等等，會有比較多黑色的佔比，而大的文字則可以填出比較滿得色彩。**而這些佔比較小文字也形成類似河流中不同的效果。這就回到最初的疑問，要怎麼樣知道哪些文字佔比高，哪些文字佔比低，然後可以把它套用到圖片使用上。
 
@@ -71,7 +71,7 @@ https://video.wixstatic.com/video/4eb1dd_2f01b930b0724a738bc039138a696753/480p/m
 
 總之核心部分是高中時候用來練習算圓周率的蒙地卡羅演算法，如下圖。
 
-![](https://static.wixstatic.com/media/4eb1dd_ce1288dae775462dbd9838d762318be6~mv2.jpg)
+![](images/wix/4eb1dd_ce1288dae775462dbd9838d762318be6~mv2.webp)
 
 數學沒很好但大致解釋一下最簡單的使用方法就是計算圓周率的近似值。我們可以知道半徑為r的四分之一圓的面積為π\*r\*r/4，而邊長為r的正方形面積為r\*r。兩者比值為π:4。因此我們可以在xy軸最大為r的情況下，隨機取樣，只要其距離與(0,0)小於r，便可以視為在圓內，再把圓內的所有點的數量加總起來。假設我們隨機打了10萬個點其中可能有X個點在圓內，則可以得知 100000:X = π:4 ，套入國中學會的方法(是國中吧？)便可以得知π = 400000/X。這樣的方法可以得知圓周率的近似值，而想當然爾，取樣的數字越高10萬100萬1000萬，數值就會越精準。
 
@@ -100,7 +100,7 @@ index_density=new float[index_length];
 
 100萬個點的示意圖。
 
-![](https://static.wixstatic.com/media/4eb1dd_7548e3e42137477a894c3020946c6f8a~mv2.jpg)
+![](images/wix/4eb1dd_7548e3e42137477a894c3020946c6f8a~mv2.webp)
 
 取出來的數字最後去做百分比和去小數點的動作。先把要除的數字都先轉為小數，才不會出錯，然後用nfc去小數點後三位。
 
@@ -134,7 +134,7 @@ for (int i=0; i<index_length-1; i++) {
 
 最後就取得我們要的漂亮答案。算完之後便可以把這串文字整理起來直接應用。
 
-![](https://static.wixstatic.com/media/4eb1dd_d7ba4e86f4244a4d8c0d7e6d4e62252c~mv2.jpg)
+![](images/wix/4eb1dd_d7ba4e86f4244a4d8c0d7e6d4e62252c~mv2.webp)
 
 這串文字應用方法很多，我們可以直接map到顏色，上不同彩度，或是分區間製造一點隨機性。
 
@@ -153,15 +153,15 @@ for (int x=0; x<width; x+=10) {
 
 可以透過這樣的方式，取得原圖像對應畫布位置的色塊，再透過不管是飽和度(Saturation)，明度(Brightness)，甚至是RGB等等，map出不同的效果。選取的方式，也要試圖片而定，圖片假設所有pixel的飽和度都很高，那選擇Brightness效果就沒那麼好。
 
-![](https://static.wixstatic.com/media/4eb1dd_b68be64535d54be1a51facd9aa5e18b8~mv2.jpg)
+![](images/wix/4eb1dd_b68be64535d54be1a51facd9aa5e18b8~mv2.webp)
 
 也可以同時疊加很多層次，然後取圖片上同樣位置的red, green,blue比例，對應的放上上了顏色的文字，也會有一種特殊的效果。
 
-![](https://static.wixstatic.com/media/4eb1dd_b2d99e39a5284aa9a75d56d79c0f336d~mv2.jpg)
+![](images/wix/4eb1dd_b2d99e39a5284aa9a75d56d79c0f336d~mv2.webp)
 
 相當不錯的地方是，影片也跑得起來呢！
 
-https://video.wixstatic.com/video/4eb1dd_1aad04cfdb5543a4b427e80857c402f0/480p/mp4/file.mp4
+images/wix/4eb1dd_1aad04cfdb5543a4b427e80857c402f0.mp4
 
 大致上的內容差不多就這樣，附上分析的github連結。最近作業好多，過幾天再把Readme.md打完，嘖嘖
 
