@@ -1,0 +1,29 @@
+# Downloads every Wix-hosted image still referenced in liutingchun/data/site.json or
+# liutingchun/posts/*.md into liutingchun/images/wix/ (as webp), points the references
+# at the local files, and commits the result to the branch the workflow runs on.
+# Run it from the Actions tab after pasting static.wixstatic.com URLs into site.json.
+name: Download Wix images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cwebp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq webp
+      - name: Download and convert
+        run: bash liutingchun/scripts/download-images.sh
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898599+github-actions[bot]@users.noreply.github.com"
+          git add -A liutingchun/images liutingchun/data liutingchun/posts
+          git diff --cached --quiet && { echo "Nothing new"; exit 0; }
+          git commit -m "Download Wix images"
+          git push
