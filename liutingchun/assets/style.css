@@ -125,7 +125,7 @@ a.card:hover .cap .t { text-decoration: underline; text-underline-offset: 4px; t
 
 /* ---------- work: information column + image field ---------- */
 .work { display: grid; grid-template-columns: var(--col) minmax(0, 1fr); gap: 56px; align-items: start; }
-.work-info { position: sticky; top: 44px; max-height: calc(100vh - 88px); overflow-y: auto; padding-right: 8px; scrollbar-width: thin; }
+.work-info { min-width: 0; }
 .work-info .idx { display: block; margin-bottom: 14px; }
 .work-info h1 { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.15; }
 .work-info .zh { font-size: 20px; color: var(--mut); margin-top: 6px; }
@@ -139,9 +139,9 @@ a.card:hover .cap .t { text-decoration: underline; text-underline-offset: 4px; t
 .work-info .prose h3 { font-size: 18px; margin: 1.6em 0 .5em; }
 .credits { margin-top: 24px; font-family: var(--mono); font-size: 13px; line-height: 1.7; color: var(--mut); white-space: pre-line; }
 
-.plates { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
-.plates > * { grid-column: span 1; }
-.plates > .hero, .plates > .embed, .plates > .wide, .plates > .clip { grid-column: 1 / -1; }
+.plates { display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+.plates .cols { columns: 2; column-gap: var(--gap); }
+.plates .cols figure { break-inside: avoid; margin-bottom: var(--gap); }
 .plates .clip video { width: 100%; height: auto; background: #000; }
 .plates img { width: 100%; height: auto; background: var(--tint); }
 
@@ -267,7 +267,7 @@ button.embed.lite:hover img { opacity: 1; }
   .home-selected { padding: 64px var(--pad) 80px; }
   .grid { grid-template-columns: 1fr; gap: 44px; }
   .grid.friends { grid-template-columns: repeat(2, 1fr); }
-  .plates { grid-template-columns: 1fr; }
+  .plates .cols { columns: 1; }
   .page-head { margin-bottom: 36px; }
   .post-body { font-size: 18px; line-height: 1.85; }
   .post-body pre { margin-left: calc(var(--pad) * -1); margin-right: calc(var(--pad) * -1); }

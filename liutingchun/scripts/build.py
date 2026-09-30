@@ -501,11 +501,16 @@ for L in LANGS:
         ims = w.get("images", [])
         plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"]) + "".join(clip(c, w["title"]) for c in w.get("clips", []))
         moving = w.get("video") or w.get("clips")
-        plates += "".join(('<figure class="hero">%s</figure>' if k == 0 and not moving else "<figure>%s</figure>") %
-                          img(im, 1600 if k == 0 else 1000, "%s — %d" % (w["title"], k + 1)) for k, im in enumerate(ims))
-        rest = len(ims) - (0 if moving else 1)  # images in the two-column part of the grid
-        if rest > 0 and rest % 2:
-            plates = plates.replace("<figure>", '<figure class="wide">', 1)  # never leave an empty cell
+        # full-width lead (video, clips or the first photo), then the rest in two masonry
+        # columns so photos of different proportions leave no gaps
+        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, "%s — %d" % (w["title"], k + 1))
+                for k, im in enumerate(ims)]
+        if not moving and figs:
+            plates += figs.pop(0).replace("<figure>", '<figure class="hero">', 1)
+        if len(figs) == 1:
+            plates += figs[0].replace("<figure>", '<figure class="hero">', 1)
+        elif figs:
+            plates += '<div class="cols">%s</div>' % "".join(figs)
         text = tr(w, "text", L)
         # a translation may be missing: then the English text is shown, marked as English
         tl = HREFLANG[L] if L == "en" or w.get("text_" + L) else "en"
