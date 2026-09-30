@@ -8,8 +8,10 @@ Areas: Critical artificial intelligence, Generative AI, Artistic research on AI,
 
 - [Works](https://aprilcoffee.github.io/liutingchun/works/): installations, performances, internet art and artistic research
 - [About / CV](https://aprilcoffee.github.io/liutingchun/about/): biography, teaching, exhibitions, talks, publications
-- [Writing](https://aprilcoffee.github.io/liutingchun/writing/): texts and technical notes
+- [Blog Archive](https://aprilcoffee.github.io/liutingchun/blog/): texts and technical notes (in Mandarin)
 - [Audio-Visual Performance](https://aprilcoffee.github.io/liutingchun/performance/)
+
+The site is also available in German (https://aprilcoffee.github.io/liutingchun/de/) and Traditional Chinese (https://aprilcoffee.github.io/liutingchun/zh/).
 
 ## Works
 
@@ -34,6 +36,6 @@ Areas: Critical artificial intelligence, Generative AI, Artistic research on AI,
 
 ## Contact
 
-- Email: april85227@gmail.com
+- Email: tingchun.liu.tw@gmail.com
 - Instagram: https://www.instagram.com/liu_tingchun/
 - GitHub: https://github.com/aprilcoffee

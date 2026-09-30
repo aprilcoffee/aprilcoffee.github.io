@@ -5,11 +5,13 @@
 - `data/site.json`：作品、表演、CV、朋友、文章列表、網站設定
 - `posts/<slug>.md`：每篇文章的內文（Markdown）
 
-`scripts/build.py` 會把它們產生成每一頁一個資料夾的靜態 HTML（`works/sun/`、`writing/lift-off/`…），每頁都有自己的 title、description、canonical、Open Graph、JSON-LD，並產生 `sitemap.xml`、`robots.txt`（放在網域根目錄）與文章 RSS（`writing/feed.xml`）。
+`scripts/build.py` 會把它們產生成每一頁一個資料夾的靜態 HTML（`works/sun/`、`blog/lift-off/`…），每頁都有自己的 title、description、canonical、Open Graph、JSON-LD，並產生 `sitemap.xml`、`robots.txt`（放在網域根目錄）與文章 RSS（`blog/feed.xml`）。
+
+網站是三語：英文在根目錄，德文在 `de/`，繁體中文在 `zh/`（部落格文章不翻譯，只有一份在 `blog/<slug>/`）。翻譯寫在 site.json 裡同名欄位加 `_de` / `_zh`（例如 `text_de`、`text_zh`、`statement_zh`、`bio_de`、`note_zh`），留空就顯示英文。舊的 `writing/…` 網址會自動轉到 `blog/…`。
 
 ```
 liutingchun/
-├── index.html, works/, performance/, about/, writing/, friends/   ← 自動產生，不要手改
+├── index.html, works/, performance/, about/, blog/, friends/, de/, zh/   ← 自動產生，不要手改
 ├── data/site.json
 ├── posts/*.md
 ├── images/wix/          圖片與影片

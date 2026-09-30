@@ -170,8 +170,8 @@
     },
 
     writing: function () {
-      setMeta('Writing');
-      return '<h1 class="page-title">Writing</h1><ul class="list writing">' +
+      setMeta('Blog Archive');
+      return '<h1 class="page-title">Blog Archive</h1><ul class="list writing">' +
         (DATA.writing || []).filter(function (p) { return !p.hidden; }).map(function (p) {
           return '<li><a href="#/writing/' + esc(p.slug) + '">' +
             '<span class="mono">' + esc(p.date) + '</span><span class="wt">' + esc(p.title) + '<small>' + esc(p.excerpt) + '</small></span>' +

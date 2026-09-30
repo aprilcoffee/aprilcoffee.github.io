@@ -51,11 +51,17 @@
     box.className = 'consent';
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-label', 'Analytics');
-    box.innerHTML = '<p>May this site use Google Analytics (with cookies) to count visits?<br>' +
-      '本網站可以使用 Google Analytics（含 cookie）統計瀏覽嗎？<br>' +
-      'Darf diese Website Google Analytics (mit Cookies) verwenden?</p>' +
-      '<a class="note" href="' + base + 'datenschutz/">Datenschutz / Privacy</a>' +
-      '<button type="button" class="no">No</button><button type="button" class="ok">OK</button>';
+    // in the language of the page (other project pages without a matching lang get all three)
+    var T = {
+      en: ['May this site use Google Analytics (with cookies) to count visits?', 'Privacy', 'No'],
+      de: ['Darf diese Website Google Analytics (mit Cookies) verwenden, um Besuche zu zählen?', 'Datenschutz', 'Nein'],
+      zh: ['本網站可以使用 Google Analytics（含 cookie）統計瀏覽嗎？', '隱私權', '不要']
+    };
+    var t = T[(document.documentElement.lang || '').slice(0, 2)] ||
+      [T.en[0] + '<br>' + T.zh[0] + '<br>' + T.de[0], 'Datenschutz / Privacy', 'No'];
+    box.innerHTML = '<p>' + t[0] + '</p>' +
+      '<a class="note" href="' + base + 'datenschutz/">' + t[1] + '</a>' +
+      '<button type="button" class="no">' + t[2] + '</button><button type="button" class="ok">OK</button>';
     function decide(v) {
       try { localStorage.setItem(KEY, v); } catch (e) {}
       if (v === 'granted') start();
