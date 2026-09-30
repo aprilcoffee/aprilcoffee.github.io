@@ -33,6 +33,7 @@
   // Wix images are served resized; everything else as-is.
   function src(url, w) {
     if (!url) return '';
+    if (!/^(https?:)?\/\//.test(url)) return url.replace(/^\//, '');
     var m = url.match(/^https:\/\/static\.wixstatic\.com\/media\/([^/?#]+)$/);
     if (!m || /\.gif$/i.test(m[1])) return url;
     return url + '/v1/fit/w_' + w + ',h_' + w + ',q_85,enc_auto/' + m[1];
@@ -48,12 +49,14 @@
     if (!url) return null;
     if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/))) return { kind: 'vimeo', id: m[1] };
     if ((m = url.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/))) return { kind: 'youtube', id: m[1] };
+    if (/\.(mp4|mov|webm)(\?|$)/.test(url)) return { kind: 'file', id: url };
     return null;
   }
 
   function embed(url) {
     var v = videoId(url);
     if (!v) return '';
+    if (v.kind === 'file') return '<div class="embed"><video controls preload="none" playsinline src="' + esc(v.id) + '"></video></div>';
     var s = v.kind === 'vimeo'
       ? 'https://player.vimeo.com/video/' + v.id + '?dnt=1'
       : 'https://www.youtube-nocookie.com/embed/' + v.id;
@@ -124,19 +127,21 @@
       var prev = i > 0 ? list[i - 1] : null;
       var next = i >= 0 && i < list.length - 1 ? list[i + 1] : null;
 
-      return '<article>' +
-        '<header class="work-head"><h1>' + esc(w.title) + '</h1>' +
-        (w.title_zh ? '<div class="zh">' + esc(w.title_zh) + '</div>' : '') +
+      return '<article class="work"><aside class="work-info"><span class="idx">(' + (i + 1) + ')</span>' +
+        '<h1>' + esc(w.title) + '</h1>' +
+        (w.title_zh ? '<p class="zh">' + esc(w.title_zh) + '</p>' : '') +
         '<dl class="meta">' + rows.filter(function (r) { return r[1]; }).map(function (r) {
           return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>';
-        }).join('') + '</dl></header>' +
-        '<div class="prose">' + prose(w.text) +
-        (w.credits ? '<div class="credits">' + esc(w.credits) + '</div>' : '') + '</div>' +
-        '<div class="media">' + embed(w.video) +
-        (w.images || []).map(function (u) { return img(u, 2000, w.title); }).join('') + '</div>' +
+        }).join('') + '</dl>' +
+        '<div class="prose">' + prose(w.text) + '</div>' +
+        (w.credits ? '<p class="credits">' + esc(w.credits) + '</p>' : '') + '</aside>' +
+        '<div class="plates">' + embed(w.video) +
+        (w.images || []).map(function (u, k) {
+          return '<figure' + (k === 0 && !w.video ? ' class="hero"' : '') + '>' + img(u, 2000, w.title) + '</figure>';
+        }).join('') + '</div>' +
         '<nav class="pager">' +
-        (prev ? '<a href="#/works/' + esc(prev.slug) + '">← ' + esc(prev.title) + '</a>' : '<span></span>') +
-        (next ? '<a href="#/works/' + esc(next.slug) + '">' + esc(next.title) + ' →</a>' : '<span></span>') +
+        (prev ? '<a href="#/works/' + esc(prev.slug) + '"><span class="mono">←</span><span class="t">' + esc(prev.title) + '</span></a>' : '<span></span>') +
+        (next ? '<a href="#/works/' + esc(next.slug) + '"><span class="mono">→</span><span class="t">' + esc(next.title) + '</span></a>' : '<span></span>') +
         '</nav></article>';
     },
 
@@ -166,21 +171,41 @@
 
     writing: function () {
       setMeta('Writing');
-      return '<h1 class="page-title">Writing</h1><ul class="list">' +
-        DATA.writing.map(function (p) {
-          return '<li><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
-            '<span class="mono">' + esc(p.date) + '</span><span>' + esc(p.title) + '</span>' +
+      return '<h1 class="page-title">Writing</h1><ul class="list writing">' +
+        (DATA.writing || []).filter(function (p) { return !p.hidden; }).map(function (p) {
+          return '<li><a href="#/writing/' + esc(p.slug) + '">' +
+            '<span class="mono">' + esc(p.date) + '</span><span class="wt">' + esc(p.title) + '<small>' + esc(p.excerpt) + '</small></span>' +
             '<span class="mono">' + esc(p.category) + '</span></a></li>';
         }).join('') + '</ul>';
     },
 
+    post: function (slug) {
+      var p = (DATA.writing || []).filter(function (x) { return x.slug === slug; })[0];
+      if (!p) return views.notfound();
+      setMeta(p.title, p.excerpt);
+      var box = '<article class="post"><aside class="post-info"><h1>' + esc(p.title) + '</h1><dl class="meta"><dt>Date</dt><dd>' +
+        esc(p.date) + '</dd><dt>Category</dt><dd>' + esc(p.category) + '</dd></dl></aside>' +
+        '<div class="prose post-body" id="postBody">Loading…</div></article>';
+      var local = null;
+      try { local = localStorage.getItem('ltc-post-' + slug); } catch (e) {}
+      (local != null ? Promise.resolve(local) : fetch('posts/' + encodeURIComponent(slug) + '.md', { cache: 'no-cache' }).then(function (r) { return r.text(); }))
+        .then(function (md) {
+          // a video URL alone on a line becomes a player, as on the real site
+          md = md.replace(/^(https?:\/\/\S+|\S+\.(?:mp4|mov|webm))$/gm, function (u) { return embed(u) ? '\n' + embed(u) + '\n' : '<' + u + '>'; });
+          var el = document.getElementById('postBody');
+          if (el) el.innerHTML = window.marked ? marked.parse(md, { breaks: true }) : '<pre>' + esc(md) + '</pre>';
+        });
+      return box;
+    },
+
     friends: function () {
       setMeta('Friends');
-      return '<h1 class="page-title">Friends</h1><ul class="list friends">' +
+      return '<h1 class="page-title">Friends</h1><div class="grid friends">' +
         DATA.friends.map(function (f) {
-          return '<li><a href="' + esc(f.url) + '" target="_blank" rel="noopener"><span>' + esc(f.name) +
-            '</span><span class="mono">↗</span></a></li>';
-        }).join('') + '</ul>';
+          return '<a class="card" href="' + esc(f.url) + '" target="_blank" rel="noopener"><div class="thumb">' +
+            (f.image ? img(f.image, 600, f.name) : '<span class="ph">' + esc(f.name) + '</span>') +
+            '</div><div class="cap"><span>' + esc(f.name) + '</span><span class="mono">↗</span></div></a>';
+        }).join('') + '</div>';
     },
 
     notfound: function () {
@@ -196,7 +221,8 @@
     main.classList.remove('full');
     if (!parts.length) html = views.home();
     else if (parts[0] === 'works' && parts[1]) html = views.work(decodeURIComponent(parts[1]));
-    else if (views[parts[0]] && parts[0] !== 'work' && parts[0] !== 'home') html = views[parts[0]]();
+    else if (parts[0] === 'writing' && parts[1]) html = views.post(decodeURIComponent(parts[1]));
+    else if (views[parts[0]] && ['work', 'post', 'home'].indexOf(parts[0]) < 0) html = views[parts[0]]();
     else html = views.notfound();
     main.innerHTML = html;
 

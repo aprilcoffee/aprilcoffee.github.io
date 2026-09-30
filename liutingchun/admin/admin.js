@@ -4,9 +4,12 @@
   var DRAFT_KEY = 'ltc-draft';
   var GH_KEY = 'ltc-github';
   var main = document.getElementById('main');
+  var POST_KEY = 'ltc-post-';   // + slug: unpublished Markdown body
+  var DIRTY_KEY = 'ltc-posts-dirty';
   var D = null;          // site data being edited
   var tab = 'works';
   var sel = 0;           // selected work index
+  var psel = 0;          // selected post index
 
   // ---------- storage ----------
   function save() {
@@ -18,6 +21,32 @@
     try { return Object.assign(def, JSON.parse(localStorage.getItem(GH_KEY)) || {}); } catch (e) { return def; }
   }
   function setGh(c) { try { localStorage.setItem(GH_KEY, JSON.stringify(c)); } catch (e) {} }
+
+  // Post bodies live in posts/<slug>.md; edits are kept locally until published.
+  function dirtyPosts() {
+    try { return JSON.parse(localStorage.getItem(DIRTY_KEY)) || []; } catch (e) { return []; }
+  }
+  function setPostBody(slug, text) {
+    try {
+      localStorage.setItem(POST_KEY + slug, text);
+      var d = dirtyPosts();
+      if (d.indexOf(slug) < 0) { d.push(slug); localStorage.setItem(DIRTY_KEY, JSON.stringify(d)); }
+    } catch (e) {}
+    document.getElementById('saved').textContent = '草稿已存 ' + new Date().toLocaleTimeString();
+  }
+  function getPostBody(slug) {
+    var local = null;
+    try { local = localStorage.getItem(POST_KEY + slug); } catch (e) {}
+    if (local != null) return Promise.resolve(local);
+    return fetch('../posts/' + encodeURIComponent(slug) + '.md', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.text() : ''; });
+  }
+  function clearPostDrafts() {
+    try {
+      dirtyPosts().forEach(function (s) { localStorage.removeItem(POST_KEY + s); });
+      localStorage.removeItem(DIRTY_KEY);
+    } catch (e) {}
+  }
 
   // ---------- tiny DOM helpers ----------
   function h(tag, attrs, kids) {
@@ -165,7 +194,7 @@
       h('div', { className: 'actions' }, [
         btn('↑ 上移', function () { move(-1); }, 'sm'),
         btn('↓ 下移', function () { move(1); }, 'sm'),
-        h('a', { className: 'btn sm', href: '../?preview#/works/' + encodeURIComponent(w.slug), target: 'ltc-preview', text: '預覽 ↗', style: 'text-decoration:none' }),
+        h('a', { className: 'btn sm', href: '../preview.html?preview#/works/' + encodeURIComponent(w.slug), target: 'ltc-preview', text: '預覽 ↗', style: 'text-decoration:none' }),
         btn('刪除', function () {
           if (confirm('刪除「' + w.title + '」？')) { D.works.splice(i, 1); save(); render(); }
         }, 'sm danger'),
@@ -195,7 +224,7 @@
     main.append(
       bar('表演影片 Performance'),
       h('div', { className: 'form' }, [
-        lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址', D, 'performances', ['title', 'note', 'video'], '順序即網站上的順序。', 'tall')
+        lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址 | 縮圖（選填）', D, 'performances', ['title', 'note', 'video', 'thumb'], '順序即網站上的順序。沒有縮圖時自動用 Vimeo / YouTube 的縮圖。', 'tall')
       ])
     );
   };
@@ -218,15 +247,66 @@
   };
 
   tabs.writing = function () {
-    main.append(bar('文章 Writing'), h('div', { className: 'form' }, [
-      lines('每行一篇：日期 | 標題 | 分類 | 網址', D, 'writing', ['date', 'title', 'category', 'url'],
-        '目前連到舊 Wix 部落格；搬好文章後把網址換成新位置。', 'tall')
-    ]));
+    var posts = D.writing = D.writing || [];
+    if (psel >= posts.length) psel = posts.length - 1;
+    var list = h('div', { className: 'items' }, posts.map(function (p, i) {
+      return h('div', {
+        className: 'item' + (i === psel ? ' on' : '') + (p.hidden ? ' off' : ''),
+        on: { click: function () { psel = i; render(); } }
+      }, [h('span', { text: p.title || '(untitled)' }), h('span', { className: 'y', text: (p.date || '').slice(0, 4) })]);
+    }));
+    var p = posts[psel];
+    main.append(
+      bar('文章 Writing', [
+        btn('+ 新增文章', function () {
+          var slug = 'post-' + Date.now().toString(36);
+          posts.unshift({ slug: slug, date: new Date().toISOString().slice(0, 10), title: 'New post', category: 'works',
+            cover: '', excerpt: '', lang: 'zh-Hant', hidden: true });
+          setPostBody(slug, '');
+          psel = 0; save(); render();
+        }, 'primary')
+      ]),
+      h('div', { className: 'split' }, [list, p ? postForm(p) : h('p', { text: '還沒有文章。' })])
+    );
   };
+
+  function postForm(p) {
+    var i = D.writing.indexOf(p);
+    var body = h('textarea', { className: 'tall', style: 'min-height:520px;font-family:ui-monospace,Menlo,monospace;font-size:13px', value: '載入中…', disabled: true });
+    getPostBody(p.slug).then(function (t) { body.value = t; body.disabled = false; });
+    body.addEventListener('input', function () { setPostBody(p.slug, body.value); });
+
+    var hidden = h('input', { type: 'checkbox', checked: !!p.hidden });
+    hidden.addEventListener('change', function () { p.hidden = hidden.checked; save(); render(); });
+
+    var slugField = field('網址代稱 slug（改了會變成新網址）', p, 'slug');
+    slugField.querySelector('input').addEventListener('change', function () {
+      // keep the body attached to the new slug
+      if (!body.disabled) setPostBody(p.slug, body.value);
+    });
+
+    return h('div', { className: 'form' }, [
+      h('div', { className: 'actions' }, [
+        btn('↑ 上移', function () { if (i > 0) { D.writing.splice(i - 1, 0, D.writing.splice(i, 1)[0]); psel = i - 1; save(); render(); } }, 'sm'),
+        btn('↓ 下移', function () { if (i < D.writing.length - 1) { D.writing.splice(i + 1, 0, D.writing.splice(i, 1)[0]); psel = i + 1; save(); render(); } }, 'sm'),
+        h('a', { className: 'btn sm', href: '../preview.html?preview#/writing/' + encodeURIComponent(p.slug), target: 'ltc-preview', text: '預覽 ↗', style: 'text-decoration:none' }),
+        btn('刪除', function () {
+          if (confirm('從列表刪除「' + p.title + '」？（GitHub 上的 .md 檔會保留）')) { D.writing.splice(i, 1); save(); render(); }
+        }, 'sm danger'),
+        h('label', { className: 'check', style: 'margin-left:auto' }, [hidden, '隱藏'])
+      ]),
+      field('標題', p, 'title', { after: function () { document.querySelector('.item.on span').textContent = p.title; } }),
+      h('div', { className: 'row' }, [slugField, field('日期 YYYY-MM-DD', p, 'date')]),
+      h('div', { className: 'row' }, [field('分類（works / technique）', p, 'category'), field('語言（zh-Hant / en）', p, 'lang')]),
+      field('摘要（列表與搜尋引擎用，一兩句）', p, 'excerpt', { area: true }),
+      field('封面圖（分享縮圖）', p, 'cover'),
+      h('label', {}, ['內文（Markdown：空一行分段、### 小標、![說明](圖片網址)、```程式碼```；單獨一行的影片網址會變成播放器）', body])
+    ]);
+  }
 
   tabs.friends = function () {
     main.append(bar('朋友 Friends'), h('div', { className: 'form' }, [
-      lines('每行一位：名字 | 網址', D, 'friends', ['name', 'url'], null, 'tall')
+      lines('每行一位：名字 | 網址 | 圖片', D, 'friends', ['name', 'url', 'image'], null, 'tall')
     ]));
   };
 
@@ -237,6 +317,17 @@
       field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
       field('Email', s, 'email'),
       field('首頁圖片', s, 'home_image'),
+      field('首頁大字介紹 Statement', s, 'statement', { area: true }),
+      (function () {
+        var ta = h('textarea', { value: (s.address || []).join('\n'), placeholder: 'Musterstraße 1\n12345 Berlin\nDeutschland' });
+        ta.addEventListener('input', function () {
+          s.address = ta.value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean); save();
+        });
+        return h('label', {}, ['Impressum 地址（德國法規要求，每行一段）', ta]);
+      })(),
+      field('Google Analytics ID（G-…）', s, 'ga_id'),
+      field('網站網址（搜尋引擎、分享連結用；換網域時改這裡）', s, 'base_url'),
+      field('預設分享縮圖', s, 'og_image'),
       lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url'])
     ]));
   };
@@ -262,10 +353,21 @@
             btn('發佈到 GitHub', function () {
               if (!c.token) return say('請先填 token。');
               say('發佈中…');
-              var body = b64utf8(JSON.stringify(D, null, 2) + '\n');
-              putFile(c, c.dir + '/data/site.json', body, 'Update site content')
-                .then(function () { say('✓ 已發佈。GitHub Pages 約 1 分鐘後更新。'); })
-                .catch(function (e) { say('✗ 失敗：' + e.message); });
+              var dirty = dirtyPosts();
+              var steps = dirty.reduce(function (pr, slug) {
+                return pr.then(function () {
+                  return getPostBody(slug).then(function (t) {
+                    say('發佈文章 ' + slug + '…');
+                    return putFile(c, c.dir + '/posts/' + slug + '.md', b64utf8(t), 'Update post ' + slug);
+                  });
+                });
+              }, Promise.resolve());
+              steps.then(function () {
+                return putFile(c, c.dir + '/data/site.json', b64utf8(JSON.stringify(D, null, 2) + '\n'), 'Update site content');
+              }).then(function () {
+                clearPostDrafts();
+                say('✓ 已發佈' + (dirty.length ? '（含 ' + dirty.length + ' 篇文章）' : '') + '。GitHub 會自動重建頁面，約 1–2 分鐘後上線。');
+              }).catch(function (e) { say('✗ 失敗：' + e.message); });
             }, 'primary'),
             btn('從 GitHub 重新載入', function () {
               if (!confirm('用 GitHub 上的版本覆蓋目前草稿？')) return;
@@ -279,7 +381,7 @@
       ]),
       h('div', { className: 'card' }, [
         h('h3', { text: '方法 B：下載檔案手動上傳' }),
-        h('p', { text: '下載 site.json，放到 repo 的 ' + c.dir + '/data/site.json 並 commit。' }),
+        h('p', { text: '下載 site.json，放到 repo 的 ' + c.dir + '/data/site.json 並 commit。文章內文不包含在內，請用方法 A 或直接改 posts/ 裡的 .md 檔。' }),
         h('div', { className: 'actions' }, [
           btn('下載 site.json', function () {
             var a = h('a', { href: URL.createObjectURL(new Blob([JSON.stringify(D, null, 2) + '\n'], { type: 'application/json' })), download: 'site.json' });
@@ -288,6 +390,7 @@
           btn('捨棄草稿（重新讀取網站上的版本）', function () {
             if (!confirm('捨棄所有未發佈的修改？')) return;
             try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+            clearPostDrafts();
             location.reload();
           }, 'danger')
         ])

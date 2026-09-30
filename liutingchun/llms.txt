@@ -1,0 +1,39 @@
+# Ting-Chun Liu (劉庭均)
+
+> Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media and network practice — dissecting technological systems through feedback-driven interventions.
+
+Areas: Critical artificial intelligence, Generative AI, Artistic research on AI, Media art, Audio-visual performance, Network and internet art, Feedback systems
+
+## Main pages
+
+- [Works](https://aprilcoffee.github.io/liutingchun/works/): installations, performances, internet art and artistic research
+- [About / CV](https://aprilcoffee.github.io/liutingchun/about/): biography, teaching, exhibitions, talks, publications
+- [Writing](https://aprilcoffee.github.io/liutingchun/writing/): texts and technical notes
+- [Audio-Visual Performance](https://aprilcoffee.github.io/liutingchun/performance/)
+
+## Works
+
+- [Steering Through the Inner Residue](https://aprilcoffee.github.io/liutingchun/works/steering-through-the-inner-residue/) (2026): Video Installation
+- [Interpolation of the Invisible Color](https://aprilcoffee.github.io/liutingchun/works/interpolation-of-the-invisible-color/) (2025): Curatorial Practice, Interactive Installation
+- [Latent Heat Generation](https://aprilcoffee.github.io/liutingchun/works/latent-heat-generation/) (2025): Artistic Research
+- [Just Jailbreak](https://aprilcoffee.github.io/liutingchun/works/just-jailbreak/) (2024): Interactive game about jailbreaking a large language model
+- [Self-cannibalizing AI](https://aprilcoffee.github.io/liutingchun/works/self-cannibalizing-ai/) (2023): Talk, 37C3 — Artistic strategies to expose generative text-to-image models
+- [Achtung! Verwischung](https://aprilcoffee.github.io/liutingchun/works/achtung-verwischung/) (2023): Site-Specific Performance
+- [Imaginary Landscape](https://aprilcoffee.github.io/liutingchun/works/imaginary-landscape/) (2022–23): Ongoing Project, Audio-Visual Performance
+- [Beneath](https://aprilcoffee.github.io/liutingchun/works/beneath/) (2022): Sound Installation
+- [Sun](https://aprilcoffee.github.io/liutingchun/works/sun/) (2020): Internet Art (p5.js website)
+- [Bring Us Somewhere](https://aprilcoffee.github.io/liutingchun/works/bring-us-somewhere/) (2020): Video
+- [Faces](https://aprilcoffee.github.io/liutingchun/works/faces/) (2020): Video
+- [Segmentary Moonlight](https://aprilcoffee.github.io/liutingchun/works/segmentary-moonlight/) (2018): Light Installation
+- [Message in a Bottle](https://aprilcoffee.github.io/liutingchun/works/message-in-a-bottle/) (2017): Facebook Posts
+- [I kept repeating the unfamiliar self](https://aprilcoffee.github.io/liutingchun/works/i-kept-repeating-the-unfamiliar-self/) (2017): Video Installation
+- [Light Segment](https://aprilcoffee.github.io/liutingchun/works/light-segment/) (2017): Light Installation
+- [Inevitable Cross of The Parallel](https://aprilcoffee.github.io/liutingchun/works/inevitable-cross-of-the-parallel/) (2017): Performance Record
+- [Take Off the Clothes](https://aprilcoffee.github.io/liutingchun/works/take-off-the-clothes/) (2017): Performance Record
+- [Hyper-Link into Image](https://aprilcoffee.github.io/liutingchun/works/hyper-link-into-image/) (2016): Internet Art
+
+## Contact
+
+- Email: april85227@gmail.com
+- Instagram: https://www.instagram.com/liu_tingchun/
+- GitHub: https://github.com/aprilcoffee
