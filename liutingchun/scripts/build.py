@@ -258,7 +258,7 @@ LANG_NAME = {"en": "EN", "de": "DE", "zh": "中文"}
 
 UI = {
     "en": {
-        "nav": {"works": "Works", "performance": "Performance", "about": "About", "blog": "Blog", "friends": "Friends"},
+        "nav": {"works": "Works", "performance": "Performance", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
         "menu": "Menu", "language": "Language", "privacy": "Privacy",
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
@@ -276,7 +276,7 @@ UI = {
         "Date": "Date", "Category": "Category",
     },
     "de": {
-        "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "blog": "Blog", "friends": "Freunde"},
+        "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
         "menu": "Menü", "language": "Sprache", "privacy": "Datenschutz",
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
@@ -294,7 +294,7 @@ UI = {
         "Date": "Datum", "Category": "Kategorie",
     },
     "zh": {
-        "nav": {"works": "作品", "performance": "表演", "about": "關於", "blog": "部落格", "friends": "朋友"},
+        "nav": {"works": "作品", "performance": "表演", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
         "menu": "選單", "language": "語言", "privacy": "隱私權",
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
@@ -337,9 +337,10 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     page_title = "%s — %s" % (title, S["name"]) if title else "%s %s" % (S["name"], S.get("name_zh", ""))
     canonical = abs_url(path)
     image = asset_abs(image or S.get("og_image") or "")
-    nav = "".join('<a href="%s"%s>%s<span>%s</span></a>' % (
-        url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", idx(i + 1), u["nav"][s])
-        for i, s in enumerate(SECTIONS))
+    nav = "".join('%s<a href="%s"%s><span>%s</span></a>' % (
+        '<span class="gap" aria-hidden="true"></span>' if s == "blog" else "",  # Blog and Friends sit apart
+        url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", u["nav"][s])
+        for s in SECTIONS)
     switch = "".join('<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (
         url(alts[l] if alts else LP[l] + (section + "/" if section else "")), HREFLANG[l], HREFLANG[l],
         ' class="on" aria-current="true"' if l == lang else "", LANG_NAME[l]) for l in LANGS)
