@@ -142,7 +142,8 @@ a.card:hover .cap .t { text-decoration: underline; text-underline-offset: 4px; t
 
 .plates { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
 .plates > * { grid-column: span 1; }
-.plates > .hero, .plates > .embed, .plates > .wide { grid-column: 1 / -1; }
+.plates > .hero, .plates > .embed, .plates > .wide, .plates > .clip { grid-column: 1 / -1; }
+.plates .clip video { width: 100%; height: auto; background: #000; }
 .plates img { width: 100%; height: auto; background: var(--tint); }
 
 .embed { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }

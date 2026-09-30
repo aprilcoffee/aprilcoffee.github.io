@@ -145,6 +145,15 @@ def embed(u, thumb="", title=""):
         esc(src), esc(": " + title) if title else "", img(thumb, 1280, title))
 
 
+def clip(c, title=""):
+    """A video file kept in this repository (images/video/). Silent loops play by themselves,
+    muted; anything with sound waits for the play button."""
+    attrs = ('autoplay muted loop playsinline preload="auto"' if c.get("loop")
+             else 'controls playsinline preload="none"')
+    return '<figure class="clip"><video %s src="%s"%s aria-label="%s"></video></figure>' % (
+        attrs, esc(asset(c["src"])), ' poster="%s"' % esc(asset(c["poster"])) if c.get("poster") else "", esc(title))
+
+
 def cover_of(w):
     if w.get("cover"):
         return w["cover"]
@@ -489,10 +498,11 @@ for L in LANGS:
                 (u["Materials"], esc(tr(w, "materials", L))), (u["With"], esc(w.get("collaborators")))]
         rows += [(u["Link"], a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
         ims = w.get("images", [])
-        plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"])
-        plates += "".join(('<figure class="hero">%s</figure>' if k == 0 and not w.get("video") else "<figure>%s</figure>") %
+        plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"]) + "".join(clip(c, w["title"]) for c in w.get("clips", []))
+        moving = w.get("video") or w.get("clips")
+        plates += "".join(('<figure class="hero">%s</figure>' if k == 0 and not moving else "<figure>%s</figure>") %
                           img(im, 1600 if k == 0 else 1000, "%s — %d" % (w["title"], k + 1)) for k, im in enumerate(ims))
-        rest = len(ims) - (0 if w.get("video") else 1)  # images in the two-column part of the grid
+        rest = len(ims) - (0 if moving else 1)  # images in the two-column part of the grid
         if rest > 0 and rest % 2:
             plates = plates.replace("<figure>", '<figure class="wide">', 1)  # never leave an empty cell
         text = tr(w, "text", L)
