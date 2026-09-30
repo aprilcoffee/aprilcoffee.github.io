@@ -117,6 +117,15 @@ def video_id(u):
     return None
 
 
+# real thumbnails recorded in site.json (works: video_thumb, performances: thumb), by video id
+VIDEO_THUMBS = dict(S.get("video_thumbs", {}))  # extra ones, e.g. for videos in blog posts
+for _it in D["works"] + D.get("performances", []):
+    _v = video_id(_it.get("video"))
+    _t = _it.get("video_thumb") or _it.get("thumb")
+    if _v and _t:
+        VIDEO_THUMBS.setdefault(_v[1], _t)
+
+
 def embed(u, thumb="", title=""):
     v = video_id(u)
     if not v:
@@ -126,6 +135,7 @@ def embed(u, thumb="", title=""):
         return '<div class="embed"><video controls preload="none" playsinline src="%s"></video></div>' % esc(asset(vid))
     src = ("https://player.vimeo.com/video/%s?dnt=1&autoplay=1" % vid if kind == "vimeo"
            else "https://www.youtube-nocookie.com/embed/%s?autoplay=1" % vid)
+    thumb = thumb or VIDEO_THUMBS.get(vid)
     if not thumb:
         thumb = ("https://vumbnail.com/%s.jpg" % vid if kind == "vimeo"
                  else "https://i.ytimg.com/vi/%s/hqdefault.jpg" % vid)
@@ -140,6 +150,8 @@ def cover_of(w):
         return w["cover"]
     if w.get("images"):
         return w["images"][0]
+    if w.get("video_thumb"):
+        return w["video_thumb"]
     v = video_id(w.get("video"))
     if v and v[0] == "vimeo":
         return "https://vumbnail.com/%s.jpg" % v[1]
@@ -458,10 +470,11 @@ for L in LANGS:
 
     # home: generative field + statement, then a few recent works
     page(P, "", tr(S, "description", L),
-         '<section class="home-hero"><div class="field" data-effect="field" aria-hidden="true"></div>'
+         '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
          '<h1 class="sr-only">%s %s</h1><p class="home-statement"><span>%s</span></p></section>'
          '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
+             esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
              esc(S["name"]), esc(S.get("name_zh", "")), esc(tr(S, "statement", L) or tr(S, "description", L)), esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
@@ -476,7 +489,7 @@ for L in LANGS:
                 (u["Materials"], esc(tr(w, "materials", L))), (u["With"], esc(w.get("collaborators")))]
         rows += [(u["Link"], a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
         ims = w.get("images", [])
-        plates = embed(w.get("video"), title=w["title"])
+        plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"])
         plates += "".join(('<figure class="hero">%s</figure>' if k == 0 and not w.get("video") else "<figure>%s</figure>") %
                           img(im, 1600 if k == 0 else 1000, "%s — %d" % (w["title"], k + 1)) for k, im in enumerate(ims))
         rest = len(ims) - (0 if w.get("video") else 1)  # images in the two-column part of the grid
