@@ -1,47 +1,63 @@
 #!/usr/bin/env bash
-# Download every Wix-hosted image referenced in data/site.json into images/wix/
-# and rewrite site.json to point at the local copies.
+# Download every Wix-hosted image/video referenced in data/site.json and posts/*.md
+# into images/wix/, convert images to webp, and rewrite the references to local paths.
 # Run from anywhere:  bash liutingchun/scripts/download-images.sh
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
 mkdir -p images/wix
 
-urls=$(grep -oE 'https://static\.wixstatic\.com/media/[^"]+' data/site.json | sort -u)
+urls=$(grep -ohE 'https://(static|video)\.wixstatic\.com/(media|video)/[^")> ]+' data/site.json posts/*.md | sort -u)
 total=$(printf '%s\n' "$urls" | grep -c . || true)
-echo "Found $total Wix images"
+echo "Found $total Wix files"
 
 n=0
 for url in $urls; do
   n=$((n + 1))
-  file="images/wix/${url##*/}"
-  if [ -s "$file" ]; then
+  if [[ "$url" == https://video.wixstatic.com/* ]]; then
+    # https://video.wixstatic.com/video/<id>/480p/mp4/file.mp4 -> <id>.mp4
+    id=$(echo "$url" | sed -E 's#.*/video/([^/]+)/.*#\1#')
+    file="images/wix/$id.mp4"
+  else
+    file="images/wix/${url##*/}"
+  fi
+  webp="${file%.*}.webp"
+  if [ -s "$file" ] || [ -s "$webp" ]; then
     echo "[$n/$total] skip $file"
     continue
   fi
   echo "[$n/$total] $url"
   curl -fsSL --retry 3 -o "$file" "$url" || { echo "  failed"; rm -f "$file"; continue; }
-  # Convert to webp like the rest of images/wix/ (skip gifs to keep animation).
-  if command -v cwebp >/dev/null && [[ "$file" != *.gif ]]; then
-    cwebp -quiet -q 82 "$file" -o "${file%.*}.webp" && rm -f "$file"
+  # Convert to webp like the rest of images/wix/ (skip gifs to keep animation, and videos).
+  if command -v cwebp >/dev/null && [[ "$file" =~ \.(jpe?g|png)$ ]]; then
+    cwebp -quiet -q 82 -resize 2000 0 "$file" -o "$webp" 2>/dev/null || cwebp -quiet -q 82 "$file" -o "$webp"
+    rm -f "$file"
   fi
 done
 
-# Rewrite only the URLs whose file actually downloaded.
+# Rewrite only the references whose file actually downloaded.
 python3 - <<'EOF'
-import json, os, re
-p = "data/site.json"
-s = open(p, encoding="utf-8").read()
-def sub(m):
-    name = m.group(1)
-    for f in ("images/wix/" + os.path.splitext(name)[0] + ".webp", "images/wix/" + name):
+import glob, json, os, re
+
+def local(url):
+    m = re.match(r"https://video\.wixstatic\.com/video/([^/]+)/", url)
+    names = [m.group(1) + ".mp4"] if m else [os.path.splitext(url.rsplit("/", 1)[1])[0] + ".webp", url.rsplit("/", 1)[1]]
+    for name in names:
+        f = "images/wix/" + name
         if os.path.exists(f) and os.path.getsize(f) > 0:
             return f
-    return m.group(0)
-s = re.sub(r'https://static\.wixstatic\.com/media/([^"/]+)', sub, s)
-json.loads(s)  # sanity check
-open(p, "w", encoding="utf-8").write(s)
-print("site.json updated")
+    return None
+
+pat = re.compile(r'https://(?:static|video)\.wixstatic\.com/(?:media|video)/[^")> \n]+')
+for path in ["data/site.json"] + sorted(glob.glob("posts/*.md")):
+    s = open(path, encoding="utf-8").read()
+    new = pat.sub(lambda m: local(m.group(0)) or m.group(0), s)
+    if path.endswith(".json"):
+        json.loads(new)  # sanity check
+    if new != s:
+        open(path, "w", encoding="utf-8").write(new)
+        print("updated", path)
 EOF
 
-echo "Done. Commit images/wix/ and data/site.json."
+left=$(grep -ohE 'https://(static|video)\.wixstatic\.com/[^")> ]+' data/site.json posts/*.md | sort -u | wc -l)
+echo "Done. $left Wix references left. Commit images/wix/, data/site.json and posts/."

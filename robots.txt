@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /liutingchun/admin/
+Disallow: /liutingchun/preview.html
+
+Sitemap: https://aprilcoffee.github.io/sitemap.xml

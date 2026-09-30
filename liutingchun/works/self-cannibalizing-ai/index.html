@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self-cannibalizing AI — Ting-Chun Liu</title>
+<meta name="description" content="What occurs when machines learn from one another and engage in self-cannibalism within the generative process? Can an image model identify the happiest person…">
+<meta name="author" content="Ting-Chun Liu">
+<link rel="canonical" href="https://aprilcoffee.github.io/liutingchun/works/self-cannibalizing-ai/">
+<meta property="og:site_name" content="Ting-Chun Liu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self-cannibalizing AI — Ting-Chun Liu">
+<meta property="og:description" content="What occurs when machines learn from one another and engage in self-cannibalism within the generative process? Can an image model identify the happiest person…">
+<meta property="og:url" content="https://aprilcoffee.github.io/liutingchun/works/self-cannibalizing-ai/">
+<meta property="og:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_421aecd14d774616bcf61525e555dd6e~mv2.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Self-cannibalizing AI — Ting-Chun Liu">
+<meta name="twitter:description" content="What occurs when machines learn from one another and engage in self-cannibalism within the generative process? Can an image model identify the happiest person…">
+<meta name="twitter:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_421aecd14d774616bcf61525e555dd6e~mv2.webp">
+<link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Writing" href="/liutingchun/writing/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/liutingchun/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Self-cannibalizing AI", "dateCreated": "2023", "genre": "Talk, 37C3 — Artistic strategies to expose generative text-to-image models", "url": "https://aprilcoffee.github.io/liutingchun/works/self-cannibalizing-ai/", "image": "https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_421aecd14d774616bcf61525e555dd6e~mv2.webp", "description": "What occurs when machines learn from one another and engage in self-cannibalism within the generative process? Can an image model identify the happiest person…", "creator": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}}</script>
+</head>
+<body>
+<aside class="side" id="side">
+  <div class="side-head">
+    <a class="brand" href="/liutingchun/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh">劉庭均</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
+  </div>
+  <nav class="nav" id="nav"><a href="/liutingchun/works/" class="on" aria-current="page">Works</a><a href="/liutingchun/performance/">Performance</a><a href="/liutingchun/about/">About</a><a href="/liutingchun/writing/">Writing</a><a href="/liutingchun/friends/">Friends</a></nav>
+  <div class="side-foot">
+    <div><a href="mailto:april85227@gmail.com">april85227@gmail.com</a></div>
+    <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
+    <div>© 2026 Ting-Chun Liu</div>
+  </div>
+</aside>
+<main class="main" id="main">
+<article><header class="work-head"><h1>Self-cannibalizing AI</h1><dl class="meta"><dt>Year</dt><dd>2023</dd><dt>Type</dt><dd>Talk, 37C3 — Artistic strategies to expose generative text-to-image models</dd><dt>With</dt><dd>Leon-Etienne Kühr</dd><dt>Link</dt><dd><a href="https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai" target="_blank" rel="noopener">Talk recording (media.ccc.de)</a></dd></dl></header><div class="prose"><p>What occurs when machines learn from one another and engage in self-cannibalism within the generative process? Can an image model identify the happiest person or determine ethnicity from a random image? Most state-of-the-art text-to-image implementations rely on a number of limited datasets, models, and algorithms. These models, initially appearing as black boxes, reveal complex pipelines involving multiple linked models and algorithms upon closer examination. We engage artistic strategies like feedback, misuse, and hacking to crack the inner workings of image-generation models. This includes recursively confronting models with their output, deconstructing text-to-image pipelines, labelling images, and discovering unexpected correlations. During the talk, we will share our experiments on investigating Stable-Diffusion pipelines, manipulating aesthetic scoring in extensive public text-to-image datasets, revealing NSFW classification, and utilizing Contrastive Language-Image Pre-training (CLIP) to reveal biases and problematic correlations inherent in the daily use of these models.</p><p>The talk will be conducted by sharing various experiments we&#x27;ve done under the umbrella of generative AI models. We will begin with a general idea of how we, as artists/programmers, perceive these models and our research on the workflow of these constructs. Then, we will further elaborate on our exploration of the Stable Diffusion pipeline and datasets. Throughout our investigation, we discovered that some essential parts are all based on the same few datasets, models, and algorithms. This causes us to think that if we investigate deeper into some specific mechanisms, we might be able to reflect on the bigger picture of some political discourses surrounding generative AI models. We deconstructed the models into three steps essential to understanding how they worked: dataset, embedding, and diffusions. Our examples are primarily based on Stable-Diffusion, but some concepts are interchangeable in other generative models.</p><p>As datasets and machine-learning models grow in scale and complexity, understanding their nuances becomes challenging. Large datasets, like the one for training Stable Diffusion, are filtered using algorithms often employing machine learning. To &quot;enhance&quot; image generation, LAION&#x27;s extensive dataset underwent filtering with an aesthetic prediction algorithm that uses machine learning to score the aesthetics of an image with a strong bias towards water-color and oil paintings. Besides the aesthetic scoring of images, images are also scored with a not safe-for-work classifier that outputs a probability of an image containing explicit content. This algorithm comes with its own discriminatory tendencies that we explore in the talk and furthermore asks how and by whom we want our datasets to be filtered and constructed.</p><p>Many generative models are built upon Contrastive Language-Image Pre-training (CLIP) and its open-source version, Open-CLIP, which stochastically relates images and texts. These models connect images and text, digitize text, and calculate distances between words and images. However, they heavily rely on a large number of text-image pairs during training, potentially introducing biases into the database. We conducted experiments involving various &quot;false labelling&quot; scenarios and identified correlations. For instance, we used faces from ThisPersonDoesNotExist to determine &quot;happiness&quot; faces, explored ethnicities and occupations on different looks, and analyzed stock images of culturally diverse food. The results often align with human predictions, but does that mean anything?</p><p>In the third part, we take a closer look at the image generation process, focusing on the Stable Diffusion pipeline. Generative AI models, like Stable Diffusion, have the ability not only to generate images from text descriptions but also to process existing images. Depending on the settings, they can reproduce input images with great accuracy. However, errors accumulate with each iteration when this AI reproduction is recursively used as input. We observed that images gradually transform into purple patterns or a limited set of mundane concepts depending on the parameters and settings. This raises questions about the models&#x27; tendencies to default to learned patterns.</p></div><div class="media"></div><nav class="pager"><a href="/liutingchun/works/just-jailbreak/">← Just Jailbreak</a><a href="/liutingchun/works/achtung-verwischung/">Achtung! Verwischung →</a></nav></article>
+</main>
+<script src="/liutingchun/assets/site.js"></script>
+</body>
+</html>

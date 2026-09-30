@@ -14,6 +14,41 @@
         "label": "GitHub",
         "url": "https://github.com/aprilcoffee"
       }
+    ],
+    "base_url": "https://aprilcoffee.github.io/liutingchun",
+    "og_image": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp",
+    "sitemap_extra": [
+      "https://aprilcoffee.github.io/sun/",
+      "https://aprilcoffee.github.io/heat_as_image/bibliography.html",
+      "https://aprilcoffee.github.io/heat_as_image/",
+      "https://aprilcoffee.github.io/heat_as_image/introduction/computer-limits.html",
+      "https://aprilcoffee.github.io/heat_as_image/introduction/cybernetic.html",
+      "https://aprilcoffee.github.io/heat_as_image/introduction/future-self.html",
+      "https://aprilcoffee.github.io/heat_as_image/introduction/",
+      "https://aprilcoffee.github.io/heat_as_image/introduction/unexpected-imagery.html",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/eliza-effect.html",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/purple-coincidence.html",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/specificity.html",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/statistical-",
+      "https://aprilcoffee.github.io/heat_as_image/loss-function/what-you-see.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/cleanrooms.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/commodity.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/fabrications.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/gpu.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/sand.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/taiwan.html",
+      "https://aprilcoffee.github.io/heat_as_image/materiality/touches.html",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/attention.html",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/biochemical.html",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/computer-vision.html",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/denoising.html",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/measuring-coffee.html",
+      "https://aprilcoffee.github.io/heat_as_image/optimized-noise/self-critic.html",
+      "https://aprilcoffee.github.io/heat_as_image/outlook.html",
+      "https://aprilcoffee.github.io/heat_as_image/prologue.html"
     ]
   },
   "works": [
@@ -39,7 +74,10 @@
       "links": [],
       "credits": "Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr\nPhoto Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu\nVideo Documentation: Ting-Chun Liu, Leon-Etienne Kühr",
       "text": "What happens when a system confronts its own output? Steering through Inner Residue explores this question by reintroducing generated output as input, steering the image making process to follow its own trace.\n\nArtificial intelligence is often depicted as a black box. Despite clearly defined inputs and outputs, it remains opaque in its internal mechanisms. Image generations are normally initialized with a textual descriptions (prompt) that reflect both human intentions and expectations. Here, the conventional process is disrupted by disregarding the text completely and iteratively guiding the machine with its own image output, replacing human expectations with ones from the machine.\n\nRecursion is a term describing the process of looping, but unlike repetition, each iteration slightly deviates from the last moment, like a spiral that surpasses linear causation and ending up at unknown coordinates. The nature of feedback means that what emerges is fundamentally contingent and situational. Like placing a microphone in front of a speaker, where the piercing feedback manifests the aesthetic quality from both the reverberation of the surroundings and the mechanical touch of the electronics.\n\nIn his 1969 piece I Am Sitting in a Room, American sound artist Alvin Lucier records himself reading a short text, then plays the recording back into the room while simultaneously re-recording it. The process is repeated until the resonance of the room compounds and the speech gradually disappears. Yet the blurry hum surfacing from the couple last recording is not simply noise, it is the accumulation of reverbs, a residue of the room. The recursive process renders the underlying visible, it measures the space acoustically and reproduces it into audible form. A similar approach can be done with artificial intelligence. The feedback process navigates the system of image generation, creating a chasm revealing the interior.\n\nThe visual surfaces resemble an unfolded box, each surface carrying reverberations of the process, a landscape of distinctive patterns emerging from the procedures alone. Colors drift into oversaturated hues, forms fragment into layers of pattern, and meaning disintegrates into noise. What accumulates over time is not an image but a process: an algorithmic artifact, a residue that signifies nowhere but the process itself and the process only.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/works/steer-through-the-inner-residue"
+      ]
     },
     {
       "slug": "interpolation-of-the-invisible-color",
@@ -72,7 +110,10 @@
       ],
       "credits": "",
       "text": "Marcel Duchamp described the title of the artwork as an invisible color (Welchman, 1997), pigments that bypass the eye and speak directly to the mind. This formulation moves aesthetic experiences beyond visual input toward context. The label of an artwork, the narrative provided by the artist, the exhibition histories, all serve as extensions of this invisible pigment. They shape how we read, value, and even dismiss what is presented to our eye.\n\nStorage Museum in Düsseldorf holds in time of the project 479 works, physically spread across 10 shelves, and digitalized as data represented by image, title, artist's name, size, and notes from the staff. This arrangement is serendipitous and serves as an archive of the staff’s expertise and labor, distilled into 10 shelves. We used embeddings as technical approach to curation, an AI technique that converts information into numbers that computers can compare. Similar method that enables tools like ChatGPT, Google search, and AI image generators, allowing machines to measure similarity and find patterns across different types of data. This process ran entirely locally, with no cloud services to keep the collection's data protected.\n\nHowever, AI is simple. It finds mathematical correlations, draws lines between things that appear together. But correlation is not causation, and pattern constitutes no meaning. Data, however detailed, can never fully represent the physical objects or the embodied experiences working with them. AI is a tool, not a replacement for artistic practice and curatorial expertise. The algorithm offers one way to wander through the collection, discovering unexpected neighbors, and suggests: these things seem related, but it cannot tell you why or what that means.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/works/interpolation-of-the-invisible-color"
+      ]
     },
     {
       "slug": "latent-heat-generation",
@@ -102,7 +143,10 @@
       ],
       "credits": "",
       "text": "Latent Heat Generation is an artistic research project investigating the hidden material infrastructures of AI systems through thermal imaging feedback loops, creating real-time feedback where computational waste heat becomes generative material for AI imagery. Developed from the vantage point of a Taiwanese artist, the work emerges from a personal dilemma: being limited by computational power while simultaneously being connected to the very infrastructure that enables AI development globally.\n\nThe installation reveals multiple forms of generation: thermal energy production, AI image creation, semiconductor manufacturing generations, and generational politics of technological dependency. Custom software converts thermal readings into prompts for stable diffusion models, creating recursive loops where GPUs examine their own material conditions through heat visualization.\n\nThe thermal investigation reveals how computational heat carries signatures of global manufacturing dependencies, questioning the apparent immateriality of digital processes by making visible the energy transformations and geopolitical relationships embedded within AI systems.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/works/latent-heat-generation"
+      ]
     },
     {
       "slug": "just-jailbreak",
@@ -131,7 +175,10 @@
       ],
       "credits": "Photo: Kito Li",
       "text": "Kuai Kuai (乖乖) is a popular Taiwanese snack brand best known for its green-packaged coconut-flavored chips. According to local belief, placing a pack of Kuai Kuai on malfunctioning technology can \"make it obedient\"—a nod to the snack’s name, which translates to \"be obedient.\" Inspired by this cultural phenomenon, Just Jailbreak transforms it into an AI-powered game experience.\n\nIn the game, Just Jailbreak, players interact with JJ, a quirky character who loves to mimic various types of technology—yet consistently refuses to work as expected. JJ is a stubborn, playful entity, rarely following instructions, so players must creatively persuade it to cooperate, much like using Kuai Kuai to \"calm\" malfunctioning tech.\n\nPowered by a large language model, JJ encourages players to try various \"jailbreaking\" techniques to coax it into compliance. Players might choose to be firm and authoritative, use a bit of mischief, offer enticing rewards, or simply shower JJ with affection. The game introduces players to the world of LLM jailbreaking, echoing the real-world experimentation where users try to bypass restrictions placed on AI chatbots by companies like OpenAI through creative text-based tactics.\n\nJust Jailbreak invites players to experiment and find their own way to communicate with JJ, making it an engaging gateway into the culture of LLM jailbreak strategies.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/works/just-jailbreak"
+      ]
     },
     {
       "slug": "self-cannibalizing-ai",
@@ -152,7 +199,10 @@
       ],
       "credits": "",
       "text": "What occurs when machines learn from one another and engage in self-cannibalism within the generative process? Can an image model identify the happiest person or determine ethnicity from a random image? Most state-of-the-art text-to-image implementations rely on a number of limited datasets, models, and algorithms. These models, initially appearing as black boxes, reveal complex pipelines involving multiple linked models and algorithms upon closer examination. We engage artistic strategies like feedback, misuse, and hacking to crack the inner workings of image-generation models. This includes recursively confronting models with their output, deconstructing text-to-image pipelines, labelling images, and discovering unexpected correlations. During the talk, we will share our experiments on investigating Stable-Diffusion pipelines, manipulating aesthetic scoring in extensive public text-to-image datasets, revealing NSFW classification, and utilizing Contrastive Language-Image Pre-training (CLIP) to reveal biases and problematic correlations inherent in the daily use of these models.\n\nThe talk will be conducted by sharing various experiments we've done under the umbrella of generative AI models. We will begin with a general idea of how we, as artists/programmers, perceive these models and our research on the workflow of these constructs. Then, we will further elaborate on our exploration of the Stable Diffusion pipeline and datasets. Throughout our investigation, we discovered that some essential parts are all based on the same few datasets, models, and algorithms. This causes us to think that if we investigate deeper into some specific mechanisms, we might be able to reflect on the bigger picture of some political discourses surrounding generative AI models. We deconstructed the models into three steps essential to understanding how they worked: dataset, embedding, and diffusions. Our examples are primarily based on Stable-Diffusion, but some concepts are interchangeable in other generative models.\n\nAs datasets and machine-learning models grow in scale and complexity, understanding their nuances becomes challenging. Large datasets, like the one for training Stable Diffusion, are filtered using algorithms often employing machine learning. To \"enhance\" image generation, LAION's extensive dataset underwent filtering with an aesthetic prediction algorithm that uses machine learning to score the aesthetics of an image with a strong bias towards water-color and oil paintings. Besides the aesthetic scoring of images, images are also scored with a not safe-for-work classifier that outputs a probability of an image containing explicit content. This algorithm comes with its own discriminatory tendencies that we explore in the talk and furthermore asks how and by whom we want our datasets to be filtered and constructed.\n\nMany generative models are built upon Contrastive Language-Image Pre-training (CLIP) and its open-source version, Open-CLIP, which stochastically relates images and texts. These models connect images and text, digitize text, and calculate distances between words and images. However, they heavily rely on a large number of text-image pairs during training, potentially introducing biases into the database. We conducted experiments involving various \"false labelling\" scenarios and identified correlations. For instance, we used faces from ThisPersonDoesNotExist to determine \"happiness\" faces, explored ethnicities and occupations on different looks, and analyzed stock images of culturally diverse food. The results often align with human predictions, but does that mean anything?\n\nIn the third part, we take a closer look at the image generation process, focusing on the Stable Diffusion pipeline. Generative AI models, like Stable Diffusion, have the ability not only to generate images from text descriptions but also to process existing images. Depending on the settings, they can reproduce input images with great accuracy. However, errors accumulate with each iteration when this AI reproduction is recursively used as input. We observed that images gradually transform into purple patterns or a limited set of mundane concepts depending on the parameters and settings. This raises questions about the models' tendencies to default to learned patterns.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/works/self-cannibalizing-ai"
+      ]
     },
     {
       "slug": "achtung-verwischung",
@@ -178,7 +228,10 @@
       "links": [],
       "credits": "Photo: @joshua_karan_singh, @juanfrocu",
       "text": "Summer 2023, I attended the \"Leaky Archive\" seminar, led by Sam Hopkins and Agustina Andreoletti. The goal was to collaborate on an exhibition at RJM with students from Kunstakademie Münster, with Mariana Castillo Deball. At the time RJM was actively discussing the restitution of Benin bronzes—artworks looted from Nigeria. We also had the opportunity to explore RJM's archive, containing around 65,000 objects and 100,000 photographs, which served as a source of inspiration for our exhibition.\n\nWhile browsing RJM's inventory and talking with Chaya, I came across the questions of how and what to present in ethnographic museums and what our role as student artists is? Initially, I want to play with the word \"leaky,\" symbolized by a dripping machine. However, we discovered the building already had multiple leaks. I then had several interesting encounters. Spoke with ticket collectors and the cleaning staff about the leaks, the cleaning lady even gave me a tour on all the leaky areas. When I tried to position my floor stand, nobody noticed, but when I attempted to remove it, I was accused for taking things away. This for me revealed the system's one-sided nature: you can contribute but not withdraw. These incidents highlighted the institution's lack of control and the ambiguity in everyone's roles. And led to the idea of creating custom wet floor stands and mopping the museum floor as part of the exhibition.\n\nIn one conversation Dennis suggested me using the word “Verwischung\" means blur or obliteration, without the prefix, \"Wischung\" signifies mopping. As a student artist invited to participate in an ethnographic museum, I wonder how we were instrumentalized in supporting the role of “we are doing good things” in the museum. Moreover, anything we contributed to the museum, institution, or system raised again questions. This led me to the concept of simply mopping an already clean floor—a seemingly inconsequential act that paradoxically became \"an art project\" for the exhibition.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/achtung-verwischung"
+      ]
     },
     {
       "slug": "imaginary-landscape",
@@ -207,7 +260,10 @@
       "links": [],
       "credits": "Performer: Ting-Chun Liu",
       "text": "The beach has always been a tourist attraction since the Enlightenment. With the rise of mass tourism and social media, the idealized beach images have become intertwined with reality, resulting in extensive human intervention and terraforming along coastlines worldwide. Drawing on this notion of the beach’s beauty, the project explores the concept of one-sided realities portrayed in travel images on social media. It uncovers cutting-edge image generation models’ technical and aesthetic attributes through AI.\n\n# The imaginary landscape which has never been reached\n\nThis project explores the concept of one-sided realities in travel images shared on social media. It reveals cutting-edge image generation models’ technical and aesthetic aspects through AI and machine learning. By digitally piecing together fantasies and imaginings, the project creates an “ideal other side” that remains unattainable. The resulting model represents a collective unconsciousness formed by AI, and the images it produces are ultimately impossible to achieve, much like the picturesque places portrayed on social media. Through various formats, the project prompts viewers to question the authenticity of these images and the collective consciousness they embody.\n\n# Historical context of beach image as an imaginary landscape\n\nThe portrayal of the beach in Western literature has a long history of emphasizing unknown dangers and disasters. Alain Corbin, a French historian, explores the changes in how the Western world perceived the sea in his book “The Lure of the Sea” (1994). Before the Middle Ages, the sea was frequently depicted in connection with the unknown, such as floods, storms, monsters, and various calamities. However, the advancement of science during the Enlightenment gradually dispelled the notion of the unknown by the 17th century. As scientific discoveries began unraveling the sea’s mysteries, the beach took on a new symbolism associated with modernity and tourism. This shift ultimately led to the establishment of bathing beaches by aristocrats and citizens, transforming the beach into a prominent symbol of modern tourism.\n\n# The bias of artificial intelligence algorithms due to social media\n\nThe primary audience for human-produced text and images has shifted from humans to machines in modern times. Computers utilize human knowledge systems to generate text and images. However, this learning process is not without its biases. The images used for training data from social media or online libraries often depict pristine, bright, and white beaches. This representation bias leads the computer to perceive beach images as artificial scenery. Moreover, when the machine processes these images, and new images are generated, evaluation bias comes into play in determining whether the generated images align with the concept of a “beach.” These multiple biases contribute to the transformer model often producing mundane beach images.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/imaginarylandscape"
+      ]
     },
     {
       "slug": "beneath",
@@ -226,7 +282,10 @@
       "links": [],
       "credits": "",
       "text": "Skylights are widely used in interior design to direct natural light from outside into the interior space. It also projects the desire of people to look upwards.\n\nInspired by the submarine-like structure of the building, the work \"Beneath\" is a sound installation that experiments with directional speakers. With the directional sound of ocean waves reflecting off the skylight a sense of the underwater world is created to connect the exterior and the interior space.\n\nOberlichter werden in der Raumplanung häufig eingesetzt, um das Naturlicht von außen in den Innenraum zu leiten. Es projiziert auch den Wunsch der Menschen, nach oben zu blicken.\n\nInspiriert von der U-Boot-ähnlichen Struktur des Gebäudes, ist das Werk \"Beneath\" eine Klanginstallation, die mit Richtlautsprechern experimentiert. Mit dem gerichteten Klang von Meereswellen, die vom Oberlicht reflektiert werden, entsteht ein Gefühl der Unterwasserwelt, um den Außen- und Innenraum zu verbinden.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/beneath"
+      ]
     },
     {
       "slug": "sun",
@@ -249,7 +308,10 @@
       ],
       "credits": "In memory of Ying Wen, Wang",
       "text": "A sun that runs on mobile, which generates heat at the same time.\n\nI’ve always been wondering how people comprehend objects or visuals on the internet, and which sense do we use to understand it? This work is based on a webpage written in p5.js, trying to generate a digital sun on everyone’s mobile. While the sun is running, the phone will slowly generate heat at the same time. Blurring the boundary between digital and reality.\n\n在網路上用瀏覽器開啟，造成手機發熱的太陽。\n\n如何理解網路上的物件或視覺，又應以何種感知來理解它？當網際網路成為當代速度的變體，伺服器以光速傳遞程式碼，經過手機軟體的重新編譯，形成當代習以為常的視聽感受，每一支連線的手機，都能得到觀看這一複製品的經驗。\n\n熱量是當代電子產品進行運算與通訊之必然消耗，發熱則是數位在現實空間留下的足跡。這件作品是基於即時演算生成的網頁，在手機上製造一個數位化太陽。以手機介面為主體，晶片發熱作為媒介，模糊與消融網路與真實世界之間二元對立的邊界。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/sun"
+      ]
     },
     {
       "slug": "bring-us-somewhere",
@@ -265,7 +327,10 @@
       "links": [],
       "credits": "",
       "text": "",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/bring-us-somewhere"
+      ]
     },
     {
       "slug": "faces",
@@ -281,7 +346,10 @@
       "links": [],
       "credits": "",
       "text": "I don't like looking people in the eye\n\n我討厭直視別人眼睛",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/faces"
+      ]
     },
     {
       "slug": "segmentary-moonlight",
@@ -300,7 +368,10 @@
       "links": [],
       "credits": "",
       "text": "In this Yue Jin Lantern Festival, we intend to create an exclusively light piece based on the dynamic flow of numbers. By the inspiration of the shape of Yanshui district which is alike the shape of the new moon, we try to respond with a full moon appearance.\n\nA moon is a tool of time calculating in the past. Nowadays, “time” is mostly being seen in the electronic way. We convert the electronic numbers by the 7-segment lights and combine the moon and numbers. While the ancient and modern intersperse each other, the beauty of the number and the moon will be shown at the same time.\n\n在本次月津港燈節中，我們以對於數字流動感的基礎，構思適合的燈節作品。受鹽水地區新月形狀的啟發，我們嘗試以滿月的形象與之呼應，將外型設計為滿月的數字燈光。\n\n月亮是古早人們計算時間時節的準則，如今藉由電子零件將時間的概念視覺化成如七段顯示器一般的數位數字，我們將月亮與數字作結合，古今穿插，呈現月亮與數字的美。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/segmentary-moonlight"
+      ]
     },
     {
       "slug": "message-in-a-bottle",
@@ -314,16 +385,22 @@
       "images": [
         "images/wix/4eb1dd_6c9944f1805c474ea33acdab82073fcd~mv2.webp",
         "images/wix/4eb1dd_889cdacd7dad4d08a6f5582ae243062f~mv2.webp",
+        "https://static.wixstatic.com/media/4eb1dd_2e157b6e36584295b3f83320a8e13e8f~mv2.png",
         "images/wix/4eb1dd_574af1681c834cfe83cee334582b5594~mv2.webp",
+        "https://static.wixstatic.com/media/4eb1dd_acba08de620249f9b5856e7a769842e3~mv2.png",
         "images/wix/4eb1dd_516381f7d5b64c59a4b67579bbd9f6b2~mv2.webp",
         "images/wix/4eb1dd_02c521553cde4ffcbd43dcedef385841~mv2.webp",
+        "https://static.wixstatic.com/media/4eb1dd_7a252e9e16ae432aba4f073aa78bac3f~mv2.png",
         "images/wix/4eb1dd_fd37b892b17346c686829a885740e0b2~mv2.webp"
       ],
       "video": "",
       "links": [],
       "credits": "",
       "text": "What is the nature of posting on Facebook? Sharing, or marking an important moment in life? Some people chose to not showing too much of themselves by posting less, and only \"like\" the post they are in favor. Some post every single day, mumbling and spreading their thoughts on the social network. In my opinion, there isn't any defined answer. Posts on Facebook shared, post, written day by day, has anyone cared about the content? Do voluminous words or delicate term make any difference on revealing ones thought? Or fulfilling the urge and desire of posting which contents don't matter at all. Tons of words and one single sentence, all end up floating on the ocean of posts.\n\nI can't help wondering, is there a way to express this unspeakable condition, from a post to narrate the nature of post itself. \"Thu 20:58:34\" couple words don't mean anything, but hit the target of posting. The exact time of posting recorded on the post, but not the \"32 mins ago\" default from the system. The post reveals a meaning but at the time being meaningless.\n\n\"Mon 01:56:23\" is only a post, the content record the time when it's born. From that exact time, it floats on the ocean of social media, waiting for any someone inadvertently collected. Like the message in a bottle, only but the label is about its birthday. The bottle is pure emptiness when it opened, and the person who collected will find a story to fill the blank. The content is not definite to me, the bottle itself is the status I want to express.\n\n我一直在想，究竟在臉書上發文的意義是什麼？純然的分享、或想在生命中註記特定事件的發生？有些人不想讓外人了解太多的自己，而選擇極少發文，僅只對自己喜愛的貼文按讚。有些人天天發文，如有多不完的話、滴滴答答的噴濺在社群網絡中。在我的想象中，似乎也沒有一個絕對的答案。在臉書上的文章一篇一篇來去、浮光掠影，真的有人注意過其中的內容嗎？長篇大論與短篇簡談，在表述自我的意義上有沒有任何差別？或是其實這一切都是如此一無所謂，重點則停在發文的瞬間與慾望，所有在臉書貼文大海之上漂流的內容都失了意義。只因有了發文的想法，不需具有發文的內容，千言萬語與一句話的力量在慾望的滿足感上是相同的，都是求得最終在海量的貼文中載浮載沉。\n\n我不禁想像著，能否有個方式去表達一種無以名狀的表述；以一個貼文的形式去訴說「貼文」這件事本身。Thu 20:58:34，短短一行字，在貼文當中不具有任何意義，卻同時達成了「貼文」的這項目的。發文的時間被記錄在文章當中，而不只是臉書內建流動的「32分鐘前」。這篇文章同時具有意義也同時在內文中沒有文字的意義。當有千言萬語想要說，不如說出一席毫無關係意義的話語。\n\n「Mon 01:56:33」僅只是一篇貼文，內文本身註記著自身呱呱墜地的精準時刻。自那時起，它便在網路社群這片汪洋載浮載沉，等待著任何人不經意的拾起。像一封瓶中信，唯瓶身只註記了生產日期，打開瓶子卻是寂靜的空洞，而拾起的人，便不自覺著尋找著故事或事件來填補那項空洞，但內容物對我始終不是絕對。反而是瓶子本身，才是我意圖去形塑的狀態。說來矯情，我當它是一種浪漫，一種自身在海洋中載浮載沉的浪漫。每隔一段時間丟出一個瓶子。好似藉由瓶子本身宣示著身在海中之感嘆，卻也不想就此講死，仿佛仍舊享受著漂泊⋯⋯。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/message-in-a-bottle"
+      ]
     },
     {
       "slug": "i-kept-repeating-the-unfamiliar-self",
@@ -339,7 +416,10 @@
       "links": [],
       "credits": "",
       "text": "During the exchange in Prague, both language and culture were unfamiliar. Without the bond to the native land, there is only simply flesh and body remaining, which started the journey of working in action. By the process of action, I started to realize I didn't know much about my body, and there is certain misalignment while manipulating it.\n\nThe video is a repeating simple gesture, trying to achieve the same goal and to create a sound, by memorizing the status of the body and trying to fulfill the expected result. Then compress them into one single movement shown on the video.\n\nI tried to discuss the authenticity of the moving image by repeating a single gesture in a compressed image. Frames are a combination of image and audio. Using the sound of the environment and the acoustic scene, every frame from the gesture is compressed together. I capture a single movement more than a hundred times, selecting a few frames in each of them and combine into one movement. Trying to establish an order of the gesture. At the same time, the misalignment of the body will be revealed.\n\n出國交換的期間，對於國外的文化與語言都極不熟悉，在適應的過程中重新檢視自我，才發現僅存的只剩自己單薄的身體。因此也開始在國外的行為藝術創作，然而在過程中時常發現自己對於身體的狀態是不熟悉的，且意識操作身體的過程也容易失準，這時才理解到對於自我的身體，我是如此的不了解。\n\n作品是極為簡單的動作不斷重複，試圖達成相同的結果，以及產生一個聲音，在重複的過程中記憶著相同的運動狀態，盡力著讓其達到預設的結果。並將他們重疊壓縮成為單一的動作。\n\n延續先前作品，透過重複單一動作的壓縮影像討論影像的真實性，和現實時間與影像時間的關係，並納入現場聲音，將空間的音場也進行壓縮。這次我拍攝了數個單一的手勢(Gesture)數百次，並將每個動作取下固定幾個影格與聲音片段，再將其堆疊並壓縮成單一的動作影像。企圖建立單一動作的秩序，於此同時身體所特有的失準也將顯現，而現場的聲音與身體的動作所觸發的聲音，也是與自己身體的對話。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/i-kept-repeating-the-unfamiliar-sel"
+      ]
     },
     {
       "slug": "light-segment",
@@ -355,7 +435,10 @@
       "links": [],
       "credits": "",
       "text": "Imagining dynamic information's movement and flows in the Digital Era. One after another, the numerical increase and decrease. As the events happened in modern time, one after another. Expectable, but at the same time difficult to search for the starting point. We try to mimic this conception with massive numbers counting down.\n\nIn the work, people can see every number as a “pixel” representing the remaining time of the light point — countdown from 9 until the extinguishing of itself. Between the micro and the overview point, glowing the illuminations of lights and shadows. We expect to present a dazzling light performance in a distance. At the same time, every operation can be seen in detail by a closer look.\n\n我們想像數位時代的流動資訊不斷變動與轉化，一盞接著一盞數值的消長，如同數位時代的事件不斷地發生，一件接著一件，有所預期，卻又無法尋覓其開端，我們以大量的倒數數字呈現這樣流動狀態的意象。\n\n作品中每一格「像素」中的數字，皆代表畫面光點殘留的時間；自 9 開始倒數至光點熄滅的時間。而微觀與綜觀之間的光影變幻，我們希望營造出遠觀下光影虛幻之間的炫目變化。同時在微觀注目下，可以看見每一個細部的運作。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/light-segment"
+      ]
     },
     {
       "slug": "inevitable-cross-of-the-parallel",
@@ -371,7 +454,10 @@
       "links": [],
       "credits": "Performer: Ting-Chun Liu, Yu-Wei He",
       "text": "We can’t control every approaching destination. Relations in a digital context are always followed by rules, obeying them or not, represents one's personal will. Surrender or confront the game, shaped another layer of correspondence. The organic body movement and the artificial voice instructions become the methods of communicating and competing with each other.\n\nEvery instant choice deeply affects the future. Beneath the crosspoint, we can never break the rules. But under the rules, there are infinite possibilities remaining while one's body expresses the personal will. Pain will long endure, and spirit may be weakened. All of them are the compulsory efforts to reach the inevitable destination.\n\n我們無法控制所有將至的目的，數位下關係的產生必伴隨一套規則。是否完整遵守或服從即是個人意志的展現；脆弱妥協或強硬碰撞，遊戲中產生了另一層對應關係，有機的身體動態與無機的聲響指令，成為彼此競爭的工具和唯一的溝通管道。當下的抉擇皆影響了未來。交錯中我們終究無法突破規則，但規則下，身體作為意志的表述仍能有著無限的可能。歷久而生的疼痛，或精神上的耗弱都是為抵達無可避免之終點必負的代價。\n\n# 內容敘述\n\n一個現場有著兩場競爭同時進行。電腦間棋局的競爭，與兩副意志與肉體的競爭。\n\n指令：第一幕——聆聽並服從規則。聽從一盤由現場兩位電腦棋局的對奕指令，以膠帶標記其移動過程。\n\n兩人遵守規則各執一方的對弈，但旗子的控制權交由電腦。一場棋局的輸贏不在兩人掌握中，但雙方在黏貼膠帶的過程中，定會因為彼此吃子的關係有所衝突與碰撞。在遵守規則的同時，以身體生產撕扯膠帶的聲響，以及彼此身體間的對應關係與碰撞，兩人身體的有機動態即時反饋模糊死板的電腦聲音；來得及或錯過，失準或順利黏貼，都是兩人與棋局間不同層次的競爭關係。\n\n指令：第二幕——觀察並遵循規則。觀察地上已建立的棋局紀錄，遍歷其中留下的痕跡，排除路上阻礙。\n\n兩人身體反饋著彼此，遵循著規則照著上一場遊戲中的路徑行走，此時電腦不在限制兩人，人有了自我的意志做出行走方向的選擇，但卻必須遵守自己當初所建立的道路。以身體的不同模式去探索道路，透過身體與路徑對話，也透過身體與對手產生關係。即便發生衝突與碰撞，彼此的競爭也必須遵照最初建立的路徑規則。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/inevitable-cross-of-the-parallel"
+      ]
     },
     {
       "slug": "take-off-the-clothes",
@@ -387,7 +473,10 @@
       "links": [],
       "credits": "Performer: Ting-Chun Liu",
       "text": "Instruction: Take off the clothes, seek from the inner sound. 指示：脫衣服，探索衣服的聲音。\n\nThe piece was performed by the time I was exchanging in AVU, Prague. During the exchange, I was unfamiliar with all the things happening around me, cultures, languages, even bodies. Then I started working with actions. It was a shock to know how little I knew about the feelings of my own body.\n\nThe weather was cold in Europe, I wore a lot more than I usually did in Taiwan. This started the idea of this performance, I tried to undress in public, seeking the difference between who I was, who I am, and the audiences on-site.\n\nLater on, when I was back to Taiwan, I did the same performance again, trying to figure it out in a different context.",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/take-of-the-clothes"
+      ]
     },
     {
       "slug": "hyper-link-into-image",
@@ -405,7 +494,10 @@
       "links": [],
       "credits": "",
       "text": "In the era of the Internet, we browse through pages and pages of content. Read the paragraph, click the next link, and repeat the same behavior. Massively and greedily ingest all the information without digesting and take it for granted. The webpage itself is an image, we read and browse all the information repeatedly.\n\nI tried to block the familiar way people browse the internet by removing the most important component \"Hyperlink\". When surfing the internet through the browser, every webpage became a static image, which lost the ability to link to another webpage. By setting up a wi-fi router in the space and blocking all the wireless connection, audiences are forced to connect to the router I run, which had been written a script to redirect the request-URL into a static image. All the web pages they see will become an image screenshot from the webpage.\n\n在網路世界中，我們瀏覽著一頁又一頁的頁面，閱讀著其中的資訊，並點選了下一個連結，重複又重複繼續著下一張頁面。大量且貪婪的攝取著資訊卻不經過消化，而成為習以為常的慣性行為卻不自知。網頁本身即是一張靜態影像，我們預期並瀏覽其上的資訊。不斷不斷重複。\n\n我企圖阻斷觀眾習以為常的網頁瀏覽方式。嘗試將網路最重要的部分超連結(Hyperlink)移除，當透過瀏覽器瀏覽網頁時，得到的是一張固定靜態影像，因此也缺乏了連結至下一個頁面的能力。透過架設一台於展場的基地台，並且屏蔽場域中的無線網路，迫使現場觀眾在使用網路時必須要連結至預設的基地台。在基地台上撰寫將請求的網址(request-URL)轉換為靜態影像的腳本。讓現場觀眾所有網頁瀏覽過程都變成一張張靜態的圖片。",
-      "hidden": false
+      "hidden": false,
+      "aliases": [
+        "/hyper-link-into-image"
+      ]
     },
     {
       "slug": "fall",
@@ -421,7 +513,10 @@
       "links": [],
       "credits": "",
       "text": "Because of the layering between frames, moving image is discrete. But it also reflects the linear of reality. We try to use a short and painful action \"falling\". By repeating over hundreds of times, stacking couple frames of audio and image, to question the nature of reality and image.\n\n動態影像的本身即因為影格與影格間的堆疊而具有離散性，但同時它卻反映了線性的真實世界。我想用跌倒這樣短暫而確實疼痛的事件，透過反覆至少一百次之後，以每一次的影像剪取數格影格堆疊。質疑真實與影像之間的關係。",
-      "hidden": true
+      "hidden": true,
+      "aliases": [
+        "/fall"
+      ]
     },
     {
       "slug": "let-the-drone-fly",
@@ -439,49 +534,60 @@
       "links": [],
       "credits": "",
       "text": "A drone that relies on power supplied by wires.\n\nRelaxing, storing energy, pulling, and crashing. Relaxing, storing energy, pulling, and crashing.\n\nIn the oscillation of self-pulling, the aircraft possesses its own dynamic and three-dimensional perspective, but at the same time tries to break free from the flat foundation it relies on.\n\nThe work also reflects my thoughts and concerns as a student of New Media Arts. Based on the speed and movement of time, which are essential conditions for the establishment of media art, and the maintenance of electricity, which also plays an important role in technological art, if the electricity supply is disrupted by the work itself, ending all movement, would the work still be valid in an exhibition like New Media Arts?\n\n一台依靠電線供電的飛行器。\n\n鬆弛、蓄能、拉扯、撞擊，鬆弛、蓄能、拉扯、撞擊。\n\n飛行器在自我拉扯的擺盪之間，自擁著動態與立體的視角，卻又極欲掙脫自己依賴的平面根基。\n\n作品亦為我作為新媒體藝術學系學生的想法與煩惱，基於時間的速度與動態作為媒體藝術成立的充要條件，而電力的維持也在科技藝術中佔有極大的地位，倘若今日供電被作品本身所扯斷，終結一切動態，作品在新媒體藝術展覽這樣的場域是否依舊成立？",
-      "hidden": true
+      "hidden": true,
+      "aliases": [
+        "/let-the-drone-fly"
+      ]
     }
   ],
   "performances": [
     {
       "title": "Imaginary Landscape",
       "note": "soft rotation #2, valentines day edition, 14.02.2024, 674FM Radio",
-      "video": "https://vimeo.com/953746255"
+      "video": "https://vimeo.com/953746255",
+      "thumb": "https://static.wixstatic.com/media/4eb1dd_5283375190fe47fd94edfa4ac6083ccb~mv2.jpg"
     },
     {
       "title": "valentinstag",
       "note": "soft rotation #2, valentines day edition, 14.02.2024, 674FM Radio",
-      "video": "https://vimeo.com/924343918"
+      "video": "https://vimeo.com/924343918",
+      "thumb": "https://static.wixstatic.com/media/4eb1dd_795521947e294861bd6aaf4318159c32~mv2.jpg"
     },
     {
       "title": "Imaginary Landscape",
       "note": "Audio-visual performance",
-      "video": "https://vimeo.com/851305237"
+      "video": "https://vimeo.com/851305237",
+      "thumb": "https://static.wixstatic.com/media/4eb1dd_8d709712675d4923a84fbd7962087607~mv2.jpg"
     },
     {
       "title": "Browse",
       "note": "14.09.2019 Nuit Blanche – Lacking Sound Festival #Soirée, Winsing Art Place, Taipei",
-      "video": "https://vimeo.com/377240363"
+      "video": "https://vimeo.com/377240363",
+      "thumb": "https://static.wixstatic.com/media/4eb1dd_fd16d1138b384624a7e1261c651c6745~mv2_d_6000_3551_s_4_2.jpg"
     },
     {
       "title": "Lift-Off Vol. 3",
       "note": "Max 8 sound + Processing 3.4 four-channel video. Opening of TNUA NMA graduation show “Reentry”, 14.06.2019, Songshan Cultural and Creative Park",
-      "video": "https://vimeo.com/347720746"
+      "video": "https://vimeo.com/347720746",
+      "thumb": "https://static.wixstatic.com/media/4eb1dd_bda657684a0b4f6bb13f552155750382~mv2_d_5385_3590_s_4_2.jpg"
     },
     {
       "title": "Lift-off",
       "note": "The rocket cloud of SpaceX Falcon 9 launching SAOCOM-1A, 07.10.2018",
-      "video": "https://vimeo.com/313166060"
+      "video": "https://vimeo.com/313166060",
+      "thumb": ""
     },
     {
       "title": "Anesthesia Calculations",
       "note": "2016, opening performance of TNUA NMA department show “A/P”",
-      "video": "https://vimeo.com/246930365"
+      "video": "https://vimeo.com/246930365",
+      "thumb": ""
     },
     {
       "title": "Untitled",
       "note": "19.04.2016, noise performance at TNUA; sound sources only electromagnetic waves and a mixer",
-      "video": "https://vimeo.com/246924468"
+      "video": "https://vimeo.com/246924468",
+      "thumb": ""
     }
   ],
   "about": {
@@ -907,137 +1013,200 @@
   "friends": [
     {
       "name": "Ying Wen, Wang",
-      "url": "https://www.wangyingwen.net/"
+      "url": "https://www.wangyingwen.net/",
+      "image": "https://static.wixstatic.com/media/4eb1dd_44268abef4344798a9b9053b26be8fc3~mv2_d_1571_1734_s_2.png"
     },
     {
       "name": "KingKong Hoho",
-      "url": "https://kingkonghoho.cargo.site/"
+      "url": "https://kingkonghoho.cargo.site/",
+      "image": "https://static.wixstatic.com/media/4eb1dd_fdb0c6c30ec142ac84511ebfb3a00234~mv2_d_4096_4096_s_4_2.jpg"
     },
     {
       "name": "Fang Tsai",
-      "url": "http://fangtsai.wixsite.com/fangtsai15"
+      "url": "http://fangtsai.wixsite.com/fangtsai15",
+      "image": "https://static.wixstatic.com/media/4eb1dd_b2eb3236916d4cc0a5d4ab475c8753d8~mv2.png"
     },
     {
       "name": "Wang-chunli",
-      "url": "http://www.wang-chunli.com/"
+      "url": "http://www.wang-chunli.com/",
+      "image": "https://static.wixstatic.com/media/4eb1dd_e2f696ba40ee406e928ed5b96aef8b6f~mv2.jpg"
     },
     {
       "name": "Cels Ho",
-      "url": "http://celscelscels.wixsite.com/celsho"
+      "url": "http://celscelscels.wixsite.com/celsho",
+      "image": "https://static.wixstatic.com/media/4eb1dd_6afac9def6af49ed96ee5d2864a1aa9c~mv2.png"
     },
     {
       "name": "Gunter",
-      "url": "https://gunter292.wixsite.com/gunter"
+      "url": "https://gunter292.wixsite.com/gunter",
+      "image": "https://static.wixstatic.com/media/4eb1dd_9da3ed63ecdb4c969b350dcd1acad503~mv2.png"
     },
     {
       "name": "SsuChi, Hou",
-      "url": "https://www.ssuchihou.com"
+      "url": "https://www.ssuchihou.com",
+      "image": "https://static.wixstatic.com/media/4eb1dd_8578c4e5bd274fea833c0ddb42adc84f~mv2.png"
     },
     {
       "name": "Lin-Yan-Xiang",
-      "url": "https://wow860217.wixsite.com/linyanxiang"
+      "url": "https://wow860217.wixsite.com/linyanxiang",
+      "image": "https://static.wixstatic.com/media/4eb1dd_42b026ee0f934e0abc53c70f74622253~mv2.jpg"
     },
     {
       "name": "林哲志 Lin zhe zhi",
-      "url": "https://zhe-zhi-lin.weebly.com"
+      "url": "https://zhe-zhi-lin.weebly.com",
+      "image": "https://static.wixstatic.com/media/4eb1dd_0697ae245e7444b6802b93b7d45c613d~mv2_d_3995_2250_s_2.jpg"
     },
     {
       "name": "JackLiu",
-      "url": "https://www.behance.net/JackLiu00521"
+      "url": "https://www.behance.net/JackLiu00521",
+      "image": "https://static.wixstatic.com/media/4eb1dd_d6aa34ab831442cbb1b69644b8be7218~mv2_d_2800_1869_s_2.jpg"
     },
     {
       "name": "ChiunHau You",
-      "url": "https://www.behance.net/chiunhauyou"
+      "url": "https://www.behance.net/chiunhauyou",
+      "image": "https://static.wixstatic.com/media/4eb1dd_8287ee94d2034cfe83b9eff114256c2b~mv2_d_2800_1979_s_2.png"
     },
     {
       "name": "Tone",
-      "url": "http://hanna841027.wixsite.com/tone19"
+      "url": "http://hanna841027.wixsite.com/tone19",
+      "image": "https://static.wixstatic.com/media/4eb1dd_0c8feb30601e4768959f84417cab687c~mv2_d_5184_3456_s_4_2.jpg"
     },
     {
       "name": "Marija Cipkute",
-      "url": "https://marija-cipkute.weebly.com/"
+      "url": "https://marija-cipkute.weebly.com/",
+      "image": "https://static.wixstatic.com/media/4eb1dd_88819d933ed8477a8bf151777092b804~mv2.jpeg"
     },
     {
       "name": "Ku, Shih-Hung",
-      "url": "http://jkdeermusic.com"
+      "url": "http://jkdeermusic.com",
+      "image": "https://static.wixstatic.com/media/4eb1dd_3709638286c24afeaeb6504f5ecf313b~mv2.jpg"
     },
     {
       "name": "Wenny Lan",
-      "url": "https://seenlan.wordpress.com/"
+      "url": "https://seenlan.wordpress.com/",
+      "image": "https://static.wixstatic.com/media/4eb1dd_0975d9a9e4be481fbea0008ec68e58b4~mv2.png"
     }
   ],
   "writing": [
     {
+      "slug": "pythonintroduction",
       "date": "2022-12-05",
       "title": "藝術學院的基礎爬說分享（待完善）",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/pythonintroduction"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.jpeg",
+      "excerpt": "這學期算是比較正式接了助教，想説寫給自己整理也分享這學期的課程大綱，還有一些自己的雜談與碎念。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "xanadu-travel-agency",
       "date": "2022-07-30",
       "title": "海灘作為想像的彼方—仙納度旅行社計畫",
       "category": "works",
-      "url": "https://www.liutingchun.com/post/xanadu-travel-agency"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_6da08cb86bd64e8bb9b75a4a0ff7e1d8~mv2.jpeg",
+      "excerpt": "現代之前海灘旅遊在西方脈絡中是無法被想像的。1994 年法國歷史學家 Alain Corbin 在著作《The Lure of the Sea》中爬梳現代性致使西方世界對於海洋理解的轉向。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "raspberry-pi-python-light-strip",
       "date": "2021-03-12",
       "title": "Raspberry Pi Python 燈條控制 (ws281x 系列)",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/raspberry-pi-python-light-strip"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_2c024145eb3340659134cb0f6d09dbda~mv2.jpg",
+      "excerpt": "如何使用 Python 操作彩色 LED 燈條，安裝相關套件與使用規格。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "raspberry-pi3-b-plus-video-sync",
       "date": "2020-02-01",
       "title": "Raspberry Pi3 B+ 同步播放器",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/raspberry-pi3-b-plus-video-sync"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.jpg",
+      "excerpt": "以 omxplayer-sync 在多台 Raspberry Pi 3 B+ 上製作同步影片播放器的完整步驟。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "processing-text-animation",
       "date": "2019-11-07",
       "title": "Processing 蒙地卡羅演算法做文字動畫",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/processing-text-animation"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_11e226901ce04a8e94da95c93cef0145~mv2.jpg",
+      "excerpt": "用蒙地卡羅方法計算文字在空間中的佔比，讓文字流動並把圖像轉換成文字。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "raspberrypi-python-osc",
       "date": "2019-09-02",
       "title": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/raspberrypi-python-osc"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.png",
+      "excerpt": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "lift-off",
       "date": "2019-08-22",
       "title": "Audio-Visual 作品 Lift-Off",
       "category": "works",
-      "url": "https://www.liutingchun.com/post/lift-off"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_158dba8f22174d9fae12284b424d2f88~mv2_d_4096_2617_s_4_2.jpg",
+      "excerpt": "2018.10.07 SpaceX 發射 Falcon 9 留下的彩雲，以及這件 Audio-Visual 演出四次版本的心得。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "raspberry-pi-shift-register",
       "date": "2019-03-17",
       "title": "Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/raspberry-pi-shift-register"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.jpg",
+      "excerpt": "用 Python GPIO 控制 74HC595 / TPIC6C594 移位暫存器與七段顯示器，以及位元運算。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "raspberry-pi-video-switching",
       "date": "2019-01-23",
       "title": "Raspberry Pi 互動影片切換與播放",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/raspberry-pi-video-switching"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.png",
+      "excerpt": "以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "raspberry-pi-basic",
       "date": "2019-01-17",
       "title": "Raspberry Pi 基本使用",
       "category": "technique",
-      "url": "https://www.liutingchun.com/post/raspberry-pi-basic"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.jpg",
+      "excerpt": "遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "body-as-the-reflection-on-site",
       "date": "2018-08-25",
       "title": "身體作為現場的折射（一）",
       "category": "works",
-      "url": "https://www.liutingchun.com/post/body-as-the-reflection-on-site"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_11bbd0e1c4674a55b235c8bd64ba5ba6~mv2.jpg",
+      "excerpt": "從《Tomorrow’s Torture》、《跌倒》到布拉格的行為實驗，整理自己身體創作的脈絡。",
+      "lang": "zh-Hant",
+      "hidden": false
     },
     {
+      "slug": "messageinthebottle",
       "date": "2017-11-08",
       "title": "瓶中信",
       "category": "works",
-      "url": "https://www.liutingchun.com/post/messageinthebottle"
+      "cover": "https://static.wixstatic.com/media/4eb1dd_e0102bb37d434178bba8f40458229562~mv2_d_3809_4333_s_4_2.png",
+      "excerpt": "瓶中信——與任何遲抵的彼方。關於網路、時間，以及臉書貼文本身。",
+      "lang": "zh-Hant",
+      "hidden": false
     }
   ]
 }
