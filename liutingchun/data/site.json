@@ -3,7 +3,7 @@
     "name": "Ting-Chun Liu",
     "name_zh": "劉庭均",
     "description": "Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media, and network practice.",
-    "email": "april85227@gmail.com",
+    "email": "tingchun.liu.tw@gmail.com",
     "home_image": "images/wix/4eb1dd_855ab1c013ad4766ace158a9529139a7~mv2.gif",
     "links": [
       {
@@ -52,7 +52,11 @@
     ],
     "ga_id": "G-JX0CS0510W",
     "statement": "Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media and network practice — dissecting technological systems through feedback-driven interventions.",
-    "address": [],
+    "address": [
+      "Heumarkt 14",
+      "50667 Köln",
+      "Deutschland"
+    ],
     "job_title": "Artist",
     "occupations": [
       "Artist",
@@ -88,7 +92,13 @@
         "@type": "Place",
         "name": "Taipei, Taiwan"
       }
-    }
+    },
+    "description_de": "Ting-Chun Liu ist Künstler an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis.",
+    "description_zh": "劉庭均是一位藝術家，創作橫跨批判性人工智慧、影音媒體與網路實踐。",
+    "statement_de": "Ting-Chun Liu ist Künstler an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis — er seziert technologische Systeme durch feedbackbasierte Interventionen.",
+    "statement_zh": "劉庭均是一位藝術家，創作橫跨批判性人工智慧、影音媒體與網路實踐——以回饋驅動的介入手法，拆解科技系統。",
+    "job_title_de": "Künstler",
+    "job_title_zh": "藝術家"
   },
   "works": [
     {
@@ -116,7 +126,11 @@
       "hidden": false,
       "aliases": [
         "/works/steer-through-the-inner-residue"
-      ]
+      ],
+      "text_zh": "當一個系統面對自己的輸出時，會發生什麼事？《Steering Through the Inner Residue》把生成的結果重新作為輸入，讓圖像生成的過程追隨它自身的軌跡。\n\n人工智慧常被描述為黑盒子：儘管輸入與輸出都清楚定義，其內部機制卻依然不透明。圖像生成通常以一段文字描述（prompt）開始，承載著人的意圖與期待。在這件作品中，這個慣常的流程被打斷——文字被完全捨棄，機器被反覆地以它自己生成的圖像引導，人的期待於是被機器的期待所取代。\n\n遞迴描述的是一種迴圈的過程；但與重複不同，每一次迭代都與前一刻略有偏差，像一道超越線性因果的螺旋，最終抵達未知的座標。回授的本質意味著，浮現出來的東西根本上是偶然且情境性的——就像把麥克風放在喇叭前，刺耳的回授同時顯露了周遭空間的迴響與電子元件的機械質地。\n\n在 1969 年的作品《I Am Sitting in a Room》中，美國聲音藝術家 Alvin Lucier 錄下自己朗讀一段短文，接著在房間裡播放這段錄音並同時重新錄製。這個過程不斷重複，直到房間的共振層層累積，說話聲逐漸消失。最後幾次錄音中浮現的模糊嗡鳴並不只是雜訊，而是迴響的累積——房間的殘留。遞迴的過程讓底層變得可見：它以聲學的方式丈量空間，並將之轉譯為可聽見的形式。人工智慧也可以用類似的方式對待：回授的過程在圖像生成系統中航行，撕開一道裂縫，顯露其內部。\n\n畫面像一只被攤開的盒子，每一面都承載著過程的迴響——一片僅由程序本身生成的、獨特圖樣的地景。色彩漂向過飽和的色調，形體碎裂成層層圖樣，意義瓦解為雜訊。隨時間累積下來的不是一張圖像，而是一個過程：一件演算法的人造物，一種除了過程本身之外不指向任何事物的殘留。",
+      "text_de": "Was passiert, wenn ein System mit seinem eigenen Output konfrontiert wird? Steering through the Inner Residue geht dieser Frage nach, indem erzeugte Bilder wieder als Input eingespeist werden und der Bildprozess so seiner eigenen Spur folgt.\n\nKünstliche Intelligenz wird oft als Blackbox beschrieben: Trotz klar definierter Ein- und Ausgaben bleiben ihre inneren Mechanismen undurchsichtig. Bildgenerierungen beginnen normalerweise mit einer Textbeschreibung (Prompt), die menschliche Absichten und Erwartungen widerspiegelt. Hier wird dieser Ablauf unterbrochen: Der Text wird vollständig weggelassen, und die Maschine wird iterativ mit ihren eigenen Bildern gelenkt – menschliche Erwartungen werden durch die der Maschine ersetzt.\n\nRekursion beschreibt einen Prozess der Schleife; anders als bei der Wiederholung weicht jede Iteration leicht von der vorherigen ab, wie eine Spirale, die lineare Kausalität überschreitet und an unbekannten Koordinaten ankommt. Das Wesen der Rückkopplung ist, dass das Entstehende grundsätzlich kontingent und situativ ist – so wie ein Mikrofon vor einem Lautsprecher, dessen schrilles Feedback die Akustik des Raums ebenso hörbar macht wie die mechanische Handschrift der Elektronik.\n\nIn seinem Werk I Am Sitting in a Room (1969) nimmt der US-amerikanische Klangkünstler Alvin Lucier sich beim Lesen eines kurzen Textes auf, spielt die Aufnahme im Raum ab und nimmt sie zugleich erneut auf. Der Vorgang wird wiederholt, bis sich die Resonanzen des Raums verdichten und die Sprache allmählich verschwindet. Das verschwommene Summen der letzten Aufnahmen ist jedoch nicht bloß Rauschen, sondern die Anhäufung von Nachhall – ein Rückstand des Raums. Der rekursive Prozess macht das Darunterliegende sichtbar: Er vermisst den Raum akustisch und übersetzt ihn in Hörbares. Ähnlich lässt sich mit künstlicher Intelligenz verfahren: Die Rückkopplung navigiert durch das System der Bildgenerierung und öffnet einen Spalt, der sein Inneres zeigt.\n\nDie Bildflächen gleichen einer aufgefalteten Schachtel; jede Fläche trägt den Nachhall des Prozesses, eine Landschaft eigener Muster, die allein aus den Verfahren hervorgeht. Farben driften in übersättigte Töne, Formen zerfallen in Musterschichten, Bedeutung zerfällt zu Rauschen. Was sich mit der Zeit ansammelt, ist kein Bild, sondern ein Prozess: ein algorithmisches Artefakt, ein Rückstand, der auf nichts verweist als auf den Prozess selbst.",
+      "type_de": "Videoinstallation",
+      "type_zh": "錄像裝置"
     },
     {
       "slug": "interpolation-of-the-invisible-color",
@@ -152,7 +166,11 @@
       "hidden": false,
       "aliases": [
         "/works/interpolation-of-the-invisible-color"
-      ]
+      ],
+      "text_zh": "馬塞爾・杜象曾把藝術作品的標題形容為一種看不見的顏色（Welchman, 1997）——繞過眼睛、直接對心智說話的顏料。這個說法把美感經驗從視覺移向脈絡。作品的標籤、藝術家提供的敘事、展覽的歷史，都是這種看不見的顏料的延伸，它們形塑了我們如何閱讀、評價，甚至忽略眼前所見之物。\n\n計畫進行時，杜塞道夫的 Storage Museum 收藏了 479 件作品，實體分布在 10 座層架上，並以圖像、標題、藝術家姓名、尺寸與工作人員筆記等資料數位化保存。這樣的排列帶有偶然性，同時也是工作人員專業與勞動的檔案，被濃縮在這 10 座層架之中。我們以嵌入（embedding）作為策展的技術方法——一種把資訊轉換成電腦可比較之數字的 AI 技術，也是 ChatGPT、Google 搜尋與 AI 圖像生成器背後的方法，讓機器得以衡量相似性、在不同類型的資料間找出模式。整個過程完全在本地運行，不使用任何雲端服務，以保護典藏資料。\n\n然而，AI 很簡單。它找到數學上的相關，在同時出現的事物之間畫線。但相關不等於因果，模式也不構成意義。資料再詳盡，也無法完整再現實體物件，或與它們共處的身體經驗。AI 是一種工具，而不是藝術實踐與策展專業的替代品。演算法提供了一種漫遊典藏、發現意外鄰居的方式，它提示著：這些東西看起來相關——卻無法告訴你為什麼，或那代表什麼。",
+      "text_de": "Marcel Duchamp beschrieb den Titel eines Kunstwerks als unsichtbare Farbe (Welchman, 1997) – Pigmente, die das Auge umgehen und direkt zum Verstand sprechen. Damit verschiebt sich die ästhetische Erfahrung vom Sichtbaren hin zum Kontext. Das Etikett eines Werks, die Erzählung der Künstlerin oder des Künstlers, die Ausstellungsgeschichte – all das verlängert dieses unsichtbare Pigment. Es prägt, wie wir lesen, bewerten oder auch übergehen, was uns vor Augen steht.\n\nDas Storage Museum in Düsseldorf umfasste zur Zeit des Projekts 479 Werke, verteilt auf 10 Regale und digital erfasst als Daten aus Bild, Titel, Name der Künstlerin oder des Künstlers, Maßen und Notizen des Teams. Diese Ordnung ist zufällig gewachsen und bildet ein Archiv des Wissens und der Arbeit des Teams, verdichtet auf 10 Regale. Als technischen Zugang zur Kuratierung nutzten wir Embeddings – eine KI-Technik, die Informationen in Zahlen übersetzt, die ein Computer vergleichen kann. Dieselbe Methode steckt hinter Werkzeugen wie ChatGPT, der Google-Suche oder KI-Bildgeneratoren und erlaubt es Maschinen, Ähnlichkeiten zu messen und Muster über verschiedene Datentypen hinweg zu finden. Der gesamte Prozess lief lokal, ohne Cloud-Dienste, damit die Daten der Sammlung geschützt blieben.\n\nDoch KI ist simpel. Sie findet mathematische Korrelationen und zieht Linien zwischen Dingen, die gemeinsam auftreten. Korrelation ist aber keine Kausalität, und ein Muster stiftet keine Bedeutung. Daten, so detailliert sie auch sind, können die physischen Objekte oder die verkörperte Erfahrung im Umgang mit ihnen nie vollständig abbilden. KI ist ein Werkzeug, kein Ersatz für künstlerische Praxis und kuratorische Expertise. Der Algorithmus bietet einen Weg, durch die Sammlung zu streifen und unerwartete Nachbarschaften zu entdecken; er schlägt vor: Diese Dinge scheinen verwandt – aber er kann nicht sagen, warum oder was das bedeutet.",
+      "type_de": "Kuratorische Praxis, interaktive Installation",
+      "type_zh": "策展實踐、互動裝置"
     },
     {
       "slug": "latent-heat-generation",
@@ -185,7 +203,13 @@
       "hidden": false,
       "aliases": [
         "/works/latent-heat-generation"
-      ]
+      ],
+      "text_zh": "《Latent Heat Generation》是一項藝術研究計畫，透過熱影像的回授迴圈探問 AI 系統隱藏的物質基礎設施：運算產生的廢熱在即時回授中成為 AI 圖像的生成素材。作品從一位台灣藝術家的位置出發，源自一個個人的兩難——既受限於不足的運算能力，同時又與支撐全球 AI 發展的那套基礎設施緊密相連。\n\n裝置揭示了多重意義的「生成」：熱能的產生、AI 圖像的生成、半導體製程的世代，以及技術依賴的世代政治。自製軟體把熱感測數據轉換成 Stable Diffusion 模型的提示詞，形成遞迴迴圈，讓顯示卡透過熱影像檢視自身的物質條件。\n\n這項熱的調查揭示了運算熱如何帶著全球製造依賴的印記，並透過顯現嵌入 AI 系統之中的能量轉換與地緣政治關係，質疑數位過程看似非物質的表象。",
+      "text_de": "Latent Heat Generation ist ein künstlerisches Forschungsprojekt, das die verborgenen materiellen Infrastrukturen von KI-Systemen über Rückkopplungsschleifen mit Wärmebildern untersucht: In Echtzeit wird die Abwärme der Rechner zum generativen Material für KI-Bilder. Aus der Perspektive eines taiwanischen Künstlers entwickelt, geht die Arbeit von einem persönlichen Dilemma aus – begrenzt durch fehlende Rechenleistung und zugleich mit genau jener Infrastruktur verbunden, die KI-Entwicklung weltweit erst ermöglicht.\n\nDie Installation macht mehrere Formen von „Generation“ sichtbar: die Erzeugung von Wärme, die Erzeugung von KI-Bildern, die Generationen der Halbleiterfertigung und die generationenübergreifende Politik technologischer Abhängigkeit. Eigene Software übersetzt Wärmemessungen in Prompts für Stable-Diffusion-Modelle und erzeugt so rekursive Schleifen, in denen Grafikprozessoren ihre eigenen materiellen Bedingungen als Wärmebild betrachten.\n\nDie thermische Untersuchung zeigt, wie Rechenwärme die Spuren globaler Fertigungsabhängigkeiten trägt. Sie stellt die scheinbare Immaterialität digitaler Prozesse infrage, indem sie die Energieumwandlungen und geopolitischen Verhältnisse sichtbar macht, die in KI-Systeme eingeschrieben sind.",
+      "type_de": "Künstlerische Forschung",
+      "type_zh": "藝術研究",
+      "materials_de": "Computer, Grafikkarten, UV-Wafer, Website",
+      "materials_zh": "電腦、顯示卡、UV 晶圓、網站"
     },
     {
       "slug": "just-jailbreak",
@@ -217,7 +241,11 @@
       "hidden": false,
       "aliases": [
         "/works/just-jailbreak"
-      ]
+      ],
+      "text_zh": "乖乖是台灣知名的零食品牌，最為人熟知的是綠色包裝的椰子口味。台灣民間相信，把一包乖乖放在故障的機器上，就能讓它「乖乖」聽話——正是取自品牌名稱的諧意。《Just Jailbreak》以這個文化現象為靈感，將它轉化為一款 AI 驅動的遊戲。\n\n在遊戲中，玩家要面對 JJ——一個喜歡模仿各種科技產品、卻總是不肯好好運作的古怪角色。JJ 頑固又愛玩，很少照指令行事，玩家必須發揮創意說服它合作，就像用乖乖「安撫」故障的機器一樣。\n\nJJ 由大型語言模型驅動，鼓勵玩家嘗試各種「越獄」技巧讓它就範：可以強硬下令、耍點小聰明、提出誘人的獎勵，或乾脆對 JJ 大灑愛心。遊戲把玩家帶進大型語言模型越獄的世界，呼應現實中使用者如何以各種文字策略，試圖繞過 OpenAI 等公司為 AI 聊天機器人設下的限制。\n\n《Just Jailbreak》邀請玩家實驗，找到自己與 JJ 溝通的方式，成為認識 LLM 越獄文化的一個有趣入口。",
+      "text_de": "Kuai Kuai (乖乖) ist eine beliebte taiwanische Snackmarke, bekannt vor allem für ihre Kokos-Chips in grüner Verpackung. Einem lokalen Glauben zufolge wird defekte Technik „gehorsam“, wenn man eine Packung Kuai Kuai darauflegt – eine Anspielung auf den Namen, der übersetzt „sei brav“ bedeutet. Just Jailbreak greift dieses kulturelle Phänomen auf und macht daraus ein KI-gestütztes Spiel.\n\nIm Spiel trifft man auf JJ, eine eigenwillige Figur, die gern verschiedene Arten von Technik imitiert – aber nie so funktioniert, wie sie soll. JJ ist stur und verspielt und befolgt Anweisungen nur selten; die Spielenden müssen JJ also kreativ zur Mitarbeit überreden, ganz so, wie man mit Kuai Kuai streikende Geräte „beruhigt“.\n\nJJ basiert auf einem großen Sprachmodell und lädt dazu ein, verschiedene „Jailbreaking“-Techniken auszuprobieren: bestimmt und autoritär auftreten, ein wenig schummeln, verlockende Belohnungen anbieten oder JJ einfach mit Zuneigung überschütten. Das Spiel führt so in die Welt des LLM-Jailbreakings ein und spiegelt reale Experimente, bei denen Nutzerinnen und Nutzer mit kreativen Texten versuchen, die Beschränkungen von KI-Chatbots großer Firmen wie OpenAI zu umgehen.\n\nJust Jailbreak lädt dazu ein, zu experimentieren und einen eigenen Weg zu finden, mit JJ zu kommunizieren – ein zugänglicher Einstieg in die Kultur der LLM-Jailbreak-Strategien.",
+      "type_de": "Interaktives Spiel über das Jailbreaken eines großen Sprachmodells",
+      "type_zh": "關於大型語言模型越獄的互動遊戲"
     },
     {
       "slug": "self-cannibalizing-ai",
@@ -241,7 +269,11 @@
       "hidden": false,
       "aliases": [
         "/works/self-cannibalizing-ai"
-      ]
+      ],
+      "text_zh": "當機器彼此學習、在生成的過程中自我吞噬時，會發生什麼事？圖像模型能從一張隨機圖片中辨認出最快樂的人，或判斷一個人的族裔嗎？當前大多數文字生成圖像的系統，都建立在少數幾個有限的資料集、模型與演算法之上。這些模型乍看像黑盒子，仔細檢視後卻會發現，它們是由多個相互串接的模型與演算法組成的複雜管線。我們運用回授、誤用與駭入等藝術策略，拆解圖像生成模型的內部運作：讓模型反覆面對自己的輸出、拆解文字生成圖像的管線、為圖像加上標籤，並發現意想不到的相關性。講演中，我們分享對 Stable Diffusion 管線的研究、操弄大型公開圖文資料集中的美感評分、揭露 NSFW 分類機制，以及運用 CLIP（Contrastive Language-Image Pre-training）揭示這些模型在日常使用中所隱含的偏見與問題性相關。\n\n講演以我們在生成式 AI 模型上所做的各種實驗展開。首先談我們作為藝術家與程式設計者如何看待這些模型、以及我們對其工作流程的研究，接著深入探討 Stable Diffusion 的管線與資料集。研究過程中我們發現，許多關鍵環節都建立在同樣少數的資料集、模型與演算法上。這讓我們認為，若深入研究某些特定機制，或許能反思圍繞生成式 AI 的更大政治論述。我們把模型拆解為理解其運作所必需的三個步驟：資料集、嵌入與擴散。我們的例子主要以 Stable Diffusion 為基礎，但許多概念也適用於其他生成模型。\n\n隨著資料集與機器學習模型的規模和複雜度不斷增長，理解其細節變得越來越困難。像訓練 Stable Diffusion 所用的大型資料集，往往以本身也採用機器學習的演算法進行篩選。為了「提升」圖像生成品質，LAION 的龐大資料集經過一套美感預測演算法篩選，而這套演算法明顯偏好水彩與油畫。除了美感評分，圖像也會經過 NSFW 分類器評分，輸出圖像含有露骨內容的機率。這套演算法本身也帶有歧視性傾向，我們在講演中加以探討，並進一步追問：我們希望資料集由誰、以何種方式篩選與建構？\n\n許多生成模型建立在 CLIP 及其開源版本 Open-CLIP 之上，以隨機的方式連結圖像與文字：它們連接圖像與文字、將文字數位化，並計算字詞與圖像之間的距離。然而它們在訓練中高度仰賴大量圖文配對，可能因此把偏見帶進資料庫。我們進行了各種「錯誤標註」的實驗並找出其中的相關性——例如用 ThisPersonDoesNotExist 的臉孔判斷誰「快樂」、依外貌探討族裔與職業，以及分析不同文化食物的圖庫照片。結果往往與人的預期相符，但這代表什麼嗎？\n\n第三部分我們更仔細地檢視圖像生成的過程，聚焦於 Stable Diffusion 的管線。像 Stable Diffusion 這樣的生成式 AI 模型，不僅能依文字描述生成圖像，也能處理既有圖像，並依設定相當精確地重現輸入的圖像。然而當這種 AI 重製被遞迴地當作輸入時，誤差會隨著每次迭代累積。我們觀察到，依參數與設定不同，圖像會逐漸變成紫色的圖樣，或收斂成少數幾種平庸的概念。這讓人不禁追問：這些模型究竟有多傾向於回到它們學到的模式？",
+      "text_de": "Was passiert, wenn Maschinen voneinander lernen und sich im generativen Prozess selbst kannibalisieren? Kann ein Bildmodell die glücklichste Person erkennen oder die Ethnie aus einem zufälligen Bild bestimmen? Die meisten aktuellen Text-zu-Bild-Systeme beruhen auf einer begrenzten Zahl von Datensätzen, Modellen und Algorithmen. Was zunächst wie eine Blackbox wirkt, entpuppt sich bei genauerem Hinsehen als komplexe Pipeline aus mehreren verketteten Modellen und Algorithmen. Mit künstlerischen Strategien wie Rückkopplung, Zweckentfremdung und Hacking legen wir die Funktionsweise von Bildgenerierungsmodellen offen: Wir konfrontieren Modelle rekursiv mit ihrem eigenen Output, zerlegen Text-zu-Bild-Pipelines, beschriften Bilder und entdecken unerwartete Korrelationen. Im Vortrag teilen wir Experimente zur Stable-Diffusion-Pipeline, zur Manipulation ästhetischer Bewertungen in großen öffentlichen Text-Bild-Datensätzen, zur NSFW-Klassifikation und zum Einsatz von CLIP (Contrastive Language-Image Pre-training), um Verzerrungen und problematische Korrelationen im alltäglichen Gebrauch dieser Modelle sichtbar zu machen.\n\nDer Vortrag stellt verschiedene Experimente rund um generative KI-Modelle vor. Wir beginnen damit, wie wir als Künstler und Programmierer diese Modelle wahrnehmen und wie wir ihre Arbeitsabläufe untersucht haben, und gehen dann auf die Stable-Diffusion-Pipeline und ihre Datensätze ein. Dabei zeigte sich, dass wesentliche Teile auf denselben wenigen Datensätzen, Modellen und Algorithmen beruhen. Daraus folgt: Wer einzelne Mechanismen genauer untersucht, kann auch über größere politische Diskurse rund um generative KI nachdenken. Wir haben die Modelle in drei wesentliche Schritte zerlegt – Datensatz, Embedding und Diffusion. Unsere Beispiele beziehen sich vor allem auf Stable Diffusion, viele Konzepte lassen sich aber auf andere generative Modelle übertragen.\n\nMit wachsender Größe und Komplexität von Datensätzen und Modellen wird es schwierig, ihre Feinheiten zu verstehen. Große Datensätze wie der für das Training von Stable Diffusion werden mit Algorithmen gefiltert, die oft selbst auf maschinellem Lernen beruhen. Um die Bildgenerierung zu „verbessern“, wurde der umfangreiche LAION-Datensatz mit einem Algorithmus zur ästhetischen Bewertung gefiltert, der eine starke Vorliebe für Aquarell- und Ölmalerei hat. Zusätzlich werden Bilder mit einem NSFW-Klassifikator bewertet, der die Wahrscheinlichkeit expliziter Inhalte schätzt. Auch dieser Algorithmus hat eigene diskriminierende Tendenzen, die wir im Vortrag untersuchen – und wir fragen, wie und von wem unsere Datensätze gefiltert und gebaut werden sollen.\n\nViele generative Modelle bauen auf CLIP und seiner Open-Source-Variante Open-CLIP auf, die Bilder und Texte stochastisch miteinander in Beziehung setzen: Sie verbinden Bild und Text, digitalisieren Text und berechnen Abstände zwischen Wörtern und Bildern. Dafür brauchen sie im Training jedoch enorme Mengen an Text-Bild-Paaren, was Verzerrungen in die Datenbasis einbringen kann. Wir haben Experimente mit verschiedenen „Falschbeschriftungen“ durchgeführt und Korrelationen aufgespürt – etwa Gesichter von ThisPersonDoesNotExist nach „Glück“ sortiert, Ethnien und Berufe anhand des Aussehens untersucht oder Stockfotos kulturell unterschiedlicher Gerichte analysiert. Die Ergebnisse entsprechen oft menschlichen Erwartungen – aber bedeutet das etwas?\n\nIm dritten Teil betrachten wir den Prozess der Bildgenerierung genauer, mit Fokus auf die Stable-Diffusion-Pipeline. Generative KI-Modelle wie Stable Diffusion können nicht nur Bilder aus Textbeschreibungen erzeugen, sondern auch vorhandene Bilder verarbeiten und diese je nach Einstellung sehr genau reproduzieren. Wird diese Reproduktion jedoch rekursiv als Input verwendet, summieren sich die Fehler mit jeder Iteration. Wir beobachteten, dass sich Bilder je nach Parametern allmählich in violette Muster oder eine begrenzte Anzahl banaler Motive verwandeln. Das wirft Fragen danach auf, wie sehr diese Modelle zu erlernten Mustern zurückkehren.",
+      "type_de": "Vortrag, 37C3 — künstlerische Strategien, um generative Text-zu-Bild-Modelle offenzulegen",
+      "type_zh": "講演，37C3 — 揭露文字生成圖像模型的藝術策略"
     },
     {
       "slug": "achtung-verwischung",
@@ -270,7 +302,13 @@
       "hidden": false,
       "aliases": [
         "/achtung-verwischung"
-      ]
+      ],
+      "text_zh": "2023 年夏天，我參加了由 Sam Hopkins 與 Agustina Andreoletti 帶領的「Leaky Archive」研討課，目標是與明斯特藝術學院的學生及 Mariana Castillo Deball 一起，在科隆的勞騰施特勞赫－約斯特博物館（RJM）合作一檔展覽。當時 RJM 正積極討論貝寧青銅器——從奈及利亞掠奪而來的藝術品——的歸還問題。我們也有機會探索 RJM 約有 65,000 件物件與 100,000 張照片的典藏，作為展覽的靈感來源。\n\n在瀏覽 RJM 的館藏、與 Chaya 交談的過程中，我開始思考民族學博物館應該如何展示、展示什麼，以及我們作為學生藝術家的角色是什麼。起初我想玩「leaky（滲漏）」這個字，用一台滴水的機器來象徵；然而我們發現，這棟建築本身早已多處漏水。接著我有了幾次有趣的相遇：我和驗票人員、清潔人員聊起漏水的事，清潔阿姨甚至帶我走遍所有會漏水的地方。當我擺放我的「小心地滑」立牌時沒有人注意；但當我想把它拿走時，卻被指責要帶走東西。這讓我看見系統的單向性：你可以貢獻，卻不能撤回。這些事件凸顯了機構失控的狀態與每個人角色的曖昧，也讓我產生了自製「小心地滑」立牌、並在展期中拖博物館地板的構想。\n\n在一次談話中，Dennis 建議我用「Verwischung」這個字——意指模糊或抹除；去掉字首的「Wischung」則是拖地的意思。作為受邀進入民族學博物館的學生藝術家，我不禁思考我們如何被工具化，去支撐博物館「我們在做好事」的角色。更何況，我們對博物館、機構或體制所貢獻的一切，又再次引發新的問題。於是有了這個構想：單純地去拖一片早已乾淨的地板——一個看似無關緊要的行為，卻弔詭地成為展覽中的「一件藝術計畫」。",
+      "text_de": "Im Sommer 2023 nahm ich am Seminar „Leaky Archive“ unter der Leitung von Sam Hopkins und Agustina Andreoletti teil. Ziel war eine gemeinsame Ausstellung im Rautenstrauch-Joest-Museum (RJM) mit Studierenden der Kunstakademie Münster und Mariana Castillo Deball. Das RJM diskutierte damals intensiv die Rückgabe der Benin-Bronzen – Kunstwerke, die aus Nigeria geraubt wurden. Wir konnten auch das Archiv des RJM mit rund 65.000 Objekten und 100.000 Fotografien erkunden, das uns als Inspiration für die Ausstellung diente.\n\nBeim Durchsehen des Inventars und in Gesprächen mit Chaya stellte sich mir die Frage, wie und was ethnologische Museen zeigen sollten – und welche Rolle wir als studentische Künstlerinnen und Künstler dabei spielen. Zunächst wollte ich mit dem Wort „leaky“ spielen, symbolisiert durch eine tropfende Maschine. Doch dann stellten wir fest, dass das Gebäude bereits an mehreren Stellen undicht war. Es folgten einige interessante Begegnungen: Ich sprach mit dem Kassen- und dem Reinigungspersonal über die Lecks; eine Reinigungskraft führte mich sogar zu allen undichten Stellen. Als ich meinen Warnaufsteller hinstellte, bemerkte es niemand – als ich ihn wieder entfernen wollte, wurde mir vorgeworfen, etwas mitzunehmen. Das zeigte mir die Einseitigkeit des Systems: Man kann beitragen, aber nichts zurücknehmen. Diese Erlebnisse machten den Kontrollverlust der Institution und die Uneindeutigkeit aller Rollen sichtbar – und führten zur Idee, eigene „Rutschgefahr“-Aufsteller zu gestalten und den Museumsboden im Rahmen der Ausstellung zu wischen.\n\nIn einem Gespräch schlug Dennis mir das Wort „Verwischung“ vor – es bedeutet Unschärfe oder Auslöschung; ohne die Vorsilbe steht „Wischung“ für das Wischen. Als studentischer Künstler, der in ein ethnologisches Museum eingeladen war, fragte ich mich, wie wir dafür instrumentalisiert wurden, die Rolle des Museums als „wir tun Gutes“ zu stützen. Und alles, was wir dem Museum, der Institution oder dem System beitrugen, warf wiederum Fragen auf. So entstand die Idee, einen bereits sauberen Boden einfach zu wischen – eine scheinbar folgenlose Handlung, die paradoxerweise zum „Kunstprojekt“ der Ausstellung wurde.",
+      "type_de": "Ortsspezifische Performance",
+      "type_zh": "特定場域表演",
+      "materials_de": "Warnaufsteller „Rutschgefahr“",
+      "materials_zh": "小心地滑立牌"
     },
     {
       "slug": "imaginary-landscape",
@@ -302,7 +340,11 @@
       "hidden": false,
       "aliases": [
         "/imaginarylandscape"
-      ]
+      ],
+      "text_zh": "自啟蒙運動以來，海灘一直是觀光勝地。隨著大眾旅遊與社群媒體興起，理想化的海灘圖像與現實交織在一起，導致世界各地的海岸線遭受大規模的人為介入與改造。本計畫以這種對海灘之美的想像為出發點，探討社群媒體旅遊圖像所呈現的片面現實，並透過 AI 揭示當代圖像生成模型的技術與美學特質。\n\n# 一片從未抵達的想像風景\n\n本計畫探討社群媒體上旅遊圖像的片面現實，並透過 AI 與機器學習揭示當代圖像生成模型的技術與美學面向。藉由以數位方式拼湊幻想與想像，計畫創造出一個始終無法抵達的「理想彼方」。最終得出的模型代表一種由 AI 形塑的集體無意識；它所生成的圖像終究無法企及，就像社群媒體上那些如畫的景點一樣。透過多種形式，計畫邀請觀者質疑這些圖像的真實性，以及它們所體現的集體意識。\n\n# 海灘圖像作為想像風景的歷史脈絡\n\n西方文學中的海洋描繪，長久以來強調未知的危險與災難。法國歷史學家 Alain Corbin 在著作《The Lure of the Sea》（1994）中爬梳西方世界對海洋理解的轉變。中世紀之前，海洋常與洪水、風暴、怪物與各種災厄等未知相連；隨著啟蒙時代科學的進展，這種未知的想像在十七世紀逐漸被驅散。當科學開始解開海洋的謎團，海灘有了與現代性與觀光連結的新象徵，貴族與市民開始建立海水浴場，海灘終於成為現代旅遊的鮮明象徵。\n\n# 社群媒體造成的人工智慧演算法偏見\n\n人類生產的文字與圖像，在當代最大的受眾已從人類轉為機器。電腦利用人類的知識體系來生成文字與圖像，但這個學習過程並非沒有偏見。來自社群媒體或線上圖庫的訓練資料，大多呈現潔淨、明亮、白色的海灘；這樣的表徵偏差，讓電腦把海灘圖像視為人造景觀。而當機器處理這些圖像並生成新圖時，判斷結果是否符合「海灘」概念的評估偏差也隨之出現。多重偏見疊加，使 Transformer 模型往往產生平庸俗套的海灘圖像。",
+      "text_de": "Seit der Aufklärung ist der Strand ein touristischer Sehnsuchtsort. Mit dem Aufkommen von Massentourismus und sozialen Medien haben sich idealisierte Strandbilder mit der Wirklichkeit verflochten – mit der Folge massiver Eingriffe und Umgestaltungen an Küsten weltweit. Ausgehend von dieser Vorstellung vom schönen Strand untersucht das Projekt die einseitigen Wirklichkeiten, die Reisebilder in sozialen Medien zeigen, und legt mithilfe von KI die technischen und ästhetischen Eigenschaften aktueller Bildgenerierungsmodelle offen.\n\n# Die imaginäre Landschaft, die nie erreicht wurde\n\nDas Projekt untersucht einseitige Wirklichkeiten in Reisebildern aus sozialen Medien und zeigt technische wie ästhetische Aspekte aktueller Bildgenerierungsmodelle. Indem es Fantasien und Vorstellungen digital zusammensetzt, erschafft es ein „ideales Anderswo“, das unerreichbar bleibt. Das entstandene Modell verkörpert ein von KI geformtes kollektives Unbewusstes; die Bilder, die es hervorbringt, sind letztlich ebenso unerreichbar wie die malerischen Orte in sozialen Medien. In verschiedenen Formaten fordert das Projekt dazu auf, die Authentizität dieser Bilder und das kollektive Bewusstsein, das sie verkörpern, zu hinterfragen.\n\n# Historischer Kontext: das Strandbild als imaginäre Landschaft\n\nDie Darstellung des Meeres in der westlichen Literatur betonte lange unbekannte Gefahren und Katastrophen. Der französische Historiker Alain Corbin untersucht in „Meereslust. Das Abendland und die Entdeckung der Küste“ (engl. „The Lure of the Sea“, 1994), wie sich die westliche Wahrnehmung des Meeres veränderte. Vor dem Mittelalter wurde das Meer häufig mit dem Unbekannten verbunden – mit Fluten, Stürmen, Ungeheuern und Unheil. Mit dem wissenschaftlichen Fortschritt der Aufklärung verlor das Unbekannte im 17. Jahrhundert allmählich an Schrecken. Als die Wissenschaft die Rätsel des Meeres zu entschlüsseln begann, wurde der Strand zum Symbol von Moderne und Tourismus; Adel und Bürgertum gründeten Seebäder, und der Strand wurde zum Sinnbild des modernen Tourismus.\n\n# KI-Verzerrungen durch soziale Medien\n\nDas wichtigste Publikum menschlich erzeugter Texte und Bilder sind heute nicht mehr Menschen, sondern Maschinen. Computer nutzen menschliche Wissenssysteme, um Texte und Bilder zu erzeugen – doch dieses Lernen ist nicht frei von Verzerrungen. Trainingsbilder aus sozialen Medien oder Online-Bibliotheken zeigen meist makellose, helle, weiße Strände. Diese Repräsentationsverzerrung lässt den Computer Strandbilder als künstliche Kulisse begreifen. Wenn die Maschine diese Bilder verarbeitet und neue erzeugt, kommt bei der Frage, ob ein Ergebnis dem Begriff „Strand“ entspricht, zusätzlich eine Bewertungsverzerrung hinzu. Diese mehrfachen Verzerrungen führen dazu, dass Transformer-Modelle oft banale Strandbilder erzeugen.",
+      "type_de": "Laufendes Projekt, audiovisuelle Performance",
+      "type_zh": "進行中計畫、影音表演"
     },
     {
       "slug": "beneath",
@@ -320,11 +362,17 @@
       "video": "",
       "links": [],
       "credits": "",
-      "text": "Skylights are widely used in interior design to direct natural light from outside into the interior space. It also projects the desire of people to look upwards.\n\nInspired by the submarine-like structure of the building, the work \"Beneath\" is a sound installation that experiments with directional speakers. With the directional sound of ocean waves reflecting off the skylight a sense of the underwater world is created to connect the exterior and the interior space.\n\nOberlichter werden in der Raumplanung häufig eingesetzt, um das Naturlicht von außen in den Innenraum zu leiten. Es projiziert auch den Wunsch der Menschen, nach oben zu blicken.\n\nInspiriert von der U-Boot-ähnlichen Struktur des Gebäudes, ist das Werk \"Beneath\" eine Klanginstallation, die mit Richtlautsprechern experimentiert. Mit dem gerichteten Klang von Meereswellen, die vom Oberlicht reflektiert werden, entsteht ein Gefühl der Unterwasserwelt, um den Außen- und Innenraum zu verbinden.",
+      "text": "Skylights are widely used in interior design to direct natural light from outside into the interior space. It also projects the desire of people to look upwards.\n\nInspired by the submarine-like structure of the building, the work \"Beneath\" is a sound installation that experiments with directional speakers. With the directional sound of ocean waves reflecting off the skylight a sense of the underwater world is created to connect the exterior and the interior space.",
       "hidden": false,
       "aliases": [
         "/beneath"
-      ]
+      ],
+      "text_zh": "天窗在室內設計中被廣泛用來引入自然光，從戶外導入室內空間，也投射出人們向上仰望的渴望。\n\n受到建築如潛水艇般結構的啟發，聲音裝置《Beneath》以指向性喇叭進行實驗。海浪的聲音經由天窗反射，營造出水下世界的感受，連結戶外與室內的空間。",
+      "text_de": "Oberlichter werden in der Raumplanung häufig eingesetzt, um das Naturlicht von außen in den Innenraum zu leiten. Es projiziert auch den Wunsch der Menschen, nach oben zu blicken.\n\nInspiriert von der U-Boot-ähnlichen Struktur des Gebäudes, ist das Werk \"Beneath\" eine Klanginstallation, die mit Richtlautsprechern experimentiert. Mit dem gerichteten Klang von Meereswellen, die vom Oberlicht reflektiert werden, entsteht ein Gefühl der Unterwasserwelt, um den Außen- und Innenraum zu verbinden.",
+      "type_de": "Klanginstallation",
+      "type_zh": "聲音裝置",
+      "materials_de": "Richtlautsprecher, LED-Lichtleisten",
+      "materials_zh": "指向性喇叭、LED 燈條"
     },
     {
       "slug": "sun",
@@ -346,11 +394,15 @@
         }
       ],
       "credits": "In memory of Ying Wen, Wang",
-      "text": "A sun that runs on mobile, which generates heat at the same time.\n\nI’ve always been wondering how people comprehend objects or visuals on the internet, and which sense do we use to understand it? This work is based on a webpage written in p5.js, trying to generate a digital sun on everyone’s mobile. While the sun is running, the phone will slowly generate heat at the same time. Blurring the boundary between digital and reality.\n\n在網路上用瀏覽器開啟，造成手機發熱的太陽。\n\n如何理解網路上的物件或視覺，又應以何種感知來理解它？當網際網路成為當代速度的變體，伺服器以光速傳遞程式碼，經過手機軟體的重新編譯，形成當代習以為常的視聽感受，每一支連線的手機，都能得到觀看這一複製品的經驗。\n\n熱量是當代電子產品進行運算與通訊之必然消耗，發熱則是數位在現實空間留下的足跡。這件作品是基於即時演算生成的網頁，在手機上製造一個數位化太陽。以手機介面為主體，晶片發熱作為媒介，模糊與消融網路與真實世界之間二元對立的邊界。",
+      "text": "A sun that runs on mobile, which generates heat at the same time.\n\nI’ve always been wondering how people comprehend objects or visuals on the internet, and which sense do we use to understand it? This work is based on a webpage written in p5.js, trying to generate a digital sun on everyone’s mobile. While the sun is running, the phone will slowly generate heat at the same time. Blurring the boundary between digital and reality.",
       "hidden": false,
       "aliases": [
         "/sun"
-      ]
+      ],
+      "text_zh": "在網路上用瀏覽器開啟，造成手機發熱的太陽。\n\n如何理解網路上的物件或視覺，又應以何種感知來理解它？當網際網路成為當代速度的變體，伺服器以光速傳遞程式碼，經過手機軟體的重新編譯，形成當代習以為常的視聽感受，每一支連線的手機，都能得到觀看這一複製品的經驗。\n\n熱量是當代電子產品進行運算與通訊之必然消耗，發熱則是數位在現實空間留下的足跡。這件作品是基於即時演算生成的網頁，在手機上製造一個數位化太陽。以手機介面為主體，晶片發熱作為媒介，模糊與消融網路與真實世界之間二元對立的邊界。",
+      "text_de": "Eine Sonne, die auf dem Handy läuft und es dabei erwärmt.\n\nIch habe mich immer gefragt, wie Menschen Objekte oder Bilder im Internet begreifen – und mit welchem Sinn wir sie verstehen. Die Arbeit basiert auf einer in p5.js geschriebenen Webseite, die auf den Handys aller Besucherinnen und Besucher eine digitale Sonne erzeugt. Während die Sonne läuft, erwärmt sich das Telefon langsam – die Grenze zwischen Digitalem und Realem verschwimmt.",
+      "type_de": "Netzkunst (p5.js-Website)",
+      "type_zh": "網路藝術（p5.js 網頁）"
     },
     {
       "slug": "bring-us-somewhere",
@@ -369,7 +421,9 @@
       "hidden": false,
       "aliases": [
         "/bring-us-somewhere"
-      ]
+      ],
+      "type_de": "Video",
+      "type_zh": "錄像"
     },
     {
       "slug": "faces",
@@ -384,11 +438,15 @@
       "video": "https://vimeo.com/520889691",
       "links": [],
       "credits": "",
-      "text": "I don't like looking people in the eye\n\n我討厭直視別人眼睛",
+      "text": "I don't like looking people in the eye",
       "hidden": false,
       "aliases": [
         "/faces"
-      ]
+      ],
+      "text_zh": "我討厭直視別人眼睛",
+      "text_de": "Ich schaue Menschen nicht gern in die Augen.",
+      "type_de": "Video",
+      "type_zh": "錄像"
     },
     {
       "slug": "segmentary-moonlight",
@@ -406,11 +464,17 @@
       "video": "",
       "links": [],
       "credits": "",
-      "text": "In this Yue Jin Lantern Festival, we intend to create an exclusively light piece based on the dynamic flow of numbers. By the inspiration of the shape of Yanshui district which is alike the shape of the new moon, we try to respond with a full moon appearance.\n\nA moon is a tool of time calculating in the past. Nowadays, “time” is mostly being seen in the electronic way. We convert the electronic numbers by the 7-segment lights and combine the moon and numbers. While the ancient and modern intersperse each other, the beauty of the number and the moon will be shown at the same time.\n\n在本次月津港燈節中，我們以對於數字流動感的基礎，構思適合的燈節作品。受鹽水地區新月形狀的啟發，我們嘗試以滿月的形象與之呼應，將外型設計為滿月的數字燈光。\n\n月亮是古早人們計算時間時節的準則，如今藉由電子零件將時間的概念視覺化成如七段顯示器一般的數位數字，我們將月亮與數字作結合，古今穿插，呈現月亮與數字的美。",
+      "text": "In this Yue Jin Lantern Festival, we intend to create an exclusively light piece based on the dynamic flow of numbers. By the inspiration of the shape of Yanshui district which is alike the shape of the new moon, we try to respond with a full moon appearance.\n\nA moon is a tool of time calculating in the past. Nowadays, “time” is mostly being seen in the electronic way. We convert the electronic numbers by the 7-segment lights and combine the moon and numbers. While the ancient and modern intersperse each other, the beauty of the number and the moon will be shown at the same time.",
       "hidden": false,
       "aliases": [
         "/segmentary-moonlight"
-      ]
+      ],
+      "text_zh": "在本次月津港燈節中，我們以對於數字流動感的基礎，構思適合的燈節作品。受鹽水地區新月形狀的啟發，我們嘗試以滿月的形象與之呼應，將外型設計為滿月的數字燈光。\n\n月亮是古早人們計算時間時節的準則，如今藉由電子零件將時間的概念視覺化成如七段顯示器一般的數位數字，我們將月亮與數字作結合，古今穿插，呈現月亮與數字的美。",
+      "text_de": "Für das Yue-Jin-Laternenfest wollten wir eine reine Lichtarbeit entwickeln, die auf dem Fluss von Zahlen beruht. Inspiriert von der Form des Bezirks Yanshui, die an eine Mondsichel erinnert, antworteten wir mit der Gestalt eines Vollmonds.\n\nDer Mond war früher ein Werkzeug der Zeitrechnung; heute sehen wir „Zeit“ meist in elektronischer Form. Wir übersetzen diese elektronischen Ziffern in 7-Segment-Leuchten und verbinden Mond und Zahlen. Wo sich Altes und Neues durchdringen, zeigt sich zugleich die Schönheit der Zahl und des Mondes.",
+      "type_de": "Lichtinstallation",
+      "type_zh": "燈光裝置",
+      "materials_de": "7-Segment-Anzeigen, Gerüst, Holzplatten — 200 × 100 × 250 cm",
+      "materials_zh": "七段顯示器、鷹架、木板 — 200 × 100 × 250 cm"
     },
     {
       "slug": "message-in-a-bottle",
@@ -435,11 +499,15 @@
       "video": "",
       "links": [],
       "credits": "",
-      "text": "What is the nature of posting on Facebook? Sharing, or marking an important moment in life? Some people chose to not showing too much of themselves by posting less, and only \"like\" the post they are in favor. Some post every single day, mumbling and spreading their thoughts on the social network. In my opinion, there isn't any defined answer. Posts on Facebook shared, post, written day by day, has anyone cared about the content? Do voluminous words or delicate term make any difference on revealing ones thought? Or fulfilling the urge and desire of posting which contents don't matter at all. Tons of words and one single sentence, all end up floating on the ocean of posts.\n\nI can't help wondering, is there a way to express this unspeakable condition, from a post to narrate the nature of post itself. \"Thu 20:58:34\" couple words don't mean anything, but hit the target of posting. The exact time of posting recorded on the post, but not the \"32 mins ago\" default from the system. The post reveals a meaning but at the time being meaningless.\n\n\"Mon 01:56:23\" is only a post, the content record the time when it's born. From that exact time, it floats on the ocean of social media, waiting for any someone inadvertently collected. Like the message in a bottle, only but the label is about its birthday. The bottle is pure emptiness when it opened, and the person who collected will find a story to fill the blank. The content is not definite to me, the bottle itself is the status I want to express.\n\n我一直在想，究竟在臉書上發文的意義是什麼？純然的分享、或想在生命中註記特定事件的發生？有些人不想讓外人了解太多的自己，而選擇極少發文，僅只對自己喜愛的貼文按讚。有些人天天發文，如有多不完的話、滴滴答答的噴濺在社群網絡中。在我的想象中，似乎也沒有一個絕對的答案。在臉書上的文章一篇一篇來去、浮光掠影，真的有人注意過其中的內容嗎？長篇大論與短篇簡談，在表述自我的意義上有沒有任何差別？或是其實這一切都是如此一無所謂，重點則停在發文的瞬間與慾望，所有在臉書貼文大海之上漂流的內容都失了意義。只因有了發文的想法，不需具有發文的內容，千言萬語與一句話的力量在慾望的滿足感上是相同的，都是求得最終在海量的貼文中載浮載沉。\n\n我不禁想像著，能否有個方式去表達一種無以名狀的表述；以一個貼文的形式去訴說「貼文」這件事本身。Thu 20:58:34，短短一行字，在貼文當中不具有任何意義，卻同時達成了「貼文」的這項目的。發文的時間被記錄在文章當中，而不只是臉書內建流動的「32分鐘前」。這篇文章同時具有意義也同時在內文中沒有文字的意義。當有千言萬語想要說，不如說出一席毫無關係意義的話語。\n\n「Mon 01:56:33」僅只是一篇貼文，內文本身註記著自身呱呱墜地的精準時刻。自那時起，它便在網路社群這片汪洋載浮載沉，等待著任何人不經意的拾起。像一封瓶中信，唯瓶身只註記了生產日期，打開瓶子卻是寂靜的空洞，而拾起的人，便不自覺著尋找著故事或事件來填補那項空洞，但內容物對我始終不是絕對。反而是瓶子本身，才是我意圖去形塑的狀態。說來矯情，我當它是一種浪漫，一種自身在海洋中載浮載沉的浪漫。每隔一段時間丟出一個瓶子。好似藉由瓶子本身宣示著身在海中之感嘆，卻也不想就此講死，仿佛仍舊享受著漂泊⋯⋯。",
+      "text": "What is the nature of posting on Facebook? Sharing, or marking an important moment in life? Some people chose to not showing too much of themselves by posting less, and only \"like\" the post they are in favor. Some post every single day, mumbling and spreading their thoughts on the social network. In my opinion, there isn't any defined answer. Posts on Facebook shared, post, written day by day, has anyone cared about the content? Do voluminous words or delicate term make any difference on revealing ones thought? Or fulfilling the urge and desire of posting which contents don't matter at all. Tons of words and one single sentence, all end up floating on the ocean of posts.\n\nI can't help wondering, is there a way to express this unspeakable condition, from a post to narrate the nature of post itself. \"Thu 20:58:34\" couple words don't mean anything, but hit the target of posting. The exact time of posting recorded on the post, but not the \"32 mins ago\" default from the system. The post reveals a meaning but at the time being meaningless.\n\n\"Mon 01:56:23\" is only a post, the content record the time when it's born. From that exact time, it floats on the ocean of social media, waiting for any someone inadvertently collected. Like the message in a bottle, only but the label is about its birthday. The bottle is pure emptiness when it opened, and the person who collected will find a story to fill the blank. The content is not definite to me, the bottle itself is the status I want to express.",
       "hidden": false,
       "aliases": [
         "/message-in-a-bottle"
-      ]
+      ],
+      "text_zh": "我一直在想，究竟在臉書上發文的意義是什麼？純然的分享、或想在生命中註記特定事件的發生？有些人不想讓外人了解太多的自己，而選擇極少發文，僅只對自己喜愛的貼文按讚。有些人天天發文，如有多不完的話、滴滴答答的噴濺在社群網絡中。在我的想象中，似乎也沒有一個絕對的答案。在臉書上的文章一篇一篇來去、浮光掠影，真的有人注意過其中的內容嗎？長篇大論與短篇簡談，在表述自我的意義上有沒有任何差別？或是其實這一切都是如此一無所謂，重點則停在發文的瞬間與慾望，所有在臉書貼文大海之上漂流的內容都失了意義。只因有了發文的想法，不需具有發文的內容，千言萬語與一句話的力量在慾望的滿足感上是相同的，都是求得最終在海量的貼文中載浮載沉。\n\n我不禁想像著，能否有個方式去表達一種無以名狀的表述；以一個貼文的形式去訴說「貼文」這件事本身。Thu 20:58:34，短短一行字，在貼文當中不具有任何意義，卻同時達成了「貼文」的這項目的。發文的時間被記錄在文章當中，而不只是臉書內建流動的「32分鐘前」。這篇文章同時具有意義也同時在內文中沒有文字的意義。當有千言萬語想要說，不如說出一席毫無關係意義的話語。\n\n「Mon 01:56:33」僅只是一篇貼文，內文本身註記著自身呱呱墜地的精準時刻。自那時起，它便在網路社群這片汪洋載浮載沉，等待著任何人不經意的拾起。像一封瓶中信，唯瓶身只註記了生產日期，打開瓶子卻是寂靜的空洞，而拾起的人，便不自覺著尋找著故事或事件來填補那項空洞，但內容物對我始終不是絕對。反而是瓶子本身，才是我意圖去形塑的狀態。說來矯情，我當它是一種浪漫，一種自身在海洋中載浮載沉的浪漫。每隔一段時間丟出一個瓶子。好似藉由瓶子本身宣示著身在海中之感嘆，卻也不想就此講死，仿佛仍舊享受著漂泊⋯⋯。",
+      "text_de": "Was bedeutet es, auf Facebook zu posten? Teilen – oder einen wichtigen Moment im Leben markieren? Manche zeigen wenig von sich, posten selten und „liken“ nur, was ihnen gefällt. Andere posten täglich und verstreuen ihre Gedanken im sozialen Netz. Eine eindeutige Antwort gibt es wohl nicht. Tag für Tag werden Beiträge geteilt und geschrieben – interessiert sich jemand für ihren Inhalt? Macht die Fülle der Worte oder ein fein gewählter Begriff einen Unterschied? Oder geht es nur darum, den Drang zum Posten zu stillen, egal was darin steht? Viele Worte oder ein einziger Satz – alles treibt am Ende auf dem Ozean der Beiträge.\n\nIch frage mich, ob es einen Weg gibt, diesen unsagbaren Zustand auszudrücken: mit einem Beitrag, der vom Posten selbst erzählt. „Thu 20:58:34“ – ein paar Zeichen, die nichts bedeuten und doch genau das Ziel des Postens treffen. Die genaue Uhrzeit steht im Beitrag selbst, nicht das vom System vorgegebene „vor 32 Minuten“. Der Beitrag hat eine Bedeutung und ist zugleich bedeutungslos.\n\n„Mon 01:56:23“ ist nur ein Beitrag, dessen Inhalt den Moment seiner Entstehung festhält. Von diesem Augenblick an treibt er auf dem Ozean der sozialen Medien und wartet darauf, zufällig aufgelesen zu werden. Wie eine Flaschenpost – nur dass auf dem Etikett ihr Geburtsdatum steht. Öffnet man die Flasche, ist sie leer, und wer sie findet, füllt die Leere mit einer eigenen Geschichte. Der Inhalt ist für mich nicht entscheidend; die Flasche selbst ist der Zustand, den ich ausdrücken will.",
+      "type_de": "Facebook-Beiträge",
+      "type_zh": "臉書貼文"
     },
     {
       "slug": "i-kept-repeating-the-unfamiliar-self",
@@ -454,11 +522,15 @@
       "video": "https://vimeo.com/320003075",
       "links": [],
       "credits": "",
-      "text": "During the exchange in Prague, both language and culture were unfamiliar. Without the bond to the native land, there is only simply flesh and body remaining, which started the journey of working in action. By the process of action, I started to realize I didn't know much about my body, and there is certain misalignment while manipulating it.\n\nThe video is a repeating simple gesture, trying to achieve the same goal and to create a sound, by memorizing the status of the body and trying to fulfill the expected result. Then compress them into one single movement shown on the video.\n\nI tried to discuss the authenticity of the moving image by repeating a single gesture in a compressed image. Frames are a combination of image and audio. Using the sound of the environment and the acoustic scene, every frame from the gesture is compressed together. I capture a single movement more than a hundred times, selecting a few frames in each of them and combine into one movement. Trying to establish an order of the gesture. At the same time, the misalignment of the body will be revealed.\n\n出國交換的期間，對於國外的文化與語言都極不熟悉，在適應的過程中重新檢視自我，才發現僅存的只剩自己單薄的身體。因此也開始在國外的行為藝術創作，然而在過程中時常發現自己對於身體的狀態是不熟悉的，且意識操作身體的過程也容易失準，這時才理解到對於自我的身體，我是如此的不了解。\n\n作品是極為簡單的動作不斷重複，試圖達成相同的結果，以及產生一個聲音，在重複的過程中記憶著相同的運動狀態，盡力著讓其達到預設的結果。並將他們重疊壓縮成為單一的動作。\n\n延續先前作品，透過重複單一動作的壓縮影像討論影像的真實性，和現實時間與影像時間的關係，並納入現場聲音，將空間的音場也進行壓縮。這次我拍攝了數個單一的手勢(Gesture)數百次，並將每個動作取下固定幾個影格與聲音片段，再將其堆疊並壓縮成單一的動作影像。企圖建立單一動作的秩序，於此同時身體所特有的失準也將顯現，而現場的聲音與身體的動作所觸發的聲音，也是與自己身體的對話。",
+      "text": "During the exchange in Prague, both language and culture were unfamiliar. Without the bond to the native land, there is only simply flesh and body remaining, which started the journey of working in action. By the process of action, I started to realize I didn't know much about my body, and there is certain misalignment while manipulating it.\n\nThe video is a repeating simple gesture, trying to achieve the same goal and to create a sound, by memorizing the status of the body and trying to fulfill the expected result. Then compress them into one single movement shown on the video.\n\nI tried to discuss the authenticity of the moving image by repeating a single gesture in a compressed image. Frames are a combination of image and audio. Using the sound of the environment and the acoustic scene, every frame from the gesture is compressed together. I capture a single movement more than a hundred times, selecting a few frames in each of them and combine into one movement. Trying to establish an order of the gesture. At the same time, the misalignment of the body will be revealed.",
       "hidden": false,
       "aliases": [
         "/i-kept-repeating-the-unfamiliar-sel"
-      ]
+      ],
+      "text_zh": "出國交換的期間，對於國外的文化與語言都極不熟悉，在適應的過程中重新檢視自我，才發現僅存的只剩自己單薄的身體。因此也開始在國外的行為藝術創作，然而在過程中時常發現自己對於身體的狀態是不熟悉的，且意識操作身體的過程也容易失準，這時才理解到對於自我的身體，我是如此的不了解。\n\n作品是極為簡單的動作不斷重複，試圖達成相同的結果，以及產生一個聲音，在重複的過程中記憶著相同的運動狀態，盡力著讓其達到預設的結果。並將他們重疊壓縮成為單一的動作。\n\n延續先前作品，透過重複單一動作的壓縮影像討論影像的真實性，和現實時間與影像時間的關係，並納入現場聲音，將空間的音場也進行壓縮。這次我拍攝了數個單一的手勢(Gesture)數百次，並將每個動作取下固定幾個影格與聲音片段，再將其堆疊並壓縮成單一的動作影像。企圖建立單一動作的秩序，於此同時身體所特有的失準也將顯現，而現場的聲音與身體的動作所觸發的聲音，也是與自己身體的對話。",
+      "text_de": "Während meines Austauschs in Prag waren mir Sprache und Kultur fremd. Ohne die Bindung an die Heimat blieben nur Fleisch und Körper – der Anfang meiner Arbeit mit Aktionen. Im Prozess wurde mir bewusst, wie wenig ich über meinen Körper wusste und wie ungenau ich ihn steuere.\n\nDas Video zeigt eine einfache, wiederholte Geste, die immer dasselbe Ziel erreichen und einen Klang erzeugen will: Ich merke mir den Zustand des Körpers und versuche, das erwartete Ergebnis zu erfüllen. Die Wiederholungen werden dann zu einer einzigen Bewegung verdichtet.\n\nDurch das Wiederholen einer einzelnen Geste in einem verdichteten Bild frage ich nach der Authentizität des bewegten Bildes. Einzelbilder verbinden Bild und Ton; mit dem Klang der Umgebung und des Raumes werden alle Frames der Geste zusammengepresst. Ich habe eine einzelne Bewegung mehr als hundertmal aufgenommen, aus jeder Aufnahme einige Frames ausgewählt und zu einer Bewegung zusammengefügt – der Versuch, eine Ordnung der Geste herzustellen. Zugleich wird die Ungenauigkeit des Körpers sichtbar.",
+      "type_de": "Videoinstallation",
+      "type_zh": "錄像裝置"
     },
     {
       "slug": "light-segment",
@@ -473,11 +545,17 @@
       "video": "",
       "links": [],
       "credits": "",
-      "text": "Imagining dynamic information's movement and flows in the Digital Era. One after another, the numerical increase and decrease. As the events happened in modern time, one after another. Expectable, but at the same time difficult to search for the starting point. We try to mimic this conception with massive numbers counting down.\n\nIn the work, people can see every number as a “pixel” representing the remaining time of the light point — countdown from 9 until the extinguishing of itself. Between the micro and the overview point, glowing the illuminations of lights and shadows. We expect to present a dazzling light performance in a distance. At the same time, every operation can be seen in detail by a closer look.\n\n我們想像數位時代的流動資訊不斷變動與轉化，一盞接著一盞數值的消長，如同數位時代的事件不斷地發生，一件接著一件，有所預期，卻又無法尋覓其開端，我們以大量的倒數數字呈現這樣流動狀態的意象。\n\n作品中每一格「像素」中的數字，皆代表畫面光點殘留的時間；自 9 開始倒數至光點熄滅的時間。而微觀與綜觀之間的光影變幻，我們希望營造出遠觀下光影虛幻之間的炫目變化。同時在微觀注目下，可以看見每一個細部的運作。",
+      "text": "Imagining dynamic information's movement and flows in the Digital Era. One after another, the numerical increase and decrease. As the events happened in modern time, one after another. Expectable, but at the same time difficult to search for the starting point. We try to mimic this conception with massive numbers counting down.\n\nIn the work, people can see every number as a “pixel” representing the remaining time of the light point — countdown from 9 until the extinguishing of itself. Between the micro and the overview point, glowing the illuminations of lights and shadows. We expect to present a dazzling light performance in a distance. At the same time, every operation can be seen in detail by a closer look.",
       "hidden": false,
       "aliases": [
         "/light-segment"
-      ]
+      ],
+      "text_zh": "我們想像數位時代的流動資訊不斷變動與轉化，一盞接著一盞數值的消長，如同數位時代的事件不斷地發生，一件接著一件，有所預期，卻又無法尋覓其開端，我們以大量的倒數數字呈現這樣流動狀態的意象。\n\n作品中每一格「像素」中的數字，皆代表畫面光點殘留的時間；自 9 開始倒數至光點熄滅的時間。而微觀與綜觀之間的光影變幻，我們希望營造出遠觀下光影虛幻之間的炫目變化。同時在微觀注目下，可以看見每一個細部的運作。",
+      "text_de": "Wir stellen uns die Bewegungen und Flüsse von Information im digitalen Zeitalter vor: Zahlen, die eine nach der anderen steigen und fallen – so wie Ereignisse in der Gegenwart aufeinanderfolgen, erwartbar und doch ohne erkennbaren Anfang. Dieses Bild übersetzen wir in eine Vielzahl rückwärts zählender Ziffern.\n\nJede Ziffer ist ein „Pixel“, das die verbleibende Leuchtdauer eines Lichtpunkts angibt – ein Countdown von 9 bis zum Erlöschen. Zwischen Nahsicht und Überblick entsteht ein Spiel von Licht und Schatten: Aus der Ferne eine flirrende Lichtperformance, aus der Nähe ist jeder einzelne Vorgang im Detail zu sehen.",
+      "type_de": "Lichtinstallation",
+      "type_zh": "燈光裝置",
+      "materials_de": "7-Segment-Leuchten, Lichtstativ, Winkelstahl, selbst entworfene Platine — 175 × 35 × 30 cm",
+      "materials_zh": "七段顯示燈、燈架、角鋼、自製電路板 — 175 × 35 × 30 cm"
     },
     {
       "slug": "inevitable-cross-of-the-parallel",
@@ -492,11 +570,15 @@
       "video": "https://vimeo.com/246924651",
       "links": [],
       "credits": "Performer: Ting-Chun Liu, Yu-Wei He",
-      "text": "We can’t control every approaching destination. Relations in a digital context are always followed by rules, obeying them or not, represents one's personal will. Surrender or confront the game, shaped another layer of correspondence. The organic body movement and the artificial voice instructions become the methods of communicating and competing with each other.\n\nEvery instant choice deeply affects the future. Beneath the crosspoint, we can never break the rules. But under the rules, there are infinite possibilities remaining while one's body expresses the personal will. Pain will long endure, and spirit may be weakened. All of them are the compulsory efforts to reach the inevitable destination.\n\n我們無法控制所有將至的目的，數位下關係的產生必伴隨一套規則。是否完整遵守或服從即是個人意志的展現；脆弱妥協或強硬碰撞，遊戲中產生了另一層對應關係，有機的身體動態與無機的聲響指令，成為彼此競爭的工具和唯一的溝通管道。當下的抉擇皆影響了未來。交錯中我們終究無法突破規則，但規則下，身體作為意志的表述仍能有著無限的可能。歷久而生的疼痛，或精神上的耗弱都是為抵達無可避免之終點必負的代價。\n\n# 內容敘述\n\n一個現場有著兩場競爭同時進行。電腦間棋局的競爭，與兩副意志與肉體的競爭。\n\n指令：第一幕——聆聽並服從規則。聽從一盤由現場兩位電腦棋局的對奕指令，以膠帶標記其移動過程。\n\n兩人遵守規則各執一方的對弈，但旗子的控制權交由電腦。一場棋局的輸贏不在兩人掌握中，但雙方在黏貼膠帶的過程中，定會因為彼此吃子的關係有所衝突與碰撞。在遵守規則的同時，以身體生產撕扯膠帶的聲響，以及彼此身體間的對應關係與碰撞，兩人身體的有機動態即時反饋模糊死板的電腦聲音；來得及或錯過，失準或順利黏貼，都是兩人與棋局間不同層次的競爭關係。\n\n指令：第二幕——觀察並遵循規則。觀察地上已建立的棋局紀錄，遍歷其中留下的痕跡，排除路上阻礙。\n\n兩人身體反饋著彼此，遵循著規則照著上一場遊戲中的路徑行走，此時電腦不在限制兩人，人有了自我的意志做出行走方向的選擇，但卻必須遵守自己當初所建立的道路。以身體的不同模式去探索道路，透過身體與路徑對話，也透過身體與對手產生關係。即便發生衝突與碰撞，彼此的競爭也必須遵照最初建立的路徑規則。",
+      "text": "We can’t control every approaching destination. Relations in a digital context are always followed by rules, obeying them or not, represents one's personal will. Surrender or confront the game, shaped another layer of correspondence. The organic body movement and the artificial voice instructions become the methods of communicating and competing with each other.\n\nEvery instant choice deeply affects the future. Beneath the crosspoint, we can never break the rules. But under the rules, there are infinite possibilities remaining while one's body expresses the personal will. Pain will long endure, and spirit may be weakened. All of them are the compulsory efforts to reach the inevitable destination.",
       "hidden": false,
       "aliases": [
         "/inevitable-cross-of-the-parallel"
-      ]
+      ],
+      "text_zh": "我們無法控制所有將至的目的，數位下關係的產生必伴隨一套規則。是否完整遵守或服從即是個人意志的展現；脆弱妥協或強硬碰撞，遊戲中產生了另一層對應關係，有機的身體動態與無機的聲響指令，成為彼此競爭的工具和唯一的溝通管道。當下的抉擇皆影響了未來。交錯中我們終究無法突破規則，但規則下，身體作為意志的表述仍能有著無限的可能。歷久而生的疼痛，或精神上的耗弱都是為抵達無可避免之終點必負的代價。\n\n# 內容敘述\n\n一個現場有著兩場競爭同時進行。電腦間棋局的競爭，與兩副意志與肉體的競爭。\n\n指令：第一幕——聆聽並服從規則。聽從一盤由現場兩位電腦棋局的對奕指令，以膠帶標記其移動過程。\n\n兩人遵守規則各執一方的對弈，但旗子的控制權交由電腦。一場棋局的輸贏不在兩人掌握中，但雙方在黏貼膠帶的過程中，定會因為彼此吃子的關係有所衝突與碰撞。在遵守規則的同時，以身體生產撕扯膠帶的聲響，以及彼此身體間的對應關係與碰撞，兩人身體的有機動態即時反饋模糊死板的電腦聲音；來得及或錯過，失準或順利黏貼，都是兩人與棋局間不同層次的競爭關係。\n\n指令：第二幕——觀察並遵循規則。觀察地上已建立的棋局紀錄，遍歷其中留下的痕跡，排除路上阻礙。\n\n兩人身體反饋著彼此，遵循著規則照著上一場遊戲中的路徑行走，此時電腦不在限制兩人，人有了自我的意志做出行走方向的選擇，但卻必須遵守自己當初所建立的道路。以身體的不同模式去探索道路，透過身體與路徑對話，也透過身體與對手產生關係。即便發生衝突與碰撞，彼此的競爭也必須遵照最初建立的路徑規則。",
+      "text_de": "Wir können nicht jedes nahende Ziel kontrollieren. Beziehungen im Digitalen folgen stets Regeln; ob man sie befolgt oder nicht, drückt den eigenen Willen aus. Sich dem Spiel zu ergeben oder sich ihm zu stellen, formt eine weitere Ebene der Entsprechung. Die organische Bewegung des Körpers und die künstlichen Sprachanweisungen werden zu Mitteln der Kommunikation und des Wettstreits.\n\nJede augenblickliche Entscheidung prägt die Zukunft. Am Kreuzungspunkt können wir die Regeln nie brechen. Doch innerhalb der Regeln bleiben unendliche Möglichkeiten, solange der Körper den eigenen Willen ausdrückt. Schmerz hält lange an, der Geist mag ermüden – all das ist der Preis dafür, das unausweichliche Ziel zu erreichen.\n\nIm Raum finden zwei Wettkämpfe gleichzeitig statt: eine Schachpartie zwischen zwei Computern und ein Wettstreit zweier Willen und Körper. Erster Akt – zuhören und den Regeln gehorchen: Die Performer folgen den Zugansagen der Computer und markieren jeden Zug mit Klebeband auf dem Boden. Zweiter Akt – beobachten und den Regeln folgen: Ohne Computer gehen beide die zuvor markierten Wege ab; sie entscheiden frei über die Richtung, müssen aber auf den selbst gelegten Pfaden bleiben.",
+      "type_de": "Performance-Dokumentation",
+      "type_zh": "表演紀錄"
     },
     {
       "slug": "take-off-the-clothes",
@@ -511,11 +593,15 @@
       "video": "https://vimeo.com/246931383",
       "links": [],
       "credits": "Performer: Ting-Chun Liu",
-      "text": "Instruction: Take off the clothes, seek from the inner sound. 指示：脫衣服，探索衣服的聲音。\n\nThe piece was performed by the time I was exchanging in AVU, Prague. During the exchange, I was unfamiliar with all the things happening around me, cultures, languages, even bodies. Then I started working with actions. It was a shock to know how little I knew about the feelings of my own body.\n\nThe weather was cold in Europe, I wore a lot more than I usually did in Taiwan. This started the idea of this performance, I tried to undress in public, seeking the difference between who I was, who I am, and the audiences on-site.\n\nLater on, when I was back to Taiwan, I did the same performance again, trying to figure it out in a different context.",
+      "text": "Instruction: Take off the clothes, seek from the inner sound.\n\nThe piece was performed by the time I was exchanging in AVU, Prague. During the exchange, I was unfamiliar with all the things happening around me, cultures, languages, even bodies. Then I started working with actions. It was a shock to know how little I knew about the feelings of my own body.\n\nThe weather was cold in Europe, I wore a lot more than I usually did in Taiwan. This started the idea of this performance, I tried to undress in public, seeking the difference between who I was, who I am, and the audiences on-site.\n\nLater on, when I was back to Taiwan, I did the same performance again, trying to figure it out in a different context.",
       "hidden": false,
       "aliases": [
         "/take-of-the-clothes"
-      ]
+      ],
+      "text_zh": "指示：脫衣服，探索衣服的聲音。\n\n這件表演是我在布拉格美術學院（AVU）交換期間完成的。交換期間，周遭的一切——文化、語言，甚至身體——對我都很陌生，我也因此開始做行為。那時才驚覺，自己對身體的感受竟如此不了解。\n\n歐洲的天氣很冷，我穿得比在台灣時多很多，這成了這件表演的起點：我嘗試在公共場合脫衣服，探尋過去的我、現在的我，與現場觀眾之間的差異。\n\n回到台灣之後，我在不同的脈絡下再次進行了同樣的表演。",
+      "text_de": "Anweisung: Zieh die Kleidung aus, suche nach dem inneren Klang.\n\nDie Performance entstand während meines Austauschs an der AVU in Prag. Alles um mich herum war mir fremd – Kulturen, Sprachen, sogar Körper. Damals begann ich, mit Aktionen zu arbeiten, und war erschrocken, wie wenig ich über das Empfinden meines eigenen Körpers wusste.\n\nIn Europa war es kalt, ich trug viel mehr Kleidung als sonst in Taiwan. Daraus entstand die Idee: mich in der Öffentlichkeit auszuziehen und dem Unterschied nachzuspüren zwischen dem, der ich war, dem, der ich bin, und dem Publikum vor Ort.\n\nZurück in Taiwan habe ich die Performance noch einmal aufgeführt, um sie in einem anderen Kontext zu verstehen.",
+      "type_de": "Performance-Dokumentation",
+      "type_zh": "表演紀錄"
     },
     {
       "slug": "hyper-link-into-image",
@@ -532,11 +618,17 @@
       "video": "",
       "links": [],
       "credits": "",
-      "text": "In the era of the Internet, we browse through pages and pages of content. Read the paragraph, click the next link, and repeat the same behavior. Massively and greedily ingest all the information without digesting and take it for granted. The webpage itself is an image, we read and browse all the information repeatedly.\n\nI tried to block the familiar way people browse the internet by removing the most important component \"Hyperlink\". When surfing the internet through the browser, every webpage became a static image, which lost the ability to link to another webpage. By setting up a wi-fi router in the space and blocking all the wireless connection, audiences are forced to connect to the router I run, which had been written a script to redirect the request-URL into a static image. All the web pages they see will become an image screenshot from the webpage.\n\n在網路世界中，我們瀏覽著一頁又一頁的頁面，閱讀著其中的資訊，並點選了下一個連結，重複又重複繼續著下一張頁面。大量且貪婪的攝取著資訊卻不經過消化，而成為習以為常的慣性行為卻不自知。網頁本身即是一張靜態影像，我們預期並瀏覽其上的資訊。不斷不斷重複。\n\n我企圖阻斷觀眾習以為常的網頁瀏覽方式。嘗試將網路最重要的部分超連結(Hyperlink)移除，當透過瀏覽器瀏覽網頁時，得到的是一張固定靜態影像，因此也缺乏了連結至下一個頁面的能力。透過架設一台於展場的基地台，並且屏蔽場域中的無線網路，迫使現場觀眾在使用網路時必須要連結至預設的基地台。在基地台上撰寫將請求的網址(request-URL)轉換為靜態影像的腳本。讓現場觀眾所有網頁瀏覽過程都變成一張張靜態的圖片。",
+      "text": "In the era of the Internet, we browse through pages and pages of content. Read the paragraph, click the next link, and repeat the same behavior. Massively and greedily ingest all the information without digesting and take it for granted. The webpage itself is an image, we read and browse all the information repeatedly.\n\nI tried to block the familiar way people browse the internet by removing the most important component \"Hyperlink\". When surfing the internet through the browser, every webpage became a static image, which lost the ability to link to another webpage. By setting up a wi-fi router in the space and blocking all the wireless connection, audiences are forced to connect to the router I run, which had been written a script to redirect the request-URL into a static image. All the web pages they see will become an image screenshot from the webpage.",
       "hidden": false,
       "aliases": [
         "/hyper-link-into-image"
-      ]
+      ],
+      "text_zh": "在網路世界中，我們瀏覽著一頁又一頁的頁面，閱讀著其中的資訊，並點選了下一個連結，重複又重複繼續著下一張頁面。大量且貪婪的攝取著資訊卻不經過消化，而成為習以為常的慣性行為卻不自知。網頁本身即是一張靜態影像，我們預期並瀏覽其上的資訊。不斷不斷重複。\n\n我企圖阻斷觀眾習以為常的網頁瀏覽方式。嘗試將網路最重要的部分超連結(Hyperlink)移除，當透過瀏覽器瀏覽網頁時，得到的是一張固定靜態影像，因此也缺乏了連結至下一個頁面的能力。透過架設一台於展場的基地台，並且屏蔽場域中的無線網路，迫使現場觀眾在使用網路時必須要連結至預設的基地台。在基地台上撰寫將請求的網址(request-URL)轉換為靜態影像的腳本。讓現場觀眾所有網頁瀏覽過程都變成一張張靜態的圖片。",
+      "text_de": "Im Zeitalter des Internets klicken wir uns durch Seite um Seite: einen Absatz lesen, den nächsten Link anklicken, dasselbe Verhalten wiederholen. Wir nehmen massenhaft Informationen gierig auf, ohne sie zu verdauen, und halten das für selbstverständlich. Die Webseite selbst ist ein Bild, das wir immer wieder lesen und durchsuchen.\n\nIch wollte die gewohnte Art, das Netz zu nutzen, blockieren, indem ich seinen wichtigsten Bestandteil entferne: den Hyperlink. Jede Webseite im Browser wurde zu einem statischen Bild ohne die Möglichkeit, auf eine andere Seite zu verlinken. Dazu stellte ich einen WLAN-Router im Raum auf und blockierte alle anderen Drahtlosverbindungen. Das Publikum musste sich mit meinem Router verbinden, auf dem ein Skript jede angefragte URL auf ein statisches Bild umleitete – alle aufgerufenen Seiten wurden zu Screenshots ihrer selbst.",
+      "type_de": "Netzkunst",
+      "type_zh": "網路藝術",
+      "materials_de": "Router, Mobiltelefon, Code in Ruby",
+      "materials_zh": "路由器、手機、Ruby 程式"
     },
     {
       "slug": "fall",
@@ -551,11 +643,14 @@
       "video": "https://youtu.be/praCnmqs5QA",
       "links": [],
       "credits": "",
-      "text": "Because of the layering between frames, moving image is discrete. But it also reflects the linear of reality. We try to use a short and painful action \"falling\". By repeating over hundreds of times, stacking couple frames of audio and image, to question the nature of reality and image.\n\n動態影像的本身即因為影格與影格間的堆疊而具有離散性，但同時它卻反映了線性的真實世界。我想用跌倒這樣短暫而確實疼痛的事件，透過反覆至少一百次之後，以每一次的影像剪取數格影格堆疊。質疑真實與影像之間的關係。",
+      "text": "Because of the layering between frames, moving image is discrete. But it also reflects the linear of reality. We try to use a short and painful action \"falling\". By repeating over hundreds of times, stacking couple frames of audio and image, to question the nature of reality and image.",
       "hidden": true,
       "aliases": [
         "/fall"
-      ]
+      ],
+      "text_zh": "動態影像的本身即因為影格與影格間的堆疊而具有離散性，但同時它卻反映了線性的真實世界。我想用跌倒這樣短暫而確實疼痛的事件，透過反覆至少一百次之後，以每一次的影像剪取數格影格堆疊。質疑真實與影像之間的關係。",
+      "type_de": "Video",
+      "type_zh": "錄像"
     },
     {
       "slug": "let-the-drone-fly",
@@ -572,62 +667,75 @@
       "video": "",
       "links": [],
       "credits": "",
-      "text": "A drone that relies on power supplied by wires.\n\nRelaxing, storing energy, pulling, and crashing. Relaxing, storing energy, pulling, and crashing.\n\nIn the oscillation of self-pulling, the aircraft possesses its own dynamic and three-dimensional perspective, but at the same time tries to break free from the flat foundation it relies on.\n\nThe work also reflects my thoughts and concerns as a student of New Media Arts. Based on the speed and movement of time, which are essential conditions for the establishment of media art, and the maintenance of electricity, which also plays an important role in technological art, if the electricity supply is disrupted by the work itself, ending all movement, would the work still be valid in an exhibition like New Media Arts?\n\n一台依靠電線供電的飛行器。\n\n鬆弛、蓄能、拉扯、撞擊，鬆弛、蓄能、拉扯、撞擊。\n\n飛行器在自我拉扯的擺盪之間，自擁著動態與立體的視角，卻又極欲掙脫自己依賴的平面根基。\n\n作品亦為我作為新媒體藝術學系學生的想法與煩惱，基於時間的速度與動態作為媒體藝術成立的充要條件，而電力的維持也在科技藝術中佔有極大的地位，倘若今日供電被作品本身所扯斷，終結一切動態，作品在新媒體藝術展覽這樣的場域是否依舊成立？",
+      "text": "A drone that relies on power supplied by wires.\n\nRelaxing, storing energy, pulling, and crashing. Relaxing, storing energy, pulling, and crashing.\n\nIn the oscillation of self-pulling, the aircraft possesses its own dynamic and three-dimensional perspective, but at the same time tries to break free from the flat foundation it relies on.\n\nThe work also reflects my thoughts and concerns as a student of New Media Arts. Based on the speed and movement of time, which are essential conditions for the establishment of media art, and the maintenance of electricity, which also plays an important role in technological art, if the electricity supply is disrupted by the work itself, ending all movement, would the work still be valid in an exhibition like New Media Arts?",
       "hidden": true,
       "aliases": [
         "/let-the-drone-fly"
       ],
-      "old_video": "https://youtu.be/d4LyVxF7bjE"
+      "old_video": "https://youtu.be/d4LyVxF7bjE",
+      "text_zh": "一台依靠電線供電的飛行器。\n\n鬆弛、蓄能、拉扯、撞擊，鬆弛、蓄能、拉扯、撞擊。\n\n飛行器在自我拉扯的擺盪之間，自擁著動態與立體的視角，卻又極欲掙脫自己依賴的平面根基。\n\n作品亦為我作為新媒體藝術學系學生的想法與煩惱，基於時間的速度與動態作為媒體藝術成立的充要條件，而電力的維持也在科技藝術中佔有極大的地位，倘若今日供電被作品本身所扯斷，終結一切動態，作品在新媒體藝術展覽這樣的場域是否依舊成立？",
+      "type_de": "Installation",
+      "type_zh": "裝置",
+      "materials_de": "Multikopter, Kabel, Steckdose — 100 × 100 × 300 cm",
+      "materials_zh": "多旋翼飛行器、電線、電源座 — 100 × 100 × 300 cm"
     }
   ],
   "performances": [
     {
       "title": "Imaginary Landscape",
-      "note": "soft rotation #2, valentines day edition, 14.02.2024, 674FM Radio",
-      "video": "https://vimeo.com/953746255",
-      "thumb": "images/wix/4eb1dd_5283375190fe47fd94edfa4ac6083ccb~mv2.webp"
+      "note": "Audio-visual performance from the ongoing project Imaginary Landscape — AI-generated images of idealised beaches: an “ideal other side”, pieced together from travel photos on social media and never reached.",
+      "video": "https://vimeo.com/845734164",
+      "thumb": "images/wix/4eb1dd_5283375190fe47fd94edfa4ac6083ccb~mv2.webp",
+      "note_de": "Audiovisuelle Performance aus dem laufenden Projekt Imaginary Landscape — KI-generierte Bilder idealisierter Strände: ein „ideales Anderswo“, zusammengesetzt aus Reisefotos in sozialen Medien und nie erreicht.",
+      "note_zh": "進行中計畫《Imaginary Landscape》的影音表演——以人工智慧生成理想化的海灘影像，由社群媒體上的旅遊照片拼湊出永遠無法抵達的「理想彼方」。"
     },
     {
       "title": "valentinstag",
       "note": "soft rotation #2, valentines day edition, 14.02.2024, 674FM Radio",
       "video": "https://vimeo.com/924343918",
-      "thumb": "images/wix/4eb1dd_795521947e294861bd6aaf4318159c32~mv2.webp"
-    },
-    {
-      "title": "Imaginary Landscape",
-      "note": "Audio-visual performance",
-      "video": "https://vimeo.com/851305237",
-      "thumb": "images/wix/4eb1dd_8d709712675d4923a84fbd7962087607~mv2.webp"
+      "thumb": "images/wix/4eb1dd_795521947e294861bd6aaf4318159c32~mv2.webp",
+      "note_de": "soft rotation #2, Valentinstagsausgabe, 14.02.2024, 674FM Radio",
+      "note_zh": "soft rotation #2 情人節特別場，2024.02.14，674FM 電台"
     },
     {
       "title": "Browse",
       "note": "14.09.2019 Nuit Blanche – Lacking Sound Festival #Soirée, Winsing Art Place, Taipei",
       "video": "https://vimeo.com/377240363",
-      "thumb": "images/wix/4eb1dd_fd16d1138b384624a7e1261c651c6745~mv2_d_6000_3551_s_4_2.webp"
+      "thumb": "images/wix/4eb1dd_fd16d1138b384624a7e1261c651c6745~mv2_d_6000_3551_s_4_2.webp",
+      "note_de": "14.09.2019 Nuit Blanche – Lacking Sound Festival #Soirée, Winsing Art Place, Taipeh",
+      "note_zh": "2019.09.14 白晝之夜 — 失聲祭 #Soirée，永添藝術，台北"
     },
     {
       "title": "Lift-Off Vol. 3",
       "note": "Max 8 sound + Processing 3.4 four-channel video. Opening of TNUA NMA graduation show “Reentry”, 14.06.2019, Songshan Cultural and Creative Park",
       "video": "https://vimeo.com/347720746",
-      "thumb": "images/wix/4eb1dd_bda657684a0b4f6bb13f552155750382~mv2_d_5385_3590_s_4_2.webp"
+      "thumb": "images/wix/4eb1dd_bda657684a0b4f6bb13f552155750382~mv2_d_5385_3590_s_4_2.webp",
+      "note_de": "Klang mit Max 8 + Vierkanal-Video mit Processing 3.4. Eröffnung der Abschlussausstellung „Reentry“ der TNUA NMA, 14.06.2019, Songshan Cultural and Creative Park",
+      "note_zh": "Max 8 聲音 + Processing 3.4 四頻道影像。北藝大新媒體藝術學系畢業展「再入」開幕演出，2019.06.14，松山文創園區"
     },
     {
       "title": "Lift-off",
       "note": "The rocket cloud of SpaceX Falcon 9 launching SAOCOM-1A, 07.10.2018",
       "video": "https://vimeo.com/313166060",
-      "thumb": ""
+      "thumb": "https://i.vimeocdn.com/video/754410675-ef6b182f2eea1e527b2f7be8b8fd04b75a4b37289b5e5a451a4ff869e8dc1aa4-d_640",
+      "note_de": "Die Raketenwolke der SpaceX Falcon 9 beim Start von SAOCOM-1A, 07.10.2018",
+      "note_zh": "SpaceX 獵鷹九號發射 SAOCOM-1A 的火箭雲，2018.10.07"
     },
     {
       "title": "Anesthesia Calculations",
       "note": "2016, opening performance of TNUA NMA department show “A/P”",
       "video": "https://vimeo.com/246930365",
-      "thumb": ""
+      "thumb": "https://i.vimeocdn.com/video/672035630-f9df751fa17b5f43f36174c5e3dbb0f7bf55a7d691972c0a1664be63a98d574c-d_640",
+      "note_de": "2016, Eröffnungsperformance der Jahresausstellung „A/P“ der TNUA NMA",
+      "note_zh": "2016，北藝大新媒體藝術學系系展「A/P」開幕演出"
     },
     {
       "title": "Untitled",
       "note": "19.04.2016, noise performance at TNUA; sound sources only electromagnetic waves and a mixer",
       "video": "https://vimeo.com/246924468",
-      "thumb": ""
+      "thumb": "https://i.vimeocdn.com/video/672026904-d7a187087ce38d1703b072866eb7220d93319d7fd3cb6aaec25b3eda616d9b44-d_640",
+      "note_de": "19.04.2016, Noise-Performance an der TNUA; Klangquellen nur elektromagnetische Wellen und ein Mischpult",
+      "note_zh": "2016.04.19，北藝大噪音演出；聲源僅有電磁波與混音器"
     }
   ],
   "about": {
@@ -656,7 +764,9 @@
             "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
             "url": ""
           }
-        ]
+        ],
+        "title_de": "Lehre",
+        "title_zh": "教學"
       },
       {
         "title": "Education",
@@ -671,7 +781,9 @@
             "text": "B.F.A. in New Media Art, Taipei National University of the Arts (TNUA)",
             "url": ""
           }
-        ]
+        ],
+        "title_de": "Ausbildung",
+        "title_zh": "學歷"
       },
       {
         "title": "Award",
@@ -681,7 +793,9 @@
             "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
             "url": ""
           }
-        ]
+        ],
+        "title_de": "Auszeichnungen",
+        "title_zh": "獎項"
       },
       {
         "title": "Lectures, Talks & Workshops",
@@ -791,7 +905,9 @@
             "text": "Aesthetic Approaches to Cyber Peace Work, FIfFKon 2023, Berlin, w/ Christian Heck, Benita Martis, Anton Linus Jehle, Lisa Reutelsterz, Naoto Hieda, Bidisha Das, Kjell Wistoff, Conrad Weise, Pedro A. Ramirez, Leon-Etienne Kühr",
             "url": "https://media.ccc.de/v/fiffkon23-47-aesthetic-approaches-to-cyber-peace-work"
           }
-        ]
+        ],
+        "title_de": "Vorträge, Talks & Workshops",
+        "title_zh": "講座、演講與工作坊"
       },
       {
         "title": "Publications & Writing",
@@ -831,7 +947,9 @@
             "text": "The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition",
             "url": "https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html"
           }
-        ]
+        ],
+        "title_de": "Publikationen & Texte",
+        "title_zh": "出版與寫作"
       },
       {
         "title": "Selected Exhibitions",
@@ -921,7 +1039,9 @@
             "text": "Shell Arrows Land On Unique Notes, Šaloun, Prague",
             "url": ""
           }
-        ]
+        ],
+        "title_de": "Ausgewählte Ausstellungen",
+        "title_zh": "精選展覽"
       },
       {
         "title": "Performances",
@@ -986,7 +1106,9 @@
             "text": "A/P, Underground Gallery, Taipei",
             "url": ""
           }
-        ]
+        ],
+        "title_de": "Performances",
+        "title_zh": "表演"
       },
       {
         "title": "New Media Projects & Theater",
@@ -1046,9 +1168,13 @@
             "text": "Nuit Blanche, Taipei (Co-Artist)",
             "url": ""
           }
-        ]
+        ],
+        "title_de": "Neue-Medien-Projekte & Theater",
+        "title_zh": "新媒體專案與劇場"
       }
-    ]
+    ],
+    "bio_de": "Ting-Chun Liu (Taipeh, Taiwan) ist Künstler, dessen Praxis und Forschung an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis angesiedelt sind. Indem er technologische Systeme mit feedbackbasierten Interventionen seziert, untersucht er, wie sich Wahrnehmung, Ästhetik und Machtverhältnisse durch computergestützte Prozesse fortpflanzen.",
+    "bio_zh": "劉庭均（台灣台北）是一位藝術家，其創作與研究位於批判性人工智慧、影音媒體與網路實踐的交會處。他以回饋驅動的介入手法拆解科技系統，探究感知、美學與權力關係如何在運算過程中傳遞與擴散。"
   },
   "friends": [
     {

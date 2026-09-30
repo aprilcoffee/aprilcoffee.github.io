@@ -209,8 +209,12 @@
         field('年份 Year', w, 'year')
       ]),
       h('div', { className: 'row' }, [field('形式 Type', w, 'type'), field('媒材 Materials', w, 'materials')]),
+      h('div', { className: 'row' }, [field('形式（德文 DE）', w, 'type_de'), field('媒材（德文 DE）', w, 'materials_de')]),
+      h('div', { className: 'row' }, [field('形式（中文）', w, 'type_zh'), field('媒材（中文）', w, 'materials_zh')]),
       h('div', { className: 'row' }, [field('合作 With', w, 'collaborators'), field('影片 Vimeo / YouTube 網址', w, 'video')]),
-      field('說明文字（空一行＝分段；以「# 」開頭＝小標題）', w, 'text', { area: true, cls: 'tall' }),
+      field('說明文字 English（空一行＝分段；以「# 」開頭＝小標題）', w, 'text', { area: true, cls: 'tall' }),
+      field('說明文字 Deutsch（留空＝德文頁顯示英文）', w, 'text_de', { area: true, cls: 'tall' }),
+      field('說明文字 中文（留空＝中文頁顯示英文）', w, 'text_zh', { area: true, cls: 'tall' }),
       field('Credits（每行一條）', w, 'credits', { area: true }),
       lines('連結（每行：名稱 | 網址）', w, 'links', ['label', 'url']),
       field('封面圖（留空＝用第一張圖）', w, 'cover', { after: drawThumbs }),
@@ -224,18 +228,21 @@
     main.append(
       bar('表演影片 Performance'),
       h('div', { className: 'form' }, [
-        lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址 | 縮圖（選填）', D, 'performances', ['title', 'note', 'video', 'thumb'], '順序即網站上的順序。沒有縮圖時自動用 Vimeo / YouTube 的縮圖。', 'tall')
+        lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址 | 縮圖（選填）| 說明 DE | 說明 中文', D, 'performances', ['title', 'note', 'video', 'thumb', 'note_de', 'note_zh'], '順序即網站上的順序。點擊會在新分頁開啟 Vimeo / YouTube。沒有縮圖時自動用 Vimeo / YouTube 的縮圖。', 'tall')
       ])
     );
   };
 
   tabs.about = function () {
     var a = D.about;
-    var box = h('div', { className: 'form' }, [field('簡介 Bio', a, 'bio', { area: true })]);
+    var box = h('div', { className: 'form' }, [field('簡介 Bio (English)', a, 'bio', { area: true }),
+      field('簡介 Bio (Deutsch)', a, 'bio_de', { area: true }), field('簡介 Bio（中文）', a, 'bio_zh', { area: true })]);
     a.sections.forEach(function (sec, i) {
       box.appendChild(h('div', { className: 'card stack', style: 'gap:12px' }, [
         h('div', { className: 'actions' }, [
           h('div', { style: 'flex:1' }, [field('段落標題', sec, 'title')]),
+          h('div', { style: 'flex:1' }, [field('DE', sec, 'title_de')]),
+          h('div', { style: 'flex:1' }, [field('中文', sec, 'title_zh')]),
           btn('↑', function () { if (i) { a.sections.splice(i - 1, 0, a.sections.splice(i, 1)[0]); save(); render(); } }, 'sm'),
           btn('刪除', function () { if (confirm('刪除段落「' + sec.title + '」？')) { a.sections.splice(i, 1); save(); render(); } }, 'sm danger')
         ]),
@@ -257,7 +264,7 @@
     }));
     var p = posts[psel];
     main.append(
-      bar('文章 Writing', [
+      bar('文章 Blog', [
         btn('+ 新增文章', function () {
           var slug = 'post-' + Date.now().toString(36);
           posts.unshift({ slug: slug, date: new Date().toISOString().slice(0, 10), title: 'New post', category: 'works',
@@ -315,9 +322,11 @@
     main.append(bar('網站設定'), h('div', { className: 'form' }, [
       h('div', { className: 'row' }, [field('名字', s, 'name'), field('中文名字', s, 'name_zh')]),
       field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
+      h('div', { className: 'row' }, [field('網站描述 DE', s, 'description_de', { area: true }), field('網站描述 中文', s, 'description_zh', { area: true })]),
       field('Email', s, 'email'),
       field('首頁圖片', s, 'home_image'),
       field('首頁大字介紹 Statement', s, 'statement', { area: true }),
+      h('div', { className: 'row' }, [field('Statement DE', s, 'statement_de', { area: true }), field('Statement 中文', s, 'statement_zh', { area: true })]),
       (function () {
         var ta = h('textarea', { value: (s.address || []).join('\n'), placeholder: 'Musterstraße 1\n12345 Berlin\nDeutschland' });
         ta.addEventListener('input', function () {
