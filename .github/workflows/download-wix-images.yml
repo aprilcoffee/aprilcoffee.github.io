@@ -6,6 +6,10 @@ name: Download Wix images
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/download-wix-images.yml"
+      - "liutingchun/scripts/download-images.sh"
 
 permissions:
   contents: write
