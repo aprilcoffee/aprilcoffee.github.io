@@ -52,7 +52,11 @@
     ],
     "ga_id": "G-JX0CS0510W",
     "statement": "Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media and network practice — dissecting technological systems through feedback-driven interventions.",
-    "address": [],
+    "address": [
+      "Heumarkt 14",
+      "50667 Köln",
+      "Deutschland"
+    ],
     "job_title": "Artist",
     "occupations": [
       "Artist",
@@ -679,11 +683,11 @@
   "performances": [
     {
       "title": "Imaginary Landscape",
-      "note": "soft rotation #2, valentines day edition, 14.02.2024, 674FM Radio",
-      "video": "https://vimeo.com/953746255",
+      "note": "Audio-visual performance from the ongoing project Imaginary Landscape — AI-generated images of idealised beaches: an “ideal other side”, pieced together from travel photos on social media and never reached.",
+      "video": "https://vimeo.com/845734164",
       "thumb": "images/wix/4eb1dd_5283375190fe47fd94edfa4ac6083ccb~mv2.webp",
-      "note_de": "soft rotation #2, Valentinstagsausgabe, 14.02.2024, 674FM Radio",
-      "note_zh": "soft rotation #2 情人節特別場，2024.02.14，674FM 電台"
+      "note_de": "Audiovisuelle Performance aus dem laufenden Projekt Imaginary Landscape — KI-generierte Bilder idealisierter Strände: ein „ideales Anderswo“, zusammengesetzt aus Reisefotos in sozialen Medien und nie erreicht.",
+      "note_zh": "進行中計畫《Imaginary Landscape》的影音表演——以人工智慧生成理想化的海灘影像，由社群媒體上的旅遊照片拼湊出永遠無法抵達的「理想彼方」。"
     },
     {
       "title": "valentinstag",
