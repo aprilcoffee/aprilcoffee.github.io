@@ -424,8 +424,9 @@
       "type": "Internet Art (p5.js website)",
       "materials": "",
       "collaborators": "",
-      "cover": "images/wix/4eb1dd_efe92a2d2f2e403e8833d6964a9f910c~mv2.webp",
+      "cover": "images/sun.webp",
       "images": [
+        "images/sun.webp",
         "images/wix/4eb1dd_efe92a2d2f2e403e8833d6964a9f910c~mv2.webp"
       ],
       "video": "",
@@ -585,8 +586,13 @@
       "type": "Light Installation",
       "materials": "7 segment light, light stand, angle steel, self-designed PCB board — 175 × 35 × 30 cm",
       "collaborators": "LLL (林瑜亮 Lin Yu-Liang, 李翎暄 Li Ling-Syuan)",
-      "cover": "",
-      "images": [],
+      "cover": "images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp",
+      "images": [
+        "images/wix/4eb1dd_01369d2faa0d40cc9e46b5df1f44ea97~mv2_d_3888_2592_s_4_2.webp",
+        "images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp",
+        "images/wix/4eb1dd_f1130697ecd34c33818746a97ff182a0~mv2_d_3888_2592_s_4_2.webp",
+        "images/wix/4eb1dd_1f0d10db976a436fa3ca92a17c173531~mv2_d_3888_2592_s_4_2.webp"
+      ],
       "video": "",
       "links": [],
       "credits": "",
@@ -610,8 +616,12 @@
       "type": "Performance Record",
       "materials": "",
       "collaborators": "Yu-Wei He",
-      "cover": "",
-      "images": [],
+      "cover": "images/wix/4eb1dd_386d6402aaea408c906d840b30315dd0~mv2_d_3360_2100_s_2.webp",
+      "images": [
+        "images/wix/4eb1dd_386d6402aaea408c906d840b30315dd0~mv2_d_3360_2100_s_2.webp",
+        "images/wix/4eb1dd_388b5846bd884162a4dc9d6ffab4c8b7~mv2_d_2048_1358_s_2.webp",
+        "images/wix/4eb1dd_0dcc243328b14cb295f4cdbbbdd5021a~mv2_d_2048_1358_s_2.webp"
+      ],
       "video": "https://vimeo.com/246924651",
       "links": [],
       "credits": "Performer: Ting-Chun Liu, Yu-Wei He",
@@ -794,22 +804,26 @@
           {
             "year": "2025–",
             "text": "Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar",
-            "url": ""
+            "url": "",
+            "text_zh": "講師暨藝術研究員（Künstlerischer Mitarbeiter），威瑪包浩斯大學藝術與設計學院"
           },
           {
             "year": "2026",
-            "text": "Lecturer, Institute of Fine Arts and Media Art, Digital Art, University of Applied Arts Vienna (Erasmus+ Staff Mobility for Teaching)",
-            "url": ""
+            "text": "Guest Lecturer (Lehrbeauftragter), Institute of Fine Arts and Media Art, Digital Art, University of Applied Arts Vienna (Erasmus+ Staff Mobility for Teaching)",
+            "url": "",
+            "text_zh": "客座講師（Lehrbeauftragter），維也納應用藝術大學 美術與媒體藝術研究所 數位藝術系（Erasmus+ 教學交流）"
           },
           {
             "year": "2024",
-            "text": "Guest Lecturer, Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
-            "url": ""
+            "text": "Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
+            "url": "",
+            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院 媒體環境教席（Chair of Media Environments）"
           },
           {
             "year": "2022–2024",
             "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
-            "url": ""
+            "url": "",
+            "text_zh": "學生助理，科隆媒體藝術學院 實驗資訊學（Experimental Informatics）"
           }
         ],
         "title_de": "Lehre",
@@ -821,12 +835,14 @@
           {
             "year": "2020–2025",
             "text": "Postgraduate Diploma, Media and Fine Art (with Distinction), Academy of Media Arts Cologne (KHM)",
-            "url": ""
+            "url": "",
+            "text_zh": "科隆媒體藝術學院（KHM）媒體與藝術研究所文憑（Postgraduate Diploma），優等畢業"
           },
           {
             "year": "2014–2018",
             "text": "B.F.A. in New Media Art, Taipei National University of the Arts (TNUA)",
-            "url": ""
+            "url": "",
+            "text_zh": "國立臺北藝術大學（TNUA）新媒體藝術學系 學士"
           }
         ],
         "title_de": "Ausbildung",
@@ -838,12 +854,14 @@
           {
             "year": "2026",
             "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
-            "url": ""
+            "url": "",
+            "text_zh": "圖林根邦數位高教創新獎助（Fellowship für Innovationen in der digitalen Hochschullehre Thüringen），德國科學捐助者協會（Stifterverband）。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」（動態影像工作室中的本地 AI 應用），至 2027 年"
           },
           {
             "year": "2025",
             "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
-            "url": ""
+            "url": "",
+            "text_zh": "Weizenbaum 學位論文獎（Weizenbaum-Studienpreis），FIfF e.V.（資訊工作者和平與社會責任論壇）。研究所論文：Heat as Generative Image Making"
           }
         ],
         "title_de": "Auszeichnungen & Fellowships",
@@ -855,112 +873,134 @@
           {
             "year": "2026",
             "text": "“Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur”",
-            "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur"
+            "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur",
+            "text_zh": "“Condition for Emotions”，DFG 研究網絡「Das Wissen der digitalen Literatur」（數位文學的知識）"
           },
           {
             "year": "2026",
             "text": "Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "Animism Revisited，ACM SIGGRAPH 數位藝術社群，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "mtrail Ausbildungscamp，林道，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "KISDtalk: Paranoia De-Prompting，科隆國際設計學院（KISD），與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte",
-            "url": "https://www.filmwerkstatt-duesseldorf.de/latenz/"
+            "url": "https://www.filmwerkstatt-duesseldorf.de/latenz/",
+            "text_zh": "Latenz，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr、Dominik Bönisch-Alpári、Ludger Schwarte 教授"
           },
           {
             "year": "2026",
             "text": "Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "Stereotype Encoding，Latent Space 研討會，杜塞道夫 Filmwerkstatt，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr",
-            "url": "https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/"
+            "url": "https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/",
+            "text_zh": "Generating for the Archive，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
             "text": "51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI，第 39 屆混沌通訊大會（39C3），與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
             "text": "Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University",
-            "url": ""
+            "url": "",
+            "text_zh": "Reverberation of the Blackbox Image，聽覺美學系列講座，國立清華大學"
           },
           {
             "year": "2025",
             "text": "Bauhaus Master Lecture, Bauhaus University Weimar",
-            "url": ""
+            "url": "",
+            "text_zh": "包浩斯大師講座（Bauhaus Master Lecture），威瑪包浩斯大學"
           },
           {
             "year": "2025",
             "text": "Artistic Experiments on AI Image, Taipei National University of the Arts",
-            "url": ""
+            "url": "",
+            "text_zh": "Artistic Experiments on AI Image，國立臺北藝術大學"
           },
           {
             "year": "2025",
             "text": "Feedback in AI, Screen Walks, London, w/ Leon-Etienne Kühr",
-            "url": "https://www.screenwalks.com/"
+            "url": "https://www.screenwalks.com/",
+            "text_zh": "Feedback in AI，Screen Walks，倫敦，與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
             "text": "Feedback in Generative Art, Café Nimmersatt, Wolfhagen",
-            "url": ""
+            "url": "",
+            "text_zh": "Feedback in Generative Art，Café Nimmersatt，沃爾夫哈根"
           },
           {
             "year": "2024",
             "text": "arafed futures – An Artist Dialogue on Chip Storage and AI Accelerationism, 38th Chaos Communication Congress, w/ Leon-Etienne Kühr",
-            "url": "https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism"
+            "url": "https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism",
+            "text_zh": "arafed futures – An Artist Dialogue on Chip Storage and AI Accelerationism，第 38 屆混沌通訊大會（38C3），與 Leon-Etienne Kühr"
           },
           {
             "year": "2024",
             "text": "On the Materiality of Artificial Intelligence, Correlations – Forum für KI in Kunst und Design, HfG Offenbach",
-            "url": "https://www.correlationsforum.de/"
+            "url": "https://www.correlationsforum.de/",
+            "text_zh": "On the Materiality of Artificial Intelligence，Correlations – 藝術與設計中的 AI 論壇，奧芬巴赫設計學院（HfG Offenbach）"
           },
           {
             "year": "2024",
             "text": "Künstliche Intelligenz – Heilsbringer oder Apokalypse, Alfred Toepfer Stiftung, Siggen, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "Künstliche Intelligenz – Heilsbringer oder Apokalypse，Alfred Toepfer 基金會，西根，與 Leon-Etienne Kühr"
           },
           {
             "year": "2024",
             "text": "Artistic Research on Recursive Dynamics in Generative Image Models, TEDA’24: The Magic Machine, University of Cambridge, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "Artistic Research on Recursive Dynamics in Generative Image Models，TEDA’24: The Magic Machine，劍橋大學，與 Leon-Etienne Kühr"
           },
           {
             "year": "2024",
             "text": "Chip Shortage, Acceleration and Taiwan’s Dilemma, Magic Wand, [ ] ground zero, Cologne",
-            "url": "https://ground-zero.khm.de/portfolio/magic-wand/"
+            "url": "https://ground-zero.khm.de/portfolio/magic-wand/",
+            "text_zh": "Chip Shortage, Acceleration and Taiwan’s Dilemma，Magic Wand，[ ] ground zero，科隆"
           },
           {
             "year": "2024",
             "text": "Fotografie in der KI-Krise? Lecture Series Photographic Studies, Fachhochschule Dortmund",
-            "url": ""
+            "url": "",
+            "text_zh": "Fotografie in der KI-Krise?，攝影研究系列講座，多特蒙德應用科技大學"
           },
           {
             "year": "2024",
             "text": "Kulturelle Bildung in postdigitalen Lebenswelten, jfc Medienzentrum, Cologne, w/ Benita Martis",
-            "url": ""
+            "url": "",
+            "text_zh": "Kulturelle Bildung in postdigitalen Lebenswelten，jfc 媒體中心，科隆，與 Benita Martis"
           },
           {
             "year": "2023",
             "text": "Self-cannibalizing AI – Artistic Strategies to Expose Generative Text-to-Image Models, 37th Chaos Communication Congress, Hamburg, w/ Leon-Etienne Kühr",
-            "url": "https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai"
+            "url": "https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai",
+            "text_zh": "Self-cannibalizing AI – Artistic Strategies to Expose Generative Text-to-Image Models，第 37 屆混沌通訊大會（37C3），漢堡，與 Leon-Etienne Kühr"
           },
           {
             "year": "2023",
             "text": "Aesthetic Approaches to Cyber Peace Work, FIfFKon 2023, Berlin, w/ Christian Heck, Benita Martis, Anton Linus Jehle, Lisa Reutelsterz, Naoto Hieda, Bidisha Das, Kjell Wistoff, Conrad Weise, Pedro A. Ramirez, Leon-Etienne Kühr",
-            "url": "https://media.ccc.de/v/fiffkon23-47-aesthetic-approaches-to-cyber-peace-work"
+            "url": "https://media.ccc.de/v/fiffkon23-47-aesthetic-approaches-to-cyber-peace-work",
+            "text_zh": "Aesthetic Approaches to Cyber Peace Work，FIfFKon 2023，柏林，與 Christian Heck、Benita Martis、Anton Linus Jehle、Lisa Reutelsterz、Naoto Hieda、Bidisha Das、Kjell Wistoff、Conrad Weise、Pedro A. Ramirez、Leon-Etienne Kühr"
           }
         ],
         "title_de": "Vorträge, Talks & Workshops",
@@ -972,133 +1012,157 @@
           {
             "year": "2026",
             "text": "Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025",
-            "url": "https://www.fiff.de/fiff-kommunikation/2026/1/"
+            "url": "https://www.fiff.de/fiff-kommunikation/2026/1/",
+            "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 Weizenbaum 學位論文獎文章"
           },
           {
             "year": "2025",
             "text": "Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf",
-            "url": "https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias"
+            "url": "https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias",
+            "text_zh": "Stereotype Encoding: How AI Images Learn Cultural Bias，Latent Space，杜塞道夫 Filmwerkstatt"
           },
           {
             "year": "2025",
             "text": "On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG",
-            "url": "https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0"
+            "url": "https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0",
+            "text_zh": "On the Materiality of Artificial Intelligence，收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫"
           },
           {
             "year": "2024",
             "text": "Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English)",
-            "url": "https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!"
+            "url": "https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!",
+            "text_zh": "Hello, hello, hello, hello? Hello? Hello! Human!，「你好，人類！」展覽專刊，臺北當代藝術館（中英）"
           },
           {
             "year": "2024",
             "text": "Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts",
-            "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi"
+            "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi",
+            "text_zh": "定位——沉浸的前提（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館"
           },
           {
             "year": "2022",
             "text": "Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition",
-            "url": "https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet"
+            "url": "https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet",
+            "text_zh": "Poetic Materialization – Regarding Midjourney，[ ] ground zero – poetics of technics and cognition"
           },
           {
             "year": "2021",
             "text": "The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition",
-            "url": "https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html"
+            "url": "https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html",
+            "text_zh": "The Rule Becomes the Author!，[ ] ground zero – poetics of technics and cognition"
           }
         ],
         "title_de": "Publikationen & Texte",
         "title_zh": "出版與寫作"
       },
       {
-        "title": "Selected Exhibitions",
+        "title": "Exhibitions",
         "items": [
           {
             "year": "2026",
             "text": "AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "AI-Worlding，達姆施塔特國家劇院，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "AI-Worlding，法蘭克福應用藝術博物館，與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
             "text": "Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr",
-            "url": ""
+            "url": "",
+            "text_zh": "Interpolation of the Invisible Color，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
             "text": "Art Cologne, Messe, Cologne",
-            "url": ""
+            "url": "",
+            "text_zh": "Art Cologne，科隆展覽中心"
           },
           {
             "year": "2025",
             "text": "Ars Electronica Campus, Linz",
-            "url": ""
+            "url": "",
+            "text_zh": "Ars Electronica Campus，林茲"
           },
           {
             "year": "2025",
             "text": "Ausstellung Kreisläufen, Café Nimmersatt, Wolfhagen",
-            "url": ""
+            "url": "",
+            "text_zh": "Ausstellung Kreisläufen，Café Nimmersatt，沃爾夫哈根"
           },
           {
             "year": "2023",
             "text": "Ephemeral Connections, Glasmoog, Cologne",
-            "url": ""
+            "url": "",
+            "text_zh": "Ephemeral Connections，Glasmoog，科隆"
           },
           {
             "year": "2023",
             "text": "Ghosts at the Feast, Weltkunstzimmer, Düsseldorf",
-            "url": ""
+            "url": "",
+            "text_zh": "Ghosts at the Feast，Weltkunstzimmer，杜塞道夫"
           },
           {
             "year": "2023",
             "text": "Kölner Kongress ’23, Deutschlandfunk, Cologne",
-            "url": ""
+            "url": "",
+            "text_zh": "Kölner Kongress ’23，德國廣播電台（Deutschlandfunk），科隆"
           },
           {
             "year": "2023",
             "text": "FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro",
-            "url": ""
+            "url": "",
+            "text_zh": "FILE：國際電子語言藝術節，聖保羅／里約熱內盧"
           },
           {
             "year": "2022",
             "text": "soundings Xtra, Aula, Cologne",
-            "url": ""
+            "url": "",
+            "text_zh": "soundings Xtra，Aula，科隆"
           },
           {
             "year": "2022",
             "text": "ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne",
-            "url": ""
+            "url": "",
+            "text_zh": "ACHT BRÜCKEN 音樂節，科隆愛樂廳"
           },
           {
             "year": "2020",
             "text": "Urban Interpreter Online, 241 Art Gallery, Hsinchu",
-            "url": ""
+            "url": "",
+            "text_zh": "Urban Interpreter Online，241 藝術空間，新竹"
           },
           {
             "year": "2020",
             "text": "Ars Electronica .ART Global Gallery, online",
-            "url": ""
+            "url": "",
+            "text_zh": "Ars Electronica .ART 全球藝廊，線上"
           },
           {
             "year": "2018",
             "text": "id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong",
-            "url": ""
+            "url": "",
+            "text_zh": "id_city：港陸台藝術畢業生錄像展，元創方（PMQ），香港"
           },
           {
             "year": "2018",
             "text": "Fresh Trend 2018 Art Graduates Joint Exhibition, Hong Kong City Hall",
-            "url": "https://www.facebook.com/FreshTrendArt/"
+            "url": "https://www.facebook.com/FreshTrendArt/",
+            "text_zh": "Fresh Trend 2018 藝術畢業生聯展，香港大會堂"
           },
           {
             "year": "2017",
             "text": "Shell Arrows Land On Unique Notes, Šaloun, Prague",
-            "url": ""
+            "url": "",
+            "text_zh": "Shell Arrows Land On Unique Notes，Šaloun，布拉格"
           }
         ],
-        "title_de": "Ausgewählte Ausstellungen",
-        "title_zh": "精選展覽"
+        "title_de": "Ausstellungen",
+        "title_zh": "展覽"
       },
       {
         "title": "Performances",
@@ -1106,62 +1170,74 @@
           {
             "year": "2025",
             "text": "54. moers festival, Moers",
-            "url": "https://www.moers-festival.de/"
+            "url": "https://www.moers-festival.de/",
+            "text_zh": "第 54 屆 moers 音樂節，莫爾斯"
           },
           {
             "year": "2023",
             "text": "Blaues Rauschen Festival ’23, Folkwang-Musikschule",
-            "url": ""
+            "url": "",
+            "text_zh": "Blaues Rauschen 音樂節 ’23，Folkwang 音樂學校"
           },
           {
             "year": "2019",
             "text": "Nuit Blanche — Lacking Sound Festival (失聲祭) #Soirée, Winsing Art Place, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "白晝之夜——失聲祭 #Soirée，永添藝術，台北"
           },
           {
             "year": "2019",
             "text": "Xero Xerco 聲淵, Artalley Café, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "Xero Xerco 聲淵，Artalley Café，台北"
           },
           {
             "year": "2019",
             "text": "Power Up! 全域通電！, Songshan Cultural and Creative Park, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "Power Up! 全域通電！，松山文創園區，台北"
           },
           {
             "year": "2018",
             "text": "A/V衝刺班_噪流實習 vol.1, Taiwan Contemporary Culture Lab, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "A/V衝刺班_噪流實習 vol.1，空總臺灣當代文化實驗場，台北"
           },
           {
             "year": "2018",
             "text": "Department of “ ” Media Art, Underground Gallery, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "「 」媒體藝術學系（Department of “ ” Media Art），地下美術館，台北"
           },
           {
             "year": "2018",
             "text": "Undefined Senses – That Party Looks So “Pa”, Huashan 1914 Creative Park, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "Undefined Senses – That Party Looks So “Pa”，華山1914文化創意產業園區，台北"
           },
           {
             "year": "2017",
             "text": "Lacking Sound Festival 失聲祭, Venue, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "失聲祭，Venue，台北"
           },
           {
             "year": "2017",
             "text": "Come Down!, Arts Forum, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "Come Down!，藝術論壇，台北"
           },
           {
             "year": "2017",
             "text": "I Promised to Do Again in Taiwan, Taipei National University of the Arts",
-            "url": ""
+            "url": "",
+            "text_zh": "I Promised to Do Again in Taiwan，國立臺北藝術大學"
           },
           {
             "year": "2016",
             "text": "A/P, Underground Gallery, Taipei",
-            "url": ""
+            "url": "",
+            "text_zh": "A/P，地下美術館，台北"
           }
         ],
         "title_de": "Performances",
@@ -1173,57 +1249,68 @@
           {
             "year": "2021",
             "text": "EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist)",
-            "url": ""
+            "url": "",
+            "text_zh": "EAT——關渡光藝術節，北藝大達文西廚房，台北（共同創作）"
           },
           {
             "year": "2021",
             "text": "Treasure Hill Light Festival, Treasure Hill Artist Village, Taipei (Programmer)",
-            "url": ""
+            "url": "",
+            "text_zh": "寶藏巖光節，寶藏巖國際藝術村，台北（程式設計）"
           },
           {
             "year": "2020",
             "text": "Nuit Blanche, Nangang, Taipei (Programmer)",
-            "url": ""
+            "url": "",
+            "text_zh": "白晝之夜，南港，台北（程式設計）"
           },
           {
             "year": "2020",
             "text": "Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team)",
-            "url": ""
+            "url": "",
+            "text_zh": "王連晟：微光風景，臺中國家歌劇院（新媒體藝術團隊）"
           },
           {
             "year": "2019",
             "text": "Baroque Robotics Studio — Ship of Fools, The Bamboo Curtain Studio, New Taipei City (Sound Design)",
-            "url": ""
+            "url": "",
+            "text_zh": "巴洛克機器人工作室——愚人船，竹圍工作室，新北（聲音設計）"
           },
           {
             "year": "2019",
             "text": "Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant)",
-            "url": ""
+            "url": "",
+            "text_zh": "Sleep 79——資訊休克勞工療養院，第一場，空總臺灣當代文化實驗場，台北（腦波程式助理）"
           },
           {
             "year": "2018",
             "text": "夜長夢多, National Human Rights Museum, Taipei (Interactive Design)",
-            "url": ""
+            "url": "",
+            "text_zh": "夜長夢多，國家人權博物館，台北（互動設計）"
           },
           {
             "year": "2018",
             "text": "Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator)",
-            "url": "http://newmedia.tnua.edu.tw/UndefinedSenses/"
+            "url": "http://newmedia.tnua.edu.tw/UndefinedSenses/",
+            "text_zh": "Undefined Senses，華山1914文化創意產業園區，台北（導演／技術統籌）"
           },
           {
             "year": "2018",
             "text": "Yue-Jin Lantern Festival, Tainan (Co-Artist)",
-            "url": ""
+            "url": "",
+            "text_zh": "月津港燈節，台南（共同創作）"
           },
           {
             "year": "2017",
             "text": "Bengaluru Fantastic 2017, Rangoli Metro Arts Center, Bengaluru (Sound Engineer)",
-            "url": ""
+            "url": "",
+            "text_zh": "Bengaluru Fantastic 2017，Rangoli Metro 藝術中心，班加羅爾（音響工程）"
           },
           {
             "year": "2017",
             "text": "Nuit Blanche, Taipei (Co-Artist)",
-            "url": ""
+            "url": "",
+            "text_zh": "白晝之夜，台北（共同創作）"
           }
         ],
         "title_de": "Neue-Medien-Projekte & Theater",

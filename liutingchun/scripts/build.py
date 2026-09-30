@@ -326,7 +326,7 @@ def lname(lang):
 
 # ---------- layout ----------
 def idx(n):
-    return '<span class="idx">(%d)</span>' % n
+    return ""  # numbering removed from the design; kept as a hook
 
 
 def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld=None, full=False, section="",
@@ -428,9 +428,9 @@ def pager(items, i, base, label, noun):
     prev = items[i - 1] if i > 0 else None
     nxt = items[i + 1] if i < len(items) - 1 else None
     one = lambda it, n, arrow: ('<a href="%s"><span class="mono">%s</span><span class="t">%s</span></a>' % (
-        url(base % it["slug"]), arrow % n, esc(it[label])))
+        url(base % it["slug"]), arrow, esc(it[label])))
     return '<nav class="pager" aria-label="%s">%s%s</nav>' % (
-        noun, one(prev, i, "← (%d)") if prev else "<span></span>", one(nxt, i + 2, "(%d) →") if nxt else "<span></span>")
+        noun, one(prev, i, "←") if prev else "<span></span>", one(nxt, i + 2, "→") if nxt else "<span></span>")
 
 
 def page_head(title, lead=""):
@@ -542,12 +542,14 @@ for L in LANGS:
          image=(perfs or [{}])[0].get("thumb"), section="performance", lang=L, alts=each("performance/"))
 
     cv = ""
-    for n, sec in enumerate(D["about"]["sections"]):
-        rows = "".join('<div class="cv-row"><span class="mono">%s</span><span>%s</span></div>' % (
-            esc(it.get("year")), a(it["url"], esc(it["text"])) if it.get("url") else esc(it["text"])) for it in sec["items"])
-        cv += '<section class="cv-sec"><h2>%s%s</h2><div lang="en">%s</div></section>' % (
-            idx(n + 1), esc(tr(sec, "title", L)), rows) if L != "en" else \
-            '<section class="cv-sec"><h2>%s%s</h2><div>%s</div></section>' % (idx(n + 1), esc(sec["title"]), rows)
+    for sec in D["about"]["sections"]:
+        rows = ""
+        for it in sec["items"]:
+            text = tr(it, "text", L)
+            same = L != "en" and not it.get("text_" + L)  # not translated: mark the row as English
+            rows += '<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
+                ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
+        cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
     bio = tr(D["about"], "bio", L)
     page(P + "about/", u["about"], bio,
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
