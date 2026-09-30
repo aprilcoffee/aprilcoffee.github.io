@@ -59,5 +59,5 @@ for path in ["data/site.json"] + sorted(glob.glob("posts/*.md")):
         print("updated", path)
 EOF
 
-left=$(grep -ohE 'https://(static|video)\.wixstatic\.com/[^")> ]+' data/site.json posts/*.md | sort -u | wc -l)
+left=$( (grep -ohE 'https://(static|video)\.wixstatic\.com/[^")> ]+' data/site.json posts/*.md || true) | sort -u | wc -l)
 echo "Done. $left Wix references left. Commit images/wix/, data/site.json and posts/."
