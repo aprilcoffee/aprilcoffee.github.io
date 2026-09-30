@@ -786,20 +786,30 @@
         "title_zh": "學歷"
       },
       {
-        "title": "Award",
+        "title": "Awards & Fellowships",
         "items": [
+          {
+            "year": "2026",
+            "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
+            "url": ""
+          },
           {
             "year": "2025",
             "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
             "url": ""
           }
         ],
-        "title_de": "Auszeichnungen",
-        "title_zh": "獎項"
+        "title_de": "Auszeichnungen & Fellowships",
+        "title_zh": "獎項與獎助"
       },
       {
         "title": "Lectures, Talks & Workshops",
         "items": [
+          {
+            "year": "2026",
+            "text": "Workshop within the DFG network “Das Wissen der digitalen Literatur”, 12 June 2026",
+            "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur"
+          },
           {
             "year": "2026",
             "text": "Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr",
