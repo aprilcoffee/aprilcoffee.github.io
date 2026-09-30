@@ -142,7 +142,7 @@
         "images/wix/4eb1dd_41e25155b22f416e8724d434e8708f94~mv2.webp",
         "images/wix/4eb1dd_a1842ea4c21e49e49c74422da3a667a8~mv2.webp"
       ],
-      "video": "",
+      "video": "https://vimeo.com/1171767792",
       "links": [],
       "credits": "Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr\nPhoto Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu\nVideo Documentation: Ting-Chun Liu, Leon-Etienne Kühr",
       "text": "What happens when a system confronts its own output? Steering through Inner Residue explores this question by reintroducing generated output as input, steering the image making process to follow its own trace.\n\nArtificial intelligence is often depicted as a black box. Despite clearly defined inputs and outputs, it remains opaque in its internal mechanisms. Image generations are normally initialized with a textual descriptions (prompt) that reflect both human intentions and expectations. Here, the conventional process is disrupted by disregarding the text completely and iteratively guiding the machine with its own image output, replacing human expectations with ones from the machine.\n\nRecursion is a term describing the process of looping, but unlike repetition, each iteration slightly deviates from the last moment, like a spiral that surpasses linear causation and ending up at unknown coordinates. The nature of feedback means that what emerges is fundamentally contingent and situational. Like placing a microphone in front of a speaker, where the piercing feedback manifests the aesthetic quality from both the reverberation of the surroundings and the mechanical touch of the electronics.\n\nIn his 1969 piece I Am Sitting in a Room, American sound artist Alvin Lucier records himself reading a short text, then plays the recording back into the room while simultaneously re-recording it. The process is repeated until the resonance of the room compounds and the speech gradually disappears. Yet the blurry hum surfacing from the couple last recording is not simply noise, it is the accumulation of reverbs, a residue of the room. The recursive process renders the underlying visible, it measures the space acoustically and reproduces it into audible form. A similar approach can be done with artificial intelligence. The feedback process navigates the system of image generation, creating a chasm revealing the interior.\n\nThe visual surfaces resemble an unfolded box, each surface carrying reverberations of the process, a landscape of distinctive patterns emerging from the procedures alone. Colors drift into oversaturated hues, forms fragment into layers of pattern, and meaning disintegrates into noise. What accumulates over time is not an image but a process: an algorithmic artifact, a residue that signifies nowhere but the process itself and the process only.",
@@ -853,7 +853,7 @@
         "items": [
           {
             "year": "2026",
-            "text": "Workshop within the DFG network “Das Wissen der digitalen Literatur”, 12 June 2026",
+            "text": "“Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur”",
             "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur"
           },
           {
