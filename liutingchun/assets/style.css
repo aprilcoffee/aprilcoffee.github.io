@@ -13,7 +13,7 @@
   --side-w: 280px;
   --pad: 44px;
   --gap: 14px;          /* gutter between plates */
-  --col: 560px;         /* information column (work text) */
+  --col: 660px;         /* information column (work text) */
   --plates-max: 820px;  /* image field on work pages */
   --label: 340px;       /* heading column on list pages */
 
@@ -196,6 +196,7 @@ button.embed.lite:hover img { opacity: 1; }
 .year-group a:hover .t { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 
 .post { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1040px); gap: 48px; align-items: start; }
+.post > *, .work > * { min-width: 0; }
 .post-info { position: sticky; top: 44px; }
 .post-info h1 { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.25; }
 .post-info .meta { margin-top: 22px; }
@@ -235,7 +236,7 @@ button.embed.lite:hover img { opacity: 1; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1280px) {
-  :root { --col: 440px; --label: 280px; --pad: 40px; --plates-max: 640px; }
+  :root { --col: 500px; --label: 280px; --pad: 40px; --plates-max: 640px; }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .grid.friends { grid-template-columns: repeat(4, 1fr); }
 }
@@ -263,14 +264,14 @@ button.embed.lite:hover img { opacity: 1; }
   .main { margin-left: 0; padding: 28px var(--pad) 80px; }
   .main.full { padding: 0; }
   .home-hero { height: calc(100svh - 55px); min-height: 440px; }
-  .home-statement { left: var(--pad); right: var(--pad); bottom: 32px; }
+  .home-statement { left: var(--pad); right: var(--pad); bottom: 32px; font-size: 25px; }
   .home-selected { padding: 64px var(--pad) 80px; }
   .grid { grid-template-columns: 1fr; gap: 44px; }
   .grid.friends { grid-template-columns: repeat(2, 1fr); }
   .plates .cols { columns: 1; }
   .page-head { margin-bottom: 36px; }
   .post-body { font-size: 18px; line-height: 1.85; }
-  .post-body pre { margin-left: calc(var(--pad) * -1); margin-right: calc(var(--pad) * -1); }
+  .post-body pre { margin-left: calc(var(--pad) * -1); margin-right: calc(var(--pad) * -1); max-width: none; }
   .year-group a { grid-template-columns: 1fr; }
   .year-group .cat { grid-row: auto; grid-column: 1; }
   .cv-row { grid-template-columns: 5.6em 1fr; }
