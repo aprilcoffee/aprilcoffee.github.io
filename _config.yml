@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) settings.
+# The LLM wiki is source material for the chat, not a set of web pages (yet).
+exclude:
+  - liutingchun/wiki
