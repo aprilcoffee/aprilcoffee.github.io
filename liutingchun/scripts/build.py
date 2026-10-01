@@ -275,7 +275,7 @@ UI = {
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
         "Date": "Date", "Category": "Category",
         "ask": "Ask about the work", "ask_ph": "Ask a question about Liu’s work…", "ask_btn": "Ask",
-        "ask_note": "Answers are written by an AI (Claude) from notes on this website and can be wrong. Questions are sent to Cloudflare and Anthropic and are not stored. %s",
+        "ask_note": "Answers are written by an AI (ChatGPT) from notes on this website and can be wrong. Questions are sent to Cloudflare and OpenAI and are not stored. %s",
         "ask_more": "More in the privacy policy.",
         "ask_q": ["What is Heat as Image about?", "Which works deal with AI?", "Where does Liu teach?"],
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -300,7 +300,7 @@ UI = {
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
         "Date": "Datum", "Category": "Kategorie",
         "ask": "Fragen zur Arbeit", "ask_ph": "Eine Frage zu Lius Arbeit …", "ask_btn": "Fragen",
-        "ask_note": "Die Antworten schreibt eine KI (Claude) auf Grundlage der Texte dieser Website; sie können Fehler enthalten. Fragen werden an Cloudflare und Anthropic übermittelt und nicht gespeichert. %s",
+        "ask_note": "Die Antworten schreibt eine KI (ChatGPT) auf Grundlage der Texte dieser Website; sie können Fehler enthalten. Fragen werden an Cloudflare und OpenAI übermittelt und nicht gespeichert. %s",
         "ask_more": "Mehr in der Datenschutzerklärung.",
         "ask_q": ["Worum geht es in Heat as Image?", "Welche Arbeiten beschäftigen sich mit KI?", "Wo unterrichtet Liu?"],
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -325,7 +325,7 @@ UI = {
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友與藝術家夥伴。",
         "Date": "日期", "Category": "分類",
         "ask": "關於作品，問問看", "ask_ph": "想知道劉庭均作品的什麼？", "ask_btn": "提問",
-        "ask_note": "回答由 AI（Claude）根據本網站的資料生成，可能有誤。問題會傳送至 Cloudflare 與 Anthropic，不會被保存。%s",
+        "ask_note": "回答由 AI（ChatGPT）根據本網站的資料生成，可能有誤。問題會傳送至 Cloudflare 與 OpenAI，不會被保存。%s",
         "ask_more": "詳見隱私權說明。",
         "ask_q": ["《Heat as Image》在談什麼？", "哪些作品與 AI 有關？", "劉庭均在哪裡教書？"],
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -686,7 +686,7 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], l
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
 
 CHAT_PRIVACY = """<h2 id="chat">7. Fragen zur Arbeit (KI-Chat)</h2>
-<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die Claude API von Anthropic (Anthropic, PBC, 548 Market St., San Francisco, CA 94104, USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; Anthropic verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
+<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
 """
 
 page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], lang="de", body="""
@@ -709,7 +709,7 @@ page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie auf Widerruf erteilter Einwilligungen. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
 <p class="en">In short: analytics only runs after you click OK; videos only load when you press play;{chat_en} nothing else tracks you.</p>
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"]), n=8 if S.get("chat_endpoint") else 7,
-               chat_en=" questions in the “Ask” box go to Cloudflare and Anthropic and are not stored;" if S.get("chat_endpoint") else "",
+               chat_en=" questions in the “Ask” box go to Cloudflare and OpenAI and are not stored;" if S.get("chat_endpoint") else "",
                chat=CHAT_PRIVACY if S.get("chat_endpoint") else ""))
 
 

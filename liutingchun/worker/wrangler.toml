@@ -1,5 +1,5 @@
 # Cloudflare Worker for the homepage chat ("Ask about the work").
-# Deploy: npx wrangler deploy   (secret once: npx wrangler secret put ANTHROPIC_API_KEY)
+# Deploy: npx wrangler deploy   (secret once: npx wrangler secret put OPENAI_API_KEY)
 name = "liutingchun-chat"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
@@ -11,8 +11,11 @@ command = "python3 ../scripts/build-knowledge.py"
 watch_dir = "../wiki"
 
 [vars]
-# Which Claude model answers. Cheaper options: "claude-sonnet-5-5", "claude-haiku-4-5".
-MODEL = "claude-opus-5-5"
+# Which OpenAI model answers (any chat model name from platform.openai.com/docs/models).
+MODEL = "gpt-5.4-mini"
+# How long reasoning models think before answering: "low" keeps replies quick and cheap.
+# Remove the line for models without reasoning (for example gpt-4.1-mini).
+REASONING_EFFORT = "low"
 # Pages allowed to call the Worker.
 ALLOWED_ORIGINS = "https://liutingchun.com,https://www.liutingchun.com,https://aprilcoffee.github.io"
 

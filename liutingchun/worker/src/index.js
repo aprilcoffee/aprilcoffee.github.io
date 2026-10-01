@@ -2,10 +2,10 @@
 //
 // The website is static, so it cannot hold an API key. This Cloudflare Worker sits in
 // between: the browser sends the conversation here, the Worker adds the knowledge base
-// (the LLM wiki, bundled into knowledge.js) and the key, asks Claude, and streams the
-// answer back as plain text. Nothing is stored.
+// (the LLM wiki, bundled into knowledge.js) and the key, asks the OpenAI API (ChatGPT
+// models), and streams the answer back as plain text. Nothing is stored.
 
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import KNOWLEDGE from "./knowledge.js";
 
 const RULES = `You are the guide on the website of the artist Ting-Chun Liu (劉庭均), based in Cologne.
@@ -25,7 +25,9 @@ Knowledge base (a wiki written from the artist's own website; each page is in a 
 
 `;
 
-const SYSTEM = [{ type: "text", text: RULES + KNOWLEDGE, cache_control: { type: "ephemeral" } }];
+// Kept byte-identical between requests: OpenAI caches a repeated prompt prefix
+// automatically, which makes the large knowledge base much cheaper after the first question.
+const SYSTEM = RULES + KNOWLEDGE;
 
 const MAX_TURNS = 12;        // messages kept from the conversation
 const MAX_QUESTION = 600;    // characters per visitor message
@@ -59,34 +61,36 @@ export default {
     }
     if (!messages) return reply(400, "bad request");
 
-    const model = env.MODEL || "claude-opus-5-5";
-    const params = { model, max_tokens: 3000, system: SYSTEM, messages };
-    if (/^claude-opus-5/.test(model)) {
-      params.output_config = { effort: "low" }; // a quick reply matters more than deep reasoning here
-      params.fallbacks = "default";             // if declined, the API retries on its recommended model
-      params.betas = ["server-side-fallback-2026-07-01"];
-    }
+    const params = {
+      model: env.MODEL || "gpt-5.4-mini",
+      messages: [{ role: "system", content: SYSTEM }, ...messages],
+      max_completion_tokens: 3000,
+      stream: true,
+      stream_options: { include_usage: true },
+      store: false,
+    };
+    if (env.REASONING_EFFORT) params.reasoning_effort = env.REASONING_EFFORT;
 
-    const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY, baseURL: env.ANTHROPIC_BASE_URL || undefined });
+    const client = new OpenAI({ apiKey: env.OPENAI_API_KEY, baseURL: env.OPENAI_BASE_URL || undefined });
     const { readable, writable } = new TransformStream();
     const writer = writable.getWriter();
     const enc = new TextEncoder();
 
     ctx.waitUntil((async () => {
       try {
-        const stream = params.betas ? client.beta.messages.stream(params) : client.messages.stream(params);
-        for await (const ev of stream) {
-          if (ev.type === "content_block_delta" && ev.delta.type === "text_delta") {
-            await writer.write(enc.encode(ev.delta.text));
-          }
+        const stream = await client.chat.completions.create(params);
+        let usage = null, refused = false;
+        for await (const chunk of stream) {
+          const delta = chunk.choices?.[0]?.delta;
+          if (delta?.content) await writer.write(enc.encode(delta.content));
+          if (delta?.refusal || chunk.choices?.[0]?.finish_reason === "content_filter") refused = true;
+          if (chunk.usage) usage = chunk.usage;
         }
-        const final = await stream.finalMessage();
-        if (final.stop_reason === "refusal") await writer.write(enc.encode("\u0000refusal"));
-        const u = final.usage;
-        console.log(JSON.stringify({ model: final.model, in: u.input_tokens, cache_read: u.cache_read_input_tokens,
-                                     cache_write: u.cache_creation_input_tokens, out: u.output_tokens }));
+        if (refused) await writer.write(enc.encode("\u0000refusal"));
+        if (usage) console.log(JSON.stringify({ model: params.model, in: usage.prompt_tokens,
+          cached: usage.prompt_tokens_details?.cached_tokens, out: usage.completion_tokens }));
       } catch (err) {
-        console.error(err instanceof Anthropic.APIError ? `Claude API ${err.status}: ${err.message}` : String(err));
+        console.error(err instanceof OpenAI.APIError ? `OpenAI API ${err.status}: ${err.message}` : String(err));
         await writer.write(enc.encode("\u0000error"));
       } finally {
         await writer.close();
