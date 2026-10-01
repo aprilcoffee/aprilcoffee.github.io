@@ -1,0 +1,19 @@
+# Temporary: calls the chat Worker from a GitHub runner to see its real response.
+name: Chat probe
+on:
+  push:
+    branches: [claude/busy-hypatia-uq1s8p]
+    paths: [".github/workflows/chat-probe.yml"]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          U=https://liutingchun-chat.8765498-208.workers.dev
+          for q in "What is Sun about?" "劉庭均在哪裡教書？"; do
+            echo "=== $q"
+            curl -sS -m 60 -N -X POST "$U" -H 'Origin: https://aprilcoffee.github.io' -H 'Content-Type: application/json' \
+              --data "$(jq -nc --arg q "$q" '{messages:[{role:"user",content:$q}]}')" -w '\nHTTP %{http_code}\n'
+          done
+          echo "=== live chat.js header"; curl -sS https://aprilcoffee.github.io/liutingchun/assets/chat.js | head -5
+          curl -sSI https://aprilcoffee.github.io/liutingchun/assets/chat.js | grep -i -E "cache-control|last-modified|age"
