@@ -21,7 +21,8 @@ After that, every change to `wiki/` redeploys the Worker automatically.
 ## Settings (`wrangler.toml`)
 
 - `MODEL`: which OpenAI model answers (`gpt-5.4-mini`; larger: `gpt-5.5`).
-- `REASONING_EFFORT`: `low` for quick answers; remove it for models without reasoning.
+- `REASONING_EFFORT`: `none` (required with the `suggest_links` tool on gpt-5.4 models in the
+  chat completions API); remove it for models without reasoning.
 - `ALLOWED_ORIGINS`: pages allowed to use the Worker.
 - Rate limits: 5 questions per minute per visitor, 20 per minute in total.
 - Context: only the new question and the exchange before it are sent; answers are short.

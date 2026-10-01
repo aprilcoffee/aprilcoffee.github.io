@@ -16,9 +16,10 @@ watch_dir = "../wiki"
 [vars]
 # Which OpenAI model answers (any chat model name from platform.openai.com/docs/models).
 MODEL = "gpt-5.4-mini"
-# How long reasoning models think before answering: "low" keeps replies quick and cheap.
+# Reasoning before answering. Must be "none" here: OpenAI's chat completions API refuses
+# function tools (suggest_links) together with any other reasoning effort on gpt-5.4 models.
 # Remove the line for models without reasoning (for example gpt-4.1-mini).
-REASONING_EFFORT = "low"
+REASONING_EFFORT = "none"
 # Pages allowed to call the Worker.
 ALLOWED_ORIGINS = "https://liutingchun.com,https://www.liutingchun.com,https://aprilcoffee.github.io"
 
