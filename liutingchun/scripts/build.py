@@ -54,8 +54,8 @@ OLD = {"": "", "/": "", "/cv": "about/", "/video-records": "performance/", "/fri
        "/blog": "blog/", "/works": "works/", "/blog/categories/works": "blog/",
        "/blog/categories/technique": "blog/"}
 for w in D["works"]:
-    for a in w.get("aliases", []):
-        OLD[a.rstrip("/")] = "works/%s/" % w["slug"]
+    for a in w.get("aliases", []):  # hidden works have no page: send their old URLs to the list
+        OLD[a.rstrip("/")] = "works/" if w.get("hidden") else "works/%s/" % w["slug"]
 
 
 def fix_link(href):

@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p images/wix
 
-urls=$(grep -ohE 'https://(static|video)\.wixstatic\.com/(media|video)/[^")> ]+' data/site.json posts/*.md | sort -u)
+urls=$( (grep -ohE 'https://(static|video)\.wixstatic\.com/(media|video)/[^")> ]+' data/site.json posts/*.md || true) | sort -u)
 total=$(printf '%s\n' "$urls" | grep -c . || true)
 echo "Found $total Wix files"
 
