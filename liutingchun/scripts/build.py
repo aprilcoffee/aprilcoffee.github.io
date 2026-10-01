@@ -274,6 +274,13 @@ UI = {
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
         "Date": "Date", "Category": "Category",
+        "ask": "Ask about the work", "ask_ph": "Ask a question about Liu’s work…", "ask_btn": "Ask",
+        "ask_note": "Answers are written by an AI (ChatGPT) from notes on this website and can be wrong. Questions are sent to Cloudflare and OpenAI and are not stored. %s",
+        "ask_more": "More in the privacy policy.",
+        "ask_q": ["What is Heat as Image about?", "Which works deal with AI?", "Where does Liu teach?"],
+        "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
+        "ask_busy": "Too many questions right now. Please wait a minute.",
+        "ask_refusal": "I can’t answer that here. Questions about Liu’s work are welcome.",
     },
     "de": {
         "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
@@ -292,6 +299,13 @@ UI = {
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
         "Date": "Datum", "Category": "Kategorie",
+        "ask": "Fragen zur Arbeit", "ask_ph": "Eine Frage zu Lius Arbeit …", "ask_btn": "Fragen",
+        "ask_note": "Die Antworten schreibt eine KI (ChatGPT) auf Grundlage der Texte dieser Website; sie können Fehler enthalten. Fragen werden an Cloudflare und OpenAI übermittelt und nicht gespeichert. %s",
+        "ask_more": "Mehr in der Datenschutzerklärung.",
+        "ask_q": ["Worum geht es in Heat as Image?", "Welche Arbeiten beschäftigen sich mit KI?", "Wo unterrichtet Liu?"],
+        "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
+        "ask_busy": "Gerade kommen zu viele Fragen. Bitte eine Minute warten.",
+        "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen zu Lius Arbeit sind willkommen.",
     },
     "zh": {
         "nav": {"works": "作品", "performance": "表演", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
@@ -310,6 +324,13 @@ UI = {
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友與藝術家夥伴。",
         "Date": "日期", "Category": "分類",
+        "ask": "關於作品，問問看", "ask_ph": "想知道劉庭均作品的什麼？", "ask_btn": "提問",
+        "ask_note": "回答由 AI（ChatGPT）根據本網站的資料生成，可能有誤。問題會傳送至 Cloudflare 與 OpenAI，不會被保存。%s",
+        "ask_more": "詳見隱私權說明。",
+        "ask_q": ["《Heat as Image》在談什麼？", "哪些作品與 AI 有關？", "劉庭均在哪裡教書？"],
+        "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
+        "ask_busy": "目前提問太多，請稍候一分鐘。",
+        "ask_refusal": "這個問題我無法在這裡回答，歡迎詢問與作品相關的問題。",
     },
 }
 CUR = ["en"]  # language of the page being built; fix_link keeps visitors in it
@@ -469,6 +490,27 @@ def each(path):
     return {l: LP[l] + path for l in LANGS}
 
 
+def ask_box(lang):
+    """The chat box on the homepage; only rendered once site.chat_endpoint is set."""
+    if not S.get("chat_endpoint"):
+        return ""
+    u = UI[lang]
+    msgs = {k: u[k] % (S["email"],) if k == "ask_err" else u[k] for k in ("ask_err", "ask_busy", "ask_refusal")}
+    return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-endpoint="%s" data-msgs="%s">'
+            '<h2 id="ask-h" class="ask-h">%s</h2>'
+            '<div class="ask-log" aria-live="polite"></div>'
+            '<form class="ask-form"><input name="q" type="text" maxlength="600" autocomplete="off" required '
+            'placeholder="%s" aria-label="%s"><button type="submit">%s</button></form>'
+            '<div class="ask-chips">%s</div>'
+            '<p class="ask-note">%s</p>'
+            '<script src="%s" defer></script></section>') % (
+        esc(S["chat_endpoint"]), esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
+        esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
+        "".join('<button type="button">%s</button>' % esc(q) for q in u["ask_q"]),
+        esc(u["ask_note"]) % ('<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
+        url("assets/chat.js"))
+
+
 years = sorted(w["year"][:4] for w in works if w.get("year"))
 y0, y1 = (years[0], years[-1]) if years else ("", "")
 platforms = sorted({"Vimeo" if "vimeo" in (p.get("video") or "") else "YouTube"
@@ -482,10 +524,11 @@ for L in LANGS:
     page(P, "", tr(S, "description", L),
          '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
          '<h1 class="sr-only">%s %s</h1><p class="home-statement"><span>%s</span></p></section>'
-         '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
+         '%s<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
              esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
-             esc(S["name"]), esc(S.get("name_zh", "")), esc(tr(S, "statement", L) or tr(S, "description", L)), esc(u["selected"]),
+             esc(S["name"]), esc(S.get("name_zh", "")), esc(tr(S, "statement", L) or tr(S, "description", L)),
+             ask_box(L), esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
 
@@ -642,6 +685,10 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], l
 <p class="en">Legal notice for this personal artist website. Contact: {email}.</p>
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
 
+CHAT_PRIVACY = """<h2 id="chat">7. Fragen zur Arbeit (KI-Chat)</h2>
+<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
+"""
+
 page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], lang="de", body="""
 <div class="legal-page">
 <h1 class="page-title">Datenschutz&shy;erklärung</h1>
@@ -658,10 +705,12 @@ page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %
 <p>Einzelne ältere Bilder werden noch vom Server der früheren Website (static.wixstatic.com, Wix.com Ltd.) geladen. Dabei wird Ihre IP-Adresse an Wix übertragen. Diese Bilder werden nach und nach auf diese Website verlagert.</p>
 <h2>6. Schriften und Skripte</h2>
 <p>Es werden keine Google Fonts von Google-Servern geladen. Die Bibliothek p5.js für die grafischen Animationen wird von cdnjs (Cloudflare, Inc.) geladen; dabei wird Ihre IP-Adresse an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
-<h2>7. Ihre Rechte</h2>
+{chat}<h2>{n}. Ihre Rechte</h2>
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie auf Widerruf erteilter Einwilligungen. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
-<p class="en">In short: analytics only runs after you click OK; videos only load when you press play; nothing else tracks you.</p>
-</div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
+<p class="en">In short: analytics only runs after you click OK; videos only load when you press play;{chat_en} nothing else tracks you.</p>
+</div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"]), n=8 if S.get("chat_endpoint") else 7,
+               chat_en=" questions in the “Ask” box go to Cloudflare and OpenAI and are not stored;" if S.get("chat_endpoint") else "",
+               chat=CHAT_PRIVACY if S.get("chat_endpoint") else ""))
 
 
 # ---------- write ----------

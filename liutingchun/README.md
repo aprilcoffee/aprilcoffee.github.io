@@ -76,3 +76,8 @@ python3 liutingchun/scripts/build.py
 python3 -m http.server 8000      # 在 repo 根目錄執行
 # http://localhost:8000/liutingchun/
 ```
+
+## 首頁問答（AI chat）
+
+`worker/` 是一個小型 Cloudflare Worker：訪客在首頁提問，它把 `wiki/` 的內容當作知識庫交給 ChatGPT（OpenAI API）回答。
+設定步驟見 `worker/README.md`。在 `data/site.json` 填入 `site.chat_endpoint` 之後，首頁才會出現問答框。
