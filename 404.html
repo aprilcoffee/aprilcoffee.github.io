@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Not found</title>
+<meta name="robots" content="noindex">
+<script>
+  // Old links to the portfolio (/liutingchun/...) continue on liutingchun.com.
+  var p = location.pathname;
+  if (p.indexOf('/liutingchun/') === 0 || p === '/liutingchun')
+    location.replace('https://liutingchun.com/' + p.replace(/^\/liutingchun\/?/, '') + location.search + location.hash);
+</script>
+</head>
+<body>
+<p>Page not found. Ting-Chun Liu's website is at <a href="https://liutingchun.com/">liutingchun.com</a>.</p>
+</body>
+</html>

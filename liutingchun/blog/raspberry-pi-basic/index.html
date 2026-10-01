@@ -1,119 +1,13 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Raspberry Pi 基本使用 — Ting-Chun Liu</title>
-<meta name="description" content="遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。">
-<meta name="author" content="Ting-Chun Liu">
-<link rel="canonical" href="https://aprilcoffee.github.io/liutingchun/blog/raspberry-pi-basic/">
-<meta property="og:site_name" content="Ting-Chun Liu">
-<meta property="og:locale" content="zh_TW">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Raspberry Pi 基本使用 — Ting-Chun Liu">
-<meta property="og:description" content="遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。">
-<meta property="og:url" content="https://aprilcoffee.github.io/liutingchun/blog/raspberry-pi-basic/">
-<meta property="og:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Raspberry Pi 基本使用 — Ting-Chun Liu">
-<meta name="twitter:description" content="遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。">
-<meta name="twitter:image" content="https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="/liutingchun/assets/favicon.svg" type="image/svg+xml">
-<link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/liutingchun/blog/feed.xml">
-<script async src="/liutingchun/assets/analytics.js" data-ga="G-JX0CS0510W" data-banner></script>
-<link rel="stylesheet" href="/liutingchun/assets/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 基本使用", "datePublished": "2019-01-17", "inLanguage": "zh-Hant", "url": "https://aprilcoffee.github.io/liutingchun/blog/raspberry-pi-basic/", "image": "https://aprilcoffee.github.io/liutingchun/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp", "description": "遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://aprilcoffee.github.io/liutingchun/"}, "mainEntityOfPage": "https://aprilcoffee.github.io/liutingchun/blog/raspberry-pi-basic/"}</script>
+<title>Moved to liutingchun.com</title>
+<link rel="canonical" href="https://liutingchun.com/blog/raspberry-pi-basic/">
+<meta http-equiv="refresh" content="0; url=https://liutingchun.com/blog/raspberry-pi-basic/">
+<script>location.replace("https://liutingchun.com/blog/raspberry-pi-basic/"+location.search+location.hash);</script>
 </head>
 <body>
-<aside class="side" id="side" lang="en">
-  <div class="side-head">
-    <a class="brand" href="/liutingchun/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh" lang="zh-Hant">劉庭均</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
-  </div>
-  <nav class="nav" id="nav" aria-label="Main"><a href="/liutingchun/works/"><span>Works</span></a><a href="/liutingchun/performance/"><span>Performance</span></a><a href="/liutingchun/about/"><span>About</span></a><span class="gap" aria-hidden="true"></span><a href="/liutingchun/blog/" class="on" aria-current="page"><span>Blog (archived)</span></a><a href="/liutingchun/friends/"><span>Friends</span></a></nav>
-  <nav class="langs" aria-label="Language"><a href="/liutingchun/blog/" hreflang="en" lang="en" class="on" aria-current="true">EN</a><a href="/liutingchun/de/blog/" hreflang="de" lang="de">DE</a><a href="/liutingchun/zh/blog/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
-  <div class="side-foot">
-    <div class="signal" data-effect="signal" aria-hidden="true"></div>
-    <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
-    <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
-    <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/liutingchun/impressum/" lang="de">Impressum</a><a href="/liutingchun/datenschutz/">Privacy</a></div>
-  </div>
-</aside>
-<main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 基本使用</h1><dl class="meta"><dt>Date</dt><dd>2019-01-17</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/liutingchun/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>因為近期接案使用頻繁(或是幫新銳動畫裝置藝術家<a href="https://gunter292.wixsite.com/gunter" target="_blank" rel="noopener">林瑜亮</a>於香港布展)，遂做個簡單的資料整理；包含遠端操控、開機自動執行、影片播放、3.5音源輸出消除雜音等等，做個常見的 Raspberry Pi 使用經驗分享。盼能拋磚引玉，得到更多分享與回饋。</p>
-<p>隨著 Raspberry Pi 的價格逐漸親民，運算量也遠大於一代二代，第三代又內附 wifi 晶片，以Raspberry Pi 作為互動裝置的主機板門檻逐漸降低。想說整理一下最近對 Rapsberry Pi 的使用方法，以及一些十分重要的基礎。</p>
-<p>本篇文的撰寫有些操作的門檻，基本上不在 command line 的部分多做介紹。使用的皆為 Raspberry Pi 3 以上之型號，包含 Raspberry Pi 3 Model B, Raspberry Pi Model B+。</p>
-<hr />
-<p><strong>Raspberry Pi 3 購買：</strong></p>
-<p>建議能購買正版的主板就購買正版主板，價格雖較高但是運作穩定。</p>
-<p>台北車站新裝潢完成的天瓏書局，老闆很善心的把RPi3其他設備包裝成一組，價格為親民的2400，包含 RPi3一台，HDMI線一條，16G記憶卡，電源變壓器，散熱片，RPi外殼，滿推薦購買的。絕對沒有業配，歡迎老闆幫我做個折扣QQ</p>
-<p><strong>作業系統：</strong></p>
-<p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">https://www.raspberrypi.org/downloads/raspbian/</a></p>
-<p>作業系統基本上使用官方推薦的<strong>Raspbian</strong>。個人習慣使用2016年中出的raspbian-jessie目前使用上十分穩定，但切記不要開啟官方測試實驗的gpu加速。</p>
-<p>基本上作業系統在安裝時有兩種 <em>Raspbian Stretch Lite與Raspbian Stretch with desktop，</em> 端看使用方式決定下載哪一款，如果純粹作聲音裝置、網路功能，包含無線分享器、藍芽喇叭，可以選擇使用Stretch Lite，如果要使用影像功能，包含影片播放等等，絕對要使用 <strong>desktop，</strong> 另外加裝Desktop會因為gui的關係導致運算效率降低。<strong>但推薦新手安裝請選擇Raspbian Stretch with desktop</strong>，多了介面多了方便。</p>
-<p><strong>燒錄與連線：</strong></p>
-<p>安裝時需先格式化記憶卡，Mac使用者推薦使用兩套軟體，先於<strong>SDFormatter</strong>格式化記憶卡後，以<strong>ApplePi-Baker</strong>安裝RPi作業系統。燒錄完成後，便可以將記憶卡插入RPi開機。</p>
-<p>不熟悉terminal的使用者可以先插上一組螢幕和鍵盤滑鼠，切記切記 <strong>不能購買藍芽的鍵盤滑鼠，</strong> 初始化時是抓不到的。</p>
-<p>熟悉terminal的使用者，可以先以電腦分享網路給Rpi，先將電腦連線上無線網路，透過分享網路的方式，走網路線給RPi，在terminal上輸入</p>
-<pre><code>arp -a
-</code></pre>
-<p>就可以搜尋區域網路內所有ip，找到raspberry pi的ip之後，輸入指令連線，<strong>內建帳號為pi 密碼為raspberry。</strong></p>
-<pre><code>ssh pi@xxx.xxx.xxx.xxx
-</code></pre>
-<p><strong>基本安裝設定：</strong></p>
-<p>開機後基本設定，在RPi的terminal中打上 sudo raspi-config 開始做初始化設定，在advance的部分開啟 scp, gpio, ssh, vnc, i2c。將時區設定好，並且將無線網路連線至手機熱點一次之後便會記憶。</p>
-<figure><img src="/liutingchun/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/liutingchun/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp')this.src='/liutingchun/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp'"></figure>
-<p>開啟VNC之後，便可以在自己電腦使用軟體 VNC Viewer 連線ip直接操作RPi的桌面。</p>
-<p><a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener">https://www.realvnc.com/en/connect/download/viewer/</a></p>
-<p>RPi上不需要另外安裝下載，再advanced options設定時便會自動安裝。</p>
-<p><strong>系統套件安裝：</strong></p>
-<p>接下來是最為重要的系統套件部分，在此推薦幾個非常重要的套件。</p>
-<p>首先先在terminal 輸入指令同步官方套件庫的資訊，並且更新所有現有套件。</p>
-<pre><code>sudo apt-get update
-sudo apt-get -y dist-upgrade
-</code></pre>
-<p>更新完畢後，開始安裝套件，以下有幾個推薦套件使用。可以以下指令來安裝</p>
-<pre><code>sudo apt-get install (欲安裝套件名稱)
-</code></pre>
-<p>推薦套件包含，omxplayer, vim, git. 這些都是必要的套件，但是不像python或vnc官方已經內建好了。</p>
-<p>（註：內建python視版本而定，大部分是python 2.7，如果需要python 3需要另外下載）</p>
-<p><strong>清除音源線雜訊：</strong></p>
-<p>許多使用RPi作為聲音裝置的好朋友，時常遇到一個問題，因為3.5音源線輸出的聲音包含許多雜訊，因此常另外購買一張usb音效卡輸出聲音，其實這問題非常好解決。只要到 /boot/config.txt 在最底下加入一行以下指令便可以解決了啦～～～～～</p>
-<pre><code>audio_pwm_mode=2
-</code></pre>
-<p><strong>開機自動執行：</strong></p>
-<p>開機自動執行的方法，需要先製作一份shell script寫下開機要做的所有事情。</p>
-<p>首先在你需要執行的檔案，不管是puredata或是python或是omxplayer播一支影片，檔案的隔壁新增一個shell script</p>
-<pre><code>vim launcher.sh
-</code></pre>
-<p>在script中打上需要前往的路徑(我不好的習慣會放在Desktop)，以及要執行的檔案(如autorun.py)。</p>
-<pre><code>cd /
-cd home/pi/Desktop
-sudo python autorun.py
-cd /
-</code></pre>
-<p>儲存檔案後，在terminal同個位置下輸入以下指令確保launcher檔案可以被執行。</p>
-<pre><code>chmod 755 launcher.sh
-</code></pre>
-<p>有時運作的檔案有問題時，開機後不會自動跑執行檔，為了保持良好習慣觀測出了什麼問題，可以回到根目錄建立一個logs的資料夾，再指派系統每次自動執行時將輸出的資料(包含錯誤執行的內容)跑到logs的資料夾中。首先建立logs資料夾，再開啟crontab檔寫上欲執行的launcher檔</p>
-<pre><code>cd
-mkdir logs
-sudo crontab -e
-</code></pre>
-<p>在crontab中寫入 <strong>(請記得修改launcher檔案路徑)</strong></p>
-<pre><code>@reboot sh /home/pi/Desktop/launcher.sh &gt;/home/pi/logs/cronlog 2&gt;&amp;1
-</code></pre>
-<p>這時 sudo reboot 後就會自動執行了！</p>
-<p>另外另外如果開機後跑的是全畫面的影片，想要跳出又不知道怎麼辦，但是又沒有透過ssh進入。</p>
-<p>可以很暴力的盲打以下指令來關閉。</p>
-<pre><code>ctrl + alt + T
-sudo pkill omxplayer
-</code></pre>
-<p>以下大概是Raspberry Pi基本的一些功能。</p>
-<p>之後有空再來撰寫 python 控制GPIO的部分，以及如何使用subprocess切換omxplayer來開啟影片。還有如何使用Raspberry Pi架設簡單的無線基地台。</p></div><nav class="pager" aria-label="Posts"><a href="/liutingchun/blog/raspberry-pi-video-switching/"><span class="mono">←</span><span class="t">Raspberry Pi 互動影片切換與播放</span></a><a href="/liutingchun/blog/body-as-the-reflection-on-site/"><span class="mono">→</span><span class="t">身體作為現場的折射（一）</span></a></nav></article>
-</main>
-<script src="/liutingchun/assets/site.js" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="/liutingchun/assets/effects.js" defer></script>
+<p>This page has moved to <a href="https://liutingchun.com/blog/raspberry-pi-basic/">https://liutingchun.com/blog/raspberry-pi-basic/</a>.</p>
 </body>
 </html>
