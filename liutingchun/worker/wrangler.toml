@@ -4,6 +4,9 @@ name = "liutingchun-chat"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 compatibility_flags = ["nodejs_compat"]
+# Served at https://liutingchun-chat.<account>.workers.dev; no per-version preview URLs.
+workers_dev = true
+preview_urls = false
 
 # Rebuild the knowledge base from ../wiki before every deploy / dev run.
 [build]
