@@ -1,4 +1,4 @@
-# Temporary: calls the chat Worker from a GitHub runner to see its real response.
+# Temporary: calls the chat Worker from a GitHub runner and tails its logs.
 name: Chat probe
 on:
   push:
@@ -8,12 +8,17 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          npm i -g wrangler@4 >/dev/null 2>&1
+          (wrangler tail liutingchun-chat --format pretty > tail.log 2>&1 &)
+          sleep 15
           U=https://liutingchun-chat.8765498-208.workers.dev
-          for q in "What is Sun about?" "劉庭均在哪裡教書？"; do
-            echo "=== $q"
-            curl -sS -m 60 -N -X POST "$U" -H 'Origin: https://aprilcoffee.github.io' -H 'Content-Type: application/json' \
-              --data "$(jq -nc --arg q "$q" '{messages:[{role:"user",content:$q}]}')" -w '\nHTTP %{http_code}\n'
-          done
-          echo "=== live chat.js header"; curl -sS https://aprilcoffee.github.io/liutingchun/assets/chat.js | head -5
-          curl -sSI https://aprilcoffee.github.io/liutingchun/assets/chat.js | grep -i -E "cache-control|last-modified|age"
+          curl -sS -m 60 -N -X POST "$U" -H 'Origin: https://aprilcoffee.github.io' -H 'Content-Type: application/json' \
+            --data '{"messages":[{"role":"user","content":"What is Sun about?"}]}' -w '\nHTTP %{http_code}\n'
+          sleep 10
+          echo "=== tail"; cat tail.log
