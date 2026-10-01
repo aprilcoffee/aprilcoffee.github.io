@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /liutingchun/admin/
-Disallow: /liutingchun/preview.html
 
 Sitemap: https://aprilcoffee.github.io/sitemap.xml
-# Summary for AI assistants: https://aprilcoffee.github.io/llms.txt
+# Ting-Chun Liu's website moved to https://liutingchun.com/ (sitemap: https://liutingchun.com/sitemap.xml)

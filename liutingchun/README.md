@@ -1,3 +1,8 @@
+> **封存（2026-10）**：這個網站已搬到 **https://liutingchun.com/**，原始碼在
+> https://github.com/aprilcoffee/portfolio 。這裡的每一個網址都會自動轉到 liutingchun.com 對應的頁面，
+> 舊的內容、資料和程式碼只作為紀錄保留，不再更新（後台與自動建置已停用）。
+> `sun/`、`heat_as_image/` 不受影響；它們用到的 `liutingchun/assets/analytics.js` 保留原樣。
+
 # liutingchun — 靜態網站
 
 從 Wix 搬出來的個人網站。內容只有兩個地方：
