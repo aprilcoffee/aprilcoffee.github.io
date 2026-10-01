@@ -23,7 +23,17 @@ After that, every change to `wiki/` redeploys the Worker automatically.
 - `MODEL`: which OpenAI model answers (`gpt-5.4-mini`; larger: `gpt-5.5`).
 - `REASONING_EFFORT`: `low` for quick answers; remove it for models without reasoning.
 - `ALLOWED_ORIGINS`: pages allowed to use the Worker.
-- Rate limits: 6 questions per minute per visitor, 40 per minute in total.
+- Rate limits: 5 questions per minute per visitor, 20 per minute in total.
+- Context: only the new question and the exchange before it are sent; answers are short.
+- Links: the model may call the `suggest_links` tool; only URLs that appear in the wiki
+  (see `wiki/pages/site-map.md`, generated from `data/site.json`) reach the visitor.
+
+## Bot check (optional, recommended)
+
+Cloudflare → Turnstile → Add widget (hostname `aprilcoffee.github.io`, later also
+`liutingchun.com`; mode "Invisible"). Put the **site key** in `data/site.json` →
+`site.turnstile_sitekey`, and the **secret key** in the GitHub secret `TURNSTILE_SECRET`,
+then run "Deploy chat worker". Requests without a valid check are refused.
 - Logs (Cloudflare dashboard → Workers → liutingchun-chat → Logs) show token usage per
   answer, never the questions.
 

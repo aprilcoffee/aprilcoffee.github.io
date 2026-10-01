@@ -59,5 +59,6 @@ Catalogue of the wiki. Read this first, then open the pages you need.
 
 - [Blog archive](pages/blog-archive.md) — Twelve older posts (2017–2022), written in Mandarin: notes on works and technical tutorials (Raspberry Pi, Processing, Python, OSC). The blog is archived and not…
 - [Exhibitions and performances](pages/exhibitions-and-performances.md) — Exhibitions, performances and collaborative new-media / theatre projects, as listed in the CV.
+- [Site map and links](pages/site-map.md) — Every page of the website and every external link it points to, generated from the site data. Each page exists in English, German (de) and Traditional Chinese (zh);…
 - [Talks and writing](pages/talks-and-writing.md) — Lectures, talks, workshops and publications, as listed in the CV on the website.
 - [Teaching, education and awards](pages/teaching-education-awards.md) — Academic positions, studies, awards and fellowships, as listed in the CV.

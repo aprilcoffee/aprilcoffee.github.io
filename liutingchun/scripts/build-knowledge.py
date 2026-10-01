@@ -4,11 +4,14 @@ the knowledge base the homepage chat answers from.
 
 The output is deterministic (sorted paths, no timestamps) so the Claude prompt cache
 keeps hitting until the wiki itself changes. Wrangler runs this before every deploy."""
-import glob, json, os
+import glob, json, os, runpy
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WIKI = os.path.join(ROOT, "wiki")
 OUT = os.path.join(ROOT, "worker", "src", "knowledge.js")
+
+# The site map is generated from data/site.json, so it never lags behind the website.
+runpy.run_path(os.path.join(ROOT, "scripts", "wiki-sitemap.py"))
 
 files = ["index.md"] + sorted(os.path.relpath(p, WIKI) for p in glob.glob(os.path.join(WIKI, "pages", "**", "*.md"), recursive=True))
 parts = []

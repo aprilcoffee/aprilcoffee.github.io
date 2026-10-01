@@ -13,3 +13,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-01] ingest | posts/*.md (titles and excerpts only)
 - blog-archive page; blog links added to related works (Imaginary Landscape, Segmentary Moonlight, Light Segment, I kept repeating…, Take Off the Clothes, Message in a Bottle).
 - Open: the full post texts (Mandarin) are not yet summarised page by page.
+
+## [2026-10-01] add | site map and links
+- pages/site-map.md: every page of the website (en/de/zh) and every external link, generated from data/site.json by scripts/wiki-sitemap.py (run on every site build and before every chat deploy). The chat recommends links only from the wiki.
