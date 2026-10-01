@@ -1,40 +1,127 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Preview — Ting-Chun Liu</title>
-  <meta name="robots" content="noindex">
-  <meta name="description" content="Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media, and network practice.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview — Ting-Chun Liu</title>
+<meta name="robots" content="noindex">
+<style>
+  html, body { margin: 0; height: 100%; background: #fff; }
+  body { display: flex; flex-direction: column; font: 14px/1.4 "IBM Plex Mono", ui-monospace, Menlo, monospace; color: #141414; }
+  .bar { display: flex; gap: 14px; align-items: center; padding: 8px 14px; background: #e4032e; color: #fff; }
+  .bar b { font-weight: 600; }
+  .bar span { opacity: .85; }
+  .bar a { color: #fff; margin-left: auto; }
+  .status { padding: 40px 24px; color: #6e6e6e; white-space: pre-wrap; }
+  iframe { flex: 1; width: 100%; border: 0; }
+</style>
 </head>
 <body>
-  <aside class="side" id="side">
-    <div class="side-head">
-      <a class="brand" href="#/">
-        <span class="brand-en" data-bind="name">Ting-Chun Liu</span>
-        <span class="brand-zh" data-bind="name_zh">劉庭均</span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
-    </div>
-    <nav class="nav" id="nav">
-      <a href="#/works">Works</a>
-      <a href="#/performance">Performance</a>
-      <a href="#/about">About</a>
-      <a href="#/writing">Blog</a>
-      <a href="#/friends">Friends</a>
-    </nav>
-    <div class="side-foot" id="sideFoot"></div>
-  </aside>
+<!--
+  Draft preview for the admin. It runs the real site generator (scripts/build.py) in the
+  browser with Pyodide, on the unpublished draft kept by the admin in this browser, so the
+  preview is exactly what publishing will produce. Links inside the preview stay in the draft.
+    preview.html?preview#/works/<slug>   preview.html?preview#/writing/<slug>   preview.html?preview#/<any page path>
+-->
+<div class="bar"><b>預覽 Preview</b><span id="what">未發佈的草稿</span><a id="live" href="./" target="_blank">線上版本 ↗</a></div>
+<div class="status" id="status">載入預覽工具…（第一次約需 5–10 秒）</div>
+<iframe id="view" title="Preview" hidden></iframe>
+<script type="module">
+  const PYODIDE = 'https://cdn.jsdelivr.net/npm/pyodide@314.0.7/';
+  const DRAFT_KEY = 'ltc-draft', POST_KEY = 'ltc-post-';
+  const R = '/site/root';                       // the site folder inside Pyodide's file system
+  const status = document.getElementById('status');
+  const view = document.getElementById('view');
+  const say = (t) => { status.textContent = t; status.hidden = false; view.hidden = true; };
+  const get = (url, kind) => fetch(url, { cache: 'no-cache' }).then((r) => {
+    if (!r.ok) throw new Error(url + ' ' + r.status);
+    return kind === 'bytes' ? r.arrayBuffer() : r.text();
+  });
+  const stored = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 
-  <main class="main" id="main" tabindex="-1">
-    <p class="loading">Loading…</p>
-  </main>
+  let py, prefix, pages;
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
-  <script src="assets/app.js"></script>
+  async function build() {
+    const { loadPyodide } = await import(PYODIDE + 'pyodide.mjs');
+    const [pyo, wheel, buildPy, sitemapPy, published] = await Promise.all([
+      loadPyodide({ indexURL: PYODIDE }),
+      get('admin/vendor/markdown-3.11-py3-none-any.whl', 'bytes'),
+      get('scripts/build.py'), get('scripts/wiki-sitemap.py'), get('data/site.json')
+    ]);
+    py = pyo;
+    py.unpackArchive(new Uint8Array(wheel), 'wheel');
+    const draft = stored(DRAFT_KEY);
+    const data = draft || published;
+    document.getElementById('what').textContent = draft ? '未發佈的草稿（只在這台電腦）' : '沒有草稿，顯示目前已發佈的內容';
+    const D = JSON.parse(data);
+    prefix = new URL(D.site.base_url.replace(/\/?$/, '/')).pathname;
+
+    const FS = py.FS;
+    ['data', 'scripts', 'posts', 'wiki/pages'].forEach((d) => FS.mkdirTree(R + '/' + d));
+    FS.writeFile(R + '/data/site.json', data);
+    FS.writeFile(R + '/scripts/build.py', buildPy);
+    FS.writeFile(R + '/scripts/wiki-sitemap.py', sitemapPy);
+    // Blog post bodies: the admin's unpublished edits first, otherwise the published file.
+    const posts = (D.writing || []).filter((p) => !p.hidden);
+    await Promise.all(posts.map((p) => {
+      const local = stored(POST_KEY + p.slug);
+      return (local != null ? Promise.resolve(local) : get('posts/' + encodeURIComponent(p.slug) + '.md').catch(() => ''))
+        .then((t) => FS.writeFile(R + '/posts/' + p.slug + '.md', t));
+    }));
+    say('產生頁面…');
+    py.runPython(`
+import io, runpy, sys
+sys.stdout = io.StringIO()
+runpy.run_path("${R}/scripts/build.py", run_name="__main__")
+sys.stdout = sys.__stdout__
+`);
+    pages = true;
+  }
+
+  // "#/works/sun" -> "works/sun/"; the admin's old "#/writing/<slug>" -> "blog/<slug>/"
+  function target() {
+    let p = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
+    p = p.replace(/^writing\b/, 'blog').replace(/^\/+/, '');
+    if (p && !p.endsWith('/') && !/\.\w+$/.test(p)) p += '/';
+    return p;
+  }
+
+  function show() {
+    const rel = target();
+    let html;
+    try { html = py.FS.readFile(R + '/' + rel + (rel.endsWith('/') || !rel ? 'index.html' : ''), { encoding: 'utf8' }); }
+    catch (e) { return say('找不到頁面：/' + rel + '\n（可能已被設為隱藏，或網址打錯。）'); }
+    // No analytics in the preview.
+    html = html.replace(/<script[^>]*analytics\.js[^>]*><\/script>/, '');
+    view.srcdoc = html;
+    status.hidden = true;
+    view.hidden = false;
+    document.getElementById('live').href = prefix + rel;
+  }
+
+  // Keep clicks on the site's own pages inside the draft.
+  view.addEventListener('load', () => {
+    const doc = view.contentDocument;
+    if (!doc) return;
+    doc.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!a || a.target === '_blank' || e.metaKey || e.ctrlKey) return;
+      const u = new URL(a.getAttribute('href'), location.origin + prefix);
+      if (u.origin !== location.origin || !u.pathname.startsWith(prefix)) return;
+      const rel = u.pathname.slice(prefix.length);
+      if (/\.\w+$/.test(rel) && !rel.endsWith('.html')) return;   // files (images, feeds) open normally
+      e.preventDefault();
+      location.hash = '#/' + rel;
+    });
+    view.contentWindow.scrollTo(0, 0);
+  });
+
+  window.addEventListener('hashchange', () => pages && show());
+
+  build().then(show).catch((e) => {
+    console.error(e);
+    say('預覽失敗：' + (e && e.message ? e.message.split('\n').slice(-3).join('\n') : e));
+  });
+</script>
 </body>
 </html>
