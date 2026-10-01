@@ -10,7 +10,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = json.load(open(os.path.join(ROOT, "data", "site.json"), encoding="utf-8"))
 S = D["site"]
 BASE = S["base_url"].rstrip("/") + "/"
-ORIGIN = re.match(r"https?://[^/]+/", BASE).group(0)
+# Sun and Heat as Image live on the GitHub Pages domain whichever domain the site uses.
+PROJECTS = "https://aprilcoffee.github.io/"
 LANGS = [("en", ""), ("de", "de/"), ("zh", "zh/")]
 
 
@@ -69,8 +70,8 @@ for p in posts:
     out.append("- **%s** (%s): %sblog/%s/" % (p["title"], p.get("date", "")[:10], BASE, p["slug"]))
 
 out.append("\n## Other projects on the same domain\n")
-out.append("- **Sun** (internet art, open on a phone): %ssun/" % ORIGIN)
-out.append("- **Heat as Image** (artistic research website): %sheat_as_image/" % ORIGIN)
+out.append("- **Sun** (internet art, open on a phone): %ssun/" % PROJECTS)
+out.append("- **Heat as Image** (artistic research website): %sheat_as_image/" % PROJECTS)
 
 out.append("\n## Elsewhere\n")
 for l in S.get("links", []):

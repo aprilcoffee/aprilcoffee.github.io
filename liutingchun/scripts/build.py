@@ -319,12 +319,12 @@ UI = {
         "work_desc": "%s（%s），%s，%s。", "work": "作品",
         "perf_title": "影音表演",
         "perf_lead": "現場影音演出與表演紀錄，2016–2024。點擊後會在新分頁開啟 %s 影片。",
-        "perf_desc": "%s的影音表演紀錄。", "watch": "在 %s 觀看 ↗",
+        "perf_desc": "%s的影音表演紀錄：現場影音演出與表演錄像，2016 年至今，影片可在 Vimeo 與 YouTube 觀看。", "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
-        "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友與藝術家夥伴。",
+        "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "想知道我作品的什麼？", "ask_btn": "提問",
         "ask_note": "回答由 AI（ChatGPT）根據我網站上的資料生成，可能有誤。問題會傳送至 Cloudflare 與 OpenAI，不會被保存。%s",
@@ -568,7 +568,10 @@ for L in LANGS:
             meta(rows), ' lang="%s"' % tl if tl != HREFLANG[L] else "", prose(text),
             '<p class="credits">%s</p>' % esc(w["credits"]) if w.get("credits") else "",
             plates, pager(works, i, P + "works/%s/", "title", u["nav"]["works"]))
-        desc = summary(text) or u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", L) or u["work"], lname(L))
+        generic = u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", L) or u["work"], lname(L))
+        desc = summary(text) or generic
+        if len(desc) < 40:  # a one-line text alone makes a thin search snippet
+            desc = generic + ("" if L == "zh" else " ") + desc
         ld = {"@context": "https://schema.org", "@type": "CreativeWork", "name": w["title"],
               "alternateName": w.get("title_zh") or None, "dateCreated": w.get("year", "")[:4],
               "genre": tr(w, "type", L) or None, "url": abs_url(P + "works/%s/" % w["slug"]), "inLanguage": HREFLANG[L],
