@@ -1,0 +1,31 @@
+# Cloudflare Worker for the homepage chat ("Ask about the work").
+# Deploy: npx wrangler deploy   (secret once: npx wrangler secret put ANTHROPIC_API_KEY)
+name = "liutingchun-chat"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Rebuild the knowledge base from ../wiki before every deploy / dev run.
+[build]
+command = "python3 ../scripts/build-knowledge.py"
+watch_dir = "../wiki"
+
+[vars]
+# Which Claude model answers. Cheaper options: "claude-sonnet-5-5", "claude-haiku-4-5".
+MODEL = "claude-opus-5-5"
+# Pages allowed to call the Worker.
+ALLOWED_ORIGINS = "https://liutingchun.com,https://www.liutingchun.com,https://aprilcoffee.github.io"
+
+# At most 6 questions a minute per visitor (IP), 40 a minute for the whole site.
+[[ratelimits]]
+name = "PER_VISITOR"
+namespace_id = "1001"
+simple = { limit = 6, period = 60 }
+
+[[ratelimits]]
+name = "EVERYONE"
+namespace_id = "1002"
+simple = { limit = 40, period = 60 }
+
+[observability]
+enabled = true

@@ -110,6 +110,36 @@ button { font: inherit; color: inherit; }
 .home-selected { padding: 96px var(--pad) 120px 0; }
 .home-selected .more { display: inline-block; margin-top: 40px; font-family: var(--mono); font-size: var(--fs-meta); border-bottom: 1px solid var(--ink); }
 
+/* chat: "Ask about the work" */
+.ask { padding: 96px var(--pad) 0 0; max-width: calc(var(--col) + 240px); }
+.ask-h { font-size: var(--fs-title); line-height: 1.1; margin-bottom: 28px; }
+.ask-log:empty { display: none; }
+.ask-log { margin-bottom: 28px; }
+.ask-log p { white-space: pre-line; overflow-wrap: anywhere; }
+.ask-q { font-weight: 700; margin-top: 28px; }
+.ask-q:first-child { margin-top: 0; }
+.ask-a { margin-top: 8px; }
+.ask-a a { border-bottom: 1px solid currentColor; color: rgb(22, 140, 190); }
+.ask-a.pending::after { content: "▍"; color: rgb(22, 170, 222); animation: ask-blink 1s steps(1) infinite; }
+.ask-a.err { color: var(--mut); }
+@keyframes ask-blink { 50% { opacity: 0; } }
+.ask-form { display: flex; gap: 0; border-bottom: 2px solid var(--ink); }
+.ask-form input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; padding: 10px 0;
+  font: inherit; color: var(--ink);
+}
+.ask-form input::placeholder { color: var(--dim); }
+.ask-form button, .ask-chips button {
+  font: var(--fs-meta)/1.4 var(--mono); background: none; border: 0; color: var(--ink); cursor: pointer; padding: 10px 0 10px 16px;
+}
+.ask-form button:disabled { color: var(--dim); cursor: default; }
+.ask-chips { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px; }
+.ask-chips button { padding: 0; color: var(--mut); border-bottom: 1px solid var(--line); }
+.ask-chips button:hover, .ask-form button:hover:not(:disabled) { color: rgb(22, 140, 190); }
+.ask.open .ask-chips { display: none; }
+.ask-note { margin-top: 18px; font-size: var(--fs-meta); line-height: 1.5; color: var(--mut); max-width: var(--col); }
+.ask-note a { border-bottom: 1px solid var(--line); }
+
 /* ---------- plates / cards ---------- */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px var(--gap); }
 .card { display: block; }
@@ -266,6 +296,8 @@ button.embed.lite:hover img { opacity: 1; }
   .home-hero { height: calc(100svh - 55px); min-height: 440px; }
   .home-statement { left: var(--pad); right: var(--pad); bottom: 32px; font-size: 25px; }
   .home-selected { padding: 64px var(--pad) 80px; }
+  .ask { padding: 64px var(--pad) 0; }
+  .ask-form input { font-size: 16px; }
   .grid { grid-template-columns: 1fr; gap: 44px; }
   .grid.friends { grid-template-columns: repeat(2, 1fr); }
   .plates .cols { columns: 1; }
