@@ -2,6 +2,7 @@
 # wiki or the Worker changes. Needs two repository secrets:
 #   CLOUDFLARE_API_TOKEN  (Cloudflare → My Profile → API Tokens → "Edit Cloudflare Workers")
 #   OPENAI_API_KEY        (platform.openai.com → API keys)
+# Optional: TURNSTILE_SECRET (Cloudflare → Turnstile) turns on the invisible bot check.
 # Without them the job is skipped.
 name: Deploy chat worker
 
@@ -12,6 +13,8 @@ on:
       - "liutingchun/wiki/**"
       - "liutingchun/worker/**"
       - "liutingchun/scripts/build-knowledge.py"
+      - "liutingchun/scripts/wiki-sitemap.py"
+      - "liutingchun/data/site.json"
       - ".github/workflows/deploy-chat.yml"
   workflow_dispatch:
 
@@ -24,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+      HAS_TURNSTILE: ${{ secrets.TURNSTILE_SECRET != '' }}
     steps:
       - if: env.HAS_TOKEN != 'true'
         run: echo "CLOUDFLARE_API_TOKEN is not set; skipping the deploy."
@@ -36,7 +40,7 @@ jobs:
       - if: env.HAS_TOKEN == 'true'
         working-directory: liutingchun/worker
         run: npm install --no-audit --no-fund
-      - if: env.HAS_TOKEN == 'true'
+      - if: env.HAS_TOKEN == 'true' && env.HAS_TURNSTILE != 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -45,3 +49,14 @@ jobs:
             OPENAI_API_KEY
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - if: env.HAS_TOKEN == 'true' && env.HAS_TURNSTILE == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: liutingchun/worker
+          secrets: |
+            OPENAI_API_KEY
+            TURNSTILE_SECRET
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TURNSTILE_SECRET: ${{ secrets.TURNSTILE_SECRET }}

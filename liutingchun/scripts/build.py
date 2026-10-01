@@ -8,11 +8,13 @@ under de/ and Traditional Chinese under zh/ (the blog posts are not translated).
     pip install markdown
     python3 liutingchun/scripts/build.py
 """
+import base64
 import datetime
 import html
 import json
 import os
 import re
+import runpy
 import shutil
 from urllib.parse import urlparse, urlsplit
 
@@ -496,7 +498,10 @@ def ask_box(lang):
         return ""
     u = UI[lang]
     msgs = {k: u[k] % (S["email"],) if k == "ask_err" else u[k] for k in ("ask_err", "ask_busy", "ask_refusal")}
-    return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-endpoint="%s" data-msgs="%s">'
+    # the endpoint is written reversed + base64 so it is not a plain URL in the page source
+    enc = base64.b64encode(S["chat_endpoint"].encode()).decode()[::-1]
+    ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
+    return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-e="%s"%s data-msgs="%s">'
             '<h2 id="ask-h" class="ask-h">%s</h2>'
             '<div class="ask-log" aria-live="polite"></div>'
             '<form class="ask-form"><input name="q" type="text" maxlength="600" autocomplete="off" required '
@@ -504,7 +509,7 @@ def ask_box(lang):
             '<div class="ask-chips">%s</div>'
             '<p class="ask-note">%s</p>'
             '<script src="%s" defer></script></section>') % (
-        esc(S["chat_endpoint"]), esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
+        enc, ts, esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
         esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
         "".join('<button type="button">%s</button>' % esc(q) for q in u["ask_q"]),
         esc(u["ask_note"]) % ('<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
@@ -523,12 +528,12 @@ for L in LANGS:
     # home: generative field + statement, then a few recent works
     page(P, "", tr(S, "description", L),
          '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
-         '<h1 class="sr-only">%s %s</h1><p class="home-statement"><span>%s</span></p></section>'
-         '%s<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
+         '<h1 class="sr-only">%s %s</h1>%s<p class="home-statement"><span>%s</span></p></section>'
+         '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
              esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
-             esc(S["name"]), esc(S.get("name_zh", "")), esc(tr(S, "statement", L) or tr(S, "description", L)),
-             ask_box(L), esc(u["selected"]),
+             esc(S["name"]), esc(S.get("name_zh", "")), ask_box(L), esc(tr(S, "statement", L) or tr(S, "description", L)),
+             esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
 
@@ -686,8 +691,13 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], l
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
 
 CHAT_PRIVACY = """<h2 id="chat">7. Fragen zur Arbeit (KI-Chat)</h2>
-<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
+<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein.{turnstile} Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
 """
+
+CHAT_PRIVACY = CHAT_PRIVACY.replace("{turnstile}", (
+    " Zum Schutz vor automatisierten Anfragen wird beim Absenden Cloudflare Turnstile geladen, das ohne Cookies "
+    "prüft, ob die Anfrage von einem Menschen stammt (Art. 6 Abs. 1 lit. f DSGVO)."
+) if S.get("turnstile_sitekey") else "")
 
 page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], lang="de", body="""
 <div class="legal-page">
@@ -777,5 +787,8 @@ if PREFIX == "/":
             write(o.strip("/") + "/index.html", '<!doctype html><meta charset="utf-8"><title>Moved</title>'
                   '<link rel="canonical" href="%s"><meta name="robots" content="noindex">'
                   '<meta http-equiv="refresh" content="0; url=%s"><a href="%s">%s</a>\n' % ((esc(abs_url(new)),) * 4))
+
+# Keep the wiki's site map (what the homepage chat may link to) in step with the site.
+runpy.run_path(os.path.join(ROOT, "scripts", "wiki-sitemap.py"))
 
 print("built %d pages -> %s" % (len(pages), BASE))
