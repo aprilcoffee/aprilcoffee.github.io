@@ -61,8 +61,10 @@
             }
           });
         }
+        // the page is sized in rem (80% on desktop), so the field scales with it
+        var k = parseFloat(getComputedStyle(document.documentElement).fontSize) / 16 || 1;
         function size() {
-          cell = el.clientWidth < 700 ? 13 : 16;
+          cell = (el.clientWidth / k < 700 ? 13 : 16) * k;
           p.resizeCanvas(el.clientWidth, el.clientHeight);
           cols = Math.ceil(p.width / cell) + 1;
           rows = Math.ceil(p.height / (cell * 1.25)) + 1;
@@ -89,7 +91,7 @@
           // a keyword fades in while the pointer is near it, and fades out again
           placed.forEach(function (w) {
             var d = Math.sqrt((w.x - mx) * (w.x - mx) + (w.y - my) * (w.y - my));
-            var target = Math.max(0, Math.min(1, (190 - d) / 110));
+            var target = Math.max(0, Math.min(1, (190 * k - d) / (110 * k)));
             w.a += (target - w.a) * 0.18;
           });
           var rh = cell * 1.25, hot = null, best = 1e9;
